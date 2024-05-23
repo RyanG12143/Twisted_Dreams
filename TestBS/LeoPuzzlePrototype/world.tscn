@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://dbkiu1hf1d1ne"]
 
-[ext_resource type="PackedScene" uid="uid://m23ls6buacwh" path="res://character_one.tscn" id="1_ex4f2"]
-[ext_resource type="Texture2D" uid="uid://cvumdn2cbyb2w" path="res://Assets/Tiles.png" id="2_rd16o"]
-[ext_resource type="PackedScene" uid="uid://pqhyjjoo1fcs" path="res://character_two.tscn" id="2_xv08u"]
-[ext_resource type="Script" path="res://Camera2D.gd" id="4_26abs"]
-[ext_resource type="PackedScene" uid="uid://d3t0efafn5mb0" path="res://Crate.tscn" id="5_ubr1c"]
+[ext_resource type="PackedScene" uid="uid://m23ls6buacwh" path="res://TestBS/LeoPuzzlePrototype/character_one.tscn" id="1_ex4f2"]
+[ext_resource type="Texture2D" uid="uid://cvumdn2cbyb2w" path="res://TestBS/LeoPuzzlePrototype/Assets/Tiles.png" id="2_rd16o"]
+[ext_resource type="PackedScene" uid="uid://pqhyjjoo1fcs" path="res://TestBS/LeoPuzzlePrototype/character_two.tscn" id="2_xv08u"]
+[ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Camera2D.gd" id="4_26abs"]
+[ext_resource type="PackedScene" uid="uid://d3t0efafn5mb0" path="res://TestBS/LeoPuzzlePrototype/Crate.tscn" id="5_ubr1c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbg3q"]
 texture = ExtResource("2_rd16o")

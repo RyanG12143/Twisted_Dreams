@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://pqhyjjoo1fcs"]
 
-[ext_resource type="Script" path="res://character_two.gd" id="1_5sjxf"]
-[ext_resource type="Texture2D" uid="uid://dlx4odth1vk0n" path="res://Assets/_0001_Layer-2.png" id="2_q2u1r"]
+[ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/character_two.gd" id="1_5sjxf"]
+[ext_resource type="Texture2D" uid="uid://dlx4odth1vk0n" path="res://TestBS/LeoPuzzlePrototype/Assets/_0001_Layer-2.png" id="2_q2u1r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sakb4"]
 size = Vector2(17, 38)

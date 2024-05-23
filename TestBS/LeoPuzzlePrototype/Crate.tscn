@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3t0efafn5mb0"]
 
-[ext_resource type="Texture2D" uid="uid://g5smoawtrh8j" path="res://Assets/crate.png" id="1_kknbp"]
-[ext_resource type="Script" path="res://Crate.gd" id="1_kuxyq"]
+[ext_resource type="Texture2D" uid="uid://g5smoawtrh8j" path="res://TestBS/LeoPuzzlePrototype/Assets/crate.png" id="1_kknbp"]
+[ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Crate.gd" id="1_kuxyq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mtqhq"]
 rough = true
