@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgt428j75dvlt"
-path="res://.godot/imported/_0000_Layer-1.png-94a5b9a0fba640502b5be6b9920b2e29.ctex"
+path="res://.godot/imported/_0000_Layer-1.png-262f3ebdc0b61e070055afa78f27ed33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/_0000_Layer-1.png"
-dest_files=["res://.godot/imported/_0000_Layer-1.png-94a5b9a0fba640502b5be6b9920b2e29.ctex"]
+source_file="res://TestBS/LeoPuzzlePrototype/Assets/_0000_Layer-1.png"
+dest_files=["res://.godot/imported/_0000_Layer-1.png-262f3ebdc0b61e070055afa78f27ed33.ctex"]
 
 [params]
 
