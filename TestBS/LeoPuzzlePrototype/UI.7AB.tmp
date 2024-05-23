@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkckmghf83dwj"]
+
+[ext_resource type="Texture2D" uid="uid://dc6uhy27g0xpo" path="res://TestBS/LeoPuzzlePrototype/Assets/blue-arrow.png" id="1_ounnp"]
+[ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/blue_arrow.gd" id="2_m6tl1"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="blue_arrow" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+rotation = 3.14159
+texture = ExtResource("1_ounnp")
+script = ExtResource("2_m6tl1")

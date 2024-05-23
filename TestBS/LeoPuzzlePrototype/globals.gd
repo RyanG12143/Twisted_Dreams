@@ -2,6 +2,7 @@ extends Node2D
 
 const UNIT_SIZE = 96
 var character_control = 1
+var next_controlled_character = 1
 var character_one
 var character_two
 
@@ -19,11 +20,17 @@ func _process(delta):
 	if(Input.is_action_just_pressed("ui_character_swap")):
 		emit_signal("Character_Swapped")
 		if(character_control == 1):
-			character_control = 2
+			next_controlled_character = 2
+			character_control = 0
 			character_two.z_index = 1
 			character_one.z_index = 0
-		else:
-			character_control = 1
+			await get_tree().create_timer(0.2).timeout
+			character_control = 2
+		elif(character_control == 2):
+			next_controlled_character = 1
+			character_control = 0
 			character_one.z_index = 1
 			character_two.z_index = 0
+			await get_tree().create_timer(0.2).timeout
+			character_control = 1
 			

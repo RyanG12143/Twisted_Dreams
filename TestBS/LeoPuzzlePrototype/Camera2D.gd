@@ -19,9 +19,9 @@ func _process(delta):
 	lerp_weight = (tween.interpolate_value(0.0, 1.0, timer, TRANSITION_TIME, Tween.TRANS_SINE, Tween.EASE_OUT))
 	
 	if(globals.character_one != null && globals.character_two != null):
-		if(globals.character_control == 1):
+		if(globals.next_controlled_character == 1):
 			global_position = lerp(startpoint, globals.character_one.global_position, lerp_weight)
-		else:
+		elif(globals.next_controlled_character == 2):
 			global_position = lerp(startpoint, globals.character_two.global_position, lerp_weight)
 		
 
