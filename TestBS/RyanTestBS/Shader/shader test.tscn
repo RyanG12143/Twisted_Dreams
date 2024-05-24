@@ -33,8 +33,8 @@ shader_parameter/saturation = 0.5
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_mgxeq")
-building_saturation = [ExtResource("4_18n7x")]
-plant_saturation = [ExtResource("3_o5al6"), ExtResource("4_egicq"), ExtResource("5_lys5f"), ExtResource("6_1ycca")]
+building_saturation = Array[ShaderMaterial]([ExtResource("4_18n7x")])
+plant_saturation = Array[ShaderMaterial]([ExtResource("3_o5al6"), ExtResource("4_egicq"), ExtResource("5_lys5f"), ExtResource("6_1ycca")])
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.904432, 0.668164, 0.0489101)

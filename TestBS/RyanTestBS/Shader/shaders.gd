@@ -24,6 +24,8 @@ func set_shaders(building, plant):
 		p.set_shader_parameter("saturation", .2)
 
 func swap_shader_saturation():
+	if not plant_saturation:
+		return
 	if plant_saturation[0].get_shader_parameter("saturation") == 1:
 		for p in plant_saturation:
 			p.set_shader_parameter("saturation", .2)
