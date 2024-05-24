@@ -9,6 +9,7 @@ var max_jump_velocity
 var min_jump_velocity
 var is_grounded
 var is_jumping = false
+var push_force = 80.0
 
 var max_jump_height = 1.0 * globals.UNIT_SIZE
 var min_jump_height = 0.15 * globals.UNIT_SIZE
@@ -38,6 +39,7 @@ func _apply_movement():
 	is_grounded = is_on_floor()
 	if(is_grounded):
 		is_jumping = false
+	
 	
 func _handle_move_input():
 	var move_direction = -int(Input.is_action_pressed("ui_left")) + int(Input.is_action_pressed("ui_right"))

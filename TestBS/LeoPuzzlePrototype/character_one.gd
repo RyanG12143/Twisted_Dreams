@@ -9,6 +9,7 @@ var max_jump_velocity
 var min_jump_velocity
 var is_grounded
 var is_jumping = false
+var push_force = 80.0
 
 var max_jump_height = 1.0 * globals.UNIT_SIZE
 var min_jump_height = 0.15 * globals.UNIT_SIZE
@@ -38,6 +39,11 @@ func _apply_movement():
 	is_grounded = is_on_floor()
 	if(is_grounded):
 		is_jumping = false
+		
+	for index in get_slide_collision_count():
+		var collision = get_slide_collision(index)
+		if collision.get_collider() is Crate:
+			collision.get_collider()._slide(-collision.normal * push_force)
 	
 func _handle_move_input():
 	var move_direction = -int(Input.is_action_pressed("ui_left")) + int(Input.is_action_pressed("ui_right"))
@@ -55,3 +61,4 @@ func _handle_move_input():
 	
 func _get_h_weight():
 	return 0.2 if is_grounded else 0.05
+
