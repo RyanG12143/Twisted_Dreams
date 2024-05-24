@@ -1,15 +1,17 @@
 extends CharacterBody2D
+class_name Character_Two
 
 const UP = Vector2(0, -1)
 const SLOPE_STOP = 64
 
 var move_speed = 2 * globals.UNIT_SIZE
+var move_direction = 0;
 var gravity = 1200;
 var max_jump_velocity
 var min_jump_velocity
 var is_grounded
 var is_jumping = false
-var push_force = 80.0
+var push_force = 100.0
 
 var max_jump_height = 1.0 * globals.UNIT_SIZE
 var min_jump_height = 0.15 * globals.UNIT_SIZE
@@ -40,9 +42,15 @@ func _apply_movement():
 	if(is_grounded):
 		is_jumping = false
 	
+	for index in get_slide_collision_count():
+		var collision = get_slide_collision(index)
+		if collision.get_collider() is Crate:
+			if (move_direction != 0 && abs(collision.get_collider().position.y - position.y) < 25):
+				collision.get_collider()._slide(Vector2(move_direction, 0) * push_force)
+	
 	
 func _handle_move_input():
-	var move_direction = -int(Input.is_action_pressed("ui_left")) + int(Input.is_action_pressed("ui_right"))
+	move_direction = -int(Input.is_action_pressed("ui_left")) + int(Input.is_action_pressed("ui_right"))
 	if move_direction == -1:
 		get_node("Sprite2D").flip_h = true
 	elif move_direction == 1:

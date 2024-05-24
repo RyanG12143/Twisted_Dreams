@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://m23ls6buacwh"]
+
+[ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/character_one.gd" id="1_u874w"]
+[ext_resource type="Texture2D" uid="uid://dgt428j75dvlt" path="res://TestBS/LeoPuzzlePrototype/Assets/_0000_Layer-1.png" id="2_les1o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_deqlf"]
+size = Vector2(23, 28)
+
+[node name="character_one" type="CharacterBody2D"]
+z_index = 1
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_u874w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(12, 14)
+texture = ExtResource("2_les1o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(11.5, 14)
+shape = SubResource("RectangleShape2D_deqlf")
