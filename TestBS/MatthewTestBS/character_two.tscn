@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd2v2rbe84u6p"]
+
+[ext_resource type="Script" path="res://TestBS/MatthewTestBS/Character_two.gd" id="1_0pdqb"]
+[ext_resource type="Texture2D" uid="uid://dlx4odth1vk0n" path="res://TestBS/LeoPuzzlePrototype/Assets/_0001_Layer-2.png" id="2_2upnw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lv83e"]
+size = Vector2(15, 38)
+
+[node name="Character_two" type="CharacterBody2D"]
+script = ExtResource("1_0pdqb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(12, 22)
+texture = ExtResource("2_2upnw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10.5, 22)
+shape = SubResource("RectangleShape2D_lv83e")
