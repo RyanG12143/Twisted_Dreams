@@ -1,47 +1,81 @@
-[gd_scene load_steps=10 format=3 uid="uid://dk2tp04abipjn"]
+[gd_scene load_steps=16 format=3 uid="uid://dk2tp04abipjn"]
 
 [ext_resource type="Script" path="res://TestBS/RyanTestBS/Shader/shader test.gd" id="1_mgxeq"]
 [ext_resource type="Shader" path="res://TestBS/RyanTestBS/Shader/Saturation.gdshader" id="1_wcjtb"]
 [ext_resource type="Texture2D" uid="uid://ddq4lfnrticpv" path="res://icon.svg" id="2_oanyl"]
-[ext_resource type="Material" uid="uid://clul26l3qykbg" path="res://TestBS/RyanTestBS/Shader/Building_Saturation.tres" id="2_rj2qy"]
-[ext_resource type="Material" uid="uid://36l5epuc1mlo" path="res://TestBS/RyanTestBS/Shader/Plant_Saturation.tres" id="3_yxlkn"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wsu3r"]
-next_pass = ExtResource("2_rj2qy")
-albedo_texture = ExtResource("2_oanyl")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kw4ly"]
-next_pass = ExtResource("3_yxlkn")
-albedo_texture = ExtResource("2_oanyl")
+[ext_resource type="Material" uid="uid://c2a3hra6yeqs2" path="res://TestBS/RyanTestBS/Shader/Material/Godot_Plant.tres" id="3_o5al6"]
+[ext_resource type="Material" uid="uid://cuy18u2mwqgma" path="res://TestBS/RyanTestBS/Shader/Material/Godot_Building.tres" id="4_18n7x"]
+[ext_resource type="Material" uid="uid://cbpmcpk6473j4" path="res://TestBS/RyanTestBS/Shader/Material/formica_cinza.tres" id="4_egicq"]
+[ext_resource type="Material" uid="uid://b1g5g48ugwvdp" path="res://TestBS/RyanTestBS/Shader/Material/material.tres" id="5_lys5f"]
+[ext_resource type="Material" uid="uid://exmfkp20osw0" path="res://TestBS/RyanTestBS/Shader/Material/Vegetation.tres" id="6_1ycca"]
+[ext_resource type="PackedScene" uid="uid://bt7giblqby3t5" path="res://TestBS/RyanTestBS/Shader/Assets/tree/scene.gltf" id="6_fj2qh"]
+[ext_resource type="Material" uid="uid://b6li1okandyd1" path="res://TestBS/RyanTestBS/Shader/Assets/tree/Materials/Vegetation_Bark_Maple_1.tres" id="7_erx31"]
+[ext_resource type="Material" uid="uid://yw4gcxtcx04m" path="res://TestBS/RyanTestBS/Shader/Assets/tree/Materials/material.tres" id="8_35t44"]
+[ext_resource type="Material" uid="uid://1b3f6jeufq15" path="res://TestBS/RyanTestBS/Shader/Assets/tree/Materials/formica_cinza.tres" id="9_jgcbe"]
+[ext_resource type="PackedScene" uid="uid://b47vmvug5rsyt" path="res://TestBS/RyanTestBS/Shader/Assets/tree/scene_shad.gltf" id="10_lni0y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g46ru"]
 render_priority = 0
 shader = ExtResource("1_wcjtb")
+shader_parameter/albedo = null
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
 shader_parameter/saturation = 0.5
 
 [sub_resource type="Environment" id="Environment_51xmt"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_mgxeq")
-building_saturation = ExtResource("2_rj2qy")
-plant_saturation = ExtResource("3_yxlkn")
+building_saturation = [ExtResource("4_18n7x")]
+plant_saturation = [ExtResource("3_o5al6"), ExtResource("4_egicq"), ExtResource("5_lys5f"), ExtResource("6_1ycca")]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.907735, -0.803046, 0)
-material = SubResource("StandardMaterial3D_wsu3r")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.904432, 0.668164, 0.0489101)
+material = ExtResource("4_18n7x")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.30569, -0.708221, 0.0489101)
+material = ExtResource("5_lys5f")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.69244, 0.565675, 0.0489101)
+material = ExtResource("7_erx31")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.68352, -0.708221, 0.0489101)
+material = ExtResource("6_1ycca")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32524, 0.650713, 0.0489101)
+material = ExtResource("8_35t44")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.94972, -0.708221, 0.0489101)
+material = ExtResource("4_egicq")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.94972, 0.724225, 0.0489101)
+material = ExtResource("9_jgcbe")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.908416, 0.746309, 0.00478745)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.905724, -0.72853, 0.0536976)
 layers = 2
-material = SubResource("StandardMaterial3D_kw4ly")
+material = ExtResource("3_o5al6")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.783728, -0.862148, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.78642, -0.942229, 0.0489101)
 material_overlay = SubResource("ShaderMaterial_g46ru")
 texture = ExtResource("2_oanyl")
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.775285, 0.688748, -0.00151932)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.777977, 0.608667, 0.0473908)
 layers = 2
 texture = ExtResource("2_oanyl")
 
@@ -53,3 +87,22 @@ environment = SubResource("Environment_51xmt")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.832225, 0.554438, 0, -0.554438, 0.832225, -3.61182, 0.736232, 13.381)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("6_fj2qh")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -22.3226, -12.0904, -12.3639)
+
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("6_fj2qh")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 4.97915, -12.0904, -12.3639)
+
+[node name="Sketchfab_Scene3" parent="." instance=ExtResource("10_lni0y")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -11.167, -12.2982, -13.3696)
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Camera3D2" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.68606)
+
+[node name="SubViewport2" type="SubViewport" parent="."]
+
+[node name="Camera3D2" type="Camera3D" parent="SubViewport2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.68606)

@@ -1,7 +1,7 @@
 extends Node
 
-var building_saturation:ShaderMaterial
-var plant_saturation:ShaderMaterial
+var building_saturation:Array[ShaderMaterial]
+var plant_saturation:Array[ShaderMaterial]
 
 const DESATURATED:int = .2
 const SATRUATED:int = 1
@@ -20,15 +20,20 @@ func _process(delta):
 func set_shaders(building, plant):
 	building_saturation = building
 	plant_saturation = plant
-	plant_saturation.set_shader_parameter("saturation", .2)
+	for p in plant_saturation:
+		p.set_shader_parameter("saturation", .2)
 
 func swap_shader_saturation():
-	if plant_saturation.get_shader_parameter("saturation") == 1:
-		plant_saturation.set_shader_parameter("saturation", .2)
+	if plant_saturation[0].get_shader_parameter("saturation") == 1:
+		for p in plant_saturation:
+			p.set_shader_parameter("saturation", .2)
 	else:
-		plant_saturation.set_shader_parameter("saturation", 1)
+		for p in plant_saturation:
+			p.set_shader_parameter("saturation", 1)
 		
-	if building_saturation.get_shader_parameter("saturation") == 1:
-		building_saturation.set_shader_parameter("saturation", .2)
+	if building_saturation[0].get_shader_parameter("saturation") == 1:
+		for b in building_saturation:
+			b.set_shader_parameter("saturation", .2)
 	else:
-		building_saturation.set_shader_parameter("saturation", 1)
+		for b in building_saturation:
+			b.set_shader_parameter("saturation", 1)

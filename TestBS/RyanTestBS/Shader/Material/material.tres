@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://b1g5g48ugwvdp"]
+
+[ext_resource type="Shader" path="res://TestBS/RyanTestBS/Shader/Saturation.gdshader" id="1_dwhnq"]
+[ext_resource type="Texture2D" uid="uid://bj6l0eoyqhusb" path="res://TestBS/RyanTestBS/Shader/Assets/tree/textures/material_baseColor.png" id="2_thka2"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_dwhnq")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 0.6
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = 0.5
+shader_parameter/metallic = null
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = null
+shader_parameter/saturation = 1.0
+shader_parameter/texture_albedo = ExtResource("2_thka2")

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://1b3f6jeufq15"]
+
+[resource]
+resource_name = "formica_cinza"
+cull_mode = 2
+albedo_color = Color(0.665185, 0.665185, 0.665185, 1)
+roughness = 0.6
