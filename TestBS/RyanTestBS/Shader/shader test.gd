@@ -1,7 +1,7 @@
 extends Node3D
 
-@export var building_saturation:ShaderMaterial
-@export var plant_saturation:ShaderMaterial
+@export var building_saturation:Array[ShaderMaterial]
+@export var plant_saturation:Array[ShaderMaterial]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
