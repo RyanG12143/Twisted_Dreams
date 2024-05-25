@@ -18,25 +18,25 @@ var min_jump_height = 0.15 * globals.UNIT_SIZE
 var jump_duration = 0.4
 
 func _ready():
-	globals._set_character_two(self)
+	globals.set_character_two(self)
 	gravity = 2 * max_jump_height / pow(jump_duration, 2)
 	max_jump_velocity = -sqrt(2 * gravity * max_jump_height)
 	min_jump_velocity = -sqrt(2 * gravity * min_jump_height)
 
 func _physics_process(delta):
-	_apply_movement()
+	apply_movement()
 
 func _process(delta):
-	_apply_gravity(delta)
+	apply_gravity(delta)
 	if(globals.character_control == 2):
-		_handle_move_input()
+		handle_move_input()
 	else:
-		velocity.x = lerp(float(velocity.x), float(move_speed * 0), _get_h_weight())
+		velocity.x = lerp(float(velocity.x), float(move_speed * 0), get_h_weight())
 
-func _apply_gravity(delta):
+func apply_gravity(delta):
 	velocity.y += gravity * delta
 	
-func _apply_movement():
+func apply_movement():
 	move_and_slide()
 	is_grounded = is_on_floor()
 	if(is_grounded):
@@ -46,10 +46,10 @@ func _apply_movement():
 		var collision = get_slide_collision(index)
 		if collision.get_collider() is Crate:
 			if (move_direction != 0 && abs(collision.get_collider().position.y - position.y) < 25):
-				collision.get_collider()._slide(Vector2(move_direction, 0) * push_force)
+				collision.get_collider().slide(Vector2(move_direction, 0) * push_force)
 	
 	
-func _handle_move_input():
+func handle_move_input():
 	move_direction = -int(Input.is_action_pressed("ui_left")) + int(Input.is_action_pressed("ui_right"))
 	if move_direction == -1:
 		get_node("Sprite2D").flip_h = true
@@ -61,7 +61,7 @@ func _handle_move_input():
 	if(is_jumping && !Input.is_action_pressed("ui_jump") && (velocity.y < min_jump_velocity)):
 		velocity.y = min_jump_velocity
 		
-	velocity.x = lerp(float(velocity.x), float(move_speed * move_direction), _get_h_weight())
+	velocity.x = lerp(float(velocity.x), float(move_speed * move_direction), get_h_weight())
 	
-func _get_h_weight():
+func get_h_weight():
 	return 0.2 if is_grounded else 0.05

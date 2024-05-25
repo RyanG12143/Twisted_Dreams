@@ -5,9 +5,9 @@ const ARROW_TIMER = 1.8
 
 
 func _ready():
-	globals.Character_Swapped.connect(_character_swap)
+	globals.Character_Swapped.connect(character_swap)
 	self_modulate.a = 0
-	_character_swap()
+	character_swap()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _process(delta):
@@ -24,7 +24,7 @@ func _process(delta):
 	else:
 		timer = 0
 
-func _character_swap():
+func character_swap():
 	if(globals.character_one != null && globals.character_two != null):
 		timer = 0
 		self_modulate.a = 1

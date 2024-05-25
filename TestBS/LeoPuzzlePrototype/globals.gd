@@ -8,11 +8,11 @@ var character_two
 
 signal Character_Swapped
 
-func _set_character_one(character: CharacterBody2D):
+func set_character_one(character: CharacterBody2D):
 	character_one = character
 	character_one.top_level = true
 	
-func _set_character_two(character: CharacterBody2D):
+func set_character_two(character: CharacterBody2D):
 	character_two = character
 	character_two.top_level = true
 

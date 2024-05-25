@@ -16,24 +16,23 @@ func _physics_process(delta):
 	
 	if(abs(velocity.x) >= 3.0):
 		if(velocity.x > 0.0):
-			_slide(Vector2(velocity.x - 3.0, velocity.y))
+			slide(Vector2(velocity.x - 3.0, velocity.y))
 		else:
-			_slide(Vector2(velocity.x + 3.0, velocity.y))
+			slide(Vector2(velocity.x + 3.0, velocity.y))
 	else:
 		velocity.x = 0.0
 		
 	for index in get_slide_collision_count():
 		var collision = get_slide_collision(index)
 		if collision.get_collider() is Crate:
-			collision.get_collider()._slide(Vector2(velocity.x, 0))
+			collision.get_collider().slide(Vector2(velocity.x, 0))
 		
-	print(velocity.x)
 	
 
 func _process(delta):
 	if(Input.is_action_pressed("ui_crate_reset")):
 		position = reset_position
 
-func _slide(vector):
+func slide(vector):
 	velocity.x = vector.x
 	

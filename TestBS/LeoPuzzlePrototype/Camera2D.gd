@@ -8,7 +8,7 @@ var tween
 
 
 func _ready():
-	globals.Character_Swapped.connect(_character_swap)
+	globals.Character_Swapped.connect(character_swap)
 	tween = get_tree().create_tween().set_trans(Tween.TRANS_SINE)
 
 
@@ -26,7 +26,7 @@ func _process(delta):
 		
 
 
-func _character_swap():
+func character_swap():
 	startpoint = global_position
 	lerp_weight = 0
 	timer = 0
