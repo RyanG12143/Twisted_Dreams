@@ -1,7 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://dk2tp04abipjn"]
 
 [ext_resource type="Script" path="res://TestBS/RyanTestBS/Shader/shader test.gd" id="1_mgxeq"]
-[ext_resource type="Shader" path="res://TestBS/RyanTestBS/Shader/Saturation.gdshader" id="1_wcjtb"]
 [ext_resource type="Texture2D" uid="uid://ddq4lfnrticpv" path="res://icon.svg" id="2_oanyl"]
 [ext_resource type="Material" uid="uid://c2a3hra6yeqs2" path="res://TestBS/RyanTestBS/Shader/Material/Godot_Plant.tres" id="3_o5al6"]
 [ext_resource type="Material" uid="uid://cuy18u2mwqgma" path="res://TestBS/RyanTestBS/Shader/Material/Godot_Building.tres" id="4_18n7x"]
@@ -14,22 +13,15 @@
 [ext_resource type="Material" uid="uid://1b3f6jeufq15" path="res://TestBS/RyanTestBS/Shader/Assets/tree/Materials/formica_cinza.tres" id="9_jgcbe"]
 [ext_resource type="PackedScene" uid="uid://b47vmvug5rsyt" path="res://TestBS/RyanTestBS/Shader/Assets/tree/scene_shad.gltf" id="10_lni0y"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_g46ru"]
-render_priority = 0
-shader = ExtResource("1_wcjtb")
-shader_parameter/albedo = null
-shader_parameter/point_size = null
-shader_parameter/roughness = null
-shader_parameter/metallic_texture_channel = null
-shader_parameter/specular = null
-shader_parameter/metallic = null
-shader_parameter/uv1_scale = null
-shader_parameter/uv1_offset = null
-shader_parameter/uv2_scale = null
-shader_parameter/uv2_offset = null
-shader_parameter/saturation = 0.5
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kuyyw"]
+
+[sub_resource type="Sky" id="Sky_g5kpl"]
+sky_material = SubResource("ProceduralSkyMaterial_kuyyw")
 
 [sub_resource type="Environment" id="Environment_51xmt"]
+background_mode = 2
+sky = SubResource("Sky_g5kpl")
+adjustment_enabled = true
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_mgxeq")
@@ -71,16 +63,15 @@ material = ExtResource("3_o5al6")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.78642, -0.942229, 0.0489101)
-material_overlay = SubResource("ShaderMaterial_g46ru")
 texture = ExtResource("2_oanyl")
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.777977, 0.608667, 0.0473908)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.777977, 0.76189, 0.0473908)
 layers = 2
 texture = ExtResource("2_oanyl")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.68606)
+transform = Transform3D(1, 0, 0, 0, 0.951643, 0.307207, 0, -0.307207, 0.951643, 0, 2.15076, 5.81279)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_51xmt")
@@ -96,13 +87,3 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 4.97915, -12.0904, -12.
 
 [node name="Sketchfab_Scene3" parent="." instance=ExtResource("10_lni0y")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -11.167, -12.2982, -13.3696)
-
-[node name="SubViewport" type="SubViewport" parent="."]
-
-[node name="Camera3D2" type="Camera3D" parent="SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.68606)
-
-[node name="SubViewport2" type="SubViewport" parent="."]
-
-[node name="Camera3D2" type="Camera3D" parent="SubViewport2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.68606)

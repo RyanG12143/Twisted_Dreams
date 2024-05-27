@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d3t0efafn5mb0" path="res://TestBS/LeoPuzzlePrototype/Crate.tscn" id="5_ubr1c"]
 [ext_resource type="PackedScene" uid="uid://bkckmghf83dwj" path="res://TestBS/LeoPuzzlePrototype/UI.tscn" id="6_d86nl"]
 [ext_resource type="PackedScene" uid="uid://dfgcelr51poc7" path="res://TestBS/LeoPuzzlePrototype/blue_arrow.tscn" id="7_stoch"]
-[ext_resource type="PackedScene" uid="uid://dv6gs2twtf31w" path="res://TestBS/LeoPuzzlePrototype/Red_Button.tscn" id="8_vxinv"]
+[ext_resource type="PackedScene" path="res://TestBS/LeoPuzzlePrototype/Red_Button.tscn" id="8_vxinv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbg3q"]
 texture = ExtResource("2_rd16o")

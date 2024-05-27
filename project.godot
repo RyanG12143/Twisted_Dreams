@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 globals="*res://TestBS/LeoPuzzlePrototype/globals.gd"
-Shaders="*res://TestBS/RyanTestBS/Shader/shaders.gd"
+Shaders="*res://Scripts/Shader/Shaders.gd"
 
 [input]
 

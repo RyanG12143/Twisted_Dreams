@@ -22,9 +22,6 @@ void vertex() {
 	UV=UV*uv1_scale.xy+uv1_offset.xy;
 }
 
-
-
-
 void fragment() {
 	vec2 base_uv = UV;
 	vec4 albedo_tex = texture(texture_albedo,base_uv);
