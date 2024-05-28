@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dc020v5sxinwt"]
+
+[ext_resource type="Texture2D" uid="uid://dl2c5owhyu5as" path="res://TestBS/LeoPuzzlePrototype/Assets/door.png" id="1_dbkua"]
+[ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Door.gd" id="2_5sq8c"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nqm1j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hui82"]
+size = Vector2(24.8, 32.3556)
+
+[node name="Sprite2D" type="Sprite2D"]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(17.5, 22.5)
+scale = Vector2(1.40625, 1.40625)
+texture = ExtResource("1_dbkua")
+script = ExtResource("2_5sq8c")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_nqm1j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.0444441, 0.177778)
+shape = SubResource("RectangleShape2D_hui82")

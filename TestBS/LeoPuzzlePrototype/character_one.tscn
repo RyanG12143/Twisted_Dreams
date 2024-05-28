@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_deqlf"]
 size = Vector2(23, 28)
 
-[node name="character_one" type="CharacterBody2D"]
+[node name="character_one" type="CharacterBody2D" groups=["Can_Press_Buttons", "Player"]]
 z_index = 1
 collision_layer = 2
 collision_mask = 5
