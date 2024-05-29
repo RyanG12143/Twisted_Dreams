@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dv6gs2twtf31w"]
 
-[ext_resource type="Texture2D" uid="uid://7qws6bwmttqw" path="res://TestBS/LeoPuzzlePrototype/Assets/button.png" id="1_yhjjn"]
+[ext_resource type="Texture2D" uid="uid://7qws6bwmttqw" path="res://TestBS/MatthewTestBS/Assets/button.png" id="1_yhjjn"]
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Red_Button.gd" id="2_ers06"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f66n4"]

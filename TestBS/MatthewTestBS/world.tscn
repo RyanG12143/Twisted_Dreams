@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnl32l7bax44g"]
+[gd_scene load_steps=10 format=3 uid="uid://cnl32l7bax44g"]
 
-[ext_resource type="Texture2D" uid="uid://cvumdn2cbyb2w" path="res://TestBS/LeoPuzzlePrototype/Assets/Tiles.png" id="1_6qvpe"]
+[ext_resource type="Texture2D" uid="uid://cvumdn2cbyb2w" path="res://TestBS/MatthewTestBS/Assets/Tiles.png" id="1_6qvpe"]
 [ext_resource type="PackedScene" uid="uid://buxmvwxwwb5q8" path="res://TestBS/MatthewTestBS/button.tscn" id="2_pc8kb"]
 [ext_resource type="PackedScene" uid="uid://dljwd17mih65x" path="res://TestBS/MatthewTestBS/character_one.tscn" id="3_x5lna"]
 [ext_resource type="PackedScene" uid="uid://dd2v2rbe84u6p" path="res://TestBS/MatthewTestBS/character_two.tscn" id="4_yy6x3"]
 [ext_resource type="Script" path="res://TestBS/MatthewTestBS/Camera2D.gd" id="5_2cwue"]
 [ext_resource type="PackedScene" uid="uid://cqv8ru5kxnmgs" path="res://TestBS/MatthewTestBS/crate.tscn" id="6_a87oe"]
+[ext_resource type="PackedScene" uid="uid://q6vqenn7ndre" path="res://TestBS/MatthewTestBS/platforms.tscn" id="7_iaaq0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s1w5u"]
 texture = ExtResource("1_6qvpe")
@@ -1418,25 +1419,28 @@ layer_0/tile_data = PackedInt32Array(262144, 458754, 13, 196608, 458754, 13, 131
 position = Vector2(148, 107)
 
 [node name="Character_one" parent="." instance=ExtResource("3_x5lna")]
-position = Vector2(70, 62)
+position = Vector2(335, 62)
 collision_layer = 2
-collision_mask = 5
+collision_mask = 13
 
 [node name="Character_two" parent="." instance=ExtResource("4_yy6x3")]
 position = Vector2(36, 45)
 collision_layer = 2
-collision_mask = 5
+collision_mask = 13
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 script = ExtResource("5_2cwue")
 
 [node name="Crate" parent="." instance=ExtResource("6_a87oe")]
-position = Vector2(194, 62)
+position = Vector2(453, 65)
 collision_layer = 4
-collision_mask = 7
+collision_mask = 15
 
 [node name="Crate2" parent="." instance=ExtResource("6_a87oe")]
-position = Vector2(197, 43)
+position = Vector2(421, 45)
 collision_layer = 4
-collision_mask = 7
+collision_mask = 15
+
+[node name="PulleyPlatform" parent="." instance=ExtResource("7_iaaq0")]
+position = Vector2(434, 89)

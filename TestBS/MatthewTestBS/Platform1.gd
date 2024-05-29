@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Node2D
 
 @export var distance: Vector2 = Vector2(0, 100)
 @export var duration: float = 5.0
@@ -17,6 +17,7 @@ func backwards_movement():
 	tween.set_loops().set_parallel(false)
 	tween.tween_property($Platform1Body, "position", -(distance * objects), duration / 2)
 
+
 func _on_area_2d_body_entered(body):
 	++objects
 	start_movement()
@@ -27,11 +28,3 @@ func _on_area_2d_body_exited(body):
 	--objects
 	backwards_movement()
 	object_off.emit()
-
-
-func _on_platform_2_object_on():
-	backwards_movement()
-
-
-func _on_platform_2_object_off():
-	start_movement()
