@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://byyrt61qbinbu"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b3nko"]
+sky_top_color = Color(0.364013, 0.451352, 0.597576, 1)
+
+[sub_resource type="Sky" id="Sky_heus7"]
+sky_material = SubResource("ProceduralSkyMaterial_b3nko")
+
+[sub_resource type="Environment" id="Environment_144i2"]
+background_mode = 2
+sky = SubResource("Sky_heus7")
+volumetric_fog_enabled = true
+
+[node name="Meshes" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000253677, -0.0398855, 0.00898743)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.71418, 2.50885, 18.7662)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15661, 2.96869, 5.00404)
+operation = 1
+size = Vector3(13.8951, 5.34268, 5.99463)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.781851, -0.0494661, 0.662875)
+operation = 2
+size = Vector3(11.1193, 4.11823, 6.37244)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14379, 0.0218048, 3.03235)
+size = Vector3(417.955, 0.0771179, 393.716)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8254, 11.3039, -3)
+size = Vector3(7, 22.9561, 7)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.2986, 11.3039, -3)
+size = Vector3(7, 22.9561, 7)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7148, 11.3039, -20.8383)
+size = Vector3(7, 22.9561, 7)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.6652, 11.3649, -50.8384)
+size = Vector3(7, 22.9561, 7)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25271, 11.3649, -70.648)
+size = Vector3(7, 22.9561, 7)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.8935, 11.3649, -105.088)
+size = Vector3(7, 22.9561, 7)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_144i2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+shadow_enabled = true
