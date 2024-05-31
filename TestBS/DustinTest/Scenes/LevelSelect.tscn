@@ -1,0 +1,137 @@
+[gd_scene load_steps=3 format=3 uid="uid://deevgd82j1vg3"]
+
+[ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/Level_Select.gd" id="1_eq2sd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8eq6s"]
+font_size = 50
+
+[node name="LevelSelect" type="Node2D"]
+script = ExtResource("1_eq2sd")
+
+[node name="Back" type="Button" parent="."]
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 120.0
+offset_bottom = 72.0
+text = "Back
+"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 320.0
+offset_top = 16.0
+offset_right = 832.0
+offset_bottom = 152.0
+text = "Level Select"
+label_settings = SubResource("LabelSettings_8eq6s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 376.0
+offset_top = 184.0
+offset_right = 424.0
+offset_bottom = 256.0
+text = "1"
+label_settings = SubResource("LabelSettings_8eq6s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 464.0
+offset_top = 184.0
+offset_right = 512.0
+offset_bottom = 256.0
+text = "2"
+label_settings = SubResource("LabelSettings_8eq6s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 552.0
+offset_top = 184.0
+offset_right = 600.0
+offset_bottom = 256.0
+text = "3"
+label_settings = SubResource("LabelSettings_8eq6s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 640.0
+offset_top = 184.0
+offset_right = 688.0
+offset_bottom = 256.0
+text = "4"
+label_settings = SubResource("LabelSettings_8eq6s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 728.0
+offset_top = 184.0
+offset_right = 776.0
+offset_bottom = 256.0
+text = "5"
+label_settings = SubResource("LabelSettings_8eq6s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FirstLevel" type="Button" parent="."]
+offset_left = 364.0
+offset_top = 258.0
+offset_right = 436.0
+offset_bottom = 330.0
+text = "Dream"
+
+[node name="Level2Pt1" type="Button" parent="."]
+offset_left = 452.0
+offset_top = 258.0
+offset_right = 524.0
+offset_bottom = 330.0
+text = "Day"
+
+[node name="Level3Pt1" type="Button" parent="."]
+offset_left = 540.0
+offset_top = 258.0
+offset_right = 612.0
+offset_bottom = 330.0
+text = "Day"
+
+[node name="Level4Pt1" type="Button" parent="."]
+offset_left = 628.0
+offset_top = 258.0
+offset_right = 700.0
+offset_bottom = 330.0
+text = "Day"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 452.0
+offset_top = 346.0
+offset_right = 524.0
+offset_bottom = 418.0
+text = "Dream"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 540.0
+offset_top = 346.0
+offset_right = 612.0
+offset_bottom = 418.0
+text = "Dream"
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 628.0
+offset_top = 346.0
+offset_right = 700.0
+offset_bottom = 418.0
+text = "Dream"
+
+[node name="FinalLevel" type="Button" parent="."]
+offset_left = 716.0
+offset_top = 258.0
+offset_right = 788.0
+offset_bottom = 330.0
+text = "Dream"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="FirstLevel" to="." method="_on_first_level_pressed"]
+[connection signal="pressed" from="Level2Pt1" to="." method="_on_level_2_pt_1_pressed"]
