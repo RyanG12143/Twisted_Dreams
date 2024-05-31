@@ -1,19 +1,18 @@
 class_name Pulley
-extends Node2D
+extends Sprite2D
 
-@export var distance: float = 1.0
-@export var duration: float = 5.0
+@export var distance: float = 20.0
 var start_pos: Vector2
 
 signal object_on
 signal object_off
 
 func start_movement():
-	position.y += distance
+	position = position.lerp(Vector2(position.x, position.y + distance), 1)
 	print("Going down")
 
 func backwards_movement():
-	position.y -= distance
+	
 	print("Going up")
 
 func _on_area_2d_body_entered(body):

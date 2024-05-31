@@ -1419,7 +1419,7 @@ layer_0/tile_data = PackedInt32Array(524293, 458752, 14, 589829, 458752, 14, 589
 position = Vector2(367, 59)
 
 [node name="Crate" parent="." instance=ExtResource("3_wsc3b")]
-position = Vector2(442, 68)
+position = Vector2(427, 75)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -1429,4 +1429,4 @@ script = ExtResource("4_lcwv4")
 position = Vector2(120, 86)
 
 [node name="PulleyPlatform" parent="." instance=ExtResource("7_iaaq0")]
-position = Vector2(433, 92)
+position = Vector2(434, 121)
