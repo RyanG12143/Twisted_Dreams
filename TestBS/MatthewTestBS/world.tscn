@@ -1438,9 +1438,9 @@ collision_layer = 4
 collision_mask = 15
 
 [node name="Crate2" parent="." instance=ExtResource("6_a87oe")]
-position = Vector2(449, 63)
+position = Vector2(458, 72)
 collision_layer = 4
-collision_mask = 15
+collision_mask = 7
 
 [node name="PulleyPlatform" parent="." instance=ExtResource("7_iaaq0")]
 position = Vector2(446, 85)
@@ -1448,4 +1448,5 @@ position = Vector2(446, 85)
 [node name="PulleyPlatform2" parent="." instance=ExtResource("7_iaaq0")]
 position = Vector2(544, 42)
 
+[connection signal="object_off" from="PulleyPlatform" to="PulleyPlatform2" method="_on_pulley_platform_object_off"]
 [connection signal="object_on" from="PulleyPlatform" to="PulleyPlatform2" method="_on_pulley_platform_object_on"]
