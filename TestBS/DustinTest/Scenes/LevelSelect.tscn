@@ -5,7 +5,11 @@
 [sub_resource type="LabelSettings" id="LabelSettings_8eq6s"]
 font_size = 50
 
-[node name="LevelSelect" type="Node2D"]
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("1_eq2sd")
 
 [node name="Back" type="Button" parent="."]

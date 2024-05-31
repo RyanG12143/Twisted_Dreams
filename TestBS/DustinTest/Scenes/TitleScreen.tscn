@@ -5,7 +5,11 @@
 [sub_resource type="LabelSettings" id="LabelSettings_np4vy"]
 font_size = 50
 
-[node name="TitleScreen" type="Node2D"]
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("1_l72fx")
 
 [node name="Play" type="Button" parent="."]
@@ -38,6 +42,12 @@ text = "Twisted Dreams"
 label_settings = SubResource("LabelSettings_np4vy")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TitleScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="LevelSelect" to="." method="_on_level_select_pressed"]
