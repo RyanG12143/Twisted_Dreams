@@ -7,6 +7,8 @@ albedo_color = Color(0.65098, 1, 1, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_av2lk"]
 material = SubResource("StandardMaterial3D_3tsmo")
+radius = 0.4
+height = 1.7
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2mlbu"]
 albedo_color = Color(0, 0, 0, 1)
@@ -15,8 +17,8 @@ albedo_color = Color(0, 0, 0, 1)
 material = SubResource("StandardMaterial3D_2mlbu")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_klf3k"]
-radius = 0.51046
-height = 2.01789
+radius = 0.414385
+height = 1.7057
 
 [node name="3DPlayer" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03182, 0)
@@ -26,18 +28,18 @@ script = ExtResource("1_ge4c8")
 mesh = SubResource("CapsuleMesh_av2lk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="BodyMesh"]
-transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, -0.222094, 0.583627, -0.451774)
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, -0.222094, 0.444082, -0.359551)
 mesh = SubResource("SphereMesh_1q8vp")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="BodyMesh"]
-transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0.222, 0.584, -0.452)
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0.222, 0.444455, -0.359777)
 mesh = SubResource("SphereMesh_1q8vp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_klf3k")
 
 [node name="CamOrigin" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.589713, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.435635, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CamOrigin"]
 spring_length = 3.0

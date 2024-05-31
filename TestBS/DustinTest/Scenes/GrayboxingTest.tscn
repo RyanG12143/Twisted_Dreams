@@ -21,7 +21,7 @@ script = ExtResource("1_hcxgs")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000253677, -0.0398855, 0.00898743)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Meshes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15661, 2.96869, 5.00404)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15661, 2.70946, 5.00404)
 operation = 1
 use_collision = true
 size = Vector3(13.8951, 5.34268, 5.99463)
@@ -66,10 +66,40 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.8935, 11.3649, -105.088)
 use_collision = true
 size = Vector3(7, 22.9561, 7)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Meshes"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8294, 2.28266, 22.9692)
+use_collision = true
+size = Vector3(5.04968, 0.334961, 0.22052)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8294, 2.77814, 22.9692)
+use_collision = true
+size = Vector3(5.04968, 0.334961, 0.22052)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8294, 3.28271, 22.9692)
+use_collision = true
+size = Vector3(5.04968, 0.334961, 0.22052)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8294, 3.75725, 22.9692)
+use_collision = true
+size = Vector3(5.04968, 0.334961, 0.22052)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8294, 4.24299, 22.9692)
+use_collision = true
+size = Vector3(5.04968, 0.334961, 0.22052)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8294, 4.75589, 22.9692)
+use_collision = true
+size = Vector3(5.04968, 0.334961, 0.22052)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_144i2")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Meshes/WorldEnvironment"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 shadow_enabled = true
 
 [node name="3DPlayer" parent="." instance=ExtResource("2_kwqkl")]
