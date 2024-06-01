@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dbkiu1hf1d1ne"]
+[gd_scene load_steps=14 format=3 uid="uid://dbkiu1hf1d1ne"]
 
 [ext_resource type="PackedScene" uid="uid://m23ls6buacwh" path="res://TestBS/LeoPuzzlePrototype/character_one.tscn" id="1_ex4f2"]
 [ext_resource type="Texture2D" uid="uid://cvumdn2cbyb2w" path="res://TestBS/LeoPuzzlePrototype/Assets/Tiles.png" id="2_rd16o"]
 [ext_resource type="PackedScene" uid="uid://pqhyjjoo1fcs" path="res://TestBS/LeoPuzzlePrototype/character_two.tscn" id="2_xv08u"]
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Camera2D.gd" id="4_26abs"]
+[ext_resource type="PackedScene" uid="uid://d3t0efafn5mb0" path="res://TestBS/LeoPuzzlePrototype/Crate.tscn" id="5_ubr1c"]
 [ext_resource type="PackedScene" uid="uid://bkckmghf83dwj" path="res://TestBS/LeoPuzzlePrototype/UI.tscn" id="6_d86nl"]
 [ext_resource type="PackedScene" uid="uid://dfgcelr51poc7" path="res://TestBS/LeoPuzzlePrototype/blue_arrow.tscn" id="7_stoch"]
 [ext_resource type="PackedScene" uid="uid://dv6gs2twtf31w" path="res://TestBS/LeoPuzzlePrototype/Red_Button.tscn" id="8_vxinv"]
@@ -1478,12 +1479,11 @@ position = Vector2(459, 96)
 [node name="Button3" parent="Puzzle" instance=ExtResource("8_vxinv")]
 position = Vector2(514, 109)
 
-[node name="crate_experimental" parent="Puzzle" instance=ExtResource("11_j86by")]
-position = Vector2(113, 39)
-scale = Vector2(1.01095, 1.01336)
+[node name="Crate" parent="Puzzle" instance=ExtResource("5_ubr1c")]
+position = Vector2(406, 95)
 
-[node name="crate_experimental2" parent="Puzzle" instance=ExtResource("11_j86by")]
-position = Vector2(148, 39)
+[node name="crate_experimental" parent="." instance=ExtResource("11_j86by")]
+position = Vector2(118, 65)
 
 [connection signal="Button_Pressed" from="Puzzle/Button1" to="Puzzle/Door1" method="add_input"]
 [connection signal="Button_Released" from="Puzzle/Button1" to="Puzzle/Door1" method="remove_input"]

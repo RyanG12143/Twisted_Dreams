@@ -1,5 +1,4 @@
 extends CharacterBody2D
-class_name Crate
 ## Movable, weighted crates.
 
 ## Time crates slide for after being moved by the player.
@@ -29,10 +28,10 @@ func _physics_process(delta):
 	else:
 		velocity.x = 0.0
 		
-	for index in get_slide_collision_count():
-		var collision = get_slide_collision(index)
-		if collision.get_collider() is Crate:
-			collision.get_collider().slide(Vector2(velocity.x, 0))
+#	for index in get_slide_collision_count():
+	#	var collision = get_slide_collision(index)
+#		if collision.get_collider() is Crate:
+	#		collision.get_collider().slide(Vector2(velocity.x, 0))
 		
 	
 
@@ -41,7 +40,7 @@ func _process(delta):
 	if(Input.is_action_pressed("ui_crate_reset")):
 		position = reset_position
 
-## Handles the sliding of the box.
+## Handles the sliding of the crate.
 func slide(vector):
 	velocity.x = vector.x
 	
