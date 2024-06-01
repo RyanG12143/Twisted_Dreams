@@ -4,36 +4,33 @@
 [ext_resource type="Texture2D" uid="uid://g5smoawtrh8j" path="res://TestBS/LeoPuzzlePrototype/Assets/crate.png" id="2_t5roo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nvgx2"]
-size = Vector2(20, 18)
+size = Vector2(19, 17)
 
 [node name="crate_experimental" type="RigidBody2D" groups=["Can_Press_Buttons"]]
 collision_layer = 4
 collision_mask = 7
-gravity_scale = 8.0
 lock_rotation = true
-linear_damp = 1.0
-angular_damp = 1.0
 script = ExtResource("1_35s18")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(9, 9)
-scale = Vector2(0.28125, 0.28125)
+position = Vector2(8.5, 8.5)
+scale = Vector2(0.265625, 0.265625)
 texture = ExtResource("2_t5roo")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(8.5, 8.5)
 scale = Vector2(0.85, 0.85)
-polygon = PackedVector2Array(11.1765, 8.82353, 0.588236, 11.1765, -10, 8.82353, -10, -10, 11.1765, -10)
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 8.82353, -0.588235, 10, -10, 8.82353)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(9, 9)
+visible = false
+position = Vector2(8.5, 8.5)
 shape = SubResource("RectangleShape2D_nvgx2")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

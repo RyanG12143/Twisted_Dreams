@@ -28,10 +28,10 @@ func _physics_process(delta):
 	else:
 		velocity.x = 0.0
 		
-#	for index in get_slide_collision_count():
-	#	var collision = get_slide_collision(index)
-#		if collision.get_collider() is Crate:
-	#		collision.get_collider().slide(Vector2(velocity.x, 0))
+	for index in get_slide_collision_count():
+		var collision = get_slide_collision(index)
+		if collision.get_collider() is Crate:
+			collision.get_collider().slide(Vector2(velocity.x, 0))
 		
 	
 
