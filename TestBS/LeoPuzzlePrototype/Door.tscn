@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ldx8dii1ypgs"]
 
-[ext_resource type="Texture2D" path="res://TestBS/LeoPuzzlePrototype/Assets/door.png" id="1_dbkua"]
+[ext_resource type="Texture2D" uid="uid://dl2c5owhyu5as" path="res://TestBS/LeoPuzzlePrototype/Assets/door.png" id="1_dbkua"]
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Door.gd" id="2_5sq8c"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nqm1j"]
@@ -9,6 +9,7 @@
 size = Vector2(24.8, 32.3556)
 
 [node name="Sprite2D" type="Sprite2D"]
+z_index = -1
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(17.5, 22.5)

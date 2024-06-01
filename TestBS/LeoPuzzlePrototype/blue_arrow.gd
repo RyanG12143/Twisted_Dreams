@@ -1,15 +1,20 @@
 extends Sprite2D
-
-var timer = 0
-const ARROW_TIMER = 1.8
+## Blue arrow that appears above the character being controlled(upon swapping characters).
 
 
+## Time that the arrow is visible on screen for.
+const ARROW_TIMER:float = 1.8
+
+## Timer.
+var timer:float = 0
+
+## Connects signals, and calls character_swap() so the arrow appears above the character being controlled by default.
 func _ready():
 	globals.Character_Swapped.connect(character_swap)
 	self_modulate.a = 0
 	character_swap()
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 
+## Controls the opacity after it is initally made visible by character_swap().
 func _process(delta):
 	if(self_modulate.a != 0):
 		timer += delta
@@ -24,6 +29,7 @@ func _process(delta):
 	else:
 		timer = 0
 
+## Called when the character is swapped, making the arrow visible.
 func character_swap():
 	if(globals.character_one != null && globals.character_two != null):
 		timer = 0

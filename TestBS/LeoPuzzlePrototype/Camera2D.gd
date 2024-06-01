@@ -1,17 +1,24 @@
 extends Camera2D
+## Controls the position and movement of the camera.
 
-var lerp_weight = 1
-var startpoint = Vector2(0,0)
-const TRANSITION_TIME = 0.33
-var timer = TRANSITION_TIME
-var tween
+## Camera transition time between characters when swapping.
+const TRANSITION_TIME:float = 0.33
 
+## Weight of the lerp controlling camera position when transitioning between characters(don't change this).
+var lerp_weight:float = 1
+## Startpoint of the camera when performing a transition.
+var startpoint:Vector2 = Vector2(0,0)
+## Timer.
+var timer:float = TRANSITION_TIME
+## Tween.
+var tween:Tween
 
+## Connects signals and creates the tween.
 func _ready():
 	globals.Character_Swapped.connect(character_swap)
 	tween = get_tree().create_tween().set_trans(Tween.TRANS_SINE)
 
-
+## Controls the position of the camera during a transition.
 func _process(delta):
 	timer += delta
 	if (timer > TRANSITION_TIME): timer = TRANSITION_TIME
@@ -25,7 +32,7 @@ func _process(delta):
 			global_position = lerp(startpoint, globals.character_two.global_position, lerp_weight)
 		
 
-
+## Called upon character swap, prepares the camera to transition by setting necessary values to perform the transition.
 func character_swap():
 	startpoint = global_position
 	lerp_weight = 0

@@ -1,14 +1,21 @@
 extends CharacterBody2D
 class_name Crate
+## Movable, weighted crates.
 
-var gravity = 20
-var reset_position
-const SLIDE_TIME = 1.0
+## Time crates slide for after being moved by the player.
+const SLIDE_TIME:float = 1.0
 
+## Essentially a falling speed.
+var gravity:int = 20
+## Original position of the crate.
+var reset_position:Vector2
+
+## Sets the reset position for the crate.
 func _ready():
 	reset_position = position
 	
 
+## Handles physics of the crate.
 func _physics_process(delta):
 	velocity.y += gravity
 	move_and_slide()
@@ -29,10 +36,12 @@ func _physics_process(delta):
 		
 	
 
+## Resets crate position if input pressed.
 func _process(delta):
 	if(Input.is_action_pressed("ui_crate_reset")):
 		position = reset_position
 
+## Handles the sliding of the box.
 func slide(vector):
 	velocity.x = vector.x
 	

@@ -1,21 +1,30 @@
 extends Node2D
+## Stores global variables, singleton.
 
-const UNIT_SIZE = 96
-var character_control = 1
-var next_controlled_character = 1
-var character_one
-var character_two
+## Size of a "unit," used in character movement calculations and such. 
+const UNIT_SIZE:int = 96
+## Which character is currently being controlled.
+var character_control:int = 1
+## Which character is to be controlled next(when a character swap is initiated).
+var next_controlled_character:int = 1
+## Character one.
+var character_one:CharacterBody2D
+## Character two.
+var character_two:CharacterBody2D
 
 signal Character_Swapped
 
+## Gets called by character one to set it.
 func set_character_one(character: CharacterBody2D):
 	character_one = character
 	character_one.top_level = true
 	
+## Gets called by character two to set it.
 func set_character_two(character: CharacterBody2D):
 	character_two = character
 	character_two.top_level = true
 
+## Controls character swaps.
 func _process(delta):
 	if(Input.is_action_just_pressed("ui_character_swap")):
 		emit_signal("Character_Swapped")
