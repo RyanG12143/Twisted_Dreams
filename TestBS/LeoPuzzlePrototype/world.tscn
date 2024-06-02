@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbkiu1hf1d1ne"]
+[gd_scene load_steps=13 format=3 uid="uid://dbkiu1hf1d1ne"]
 
 [ext_resource type="PackedScene" uid="uid://m23ls6buacwh" path="res://TestBS/LeoPuzzlePrototype/character_one.tscn" id="1_ex4f2"]
 [ext_resource type="Texture2D" uid="uid://cvumdn2cbyb2w" path="res://TestBS/LeoPuzzlePrototype/Assets/Tiles.png" id="2_rd16o"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dfgcelr51poc7" path="res://TestBS/LeoPuzzlePrototype/blue_arrow.tscn" id="7_stoch"]
 [ext_resource type="PackedScene" uid="uid://dv6gs2twtf31w" path="res://TestBS/LeoPuzzlePrototype/Red_Button.tscn" id="8_vxinv"]
 [ext_resource type="PackedScene" uid="uid://ldx8dii1ypgs" path="res://TestBS/LeoPuzzlePrototype/Door.tscn" id="9_8a778"]
+[ext_resource type="PackedScene" uid="uid://cjwddsu2gfj1v" path="res://TestBS/LeoPuzzlePrototype/crate_experimental.tscn" id="10_dgdxc"]
 [ext_resource type="PackedScene" uid="uid://ckg3s6aysm80r" path="res://TestBS/LeoPuzzlePrototype/Lever.tscn" id="10_g31pm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbg3q"]
@@ -1476,6 +1477,9 @@ position = Vector2(459, 96)
 
 [node name="Button3" parent="Puzzle" instance=ExtResource("8_vxinv")]
 position = Vector2(514, 109)
+
+[node name="crate_experimental" parent="." instance=ExtResource("10_dgdxc")]
+position = Vector2(100, 58)
 
 [connection signal="Button_Pressed" from="Puzzle/Button1" to="Puzzle/Door1" method="add_input"]
 [connection signal="Button_Released" from="Puzzle/Button1" to="Puzzle/Door1" method="remove_input"]
