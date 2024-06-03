@@ -1479,7 +1479,7 @@ position = Vector2(459, 96)
 position = Vector2(514, 109)
 
 [node name="RigidBody2D" parent="." instance=ExtResource("10_rl3hx")]
-position = Vector2(119, 78)
+position = Vector2(95, 39)
 
 [node name="RigidBody2D2" parent="." instance=ExtResource("10_rl3hx")]
 position = Vector2(123, 33)

@@ -1,6 +1,5 @@
 extends CharacterBody2D
 ## Grabbable, weighted crates.
-class_name Crate
 
 ## State of the crate
 var state:String

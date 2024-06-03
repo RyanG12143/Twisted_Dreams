@@ -68,10 +68,14 @@ func apply_movement():
 		var collision = get_slide_collision(index)
 		if collision.get_collider() is Crate:
 			var coll:RigidBody2D = collision.get_collider()
-			if (move_direction != 0 && abs(collision.get_collider().position.y - position.y) < 25):
-				coll.set_deferred("linear_velocity", Vector2(move_direction, coll.linear_velocity.y) * push_force)
-				
-
+			if (abs(collision.get_collider().position.y - position.y) < 25):
+				if(move_direction != 0 && collision.get_collider().position.y > position.y):
+					coll.set_deferred("linear_velocity", Vector2(move_direction  * push_force, coll.linear_velocity.y))
+				elif(collision.get_collider().position.y <= position.y):
+					if ((collision.get_collider().position.x + ($Sprite2D.texture.get_width()/3.0)) <= position.x):
+						coll.set_deferred("linear_velocity", Vector2(-1.0  * push_force, coll.linear_velocity.y))
+					else:
+						coll.set_deferred("linear_velocity", Vector2(1.0  * push_force, coll.linear_velocity.y))
 				
 
 ## Handle movement input.
