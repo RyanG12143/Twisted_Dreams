@@ -62,6 +62,17 @@ func apply_movement():
 	if(is_grounded):
 		is_jumping = false
 		
+<<<<<<< Updated upstream
+=======
+	for index in get_slide_collision_count():
+		var collision = get_slide_collision(index)
+		if collision.get_collider() is RigidBody2D:
+			var coll:RigidBody2D = collision.get_collider()
+			if (move_direction != 0 && abs(collision.get_collider().position.y - position.y) < 25):
+				if not coll.constant_force:
+					coll.set_deferred("linear_velocity", Vector2(move_direction, 0) * push_force)
+				
+>>>>>>> Stashed changes
 				
 
 ## Handle movement input.
