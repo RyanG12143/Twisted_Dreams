@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://feaamxyeef4d"]
+[gd_scene load_steps=7 format=3 uid="uid://feaamxyeef4d"]
 
 [ext_resource type="TileSet" uid="uid://bmpcfur6aurb6" path="res://TestBS/RyanTestBS/Proto_Tilemap.tres" id="1_thtja"]
 [ext_resource type="Script" path="res://TestBS/RyanTestBS/Enemies/Navigation_Region_2D.gd" id="2_k4afg"]
 [ext_resource type="PackedScene" uid="uid://yt3boj0lw4yf" path="res://TestBS/RyanTestBS/Enemies/Enemy.tscn" id="3_0f0yu"]
 [ext_resource type="PackedScene" uid="uid://m23ls6buacwh" path="res://TestBS/LeoPuzzlePrototype/character_one.tscn" id="4_j0gww"]
+[ext_resource type="PackedScene" uid="uid://bttpiegars2dr" path="res://TestBS/RyanTestBS/Crate.tscn" id="5_cy2og"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jxqwv"]
 vertices = PackedVector2Array(1056, 47, 1068, 597, 56, 597, 79, 34)
@@ -23,7 +24,14 @@ navigation_polygon = SubResource("NavigationPolygon_jxqwv")
 script = ExtResource("2_k4afg")
 
 [node name="Enemy" parent="." instance=ExtResource("3_0f0yu")]
+visible = false
 position = Vector2(511, 151)
 
 [node name="character_one" parent="." instance=ExtResource("4_j0gww")]
 position = Vector2(307, 141)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("5_cy2og")]
+position = Vector2(398, 161)
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("5_cy2og")]
+position = Vector2(398, 139)

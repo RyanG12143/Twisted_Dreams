@@ -15,5 +15,5 @@ func physics_update(body:CharacterBody2D, delta:float):
 	pass
 
 
-func update():
+func update(body:CharacterBody2D):
 	pass

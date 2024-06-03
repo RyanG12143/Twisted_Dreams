@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://yt3boj0lw4yf"]
+[gd_scene load_steps=7 format=3 uid="uid://yt3boj0lw4yf"]
 
 [ext_resource type="Script" path="res://TestBS/RyanTestBS/Enemies/Enemy.gd" id="1_6ad6c"]
 [ext_resource type="Script" path="res://TestBS/RyanTestBS/Enemies/State_Machine.gd" id="2_gbq0s"]
 [ext_resource type="Script" path="res://TestBS/RyanTestBS/Enemies/States/Follow_State.gd" id="3_bma5r"]
+[ext_resource type="Script" path="res://TestBS/RyanTestBS/Enemies/States/Idle_State.gd" id="4_2egie"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_lm62n"]
 
@@ -28,11 +29,15 @@ shape = SubResource("CapsuleShape2D_8iehw")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="State_Machine" type="Node" parent="."]
+[node name="State_Machine" type="Node" parent="." node_paths=PackedStringArray("default_state")]
 script = ExtResource("2_gbq0s")
+default_state = NodePath("Follow")
 
-[node name="Follow_State" type="Node" parent="State_Machine"]
+[node name="Follow" type="Node" parent="State_Machine"]
 script = ExtResource("3_bma5r")
+
+[node name="Idle" type="Node" parent="State_Machine"]
+script = ExtResource("4_2egie")
 
 [connection signal="path_changed" from="NavigationAgent2D" to="." method="_path_changed"]
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_target_reached"]

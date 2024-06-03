@@ -36,8 +36,17 @@ func _physics_process(delta):
 	if state_machine.current_state:
 		state_machine.current_state.physics_update(self, delta)
 	
+	if abs(velocity.x) - velocity.normalized().x * 300 * delta < 0:
+		velocity.x = 0
+	else:
+		velocity.x -= velocity.normalized().x * 300 * delta
 	velocity.y += GRAVITY * delta
 	move_and_slide()
+
+
+func _process(delta):
+	if state_machine.current_state:
+		state_machine.current_state.update(self)
 
 
 func _target_reached():
