@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://yt3boj0lw4yf"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/Enemy.gd" id="1_pbbsk"]
+[ext_resource type="Script" path="res://Scripts/Enemies/State_Machine.gd" id="2_gbq0s"]
+[ext_resource type="Script" path="res://Scripts/Enemies/States/Follow_State.gd" id="3_bma5r"]
+[ext_resource type="Script" path="res://Scripts/Enemies/States/Idle_State.gd" id="4_2egie"]
+[ext_resource type="Script" path="res://Scripts/Enemies/States/Roaming_State.gd" id="5_4yl3q"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_lm62n"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8iehw"]
+radius = 7.0
+height = 32.0
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_pbbsk")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(5.36442e-07, 3.33786e-06)
+scale = Vector2(14, 16)
+mesh = SubResource("CapsuleMesh_lm62n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_8iehw")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Ray_Cast_Down_Right" type="RayCast2D" parent="."]
+position = Vector2(8, 0)
+target_position = Vector2(0, 19)
+
+[node name="Ray_Cast_Side_Right" type="RayCast2D" parent="."]
+position = Vector2(8, 0)
+target_position = Vector2(4, 0)
+
+[node name="Ray_Cast_Down_Left" type="RayCast2D" parent="."]
+position = Vector2(-8, 0)
+target_position = Vector2(0, 19)
+
+[node name="Ray_Cast_Side_Left" type="RayCast2D" parent="."]
+position = Vector2(-8, 0)
+target_position = Vector2(-4, 0)
+
+[node name="State_Machine" type="Node" parent="." node_paths=PackedStringArray("character_body", "default_state")]
+script = ExtResource("2_gbq0s")
+character_body = NodePath("..")
+default_state = NodePath("Follow")
+
+[node name="Follow" type="Node" parent="State_Machine" node_paths=PackedStringArray("ray_cast_down_right", "ray_cast_down_left")]
+script = ExtResource("3_bma5r")
+ray_cast_down_right = NodePath("../../Ray_Cast_Down_Right")
+ray_cast_down_left = NodePath("../../Ray_Cast_Down_Left")
+
+[node name="Idle" type="Node" parent="State_Machine"]
+script = ExtResource("4_2egie")
+
+[node name="Roaming" type="Node" parent="State_Machine" node_paths=PackedStringArray("ray_cast_down_right", "ray_cast_side_right", "ray_cast_down_left", "ray_cast_side_left")]
+script = ExtResource("5_4yl3q")
+ray_cast_down_right = NodePath("../../Ray_Cast_Down_Right")
+ray_cast_side_right = NodePath("../../Ray_Cast_Side_Right")
+ray_cast_down_left = NodePath("../../Ray_Cast_Down_Left")
+ray_cast_side_left = NodePath("../../Ray_Cast_Side_Left")
+
+[connection signal="path_changed" from="NavigationAgent2D" to="." method="_path_changed"]
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_target_reached"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
