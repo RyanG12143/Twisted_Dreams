@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cvumdn2cbyb2w" path="res://TestBS/LeoPuzzlePrototype/Assets/Tiles.png" id="1_6qvpe"]
 [ext_resource type="PackedScene" uid="uid://m23ls6buacwh" path="res://TestBS/LeoPuzzlePrototype/character_one.tscn" id="2_y3h2e"]
 [ext_resource type="PackedScene" uid="uid://d3t0efafn5mb0" path="res://TestBS/LeoPuzzlePrototype/Crate_old.tscn" id="3_wsc3b"]
-[ext_resource type="Script" path="res://Camera2D.gd" id="4_lcwv4"]
+[ext_resource type="Script" path="res://TestBS/MatthewTestBS/Camera2D.gd" id="4_epy6n"]
 [ext_resource type="PackedScene" uid="uid://pqhyjjoo1fcs" path="res://TestBS/LeoPuzzlePrototype/character_two.tscn" id="5_kj2l7"]
 [ext_resource type="PackedScene" uid="uid://q6vqenn7ndre" path="res://TestBS/MatthewTestBS/platforms.tscn" id="7_iaaq0"]
 
@@ -1419,14 +1419,15 @@ layer_0/tile_data = PackedInt32Array(524293, 458752, 14, 589829, 458752, 14, 589
 position = Vector2(367, 59)
 
 [node name="Crate" parent="." instance=ExtResource("3_wsc3b")]
-position = Vector2(427, 75)
+position = Vector2(517, 113)
+collision_mask = 15
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
-script = ExtResource("4_lcwv4")
+script = ExtResource("4_epy6n")
 
 [node name="character_two" parent="." instance=ExtResource("5_kj2l7")]
 position = Vector2(120, 86)
 
 [node name="PulleyPlatform" parent="." instance=ExtResource("7_iaaq0")]
-position = Vector2(434, 121)
+position = Vector2(439, 116)

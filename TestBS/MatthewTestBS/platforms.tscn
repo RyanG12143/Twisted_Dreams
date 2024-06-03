@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://TestBS/MatthewTestBS/platforms.gd" id="1_cl1ao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xq3yr"]
-size = Vector2(735.818, 16.3515)
+size = Vector2(735.818, 32.7027)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bdthb"]
 size = Vector2(505.618, 280.899)
@@ -22,12 +22,12 @@ collision_layer = 4
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-109.733, -191.491)
+position = Vector2(-109.733, -199.666)
 shape = SubResource("RectangleShape2D_xq3yr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 4
-collision_mask = 6
+collision_layer = 8
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(2.80884, 81.4608)
