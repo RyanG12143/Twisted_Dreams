@@ -1,6 +1,8 @@
 extends CharacterBody2D
-class_name Character_One
-## Everything related to character one.
+## Everything related to character.
+
+## Character number.
+@export var character_number:int = 0
 
 ## Upwards direction.
 const UP:Vector2 = Vector2(0, -1)
@@ -28,12 +30,12 @@ var min_jump_height:float = 0.15 * globals.UNIT_SIZE
 ## Duration of a jump.
 var jump_duration:float = 0.4
 
-## Whether or not the player is holding a crate.
-var has_crate:bool = false
-
 ## Sets some default values.
 func _ready():
-	globals.set_character_one(self)
+	if(character_number == 1):
+		globals.set_character_one(self)
+	elif(character_number == 2):
+		globals.set_character_two(self)
 	gravity = 2 * max_jump_height / pow(jump_duration, 2)
 	max_jump_velocity = -sqrt(2 * gravity * max_jump_height)
 	min_jump_velocity = -sqrt(2 * gravity * min_jump_height)
@@ -45,7 +47,7 @@ func _physics_process(delta):
 ## Apply gravity and handle movement input.
 func _process(delta):
 	apply_gravity(delta)
-	if(globals.character_control == 1):
+	if(globals.character_control == character_number):
 		handle_move_input()
 	else:
 		velocity.x = lerp(float(velocity.x), float(move_speed * 0), get_h_weight())
@@ -62,17 +64,14 @@ func apply_movement():
 	if(is_grounded):
 		is_jumping = false
 		
-<<<<<<< Updated upstream
-=======
 	for index in get_slide_collision_count():
 		var collision = get_slide_collision(index)
-		if collision.get_collider() is RigidBody2D:
+		if collision.get_collider() is Crate:
 			var coll:RigidBody2D = collision.get_collider()
 			if (move_direction != 0 && abs(collision.get_collider().position.y - position.y) < 25):
-				if not coll.constant_force:
-					coll.set_deferred("linear_velocity", Vector2(move_direction, 0) * push_force)
+				coll.set_deferred("linear_velocity", Vector2(move_direction, coll.linear_velocity.y) * push_force)
 				
->>>>>>> Stashed changes
+
 				
 
 ## Handle movement input.

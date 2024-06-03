@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbkiu1hf1d1ne"]
+[gd_scene load_steps=13 format=3 uid="uid://dbkiu1hf1d1ne"]
 
 [ext_resource type="PackedScene" uid="uid://m23ls6buacwh" path="res://TestBS/LeoPuzzlePrototype/character_one.tscn" id="1_ex4f2"]
 [ext_resource type="Texture2D" uid="uid://cvumdn2cbyb2w" path="res://TestBS/LeoPuzzlePrototype/Assets/Tiles.png" id="2_rd16o"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dv6gs2twtf31w" path="res://TestBS/LeoPuzzlePrototype/Red_Button.tscn" id="8_vxinv"]
 [ext_resource type="PackedScene" uid="uid://ldx8dii1ypgs" path="res://TestBS/LeoPuzzlePrototype/Door.tscn" id="9_8a778"]
 [ext_resource type="PackedScene" uid="uid://ckg3s6aysm80r" path="res://TestBS/LeoPuzzlePrototype/Lever.tscn" id="10_g31pm"]
+[ext_resource type="PackedScene" uid="uid://bttpiegars2dr" path="res://TestBS/LeoPuzzlePrototype/Crate.tscn" id="10_rl3hx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbg3q"]
 texture = ExtResource("2_rd16o")
@@ -1476,6 +1477,9 @@ position = Vector2(459, 96)
 
 [node name="Button3" parent="Puzzle" instance=ExtResource("8_vxinv")]
 position = Vector2(514, 109)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("10_rl3hx")]
+position = Vector2(119, 78)
 
 [connection signal="Button_Pressed" from="Puzzle/Button1" to="Puzzle/Door1" method="add_input"]
 [connection signal="Button_Released" from="Puzzle/Button1" to="Puzzle/Door1" method="remove_input"]
