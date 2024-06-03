@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 globals="*res://TestBS/LeoPuzzlePrototype/globals.gd"
-Shaders="*res://Scripts/Shader/Shaders.gd"
+Shaders="*res://Scripts/Global/Shaders.gd"
 Game_State="*res://Scripts/Global/Game_State.gd"
 Utils="*res://Scripts/Global/Utils.gd"
 
@@ -100,3 +100,8 @@ crate_pick_up={
 2d_physics/layer_1="world"
 2d_physics/layer_2="player"
 2d_physics/layer_3="objects"
+2d_physics/layer_4="enemies"
+
+[physics]
+
+2d/solver/contact_max_allowed_penetration=0.01
