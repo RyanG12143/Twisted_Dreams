@@ -1,5 +1,6 @@
-extends Enemy_State
 class_name Idle
+extends Enemy_State
+
 
 @export var range:float = 100
 

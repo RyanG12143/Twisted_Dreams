@@ -58,7 +58,6 @@ ray_cast_down_left = NodePath("../../Ray_Cast_Down_Left")
 
 [node name="Idle" type="Node" parent="State_Machine"]
 script = ExtResource("4_2egie")
-range = null
 
 [node name="Roaming" type="Node" parent="State_Machine" node_paths=PackedStringArray("ray_cast_down_right", "ray_cast_side_right", "ray_cast_down_left", "ray_cast_side_left")]
 script = ExtResource("5_4yl3q")

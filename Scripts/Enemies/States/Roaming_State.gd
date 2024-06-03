@@ -1,5 +1,6 @@
-extends Enemy_State
 class_name Roaming
+extends Enemy_State
+
 
 @export var range:float = 100
 @export var ray_cast_down_right:RayCast2D
@@ -18,7 +19,6 @@ func exit(body:CharacterBody2D):
 
 
 func physics_update(body:CharacterBody2D, delta:float):
-	print(roam_right)
 	var direction:float = 1.0 if roam_right else -1.0
 	
 	body.velocity.x = direction * body.SPEED * delta

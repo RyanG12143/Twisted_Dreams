@@ -1,39 +1,50 @@
 extends CharacterBody2D
+## Base script for hanlding enemy behavior
+##
+## Calls on State_Machine to controll behaviors
 
-# Private Globals
-var at_target:bool = false
-var selected:bool = false
-var targets:Array[Node] = []
-var target:CharacterBody2D
+## Gravity constant
 const GRAVITY:float = 1200
 
+## Movement speed of enemy
+@export var SPEED:float = 5000.0
+## If enabled enemy roams when player is not in range
+@export var roaming:bool = true
+## If eneabled enemy will not leave platform
+## [br]
+## Does not handle flying
+@export var grounded:bool = true
+
+## Closest of the objects in _targets
+var target:CharacterBody2D
+
+## Gets all player characters on ready and stores the node of each
+var _targets:Array[Node] = []
+
+## Nav agent for enemy
 @onready var nav:NavigationAgent2D = $NavigationAgent2D
+## Enemy state machine which handles switching of states
 @onready var state_machine:State_Machine = $State_Machine
 
-# Exported
-@export var SPEED:float = 5000.0
-@export var is_roaming:bool = true
-@export var is_grounded:bool = true
+
 
 
 func _ready():
 	nav.target_position = global_position
 	
 	if owner and owner.is_node_ready():
-		targets = get_tree().get_nodes_in_group("Player")
+		_targets = get_tree().get_nodes_in_group("Player")
 		_on_timer_timeout()
 	elif(owner):
 		await owner.ready
-		targets = get_tree().get_nodes_in_group("Player")
+		_targets = get_tree().get_nodes_in_group("Player")
 		_on_timer_timeout()
 
 
 func _physics_process(delta):
+	
 	if target:
 		nav.target_position = target.global_position
-	
-	if nav.target_position.distance_to(global_position) > nav.target_desired_distance:
-		_path_changed()
 	
 	if state_machine.current_state:
 		state_machine.current_state.physics_update(self, delta)
@@ -51,19 +62,12 @@ func _process(delta):
 		state_machine.current_state.update(self, delta)
 
 
-func _target_reached():
-	at_target = true
-
-
-func _path_changed():
-	at_target = false
-
-
+## Redetermines target every second or when called
 func _on_timer_timeout():
-	if not targets:
+	if not _targets:
 		return
 	if not target:
-		target = targets[0]
-	for tar in targets:
+		target = _targets[0]
+	for tar in _targets:
 		if position.distance_to(tar.position) < position.distance_to(target.position):
 			target = tar

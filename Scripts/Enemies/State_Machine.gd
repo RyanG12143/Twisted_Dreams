@@ -1,11 +1,12 @@
-extends Node
 class_name State_Machine
+extends Node
+##
 
 @export var character_body:CharacterBody2D
 @export var default_state:Enemy_State
 
 var current_state:Enemy_State
-var states: Dictionary = {}
+var states:Dictionary = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,7 +18,7 @@ func _ready():
 	current_state = default_state
 
 
-func on_child_transition(state, new_state:String):
+func on_child_transition(state:Enemy_State, new_state:String):
 	if state != current_state:
 		return
 	current_state.exit(character_body)
