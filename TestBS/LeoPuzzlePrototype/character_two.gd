@@ -28,6 +28,9 @@ var min_jump_height:float = 0.15 * globals.UNIT_SIZE
 ## Duration of a jump.
 var jump_duration:float = 0.4
 
+## Whether or not the player is holding a crate.
+var has_crate:bool = false
+
 ## Sets some default values.
 func _ready():
 	globals.set_character_two(self)
@@ -57,12 +60,6 @@ func apply_movement():
 	is_grounded = is_on_floor()
 	if(is_grounded):
 		is_jumping = false
-	
-	#for index in get_slide_collision_count():
-		#var collision = get_slide_collision(index)
-		#if collision.get_collider() is Crate:
-			#if (move_direction != 0 && abs(collision.get_collider().position.y - position.y) < 25):
-				#collision.get_collider().slide(Vector2(move_direction, 0) * push_force)
 	
 ## Handle movement input.
 func handle_move_input():

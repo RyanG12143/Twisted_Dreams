@@ -1,46 +1,54 @@
 extends CharacterBody2D
-## Movable, weighted crates.
+## Grabbable, weighted crates.
+class_name Crate
 
-## Time crates slide for after being moved by the player.
-const SLIDE_TIME:float = 1.0
-
+## State of the crate
+var state:String
 ## Essentially a falling speed.
-var gravity:int = 20
+var gravity:int = 10
 ## Original position of the crate.
 var reset_position:Vector2
+## The player.
+var player:CharacterBody2D
+## Timer.
+var timer:float = 0
 
-## Sets the reset position for the crate.
+## Sets some default values.
 func _ready():
+	player = globals.character_one
+	start_normal()
+	state = "normal"
 	reset_position = position
-	
 
-## Handles physics of the crate.
-func _physics_process(delta):
-	velocity.y += gravity
-	move_and_slide()
-	
-	
-	if(abs(velocity.x) >= 3.0):
-		if(velocity.x > 0.0):
-			slide(Vector2(velocity.x - 3.0, velocity.y))
-		else:
-			slide(Vector2(velocity.x + 3.0, velocity.y))
-	else:
-		velocity.x = 0.0
-		
-	for index in get_slide_collision_count():
-		var collision = get_slide_collision(index)
-		if collision.get_collider() is Crate:
-			collision.get_collider().slide(Vector2(velocity.x, 0))
-		
-	
-
-## Resets crate position if input pressed.
 func _process(delta):
-	if(Input.is_action_pressed("ui_crate_reset")):
-		position = reset_position
-
-## Handles the sliding of the crate.
-func slide(vector):
-	velocity.x = vector.x
+	timer += delta
 	
+	match state:
+		"normal":
+			velocity.y += gravity
+			if(Input.is_action_pressed("crate_pick_up") && timer > 0.35):
+				for body in $Area2D.get_overlapping_bodies():
+					if body == player:
+						start_grabbed()
+						state = "grabbed"
+		"grabbed":
+			position = Vector2(player.position.x + 30, player.position.y -10)
+			if(Input.is_action_pressed("crate_pick_up") && timer > 0.35):
+					start_normal()
+					state = "normal"
+	move_and_slide()
+
+func start_grabbed():
+	if (player.has_crate == true):
+		state = "normal"
+		return
+	timer = 0
+	set_collision_layer_value(3, false)
+	set_collision_mask_value(2, false)
+	player.has_crate = true
+
+func start_normal():
+	timer = 0
+	set_collision_layer_value(3, true)
+	set_collision_mask_value(2, true)
+	player.has_crate = false

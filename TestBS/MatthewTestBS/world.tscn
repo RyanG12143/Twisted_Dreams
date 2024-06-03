@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cvumdn2cbyb2w" path="res://TestBS/LeoPuzzlePrototype/Assets/Tiles.png" id="1_6qvpe"]
 [ext_resource type="PackedScene" uid="uid://m23ls6buacwh" path="res://TestBS/LeoPuzzlePrototype/character_one.tscn" id="2_y3h2e"]
-[ext_resource type="PackedScene" uid="uid://d3t0efafn5mb0" path="res://TestBS/LeoPuzzlePrototype/Crate.tscn" id="3_wsc3b"]
+[ext_resource type="PackedScene" uid="uid://d3t0efafn5mb0" path="res://TestBS/LeoPuzzlePrototype/Crate_old.tscn" id="3_wsc3b"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="4_lcwv4"]
 [ext_resource type="PackedScene" uid="uid://pqhyjjoo1fcs" path="res://TestBS/LeoPuzzlePrototype/character_two.tscn" id="5_kj2l7"]
 [ext_resource type="PackedScene" uid="uid://q6vqenn7ndre" path="res://TestBS/MatthewTestBS/platforms.tscn" id="7_iaaq0"]
