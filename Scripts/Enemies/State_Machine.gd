@@ -1,6 +1,7 @@
 extends Node
 class_name State_Machine
 
+@export var character_body:CharacterBody2D
 @export var default_state:Enemy_State
 
 var current_state:Enemy_State
@@ -19,6 +20,6 @@ func _ready():
 func on_child_transition(state, new_state:String):
 	if state != current_state:
 		return
-	current_state.exit()
+	current_state.exit(character_body)
 	current_state = states.get(new_state.to_lower())
-	current_state.enter()
+	current_state.enter(character_body)

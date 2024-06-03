@@ -11,7 +11,9 @@ const GRAVITY:float = 1200
 @onready var state_machine:State_Machine = $State_Machine
 
 # Exported
-@export var SPEED:float = 2000.0
+@export var SPEED:float = 5000.0
+@export var is_roaming:bool = true
+@export var is_grounded:bool = true
 
 
 func _ready():
@@ -46,7 +48,7 @@ func _physics_process(delta):
 
 func _process(delta):
 	if state_machine.current_state:
-		state_machine.current_state.update(self)
+		state_machine.current_state.update(self, delta)
 
 
 func _target_reached():

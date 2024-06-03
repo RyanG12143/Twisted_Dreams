@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://feaamxyeef4d"]
 
 [ext_resource type="TileSet" uid="uid://bmpcfur6aurb6" path="res://TestBS/RyanTestBS/Proto_Tilemap.tres" id="1_thtja"]
-[ext_resource type="Script" path="res://TestBS/RyanTestBS/Enemies/Navigation_Region_2D.gd" id="2_k4afg"]
-[ext_resource type="PackedScene" uid="uid://yt3boj0lw4yf" path="res://TestBS/RyanTestBS/Enemies/Enemy.tscn" id="3_0f0yu"]
+[ext_resource type="Script" path="res://Scripts/Enemies/Navigation_Region_2D.gd" id="2_k4afg"]
+[ext_resource type="PackedScene" uid="uid://yt3boj0lw4yf" path="res://Scenes/Enemies/Enemy.tscn" id="3_0f0yu"]
 [ext_resource type="PackedScene" uid="uid://m23ls6buacwh" path="res://TestBS/LeoPuzzlePrototype/character_one.tscn" id="4_j0gww"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jxqwv"]
@@ -16,7 +16,7 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_thtja")
 format = 2
-layer_0/tile_data = PackedInt32Array(720912, 196608, 3, 720913, 196608, 3, 720914, 196608, 3, 720915, 196608, 3, 720916, 196608, 3, 720917, 196608, 3, 720918, 196608, 3, 720919, 196608, 3, 720920, 196608, 3, 720921, 196608, 3, 720922, 196608, 3, 720923, 196608, 3, 720924, 196608, 3, 720925, 196608, 3, 720926, 196608, 3, 720927, 196608, 3, 720928, 196608, 3, 720929, 196608, 3, 720930, 196608, 3, 720931, 196608, 3, 720932, 196608, 3, 720933, 196608, 3, 720934, 196608, 3, 720935, 196608, 3, 720936, 196608, 3, 720937, 196608, 3, 720938, 196608, 3, 720939, 196608, 3, 720940, 196608, 3, 720941, 196608, 3, 720942, 196608, 3, 720943, 196608, 3, 720944, 196608, 3, 720945, 196608, 3, 720946, 196608, 3, 720947, 196608, 3, 720948, 196608, 3, 720949, 196608, 3)
+layer_0/tile_data = PackedInt32Array(720912, 196608, 3, 720913, 196608, 3, 720914, 196608, 3, 720915, 196608, 3, 720916, 196608, 3, 720917, 196608, 3, 720918, 196608, 3, 720919, 196608, 3, 720920, 196608, 3, 720921, 196608, 3, 720922, 196608, 3, 720923, 196608, 3, 720924, 196608, 3, 720925, 196608, 3, 720926, 196608, 3, 720927, 196608, 3, 720928, 196608, 3, 720929, 196608, 3, 720930, 196608, 3, 720931, 196608, 3, 720932, 196608, 3, 720933, 196608, 3, 720934, 196608, 3, 720935, 196608, 3, 720936, 196608, 3, 720937, 196608, 3, 720938, 196608, 3, 720939, 196608, 3, 720940, 196608, 3, 720941, 196608, 3, 720942, 196608, 3, 720943, 196608, 3, 720944, 196608, 3, 720945, 196608, 3, 720946, 196608, 3, 720947, 196608, 3, 720948, 196608, 3, 720949, 196608, 3, 983056, 131072, 8, 1048592, 131072, 8, 1114128, 131072, 8, 1179664, 131072, 8, 1245200, 131072, 8, 1310736, 131072, 8, 1376272, 131072, 8, 1441808, 131072, 8, 1441809, 131072, 8, 1441810, 131072, 8, 1441811, 131072, 8, 1441812, 131072, 8, 1441813, 131072, 8, 1441814, 131072, 8, 1441815, 131072, 8, 1441816, 131072, 8, 1441817, 131072, 8, 1441818, 131072, 8, 1441819, 131072, 8, 1441820, 131072, 8, 1441821, 131072, 8, 1441822, 131072, 8, 1441823, 131072, 8, 1441824, 131072, 8, 1441825, 131072, 8, 1376289, 131072, 8, 1310753, 131072, 8, 1245217, 131072, 8, 1179681, 131072, 8, 1114145, 131072, 8, 1048609, 131072, 8)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_jxqwv")
@@ -25,5 +25,9 @@ script = ExtResource("2_k4afg")
 [node name="Enemy" parent="." instance=ExtResource("3_0f0yu")]
 position = Vector2(511, 151)
 
+[node name="Enemy2" parent="." instance=ExtResource("3_0f0yu")]
+position = Vector2(400, 330)
+
 [node name="character_one" parent="." instance=ExtResource("4_j0gww")]
 position = Vector2(307, 141)
+collision_mask = 13
