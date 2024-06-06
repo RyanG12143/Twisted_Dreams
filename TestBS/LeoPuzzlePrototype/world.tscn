@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dv6gs2twtf31w" path="res://TestBS/LeoPuzzlePrototype/Red_Button.tscn" id="8_vxinv"]
 [ext_resource type="PackedScene" uid="uid://ldx8dii1ypgs" path="res://TestBS/LeoPuzzlePrototype/Door.tscn" id="9_8a778"]
 [ext_resource type="PackedScene" uid="uid://ckg3s6aysm80r" path="res://TestBS/LeoPuzzlePrototype/Lever.tscn" id="10_g31pm"]
-[ext_resource type="PackedScene" uid="uid://d3t0efafn5mb0" path="res://TestBS/LeoPuzzlePrototype/Crate_old.tscn" id="10_rl3hx"]
+[ext_resource type="PackedScene" uid="uid://bttpiegars2dr" path="res://TestBS/LeoPuzzlePrototype/Crate.tscn" id="10_oywdc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbg3q"]
 texture = ExtResource("2_rd16o")
@@ -1478,11 +1478,11 @@ position = Vector2(459, 96)
 [node name="Button3" parent="Puzzle" instance=ExtResource("8_vxinv")]
 position = Vector2(514, 109)
 
-[node name="RigidBody2D" parent="." instance=ExtResource("10_rl3hx")]
-position = Vector2(95, 39)
+[node name="RigidBody2D" parent="Puzzle" instance=ExtResource("10_oywdc")]
+position = Vector2(83, -2)
 
-[node name="RigidBody2D2" parent="." instance=ExtResource("10_rl3hx")]
-position = Vector2(123, 33)
+[node name="RigidBody2D2" parent="Puzzle" instance=ExtResource("10_oywdc")]
+position = Vector2(128, 26)
 
 [connection signal="Button_Pressed" from="Puzzle/Button1" to="Puzzle/Door1" method="add_input"]
 [connection signal="Button_Released" from="Puzzle/Button1" to="Puzzle/Door1" method="remove_input"]

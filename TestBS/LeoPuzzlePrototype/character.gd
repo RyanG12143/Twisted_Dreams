@@ -68,17 +68,24 @@ func apply_movement():
 		var collision = get_slide_collision(index)
 		if collision.get_collider() is Crate:
 			var coll:RigidBody2D = collision.get_collider()
-			if (abs(collision.get_collider().position.y - position.y) < 25):
+			if (abs(coll.position.y - position.y) < 25):
 				if(move_direction != 0 && collision.get_collider().position.y > position.y):
-					coll.set_deferred("linear_velocity", Vector2(move_direction  * push_force, coll.linear_velocity.y))
-				elif(collision.get_collider().position.y <= position.y):
-					if ((collision.get_collider().position.x + ($Sprite2D.texture.get_width()/3.0)) <= position.x):
+					if(Input.is_action_pressed("crate_pick_up")):
+						coll._pull_crate()
+						if(coll.position.x > position.x):
+							coll.set_deferred("linear_velocity", Vector2(-4 * push_force, coll.linear_velocity.y))
+						else:
+							coll.set_deferred("linear_velocity", Vector2(4 * push_force, coll.linear_velocity.y))
+					else:
+						coll.set_deferred("linear_velocity", Vector2(move_direction * push_force, coll.linear_velocity.y))
+				elif(coll.position.y <= position.y):
+					if ((coll.position.x + ($Sprite2D.texture.get_width()/3.0)) <= position.x):
 						coll.set_deferred("linear_velocity", Vector2(-1.0  * push_force, coll.linear_velocity.y))
 					else:
 						coll.set_deferred("linear_velocity", Vector2(1.0  * push_force, coll.linear_velocity.y))
 				
 
-## Handle movement input.
+## Handle movement input.d
 func handle_move_input():
 	move_direction = -int(Input.is_action_pressed("ui_left")) + int(Input.is_action_pressed("ui_right"))
 	if move_direction == -1:
