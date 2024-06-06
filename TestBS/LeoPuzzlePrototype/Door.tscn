@@ -1,20 +1,42 @@
-[gd_scene load_steps=5 format=3 uid="uid://ldx8dii1ypgs"]
+[gd_scene load_steps=8 format=3 uid="uid://ldx8dii1ypgs"]
 
-[ext_resource type="Texture2D" uid="uid://dl2c5owhyu5as" path="res://TestBS/LeoPuzzlePrototype/Assets/door.png" id="1_dbkua"]
+[ext_resource type="Texture2D" uid="uid://dydvfacxuhmmw" path="res://TestBS/LeoPuzzlePrototype/Assets/Interactable_Door_Closed_&_Open_Sade_01.png" id="1_xtm0q"]
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Door.gd" id="2_5sq8c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvlak"]
+atlas = ExtResource("1_xtm0q")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0u0o"]
+atlas = ExtResource("1_xtm0q")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wmhk4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvlak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0u0o")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nqm1j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hui82"]
-size = Vector2(24.8, 32.3556)
+size = Vector2(16.1556, 63.8222)
 
-[node name="Sprite2D2" type="Sprite2D"]
+[node name="Door" type="AnimatedSprite2D"]
 z_index = -1
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(17.5, 22.5)
-scale = Vector2(1.40625, 1.40625)
-texture = ExtResource("1_dbkua")
+position = Vector2(16, 32)
+sprite_frames = SubResource("SpriteFrames_wmhk4")
+frame_progress = 1.0
 script = ExtResource("2_5sq8c")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -23,5 +45,5 @@ collision_mask = 6
 physics_material_override = SubResource("PhysicsMaterial_nqm1j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-0.0444441, 0.177778)
+position = Vector2(-8.07778, -1.90735e-06)
 shape = SubResource("RectangleShape2D_hui82")

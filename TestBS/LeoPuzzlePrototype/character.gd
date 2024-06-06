@@ -7,12 +7,16 @@ extends CharacterBody2D
 ## Upwards direction.
 const UP:Vector2 = Vector2(0, -1)
 ## The force applied to pushable objects(crates).
-const  push_force:float = 100.0
+const  push_force:float = 120.0
 
 ## Horizontal movement speed.
 var move_speed:float = 2 * globals.UNIT_SIZE
 ## Movement direction of the character(-1=left, 0=stationary, 1=right).
 var move_direction:int = 0
+## Previous move direction of the character(used to make crate moving less buggy)
+var prev_mov_dir:int = 0
+## Can previous move direction be set?
+var set_pmd_ready:bool = true
 ## Gravity(effects how far the character can jump and how fast they fall).
 var gravity:float = 1200
 ## Maximum jump velocity.
@@ -49,6 +53,7 @@ func _process(delta):
 	apply_gravity(delta)
 	if(globals.character_control == character_number):
 		handle_move_input()
+		set_prev_mov_div()
 	else:
 		velocity.x = lerp(float(velocity.x), float(move_speed * 0), get_h_weight())
 
@@ -68,7 +73,7 @@ func apply_movement():
 		var collision = get_slide_collision(index)
 		if collision.get_collider() is Crate:
 			var coll:RigidBody2D = collision.get_collider()
-			if (abs(coll.position.y - position.y) < 25):
+			if ((abs(coll.position.y - position.y) < 28 && character_number == 1) or (abs(coll.position.y - position.y) < 60 && character_number == 2)):
 				if(move_direction != 0 && collision.get_collider().position.y > position.y):
 					if(Input.is_action_pressed("crate_pick_up")):
 						coll._pull_crate()
@@ -76,7 +81,7 @@ func apply_movement():
 							coll.set_deferred("linear_velocity", Vector2(-4 * push_force, coll.linear_velocity.y))
 						else:
 							coll.set_deferred("linear_velocity", Vector2(4 * push_force, coll.linear_velocity.y))
-					else:
+					elif(prev_mov_dir == move_direction):
 						coll.set_deferred("linear_velocity", Vector2(move_direction * push_force, coll.linear_velocity.y))
 				elif(coll.position.y <= position.y):
 					if ((coll.position.x + ($Sprite2D.texture.get_width()/3.0)) <= position.x):
@@ -85,7 +90,7 @@ func apply_movement():
 						coll.set_deferred("linear_velocity", Vector2(1.0  * push_force, coll.linear_velocity.y))
 				
 
-## Handle movement input.d
+## Handle movement input.
 func handle_move_input():
 	move_direction = -int(Input.is_action_pressed("ui_left")) + int(Input.is_action_pressed("ui_right"))
 	if move_direction == -1:
@@ -103,4 +108,11 @@ func handle_move_input():
 ## Gets current horizontal weight of character movement.
 func get_h_weight():
 	return 0.2 if is_grounded else 0.05
-
+	
+## Previous move direction of the character(used to make crate moving less buggy)
+func set_prev_mov_div():
+	if(set_pmd_ready):
+		set_pmd_ready = false
+		prev_mov_dir = move_direction
+		await get_tree().create_timer(0.1).timeout
+		set_pmd_ready = true

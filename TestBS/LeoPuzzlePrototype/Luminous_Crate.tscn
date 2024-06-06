@@ -1,24 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://bttpiegars2dr"]
+[gd_scene load_steps=4 format=3 uid="uid://bd1ru2so26744"]
 
-[ext_resource type="Texture2D" uid="uid://g5smoawtrh8j" path="res://TestBS/LeoPuzzlePrototype/Assets/crate.png" id="1_3dh2j"]
-[ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Crate.gd" id="1_kuxyq"]
+[ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Luminous_Crate.gd" id="1_0qp43"]
+[ext_resource type="Texture2D" uid="uid://cfrtftk551cr7" path="res://TestBS/LeoPuzzlePrototype/Assets/Crate sprite sheet.png" id="2_chdtv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_il00c"]
 friction = 0.15
 
-[node name="Crate" type="RigidBody2D" groups=["Can_Press_Buttons"]]
-texture_filter = 1
-texture_repeat = 1
+[node name="Luminous_Crate" type="RigidBody2D" groups=["Can_Press_Buttons"]]
 collision_layer = 4
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_il00c")
 lock_rotation = true
-script = ExtResource("1_kuxyq")
+script = ExtResource("1_0qp43")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
 position = Vector2(8.5, 8.5)
 scale = Vector2(0.266, 0.266)
-texture = ExtResource("1_3dh2j")
+texture = ExtResource("2_chdtv")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(9.1, 9.1)

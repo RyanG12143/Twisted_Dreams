@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dl2c5owhyu5as"
-path="res://.godot/imported/door.png-29f8db448d085b49724b7cf0cb1fb336.ctex"
+uid="uid://cfrtftk551cr7"
+path="res://.godot/imported/Crate sprite sheet.png-2245bca0e7386bc0f55f4add48f7c7b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestBS/LeoPuzzlePrototype/Assets/door.png"
-dest_files=["res://.godot/imported/door.png-29f8db448d085b49724b7cf0cb1fb336.ctex"]
+source_file="res://TestBS/LeoPuzzlePrototype/Assets/Crate sprite sheet.png"
+dest_files=["res://.godot/imported/Crate sprite sheet.png-2245bca0e7386bc0f55f4add48f7c7b4.ctex"]
 
 [params]
 

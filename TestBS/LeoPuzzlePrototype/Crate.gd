@@ -32,8 +32,8 @@ func _pull_crate():
 	set_collision_layer_value(3,false)
 	set_collision_mask_value(2,false)
 	set_collision_mask_value(3,false)
-	await get_tree().create_timer(0.1).timeout
-	set_deferred("linear_velocity", Vector2(linear_velocity.x/15, linear_velocity.y))
+	await get_tree().create_timer(0.14).timeout
+	set_deferred("linear_velocity", Vector2(linear_velocity.x/8, linear_velocity.y))
 	await get_tree().create_timer(0.01).timeout
 	set_collision_layer_value(3,true)
 	set_collision_mask_value(2,true)

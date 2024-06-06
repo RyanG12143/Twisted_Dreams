@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://dv6gs2twtf31w"]
+
+[ext_resource type="Texture2D" uid="uid://dkx5qlyoprdqv" path="res://TestBS/LeoPuzzlePrototype/Assets/Interactable_Button_Sade_01.png" id="1_febrf"]
+[ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Floor_Button.gd" id="2_ers06"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00xax"]
+atlas = ExtResource("1_febrf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8r6tl"]
+atlas = ExtResource("1_febrf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anw13"]
+atlas = ExtResource("1_febrf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ei4sm"]
+atlas = ExtResource("1_febrf")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rycx6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00xax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r6tl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anw13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ei4sm")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f66n4"]
+size = Vector2(19.6667, 5.5)
+
+[node name="Floor_Button" type="AnimatedSprite2D"]
+z_index = 1
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(0.200001, -12.8)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_rycx6")
+script = ExtResource("2_ers06")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.63913e-07, 7.91667)
+shape = SubResource("RectangleShape2D_f66n4")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

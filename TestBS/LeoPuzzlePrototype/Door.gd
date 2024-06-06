@@ -1,6 +1,8 @@
-extends Sprite2D
+extends AnimatedSprite2D
 ## Doors, can be open or closed.
 
+## Collider of the door.
+@onready var collider:CollisionShape2D = $StaticBody2D/CollisionShape2D
 ## Whether or not a door is open.
 var open:bool = false
 ## Number of active inputs affecting the door.
@@ -10,7 +12,7 @@ var inputs:int = 0
 
 ## Sets door to visually closed.
 func _ready():
-	self_modulate.a = 1.0
+	frame = 0
 
 ## Handles additions of inputs.
 func add_input():
@@ -20,11 +22,11 @@ func add_input():
 	else:
 		open = false
 	if(open):
-		self_modulate.a = 0.2
-		$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
+		frame = 1
+		collider.set_deferred("disabled", true)
 	else:
-		self_modulate.a = 1.0
-		$StaticBody2D/CollisionShape2D.set_deferred("disabled", false)
+		frame = 0
+		collider.set_deferred("disabled", false)
 
 ## Handles removals of inputs.
 func remove_input():
@@ -34,8 +36,8 @@ func remove_input():
 	else:
 		open = true
 	if(open):
-		self_modulate.a = 0.2
-		$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
+		frame = 1
+		collider.set_deferred("disabled", true)
 	else:
-		self_modulate.a = 1.0
-		$StaticBody2D/CollisionShape2D.set_deferred("disabled", false)
+		frame = 0
+		collider.set_deferred("disabled", false)

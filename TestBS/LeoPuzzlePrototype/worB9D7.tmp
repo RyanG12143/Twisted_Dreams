@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Camera2D.gd" id="4_26abs"]
 [ext_resource type="PackedScene" uid="uid://bkckmghf83dwj" path="res://TestBS/LeoPuzzlePrototype/UI.tscn" id="6_d86nl"]
 [ext_resource type="PackedScene" uid="uid://dfgcelr51poc7" path="res://TestBS/LeoPuzzlePrototype/blue_arrow.tscn" id="7_stoch"]
-[ext_resource type="PackedScene" uid="uid://dv6gs2twtf31w" path="res://TestBS/LeoPuzzlePrototype/Floor_Button.tscn" id="8_vxinv"]
+[ext_resource type="PackedScene" uid="uid://dv6gs2twtf31w" path="res://TestBS/LeoPuzzlePrototype/Red_Button.tscn" id="8_vxinv"]
 [ext_resource type="PackedScene" uid="uid://ldx8dii1ypgs" path="res://TestBS/LeoPuzzlePrototype/Door.tscn" id="9_8a778"]
 [ext_resource type="PackedScene" uid="uid://ckg3s6aysm80r" path="res://TestBS/LeoPuzzlePrototype/Lever.tscn" id="10_g31pm"]
 [ext_resource type="PackedScene" uid="uid://bttpiegars2dr" path="res://TestBS/LeoPuzzlePrototype/Crate.tscn" id="10_oywdc"]
@@ -1469,7 +1469,7 @@ inputs_required = 2
 position = Vector2(-45, 97)
 
 [node name="Button" parent="Platform Connections" instance=ExtResource("8_vxinv")]
-position = Vector2(-160, 99)
+position = Vector2(-161, 109)
 
 [node name="Crates" type="Node" parent="."]
 
@@ -1486,13 +1486,13 @@ position = Vector2(576, 80)
 inputs_required = 2
 
 [node name="Button" parent="Door Connections" instance=ExtResource("8_vxinv")]
-position = Vector2(618, 99)
+position = Vector2(631, 109)
 
 [node name="Button2" parent="Door Connections" instance=ExtResource("8_vxinv")]
-position = Vector2(499, 99)
+position = Vector2(499, 109)
 
 [node name="Button3" parent="Door Connections" instance=ExtResource("8_vxinv")]
-position = Vector2(422, 99)
+position = Vector2(422, 109)
 
 [node name="Luminous_Crate" parent="." instance=ExtResource("12_dojai")]
 position = Vector2(122, 33)

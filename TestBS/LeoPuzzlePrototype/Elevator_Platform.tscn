@@ -27,21 +27,6 @@ tracks/0/keys = {
 "values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_ghes1"]
-resource_name = "move"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PathFollow2D:progress_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
 [sub_resource type="Animation" id="Animation_kr17j"]
 resource_name = "move_down"
 tracks/0/type = "value"
@@ -57,6 +42,21 @@ tracks/0/keys = {
 "values": [1.0, 0.0]
 }
 
+[sub_resource type="Animation" id="Animation_ghes1"]
+resource_name = "move"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yk82q"]
 _data = {
 "RESET": SubResource("Animation_aspof"),
@@ -64,7 +64,7 @@ _data = {
 "move_up": SubResource("Animation_ghes1")
 }
 
-[node name="Path2D" type="Path2D"]
+[node name="Elevator_Platform" type="Path2D"]
 scale = Vector2(2, 2)
 curve = SubResource("Curve2D_45ob3")
 script = ExtResource("1_yj7td")
@@ -73,7 +73,7 @@ script = ExtResource("1_yj7td")
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(0, -72)
-rotation = 0.000253081
+rotation = 0.000253677
 scale = Vector2(1, 1)
 collision_layer = 4
 collision_mask = 6
@@ -87,9 +87,7 @@ position = Vector2(15.9999, 2.99734)
 shape = SubResource("RectangleShape2D_cvvan")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(0, -72)
 rotation = -1.5708
-progress = 72.0
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 rotation = 1.57105
