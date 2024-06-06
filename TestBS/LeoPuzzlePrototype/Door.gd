@@ -5,7 +5,7 @@ extends Sprite2D
 var open:bool = false
 ## Number of active inputs affecting the door.
 var inputs:int = 0
-## How manu inputs are required to open a door.
+## How many inputs are required to open a door.
 @export var inputs_required:int = 1
 
 ## Sets door to visually closed.
