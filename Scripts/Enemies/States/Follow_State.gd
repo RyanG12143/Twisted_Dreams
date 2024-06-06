@@ -5,13 +5,6 @@ extends Enemy_State
 @export var ray_cast_down_right:RayCast2D
 @export var ray_cast_down_left:RayCast2D
 
-func enter(body:CharacterBody2D):
-	pass
-
-
-func exit(body:CharacterBody2D):
-	pass
-
 
 func physics_update(body:CharacterBody2D, delta:float):
 	var direction:Vector2 = (body.nav.get_next_path_position() - body.global_position).normalized()

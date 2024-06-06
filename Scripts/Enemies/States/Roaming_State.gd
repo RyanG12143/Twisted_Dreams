@@ -14,10 +14,6 @@ func enter(body:CharacterBody2D):
 	roam_right = true if body.velocity.x > 0 else false
 
 
-func exit(body:CharacterBody2D):
-	pass
-
-
 func physics_update(body:CharacterBody2D, delta:float):
 	var direction:float = 1.0 if roam_right else -1.0
 	
