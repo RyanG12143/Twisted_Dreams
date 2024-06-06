@@ -13,6 +13,7 @@ offset_bottom = 40.0
 script = ExtResource("1_l72fx")
 
 [node name="Play" type="Button" parent="."]
+layout_mode = 0
 offset_left = 408.0
 offset_top = 400.0
 offset_right = 744.0
@@ -20,6 +21,7 @@ offset_bottom = 448.0
 text = "Play"
 
 [node name="LevelSelect" type="Button" parent="."]
+layout_mode = 0
 offset_left = 408.0
 offset_top = 464.0
 offset_right = 744.0
@@ -27,6 +29,7 @@ offset_bottom = 512.0
 text = "Level Select"
 
 [node name="Quit" type="Button" parent="."]
+layout_mode = 0
 offset_left = 408.0
 offset_top = 528.0
 offset_right = 744.0
@@ -34,6 +37,7 @@ offset_bottom = 576.0
 text = "Quit"
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 320.0
 offset_top = 16.0
 offset_right = 832.0
