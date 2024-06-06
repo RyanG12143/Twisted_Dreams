@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://m23ls6buacwh" path="res://TestBS/LeoPuzzlePrototype/character_one.tscn" id="4_j0gww"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jxqwv"]
-vertices = PackedVector2Array(1056, 47, 1068, 597, 56, 597, 79, 34)
+vertices = PackedVector2Array(1051, 46, 1049, 573, 56, 596, 75, 35)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(44, 26, 46, 607, 1078, 607, 1063, 18)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(66, 25, 46, 607, 1059, 583, 1062, 37)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="Node2D" type="Node2D"]
@@ -23,10 +23,11 @@ navigation_polygon = SubResource("NavigationPolygon_jxqwv")
 script = ExtResource("2_k4afg")
 
 [node name="Enemy" parent="." instance=ExtResource("3_0f0yu")]
-position = Vector2(511, 151)
+position = Vector2(624, 157)
+grounded = false
 
 [node name="Enemy2" parent="." instance=ExtResource("3_0f0yu")]
-position = Vector2(400, 330)
+position = Vector2(403, 331)
 
 [node name="character_one" parent="." instance=ExtResource("4_j0gww")]
 position = Vector2(307, 141)

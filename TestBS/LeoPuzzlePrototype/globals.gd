@@ -26,7 +26,7 @@ func set_character_two(character: CharacterBody2D):
 
 ## Controls character swaps.
 func _process(delta):
-	if(Input.is_action_just_pressed("ui_character_swap")):
+	if(Input.is_action_just_pressed("ui_character_swap")) and character_one and character_two:
 		emit_signal("Character_Swapped")
 		if(character_control == 1):
 			next_controlled_character = 2
