@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb7k85jch125j"]
+
+[ext_resource type="Script" path="res://TestBS/MatthewTestBS/Pulley_Platform.gd" id="1_a0t8k"]
+[ext_resource type="Texture2D" uid="uid://dxkh1aa3kkdoi" path="res://TestBS/MatthewTestBS/Assets/platform.png" id="2_7ukjf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtxxy"]
+size = Vector2(500, 272.727)
+
+[node name="Pulley_Platform" type="Node2D"]
+script = ExtResource("1_a0t8k")
+
+[node name="Platform" type="CharacterBody2D" parent="."]
+scale = Vector2(0.22, 0.22)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform"]
+texture = ExtResource("2_7ukjf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(0, 81.8181)
+shape = SubResource("RectangleShape2D_dtxxy")

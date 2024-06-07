@@ -28,12 +28,14 @@ func _process(delta):
 	#print("Going up")
 
 func _on_area_2d_body_entered(body):
-	objects += 1
-	print("Going down")
-	object_on.emit()
+	if not body.is_in_group("Pulley_Platform"):
+		objects += 1
+		print("Going down")
+		object_on.emit()
 
 
 func _on_area_2d_body_exited(body):
-	objects -= 1
-	print("Going up")
-	object_off.emit()
+	if not body.is_in_group("Pulley_Platform"):
+		objects -= 1
+		print("Going up")
+		object_off.emit()

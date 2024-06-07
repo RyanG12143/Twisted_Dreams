@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://q6vqenn7ndre"]
 
 [ext_resource type="Texture2D" uid="uid://dxkh1aa3kkdoi" path="res://TestBS/MatthewTestBS/Assets/platform.png" id="1_3dpak"]
-[ext_resource type="Script" path="res://TestBS/MatthewTestBS/platforms.gd" id="1_cl1ao"]
+[ext_resource type="Script" path="res://TestBS/MatthewTestBS/platforms_old.gd" id="1_cl1ao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xq3yr"]
 size = Vector2(735.818, 32.7027)
@@ -9,27 +9,26 @@ size = Vector2(735.818, 32.7027)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bdthb"]
 size = Vector2(505.618, 280.899)
 
-[node name="PulleyPlatform" type="Sprite2D"]
-position = Vector2(209.25, 114.25)
+[node name="PulleyPlatform" type="Sprite2D" groups=["Pulley_Platform"]]
 scale = Vector2(0.089, 0.089)
 texture = ExtResource("1_3dpak")
 script = ExtResource("1_cl1ao")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["Pulley_Platform"]]
 position = Vector2(78.2123, 78.2123)
 scale = Vector2(0.687151, 0.687151)
-collision_layer = 4
+collision_layer = 0
 collision_mask = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Pulley_Platform"]]
 position = Vector2(-109.733, -199.666)
 shape = SubResource("RectangleShape2D_xq3yr")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 8
-collision_mask = 2
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Pulley_Platform"]]
+collision_layer = 4
+collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" groups=["Pulley_Platform"]]
 position = Vector2(2.80884, 81.4608)
 shape = SubResource("RectangleShape2D_bdthb")
 
