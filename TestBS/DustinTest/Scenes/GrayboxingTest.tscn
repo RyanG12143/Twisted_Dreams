@@ -6,12 +6,12 @@
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b3nko"]
 sky_top_color = Color(0.364013, 0.451352, 0.597576, 1)
 
-[sub_resource type="Sky" id="Sky_heus7"]
+[sub_resource type="Sky" id="Sky_ou1v0"]
 sky_material = SubResource("ProceduralSkyMaterial_b3nko")
 
 [sub_resource type="Environment" id="Environment_144i2"]
 background_mode = 2
-sky = SubResource("Sky_heus7")
+sky = SubResource("Sky_ou1v0")
 volumetric_fog_enabled = true
 
 [node name="GrayboxingTest" type="Node3D"]
