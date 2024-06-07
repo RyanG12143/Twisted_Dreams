@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bived31tg1brm"]
 
-[ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/3D_Player.gd" id="1_ge4c8"]
+[ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/3D_Player_Older.gd" id="1_cj4bd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3tsmo"]
 albedo_color = Color(0.65098, 1, 1, 1)
@@ -20,9 +20,9 @@ material = SubResource("StandardMaterial3D_2mlbu")
 radius = 0.414385
 height = 1.7057
 
-[node name="3DPlayer" type="CharacterBody3D"]
+[node name="3DPlayerOlder" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03182, 0)
-script = ExtResource("1_ge4c8")
+script = ExtResource("1_cj4bd")
 
 [node name="BodyMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_av2lk")
@@ -47,3 +47,35 @@ margin = 0.5
 
 [node name="Camera3D" type="Camera3D" parent="CamOrigin/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.58062e-08, 0, 3.00264)
+
+[node name="Rays" type="Node3D" parent="."]
+
+[node name="HeadRays" type="Node3D" parent="Rays"]
+
+[node name="Head" type="RayCast3D" parent="Rays/HeadRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.45, 0)
+target_position = Vector3(0, 0, -1)
+
+[node name="Head2" type="RayCast3D" parent="Rays/HeadRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+target_position = Vector3(0, 0, -1)
+
+[node name="Head3" type="RayCast3D" parent="Rays/HeadRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.45, 0)
+target_position = Vector3(0, 0, -1)
+
+[node name="Head4" type="RayCast3D" parent="Rays/HeadRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+target_position = Vector3(0, 1.8, -1)
+
+[node name="Head5" type="RayCast3D" parent="Rays/HeadRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.45, 0)
+target_position = Vector3(0, 1.8, -1)
+
+[node name="Head6" type="RayCast3D" parent="Rays/HeadRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.45, 0)
+target_position = Vector3(0, 1.8, -1)
+
+[node name="Chest" type="RayCast3D" parent="Rays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.171991, 0)
+target_position = Vector3(0, 0, -0.6)
