@@ -5,6 +5,8 @@ class_name Floor_Button
 signal Button_Pressed
 signal Button_Released
 
+## Whether or not the most recent action applied to the button was pressing.
+var recent_pressed:bool = false
 ## Array of valid bodies overlapping with the button, and are therefore pressing it.
 var overlapping_bodies:Array = []
 
@@ -18,14 +20,10 @@ func _on_area_2d_body_entered(body):
 		if(!overlapping_bodies):
 			emit_signal("Button_Pressed")
 		overlapping_bodies.append(body)
-		if (frame != 3):
-			frame = 0
-			await get_tree().create_timer(0.02).timeout
-			frame = 1
-			await get_tree().create_timer(0.02).timeout
-			frame = 2
-			await get_tree().create_timer(0.02).timeout
-			frame = 3
+		recent_pressed = true
+		while (frame != 3 and recent_pressed == true):
+			frame += 1
+			await get_tree().create_timer(0.03).timeout
 
 ## Handles bodies being removed from the button.
 func _on_area_2d_body_exited(body):
@@ -33,11 +31,7 @@ func _on_area_2d_body_exited(body):
 		overlapping_bodies.erase(body)
 		if(!overlapping_bodies):
 			emit_signal("Button_Released")
-			if (frame != 0):
-				frame = 3
-				await get_tree().create_timer(0.02).timeout
-				frame = 2
-				await get_tree().create_timer(0.02).timeout
-				frame = 1
-				await get_tree().create_timer(0.02).timeout
-				frame = 0
+			recent_pressed = false
+			while (frame != 0 and recent_pressed == false):
+				frame -= 1
+				await get_tree().create_timer(0.03).timeout

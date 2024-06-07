@@ -12,6 +12,9 @@ var character_one:CharacterBody2D
 ## Character two.
 var character_two:CharacterBody2D
 
+## Are the characters being swapped?
+var swap_active:bool = false
+
 signal Character_Swapped
 
 ## Gets called by character one to set it.
@@ -26,7 +29,8 @@ func set_character_two(character: CharacterBody2D):
 
 ## Controls character swaps.
 func _process(delta):
-	if(Input.is_action_just_pressed("ui_character_swap")) and character_one and character_two:
+	if(Input.is_action_just_pressed("ui_character_swap")) and character_one and character_two && character_control != 0:
+		swap_active = true
 		emit_signal("Character_Swapped")
 		if(character_control == 1):
 			next_controlled_character = 2
@@ -42,4 +46,4 @@ func _process(delta):
 			character_two.z_index = 0
 			await get_tree().create_timer(0.2).timeout
 			character_control = 1
-			
+		swap_active = false

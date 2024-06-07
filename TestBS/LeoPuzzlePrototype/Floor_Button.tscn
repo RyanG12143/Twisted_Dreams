@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dv6gs2twtf31w"]
+[gd_scene load_steps=12 format=3 uid="uid://dv6gs2twtf31w"]
 
 [ext_resource type="Texture2D" uid="uid://dkx5qlyoprdqv" path="res://TestBS/LeoPuzzlePrototype/Assets/Interactable_Button_Sade_01.png" id="1_febrf"]
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Floor_Button.gd" id="2_ers06"]
@@ -42,6 +42,44 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f66n4"]
 size = Vector2(19.6667, 5.5)
 
+[sub_resource type="Animation" id="Animation_qdgsy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_1cb4a"]
+resource_name = "press"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1qgyc"]
+_data = {
+"RESET": SubResource("Animation_qdgsy"),
+"press": SubResource("Animation_1cb4a")
+}
+
 [node name="Floor_Button" type="AnimatedSprite2D"]
 z_index = 1
 texture_filter = 1
@@ -58,6 +96,11 @@ collision_mask = 6
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1.63913e-07, 7.91667)
 shape = SubResource("RectangleShape2D_f66n4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1qgyc")
+}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

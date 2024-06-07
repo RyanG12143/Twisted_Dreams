@@ -4,6 +4,8 @@ extends CharacterBody2D
 ## Character number.
 @export var character_number:int = 0
 
+@onready var Sprite:Sprite2D = $Sprite2D
+
 ## Upwards direction.
 const UP:Vector2 = Vector2(0, -1)
 ## The force applied to pushable objects(crates).
@@ -84,7 +86,7 @@ func apply_movement():
 					elif(prev_mov_dir == move_direction):
 						coll.set_deferred("linear_velocity", Vector2(move_direction * push_force, coll.linear_velocity.y))
 				elif(coll.position.y <= position.y):
-					if ((coll.position.x + ($Sprite2D.texture.get_width()/3.0)) <= position.x):
+					if ((coll.position.x + (Sprite.texture.get_width()/3.0)) <= position.x):
 						coll.set_deferred("linear_velocity", Vector2(-1.0  * push_force, coll.linear_velocity.y))
 					else:
 						coll.set_deferred("linear_velocity", Vector2(1.0  * push_force, coll.linear_velocity.y))
@@ -97,7 +99,7 @@ func handle_move_input():
 		get_node("Sprite2D").flip_h = true
 	elif move_direction == 1:
 		get_node("Sprite2D").flip_h = false
-	if(Input.is_action_pressed("ui_jump") && !is_jumping):
+	if(Input.is_action_just_pressed("ui_jump") && !is_jumping):
 		velocity.y = max_jump_velocity
 		is_jumping = true
 	if(is_jumping && !Input.is_action_pressed("ui_jump") && (velocity.y < min_jump_velocity)):

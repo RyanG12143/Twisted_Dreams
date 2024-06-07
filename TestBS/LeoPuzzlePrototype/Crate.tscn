@@ -7,6 +7,7 @@
 friction = 0.15
 
 [node name="Crate" type="RigidBody2D" groups=["Can_Press_Buttons"]]
+z_index = 2
 texture_filter = 1
 texture_repeat = 1
 collision_layer = 4

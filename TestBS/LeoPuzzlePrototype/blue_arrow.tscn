@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/blue_arrow.gd" id="2_uqhpk"]
 
 [node name="blue_arrow" type="Sprite2D"]
-z_index = 1
+z_index = 10
 texture_filter = 1
 texture_repeat = 1
 rotation = 3.14159
