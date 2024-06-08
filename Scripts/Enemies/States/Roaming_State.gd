@@ -3,6 +3,7 @@ extends Enemy_State
 
 
 @export var range:float = 100
+@export var ray_cast_target:RayCast2D
 @export var ray_cast_down_right:RayCast2D
 @export var ray_cast_side_right:RayCast2D
 @export var ray_cast_down_left:RayCast2D
@@ -29,9 +30,12 @@ func update(body:CharacterBody2D, delta:float):
 			roam_right = not roam_right
 	
 	
-	if not body.target:
+	if not body.targets:
 		return
-	if body.global_position.distance_to(body.target.global_position) < range:
-		emit_signal("transitioned", self, "Follow")
-		return
+	
+	for target in body.targets:
+		ray_cast_target.target_position = target.global_position - ray_cast_target.global_position
+		if ray_cast_target.get_collider() == target:
+			body.target = target
+			emit_signal("transitioned", self, "Follow")
 	

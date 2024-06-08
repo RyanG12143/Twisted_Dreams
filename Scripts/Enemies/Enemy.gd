@@ -15,14 +15,11 @@ const GRAVITY:float = 1200
 ## Does not handle flying
 @export var grounded:bool = true
 
-## Closest of the objects in _targets
+## Closest of the objects in targets
 var target:CharacterBody2D
-
 ## Gets all player characters on ready and stores the node of each
-var _targets:Array[Node] = []
+var targets:Array[Node] = []
 
-## Nav agent for enemy
-@onready var nav:NavigationAgent2D = $NavigationAgent2D
 ## Enemy state machine which handles switching of states
 @onready var state_machine:State_Machine = $State_Machine
 
@@ -30,21 +27,13 @@ var _targets:Array[Node] = []
 
 
 func _ready():
-	nav.target_position = global_position
-	
-	if owner and owner.is_node_ready():
-		_targets = get_tree().get_nodes_in_group("Player")
-		_on_timer_timeout()
-	elif(owner):
-		await owner.ready
-		_targets = get_tree().get_nodes_in_group("Player")
-		_on_timer_timeout()
+	pass
 
 
 func _physics_process(delta):
 	
-	if target:
-		nav.target_position = target.global_position
+	print(state_machine.current_state.name)
+	print(targets)
 	
 	if state_machine.current_state:
 		state_machine.current_state.physics_update(self, delta)
@@ -62,12 +51,12 @@ func _process(delta):
 		state_machine.current_state.update(self, delta)
 
 
-## Redetermines target every second or when called
-func _on_timer_timeout():
-	if not _targets:
-		return
-	if not target:
-		target = _targets[0]
-	for tar in _targets:
-		if position.distance_to(tar.position) < position.distance_to(target.position):
-			target = tar
+
+func _on_detection_radius_body_entered(body):
+	if body.is_in_group("Player"):
+		targets.append(body)
+
+
+func _on_detection_radius_body_exited(body):
+	if body.is_in_group("Player"):
+		targets.erase(body)

@@ -7,7 +7,10 @@ extends Enemy_State
 
 
 func physics_update(body:CharacterBody2D, delta:float):
-	var direction:Vector2 = (body.nav.get_next_path_position() - body.global_position).normalized()
+	if not body.target:
+		return
+	
+	var direction:Vector2 = body.global_position.direction_to(body.target.global_position)
 	
 	direction.x = 1 if direction.x > 0 else -1
 	
@@ -22,9 +25,7 @@ func physics_update(body:CharacterBody2D, delta:float):
 
 
 func update(body:CharacterBody2D, delta:float):
-	if not body.target:
-		return
-	if body.global_position.distance_to(body.target.global_position) > range:
+	if not body.targets:
 		if body.roaming:
 			emit_signal("transitioned", self, "Roaming")
 		else:

@@ -23,11 +23,10 @@ navigation_polygon = SubResource("NavigationPolygon_jxqwv")
 script = ExtResource("2_k4afg")
 
 [node name="Enemy" parent="." instance=ExtResource("3_0f0yu")]
-position = Vector2(624, 157)
-grounded = false
+position = Vector2(807, 157)
 
 [node name="Enemy2" parent="." instance=ExtResource("3_0f0yu")]
-position = Vector2(403, 331)
+position = Vector2(497, 321)
 
 [node name="character_one" parent="." instance=ExtResource("4_j0gww")]
 position = Vector2(307, 141)

@@ -17,10 +17,8 @@ character_number = 1
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(16.2131, 16.4512)
 scale = Vector2(1.45311, 1.17304)
 texture = ExtResource("2_les1o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(15.9631, 16.1468)
 shape = SubResource("RectangleShape2D_ljtpv")
