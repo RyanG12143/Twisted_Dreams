@@ -2,12 +2,12 @@ class_name Idle
 extends Enemy_State
 
 
-@export var range:float = 100
-
-
 func update(body:CharacterBody2D, delta:float):
-	if not body.target:
+	if not body.targets:
 		return
-	if body.global_position.distance_to(body.target.global_position) < range:
-		emit_signal("transitioned", self, "Follow")
-		return
+	
+	for target in body.targets:
+		body.target_rays[target].target_position = target.global_position - body.target_rays[target].global_position
+		if body.target_rays[target].get_collider() == target:
+			body.target = target
+			emit_signal("transitioned", self, "Follow")

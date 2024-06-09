@@ -1,7 +1,6 @@
 class_name Follow
 extends Enemy_State
 
-@export var range:float = 100
 @export var ray_cast_down_right:RayCast2D
 @export var ray_cast_down_left:RayCast2D
 
@@ -31,3 +30,28 @@ func update(body:CharacterBody2D, delta:float):
 		else:
 			emit_signal("transitioned", self, "Idle")
 		return
+	
+	var valid_targets:Array[CharacterBody2D] = []
+	
+	for target in body.targets:
+		body.target_rays[target].target_position = target.global_position - body.target_rays[target].global_position
+		if body.target_rays[target].get_collider() == target:
+			valid_targets.append(target)
+	
+	if not valid_targets:
+		return
+	
+	body.target = valid_targets[0]
+	if valid_targets.size() > 1:
+		for target in valid_targets:
+			var body_dist_target = body.global_position.distance_to(target.global_position)
+			var body_dist_curr_target = body.global_position.distance_to(body.target.global_position)
+			
+			if body_dist_target < body_dist_curr_target:
+				body.target = target
+	
+	var charge_radius:Area2D = body.get_node("Charge_Radius")
+	
+	if charge_radius.get_overlapping_bodies().has(body.target):
+		emit_signal("transitioned", self, "Charge_Prep")
+

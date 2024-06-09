@@ -2,8 +2,6 @@ class_name Roaming
 extends Enemy_State
 
 
-@export var range:float = 100
-@export var ray_cast_target:RayCast2D
 @export var ray_cast_down_right:RayCast2D
 @export var ray_cast_side_right:RayCast2D
 @export var ray_cast_down_left:RayCast2D
@@ -24,18 +22,18 @@ func physics_update(body:CharacterBody2D, delta:float):
 func update(body:CharacterBody2D, delta:float):
 	if roam_right:
 		if not ray_cast_down_right.is_colliding() or ray_cast_side_right.is_colliding():
-			roam_right = not roam_right
+			roam_right = false
 	else:
 		if not ray_cast_down_left.is_colliding() or ray_cast_side_left.is_colliding():
-			roam_right = not roam_right
+			roam_right = true
 	
 	
 	if not body.targets:
 		return
 	
 	for target in body.targets:
-		ray_cast_target.target_position = target.global_position - ray_cast_target.global_position
-		if ray_cast_target.get_collider() == target:
+		body.target_rays[target].target_position = target.global_position - body.target_rays[target].global_position
+		if body.target_rays[target].get_collider() == target:
 			body.target = target
 			emit_signal("transitioned", self, "Follow")
 	

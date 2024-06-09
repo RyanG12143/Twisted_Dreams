@@ -19,6 +19,10 @@ const GRAVITY:float = 1200
 var target:CharacterBody2D
 ## Gets all player characters on ready and stores the node of each
 var targets:Array[Node] = []
+## Stores ray_casts for each target taht comes into range
+var target_rays:Dictionary = {}
+## True if enemy is facing right
+var is_facing_right:bool = true
 
 ## Enemy state machine which handles switching of states
 @onready var state_machine:State_Machine = $State_Machine
@@ -32,8 +36,8 @@ func _ready():
 
 func _physics_process(delta):
 	
-	print(state_machine.current_state.name)
-	print(targets)
+	#print(state_machine.current_state.name)
+	#print(targets)
 	
 	if state_machine.current_state:
 		state_machine.current_state.physics_update(self, delta)
@@ -44,6 +48,14 @@ func _physics_process(delta):
 		velocity.x -= velocity.normalized().x * 300 * delta
 	velocity.y += GRAVITY * delta
 	move_and_slide()
+	
+	if not state_machine.current_state is Charge_Prep:
+		if is_facing_right and velocity.x < 0:
+			is_facing_right = false
+			$MeshInstance2D.scale.x = -$MeshInstance2D.scale.x
+		elif not is_facing_right and velocity.x > 0:
+			is_facing_right = true
+			$MeshInstance2D.scale.x = -$MeshInstance2D.scale.x
 
 
 func _process(delta):
@@ -55,6 +67,11 @@ func _process(delta):
 func _on_detection_radius_body_entered(body):
 	if body.is_in_group("Player"):
 		targets.append(body)
+		if not target_rays.has(body):
+			var ray:RayCast2D = RayCast2D.new()
+			ray.set_collision_mask_value(2, true)
+			add_child(ray)
+			target_rays[body] = ray
 
 
 func _on_detection_radius_body_exited(body):
