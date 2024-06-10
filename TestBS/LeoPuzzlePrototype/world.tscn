@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dbkiu1hf1d1ne"]
+[gd_scene load_steps=12 format=3 uid="uid://dbkiu1hf1d1ne"]
 
 [ext_resource type="PackedScene" uid="uid://m23ls6buacwh" path="res://TestBS/LeoPuzzlePrototype/character_one.tscn" id="1_ex4f2"]
 [ext_resource type="Texture2D" uid="uid://cvumdn2cbyb2w" path="res://TestBS/LeoPuzzlePrototype/Assets/Tiles.png" id="2_rd16o"]
@@ -6,11 +6,9 @@
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Camera2D.gd" id="4_26abs"]
 [ext_resource type="PackedScene" uid="uid://bkckmghf83dwj" path="res://TestBS/LeoPuzzlePrototype/UI.tscn" id="6_d86nl"]
 [ext_resource type="PackedScene" uid="uid://dfgcelr51poc7" path="res://TestBS/LeoPuzzlePrototype/blue_arrow.tscn" id="7_stoch"]
-[ext_resource type="PackedScene" uid="uid://ldx8dii1ypgs" path="res://TestBS/LeoPuzzlePrototype/Door.tscn" id="9_8a778"]
-[ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Lever.gd" id="9_m5g6d"]
-[ext_resource type="PackedScene" uid="uid://ckg3s6aysm80r" path="res://TestBS/LeoPuzzlePrototype/Lever.tscn" id="10_g31pm"]
 [ext_resource type="PackedScene" uid="uid://dv6gs2twtf31w" path="res://TestBS/LeoPuzzlePrototype/Floor_Button.tscn" id="11_scsrt"]
 [ext_resource type="PackedScene" uid="uid://5wfhqfkebi8e" path="res://TestBS/LeoPuzzlePrototype/Elevator_Platform.tscn" id="11_snc3j"]
+[ext_resource type="PackedScene" uid="uid://bttpiegars2dr" path="res://TestBS/LeoPuzzlePrototype/Crate.tscn" id="12_kunpn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbg3q"]
 texture = ExtResource("2_rd16o")
@@ -1458,35 +1456,20 @@ script = ExtResource("4_26abs")
 
 [node name="blue_arrow" parent="." instance=ExtResource("7_stoch")]
 
-[node name="Door1" type="Node" parent="."]
+[node name="Crate" parent="." instance=ExtResource("12_kunpn")]
+position = Vector2(150, 10)
 
-[node name="Door" parent="Door1" instance=ExtResource("9_8a778")]
-position = Vector2(-112, 79)
+[node name="Elevator_Platform" parent="." instance=ExtResource("11_snc3j")]
+position = Vector2(104, 112)
+inputs_required = 2
 
-[node name="Floor_Button" parent="Door1" instance=ExtResource("11_scsrt")]
-position = Vector2(371, 99)
+[node name="Floor_Button2" parent="." instance=ExtResource("11_scsrt")]
+position = Vector2(-96, 99)
 
-[node name="Door2" type="Node" parent="."]
+[node name="Floor_Button" parent="." instance=ExtResource("11_scsrt")]
+position = Vector2(-44, 99)
 
-[node name="Door" parent="Door2" instance=ExtResource("9_8a778")]
-position = Vector2(512, 16)
-
-[node name="Floor_Button" parent="Door2" instance=ExtResource("11_scsrt")]
-position = Vector2(-197, 99)
-
-[node name="Elevator" type="Node" parent="."]
-script = ExtResource("9_m5g6d")
-
-[node name="Elevator_Platform" parent="Elevator" instance=ExtResource("11_snc3j")]
-position = Vector2(-432, 32)
-inputs_required = 1
-
-[node name="Lever" parent="Elevator" instance=ExtResource("10_g31pm")]
-position = Vector2(546, 32)
-
-[connection signal="Button_Pressed" from="Door1/Floor_Button" to="Door1/Door" method="add_input"]
-[connection signal="Button_Released" from="Door1/Floor_Button" to="Door1/Door" method="remove_input"]
-[connection signal="Button_Pressed" from="Door2/Floor_Button" to="Door2/Door" method="add_input"]
-[connection signal="Button_Released" from="Door2/Floor_Button" to="Door2/Door" method="remove_input"]
-[connection signal="Lever_Green" from="Elevator/Lever" to="Elevator/Elevator_Platform" method="add_input"]
-[connection signal="Lever_Red" from="Elevator/Lever" to="Elevator/Elevator_Platform" method="remove_input"]
+[connection signal="Button_Pressed" from="Floor_Button2" to="Elevator_Platform" method="add_input"]
+[connection signal="Button_Released" from="Floor_Button2" to="Elevator_Platform" method="remove_input"]
+[connection signal="Button_Pressed" from="Floor_Button" to="Elevator_Platform" method="add_input"]
+[connection signal="Button_Released" from="Floor_Button" to="Elevator_Platform" method="remove_input"]

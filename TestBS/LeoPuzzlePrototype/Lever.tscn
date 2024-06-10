@@ -25,7 +25,7 @@ size = Vector2(30, 26)
 z_index = -1
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(16, 16)
+position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_yh4gc")
 script = ExtResource("2_jto2l")
 

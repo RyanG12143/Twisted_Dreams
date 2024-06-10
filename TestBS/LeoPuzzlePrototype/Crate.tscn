@@ -10,6 +10,7 @@ friction = 0.15
 z_index = 2
 texture_filter = 1
 texture_repeat = 1
+position = Vector2(-9, -9)
 collision_layer = 4
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_il00c")
@@ -17,10 +18,10 @@ lock_rotation = true
 script = ExtResource("1_kuxyq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(8.5, 8.5)
-scale = Vector2(0.266, 0.266)
+position = Vector2(9.006, 9.006)
+scale = Vector2(0.250187, 0.250187)
 texture = ExtResource("1_3dh2j")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(9.1, 9.1)
-polygon = PackedVector2Array(-9, -9, -9, 7, 0, 8, 8, 7, 8, -9)
+polygon = PackedVector2Array(-8.1, -8.1, -8.1, 6.9, -0.1, 7.9, 7.9, 6.9, 7.9, -8.1)
