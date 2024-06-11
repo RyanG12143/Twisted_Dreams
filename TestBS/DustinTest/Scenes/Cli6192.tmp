@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bd2sq84ss3jap"]
+[gd_scene load_steps=11 format=3 uid="uid://bd2sq84ss3jap"]
 
 [ext_resource type="PackedScene" uid="uid://bived31tg1brm" path="res://TestBS/DustinTest/Scenes/3d_player.tscn" id="1_1lc8v"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_3yh0r"]
@@ -16,12 +16,6 @@ sky_material = SubResource("ProceduralSkyMaterial_7wn02")
 background_mode = 2
 sky = SubResource("Sky_heus7")
 volumetric_fog_enabled = true
-
-[sub_resource type="PrismMesh" id="PrismMesh_wibcu"]
-size = Vector3(0.5, 0.5, 0.3)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ddan"]
-albedo_color = Color(0.988235, 0.498039, 0.498039, 1)
 
 [sub_resource type="Resource" id="Resource_fdnka"]
 script = ExtResource("3_p7r67")
@@ -118,13 +112,15 @@ shadow_enabled = true
 
 [node name="3DPlayer" parent="." instance=ExtResource("1_1lc8v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0486372, 1.06137, -0.0971985)
-
-[node name="PlayerDirection" type="MeshInstance3D" parent="3DPlayer"]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, -9.31323e-10, 1, 4.65661e-10, 2.98023e-08, 0, 1, -0.0156226, 1.08631, 0)
-mesh = SubResource("PrismMesh_wibcu")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_3ddan")
+walk_speed = 4.0
+sprint_speed = 6.0
+jump_velocity = 4.5
+sens = 0.5
+mouse_sensitivity = 0.05
+min_pitch = -89.9
+max_pitch = 50.0
+min_yaw = 0.0
+max_yaw = 360.0
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
 transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939692, 0.0486372, 3.42945, 3.66157)

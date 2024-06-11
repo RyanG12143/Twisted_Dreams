@@ -21,6 +21,11 @@ globals="*res://TestBS/LeoPuzzlePrototype/globals.gd"
 Shaders="*res://Scripts/Global/Shaders.gd"
 Game_State="*res://Scripts/Global/Game_State.gd"
 Utils="*res://Scripts/Global/Utils.gd"
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
 
 [input]
 
