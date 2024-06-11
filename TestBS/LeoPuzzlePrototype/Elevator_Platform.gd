@@ -34,8 +34,6 @@ func _ready():
 
 ## Used to determine what the move direction of the platform should be.
 func _process(delta):
-	print($PathFollow2D.get_progress_ratio())
-	print(target_height)
 	if($PathFollow2D.get_progress_ratio() != target_height):
 		animation.play("move_up")
 		if($PathFollow2D.get_progress_ratio() < target_height):
