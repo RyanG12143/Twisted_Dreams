@@ -36,6 +36,9 @@ var min_jump_height:float = 0.15 * globals.UNIT_SIZE
 ## Duration of a jump.
 var jump_duration:float = 0.4
 
+## Wether or not the character is facing right.
+var is_facing_right:bool = true
+
 ## Sets some default values.
 func _ready():
 	if(character_number == 1):
@@ -96,8 +99,10 @@ func apply_movement():
 func handle_move_input():
 	move_direction = -int(Input.is_action_pressed("ui_left")) + int(Input.is_action_pressed("ui_right"))
 	if move_direction == -1:
+		is_facing_right = false
 		get_node("Sprite2D").flip_h = true
 	elif move_direction == 1:
+		is_facing_right = true
 		get_node("Sprite2D").flip_h = false
 	if(Input.is_action_just_pressed("ui_jump") && !is_jumping):
 		velocity.y = max_jump_velocity
