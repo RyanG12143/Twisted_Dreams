@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfgcelr51poc7"]
+
+[ext_resource type="Texture2D" uid="uid://dc6uhy27g0xpo" path="res://TestBS/LeoPuzzlePrototype/Assets/blue-arrow.png" id="1_n462f"]
+[ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/blue_arrow.gd" id="2_uqhpk"]
+
+[node name="blue_arrow" type="Sprite2D"]
+z_index = 10
+texture_filter = 1
+texture_repeat = 1
+rotation = 3.14159
+texture = ExtResource("1_n462f")
+script = ExtResource("2_uqhpk")

@@ -17,6 +17,7 @@ character_number = 2
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
+position = Vector2(2.99309, 0)
 scale = Vector2(2.0479, 1.69508)
 texture = ExtResource("2_q2u1r")
 

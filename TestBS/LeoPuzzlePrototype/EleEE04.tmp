@@ -1,0 +1,103 @@
+[gd_scene load_steps=9 format=3 uid="uid://5wfhqfkebi8e"]
+
+[ext_resource type="Texture2D" uid="uid://bf3q30165sdbe" path="res://TestBS/LeoPuzzlePrototype/Assets/elevator-platform.png" id="1_l61sh"]
+[ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Elevator_Platform.gd" id="1_yj7td"]
+
+[sub_resource type="Curve2D" id="Curve2D_45ob3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -720)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvvan"]
+size = Vector2(32.0018, 6.00025)
+
+[sub_resource type="Animation" id="Animation_aspof"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_kr17j"]
+resource_name = "move_down"
+length = 10.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ghes1"]
+resource_name = "move"
+length = 10.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yk82q"]
+_data = {
+"RESET": SubResource("Animation_aspof"),
+"move_down": SubResource("Animation_kr17j"),
+"move_up": SubResource("Animation_ghes1")
+}
+
+[node name="Elevator_Platform" type="Path2D"]
+position = Vector2(-32, -6)
+scale = Vector2(2, 2)
+curve = SubResource("Curve2D_45ob3")
+script = ExtResource("1_yj7td")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+rotation = 0.000253677
+scale = Vector2(1, 1)
+collision_layer = 4
+collision_mask = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+position = Vector2(16, -10)
+texture = ExtResource("1_l61sh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(15.9999, 2.99734)
+shape = SubResource("RectangleShape2D_cvvan")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotation = -1.5708
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+rotation = 1.57105
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yk82q")
+}

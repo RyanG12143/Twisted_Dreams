@@ -36,6 +36,9 @@ var min_jump_height:float = 0.15 * globals.UNIT_SIZE
 ## Duration of a jump.
 var jump_duration:float = 0.4
 
+## Wether or not the character is facing right.
+var is_facing_right:bool = true
+
 ## Sets some default values.
 func _ready():
 	if(character_number == 1):
@@ -75,8 +78,8 @@ func apply_movement():
 		var collision = get_slide_collision(index)
 		if collision.get_collider() is Crate:
 			var coll:RigidBody2D = collision.get_collider()
-			if ((abs(coll.position.y - position.y) < 28 && character_number == 1) or (abs(coll.position.y - position.y) < 60 && character_number == 2)):
-				if(move_direction != 0 && collision.get_collider().position.y > position.y):
+			if ((abs(coll.position.y - position.y) < 10 && character_number == 1) or (abs(coll.position.y - position.y) < 26 && character_number == 2)):
+				if(move_direction != 0 && collision.get_collider().position.y > (position.y - 5)):
 					if(Input.is_action_pressed("crate_pick_up")):
 						coll._pull_crate()
 						if(coll.position.x > position.x):
@@ -96,8 +99,10 @@ func apply_movement():
 func handle_move_input():
 	move_direction = -int(Input.is_action_pressed("ui_left")) + int(Input.is_action_pressed("ui_right"))
 	if move_direction == -1:
+		is_facing_right = false
 		get_node("Sprite2D").flip_h = true
 	elif move_direction == 1:
+		is_facing_right = true
 		get_node("Sprite2D").flip_h = false
 	if(Input.is_action_just_pressed("ui_jump") && !is_jumping):
 		velocity.y = max_jump_velocity

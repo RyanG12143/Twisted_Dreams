@@ -34,7 +34,6 @@ size = Vector2(16.1556, 63.8222)
 z_index = -1
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(16, 32)
 sprite_frames = SubResource("SpriteFrames_wmhk4")
 frame_progress = 1.0
 script = ExtResource("2_5sq8c")
