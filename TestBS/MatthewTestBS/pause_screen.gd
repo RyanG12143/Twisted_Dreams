@@ -37,4 +37,5 @@ func _on_audio_pressed():
 	$AudioMenu.show()
 
 func _on_back_to_settings_pressed():
-	pass # Replace with function body.
+	$AudioMenu.hide()
+	$SettingsMenu.show()

@@ -1411,6 +1411,13 @@ sources/0 = SubResource("TileSetAtlasSource_05fo7")
 
 [node name="World" type="Node2D"]
 
+[node name="PauseScreen" parent="." instance=ExtResource("7_v6g86")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_3nt5j")
 format = 2
@@ -1431,5 +1438,3 @@ position = Vector2(438, 101)
 
 [node name="RigidBody2D" parent="." instance=ExtResource("6_x63rw")]
 position = Vector2(547, 97)
-
-[node name="PauseScreen" parent="." instance=ExtResource("7_v6g86")]

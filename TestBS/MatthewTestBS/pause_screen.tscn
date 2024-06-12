@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://fnabxih0s6b4"]
+[gd_scene load_steps=7 format=3 uid="uid://fnabxih0s6b4"]
 
 [ext_resource type="Script" path="res://TestBS/MatthewTestBS/pause_screen.gd" id="1_pypjs"]
 
@@ -7,6 +7,15 @@ font_size = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_bk304"]
 font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_gsbqn"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_ssci4"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_k3hf5"]
+font_size = 25
 
 [node name="PauseScreen" type="Control"]
 layout_mode = 3
@@ -69,6 +78,7 @@ text = "Quit to Title
 "
 
 [node name="SettingsMenu" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -132,8 +142,91 @@ offset_right = 561.0
 offset_bottom = 329.0
 text = "Controls"
 
+[node name="AudioMenu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Audio" type="Label" parent="AudioMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.0
+offset_top = -238.0
+offset_right = 97.0
+offset_bottom = -169.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Audio"
+label_settings = SubResource("LabelSettings_bk304")
+
+[node name="MusicSlider" type="HSlider" parent="AudioMenu"]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 261.0
+offset_right = 633.0
+offset_bottom = 293.0
+
+[node name="SFXSlider" type="HSlider" parent="AudioMenu"]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 334.0
+offset_right = 633.0
+offset_bottom = 366.0
+
+[node name="VoiceSlider" type="HSlider" parent="AudioMenu"]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 400.0
+offset_right = 633.0
+offset_bottom = 432.0
+
+[node name="Music" type="Label" parent="AudioMenu"]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 219.0
+offset_right = 585.0
+offset_bottom = 254.0
+text = "BGM"
+label_settings = SubResource("LabelSettings_gsbqn")
+
+[node name="SFX" type="Label" parent="AudioMenu"]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 299.0
+offset_right = 583.0
+offset_bottom = 334.0
+text = "SFX"
+label_settings = SubResource("LabelSettings_ssci4")
+
+[node name="Voices" type="Label" parent="AudioMenu"]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 366.0
+offset_right = 605.0
+offset_bottom = 401.0
+text = "Voices"
+label_settings = SubResource("LabelSettings_k3hf5")
+
+[node name="BackToSettings" type="Button" parent="AudioMenu"]
+layout_mode = 0
+offset_left = 495.0
+offset_top = 456.0
+offset_right = 638.0
+offset_bottom = 506.0
+text = "Back"
+
 [connection signal="pressed" from="MainScreen/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MainScreen/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MainScreen/Settings" to="SettingsMenu" method="_on_settings_pressed"]
 [connection signal="pressed" from="MainScreen/ReturnToTitle" to="." method="_on_return_to_title_pressed"]
 [connection signal="pressed" from="SettingsMenu/BackToMain" to="." method="_on_back_to_main_pressed"]
+[connection signal="pressed" from="SettingsMenu/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="SettingsMenu/Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="AudioMenu/BackToSettings" to="." method="_on_back_to_settings_pressed"]
