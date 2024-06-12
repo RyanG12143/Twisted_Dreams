@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://ldx8dii1ypgs" path="res://TestBS/LeoPuzzlePrototype/Door.tscn" id="9_8a778"]
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Lever.gd" id="9_m5g6d"]
 [ext_resource type="PackedScene" uid="uid://ckg3s6aysm80r" path="res://TestBS/LeoPuzzlePrototype/Lever.tscn" id="10_g31pm"]
-[ext_resource type="PackedScene" uid="uid://dv6gs2twtf31w" path="res://TestBS/LeoPuzzlePrototype/Floor_Button.tscn" id="11_scsrt"]
-[ext_resource type="PackedScene" uid="uid://5wfhqfkebi8e" path="res://TestBS/LeoPuzzlePrototype/Elevator_Platform.tscn" id="11_snc3j"]
+[ext_resource type="PackedScene" uid="uid://daelj4hlba7qu" path="res://TestBS/LeoPuzzlePrototype/Floor_Button.tscn" id="11_scsrt"]
+[ext_resource type="PackedScene" path="res://TestBS/LeoPuzzlePrototype/Elevator_Platform.tscn" id="11_snc3j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbg3q"]
 texture = ExtResource("2_rd16o")
