@@ -13,12 +13,10 @@ func _ready():
 	
 ## Resets crate position if input pressed.
 func _process(delta):
-	apply_central_impulse(Vector2(0, 0))
 	if(Input.is_action_pressed("ui_crate_reset")):
 		reset_state = true
 
-
-## Prepares crates to be reset
+## Prepares crates to be reset.
 func _integrate_forces(state):
 	if reset_state:
 		reset_state = false
@@ -31,11 +29,9 @@ func _integrate_forces(state):
 func _pull_crate():
 	set_collision_layer_value(3,false)
 	set_collision_mask_value(2,false)
-	set_collision_mask_value(3,false)
 	await get_tree().create_timer(0.14).timeout
 	set_deferred("linear_velocity", Vector2(linear_velocity.x/8, linear_velocity.y))
 	await get_tree().create_timer(0.01).timeout
 	set_collision_layer_value(3,true)
 	set_collision_mask_value(2,true)
-	set_collision_mask_value(3,true)
 	

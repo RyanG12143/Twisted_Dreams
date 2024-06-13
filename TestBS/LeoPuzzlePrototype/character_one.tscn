@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dgt428j75dvlt" path="res://TestBS/LeoPuzzlePrototype/Assets/_0000_Layer-1.png" id="2_les1o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljtpv"]
-size = Vector2(32, 32)
+size = Vector2(32, 32.1468)
 
 [node name="character_one" type="CharacterBody2D" groups=["Can_Press_Buttons", "Player"]]
 z_index = 2
@@ -17,8 +17,10 @@ character_number = 1
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
-scale = Vector2(1.45311, 1.17304)
+position = Vector2(0.623875, 0.137869)
+scale = Vector2(1.4206, 1.16319)
 texture = ExtResource("2_les1o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.073411)
 shape = SubResource("RectangleShape2D_ljtpv")

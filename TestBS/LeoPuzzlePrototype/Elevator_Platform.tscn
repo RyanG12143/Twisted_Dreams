@@ -5,7 +5,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_45ob3"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -720)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 1.68179, 46.2493, 0, -720)
 }
 point_count = 2
 
@@ -80,7 +80,6 @@ script = ExtResource("1_yj7td")
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(0, -720)
 rotation = 0.000253677
 scale = Vector2(1, 1)
 collision_layer = 4

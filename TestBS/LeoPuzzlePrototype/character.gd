@@ -88,12 +88,11 @@ func apply_movement():
 							coll.set_deferred("linear_velocity", Vector2(4 * push_force, coll.linear_velocity.y))
 					elif(prev_mov_dir == move_direction):
 						coll.set_deferred("linear_velocity", Vector2(move_direction * push_force, coll.linear_velocity.y))
-				elif(coll.position.y <= position.y):
-					if ((coll.position.x + (Sprite.texture.get_width()/3.0)) <= position.x):
-						coll.set_deferred("linear_velocity", Vector2(-1.0  * push_force, coll.linear_velocity.y))
-					else:
-						coll.set_deferred("linear_velocity", Vector2(1.0  * push_force, coll.linear_velocity.y))
-				
+			elif(coll.position.y <= position.y):
+				if (coll.position.x <= position.x):
+					coll.set_deferred("linear_velocity", Vector2(-1.0  * push_force, coll.linear_velocity.y))
+				else:
+					coll.set_deferred("linear_velocity", Vector2(1.0  * push_force, coll.linear_velocity.y))
 
 ## Handle movement input.
 func handle_move_input():

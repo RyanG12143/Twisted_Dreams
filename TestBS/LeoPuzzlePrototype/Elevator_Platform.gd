@@ -1,4 +1,5 @@
 extends Path2D
+class_name Elevator_Platform
 
 ## How far the platform moves (y direction) from a single input
 const MOVE_DISTANCE:int = 144
