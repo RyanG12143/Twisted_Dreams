@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dv6gs2twtf31w"]
+[gd_scene load_steps=12 format=3 uid="uid://daelj4hlba7qu"]
 
 [ext_resource type="Texture2D" uid="uid://dkx5qlyoprdqv" path="res://TestBS/LeoPuzzlePrototype/Assets/Interactable_Button_Sade_01.png" id="1_febrf"]
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Floor_Button.gd" id="2_ers06"]
