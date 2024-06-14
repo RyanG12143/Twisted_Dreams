@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://fnabxih0s6b4"]
+[gd_scene load_steps=9 format=3 uid="uid://fnabxih0s6b4"]
 
 [ext_resource type="Script" path="res://TestBS/MatthewTestBS/pause_screen.gd" id="1_pypjs"]
 
@@ -17,19 +17,18 @@ font_size = 25
 [sub_resource type="LabelSettings" id="LabelSettings_k3hf5"]
 font_size = 25
 
-[node name="PauseScreen" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+[sub_resource type="LabelSettings" id="LabelSettings_l5yh3"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_u1dj7"]
+font_size = 25
+
+[node name="PauseScreen" type="CanvasLayer"]
 script = ExtResource("1_pypjs")
 
 [node name="MainScreen" type="Control" parent="."]
 visible = false
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -79,7 +78,7 @@ text = "Quit to Title
 
 [node name="SettingsMenu" type="Control" parent="."]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -94,9 +93,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -97.0
-offset_top = -238.0
+offset_top = -190.0
 offset_right = 97.0
-offset_bottom = -169.0
+offset_bottom = -121.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Settings"
@@ -143,7 +142,8 @@ offset_bottom = 329.0
 text = "Controls"
 
 [node name="AudioMenu" type="Control" parent="."]
-layout_mode = 1
+visible = false
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -157,10 +157,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -97.0
-offset_top = -238.0
-offset_right = 97.0
-offset_bottom = -169.0
+offset_left = -86.0
+offset_top = -187.0
+offset_right = 108.0
+offset_bottom = -118.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Audio"
@@ -222,11 +222,78 @@ offset_right = 638.0
 offset_bottom = 506.0
 text = "Back"
 
+[node name="VisualMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Visual" type="Label" parent="VisualMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.420139
+anchor_top = 0.212963
+anchor_right = 0.545139
+anchor_bottom = 0.319444
+grow_horizontal = 2
+grow_vertical = 2
+text = "Visual"
+label_settings = SubResource("LabelSettings_l5yh3")
+metadata/_edit_use_anchors_ = true
+
+[node name="Brightness" type="Label" parent="VisualMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.429688
+anchor_top = 0.333333
+anchor_right = 0.541667
+anchor_bottom = 0.387346
+grow_horizontal = 2
+grow_vertical = 2
+text = "Brightness"
+label_settings = SubResource("LabelSettings_u1dj7")
+metadata/_edit_use_anchors_ = true
+
+[node name="BrightSlider" type="HSlider" parent="VisualMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.427951
+anchor_top = 0.415123
+anchor_right = 0.552951
+anchor_bottom = 0.439815
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="SubtitleToggle" type="CheckButton" parent="VisualMenu"]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 316.0
+offset_right = 624.0
+offset_bottom = 347.0
+text = "Subtitles"
+
+[node name="BackToSettings" type="Button" parent="VisualMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.427951
+anchor_top = 0.70216
+anchor_right = 0.554688
+anchor_bottom = 0.777778
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="MainScreen/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="MainScreen/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MainScreen/Settings" to="SettingsMenu" method="_on_settings_pressed"]
+[connection signal="pressed" from="MainScreen/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MainScreen/ReturnToTitle" to="." method="_on_return_to_title_pressed"]
 [connection signal="pressed" from="SettingsMenu/BackToMain" to="." method="_on_back_to_main_pressed"]
 [connection signal="pressed" from="SettingsMenu/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="SettingsMenu/Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="SettingsMenu/Visual" to="." method="_on_visual_pressed"]
 [connection signal="pressed" from="AudioMenu/BackToSettings" to="." method="_on_back_to_settings_pressed"]
+[connection signal="pressed" from="VisualMenu/BackToSettings" to="." method="_on_back_to_settings_pressed"]

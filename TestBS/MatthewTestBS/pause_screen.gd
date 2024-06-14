@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 var open: bool = false
 
@@ -11,7 +11,8 @@ func _process(delta):
 		show()
 		$MainScreen.show()
 		$SettingsMenu.hide()
-		$AudioMenu.show()
+		$AudioMenu.hide()
+		$VisualMenu.hide()
 
 func _on_back_pressed():
 	hide()
@@ -38,4 +39,10 @@ func _on_audio_pressed():
 
 func _on_back_to_settings_pressed():
 	$AudioMenu.hide()
+	$VisualMenu.hide()
 	$SettingsMenu.show()
+
+
+func _on_visual_pressed():
+	$SettingsMenu.hide()
+	$VisualMenu.show()
