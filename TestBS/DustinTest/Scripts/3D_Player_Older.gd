@@ -1,4 +1,4 @@
-extends CharacterBody3D
+extends "res://addons/phantom_camera/examples/scripts/3D/player_controller.gd"
 
 
 var current_speed:float
@@ -14,12 +14,13 @@ var grab_start = false
 
 
 # Raycasting
-@onready var chest_ray = $Rays/Chest
-@onready var head_rays = $Rays/HeadRays
+@onready var chest_ray = $PlayerVisual/Rays/Chest
+@onready var head_rays = $PlayerVisual/Rays/HeadRays
 
 #camera stuff
 @onready var _player_pcam: PhantomCamera3D
-@onready var _player_direction: Node3D = %PlayerDirection
+@onready var _player_direction: Node3D = %PlayerVisual
+@onready var ray_direction: Node3D = %Rays
 
 @export var mouse_sensitivity: float = 0.05
 
@@ -33,17 +34,18 @@ var grab_start = false
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+#var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
+	super()
 	_player_pcam = get_node("../PhantomCamera3D")
 
 	if _player_pcam.get_follow_mode() == _player_pcam.FollowMode.THIRD_PERSON:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-func _input(event):
-	if event is InputEventMouseMotion:
-		pass
+#func _input(event):
+	#if event is InputEventMouseMotion:
+		#pass
 		#rotate_y(deg_to_rad(-event.relative.x * sens))
 		#pivot.rotate_x(deg_to_rad(-event.relative.y * sens))
 		#pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(45))
@@ -54,9 +56,8 @@ func _input(event):
 func _unhandled_input(event: InputEvent) -> void:
 	if _player_pcam.get_follow_mode() == _player_pcam.FollowMode.THIRD_PERSON:
 		var active_pcam: PhantomCamera3D
+		_set_pcam_rotation(_player_pcam, event)
 
-		if is_instance_valid(_player_pcam):
-			_set_pcam_rotation(_player_pcam, event)
 
 
 func _set_pcam_rotation(pcam: PhantomCamera3D, event: InputEvent) -> void:
@@ -89,6 +90,7 @@ func _set_pcam_rotation(pcam: PhantomCamera3D, event: InputEvent) -> void:
 
 
 func _physics_process(delta):
+	super(delta)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -108,20 +110,23 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("3Dleft", "3Dright", "3Dforward", "3Dbackward")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * current_speed
-		velocity.z = direction.z * current_speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, current_speed)
-		velocity.z = move_toward(velocity.z, 0, current_speed)
-	
-	if velocity.length() > 0.2:
+	#var input_dir = Input.get_vector("3Dleft", "3Dright", "3Dforward", "3Dbackward")
+	#var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	#if direction:
+		#velocity.x = direction.x * current_speed
+		#velocity.z = direction.z * current_speed
+	#else:
+		#velocity.x = move_toward(velocity.x, 0, current_speed)
+		#velocity.z = move_toward(velocity.z, 0, current_speed)
+	var testVelocity: Vector3 = Vector3(velocity.x, 0, velocity.z)
+	if testVelocity.length() > 0.2 and !chest_ray.is_colliding():
 		var look_direction: Vector2 = Vector2(velocity.z, velocity.x)
 		_player_direction.rotation.y = look_direction.angle()
+		
 	
 	move_and_slide()
+	
+	
 	
 func _process(delta):
 	if Input.is_action_pressed("3Djump") and can_climb():
@@ -151,7 +156,7 @@ func climb():
 	var v_move_time = 1
 	var h_move_time = 0.4
 	var vertical_movement = global_transform.origin + Vector3(0, 1.3, 0)
-	var forward_movement = global_transform.origin + (-global_transform.basis.z * 1.2)
+	var forward_movement = global_transform.origin + (_player_direction.global_transform.basis.z * 1.2)
 	forward_movement.y += 1.3
 	
 	var tween = create_tween()

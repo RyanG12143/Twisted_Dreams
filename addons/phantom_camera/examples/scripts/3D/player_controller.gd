@@ -6,12 +6,13 @@ extends CharacterBody3D
 
 @onready var _camera: Camera3D
 
-@onready var _player_visual: Node3D = %PlayerVisual
+@onready var _player_visual: Node3D = $"."
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = 9.8
 
 var movement_enabled: bool = true
+
 
 var _physics_body_trans_last: Transform3D
 var _physics_body_trans_current: Transform3D
