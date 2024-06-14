@@ -29,15 +29,6 @@ albedo_color = Color(0.988235, 0.498039, 0.498039, 1)
 [node name="3DPlayerOlder" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03182, 0)
 script = ExtResource("1_cj4bd")
-walk_speed = null
-sprint_speed = null
-jump_velocity = null
-sens = null
-mouse_sensitivity = null
-min_pitch = null
-max_pitch = null
-min_yaw = null
-max_yaw = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_klf3k")
@@ -60,7 +51,7 @@ mesh = SubResource("SphereMesh_1q8vp")
 
 [node name="PlayerDirection" type="MeshInstance3D" parent="PlayerVisual"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.0540788, -0.998537, 0, 0.998537, 0.0540788, -0.0156226, 1.08631, 0.645587)
+transform = Transform3D(1, 0, 0, 0, 0.0540788, -0.998537, 0, 0.998537, 0.0540788, -0.000458195, 1.08631, 0.645587)
 mesh = SubResource("PrismMesh_pkiyi")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_titu6")
