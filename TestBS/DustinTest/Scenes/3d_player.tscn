@@ -60,29 +60,30 @@ surface_material_override/0 = SubResource("StandardMaterial3D_titu6")
 unique_name_in_owner = true
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
-[node name="HeadRays" type="Node3D" parent="PlayerVisual/Rays"]
+[node name="HeadClimbRays" type="Node3D" parent="PlayerVisual/Rays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57202, 0)
 
-[node name="Head" type="RayCast3D" parent="PlayerVisual/Rays/HeadRays"]
+[node name="Head" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.45, 0)
 target_position = Vector3(0, 0, -1)
 
-[node name="Head2" type="RayCast3D" parent="PlayerVisual/Rays/HeadRays"]
+[node name="Head2" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 target_position = Vector3(0, 0, -1)
 
-[node name="Head3" type="RayCast3D" parent="PlayerVisual/Rays/HeadRays"]
+[node name="Head3" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.45, 0)
 target_position = Vector3(0, 0, -1)
 
-[node name="Head4" type="RayCast3D" parent="PlayerVisual/Rays/HeadRays"]
+[node name="Head4" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 target_position = Vector3(0, 1.8, -1)
 
-[node name="Head5" type="RayCast3D" parent="PlayerVisual/Rays/HeadRays"]
+[node name="Head5" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.45, 0)
 target_position = Vector3(0, 1.8, -1)
 
-[node name="Head6" type="RayCast3D" parent="PlayerVisual/Rays/HeadRays"]
+[node name="Head6" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.45, 0)
 target_position = Vector3(0, 1.8, -1)
 
