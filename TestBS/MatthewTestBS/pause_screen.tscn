@@ -288,8 +288,8 @@ text = "Back"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="MainScreen/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="MainScreen/Settings" to="SettingsMenu" method="_on_settings_pressed"]
 [connection signal="pressed" from="MainScreen/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainScreen/Settings" to="SettingsMenu" method="_on_settings_pressed"]
 [connection signal="pressed" from="MainScreen/ReturnToTitle" to="." method="_on_return_to_title_pressed"]
 [connection signal="pressed" from="SettingsMenu/BackToMain" to="." method="_on_back_to_main_pressed"]
 [connection signal="pressed" from="SettingsMenu/Save" to="." method="_on_save_pressed"]
