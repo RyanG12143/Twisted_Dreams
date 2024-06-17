@@ -24,6 +24,7 @@ font_size = 50
 font_size = 25
 
 [node name="PauseScreen" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_pypjs")
 
 [node name="MainScreen" type="Control" parent="."]
@@ -233,10 +234,10 @@ grow_vertical = 2
 [node name="Visual" type="Label" parent="VisualMenu"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.420139
-anchor_top = 0.212963
-anchor_right = 0.545139
-anchor_bottom = 0.319444
+anchor_left = 0.43316
+anchor_top = 0.219136
+anchor_right = 0.55816
+anchor_bottom = 0.325617
 grow_horizontal = 2
 grow_vertical = 2
 text = "Visual"
@@ -246,10 +247,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Brightness" type="Label" parent="VisualMenu"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.429688
-anchor_top = 0.333333
-anchor_right = 0.541667
-anchor_bottom = 0.387346
+anchor_left = 0.434896
+anchor_top = 0.438272
+anchor_right = 0.546875
+anchor_bottom = 0.492285
 grow_horizontal = 2
 grow_vertical = 2
 text = "Brightness"
@@ -260,9 +261,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.427951
-anchor_top = 0.415123
+anchor_top = 0.518519
 anchor_right = 0.552951
-anchor_bottom = 0.439815
+anchor_bottom = 0.543211
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -270,9 +271,9 @@ metadata/_edit_use_anchors_ = true
 [node name="SubtitleToggle" type="CheckButton" parent="VisualMenu"]
 layout_mode = 0
 offset_left = 508.0
-offset_top = 316.0
+offset_top = 372.0
 offset_right = 624.0
-offset_bottom = 347.0
+offset_bottom = 403.0
 text = "Subtitles"
 
 [node name="BackToSettings" type="Button" parent="VisualMenu"]
@@ -287,6 +288,14 @@ grow_vertical = 2
 text = "Back"
 metadata/_edit_use_anchors_ = true
 
+[node name="SubtitleSample" type="Label" parent="VisualMenu"]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 413.0
+offset_right = 638.0
+offset_bottom = 436.0
+text = "These are subtitles"
+
 [connection signal="pressed" from="MainScreen/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MainScreen/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MainScreen/Settings" to="SettingsMenu" method="_on_settings_pressed"]
@@ -296,4 +305,5 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="SettingsMenu/Audio" to="." method="_on_audio_pressed"]
 [connection signal="pressed" from="SettingsMenu/Visual" to="." method="_on_visual_pressed"]
 [connection signal="pressed" from="AudioMenu/BackToSettings" to="." method="_on_back_to_settings_pressed"]
+[connection signal="toggled" from="VisualMenu/SubtitleToggle" to="." method="_on_subtitle_toggle_toggled"]
 [connection signal="pressed" from="VisualMenu/BackToSettings" to="." method="_on_back_to_settings_pressed"]

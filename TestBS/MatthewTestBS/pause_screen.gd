@@ -8,6 +8,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_pressed("escape"):
+		get_tree().paused = true
 		show()
 		$MainScreen.show()
 		$SettingsMenu.hide()
@@ -15,6 +16,7 @@ func _process(delta):
 		$VisualMenu.hide()
 
 func _on_back_pressed():
+	get_tree().paused = false
 	hide()
 
 func _on_settings_pressed():
@@ -22,6 +24,7 @@ func _on_settings_pressed():
 	$SettingsMenu.show()
 
 func _on_return_to_title_pressed():
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://TestBS/DustinTest/Scenes/TitleScreen.tscn")
 
 
@@ -46,3 +49,8 @@ func _on_back_to_settings_pressed():
 func _on_visual_pressed():
 	$SettingsMenu.hide()
 	$VisualMenu.show()
+	$VisualMenu/SubtitleSample.hide()
+
+
+func _on_subtitle_toggle_toggled(toggled_on):
+	$VisualMenu/SubtitleSample.show()
