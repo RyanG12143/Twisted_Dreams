@@ -19,6 +19,7 @@ extends "res://TestBS/DustinTest/Scripts/player_controller.gd"
 
 # Climbing vars
 var called_climb = false
+var called_grab: bool = false
 var can_jump = true
 var grab_start = false
 var can_turn: bool = true
@@ -64,9 +65,6 @@ func _set_pcam_rotation(pcam: PhantomCamera3D, event: InputEvent) -> void:
 # Physics process function
 func _physics_process(delta):
 	super(delta)
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
 	
 	# Quitting to menu
 	if Input.is_action_just_pressed("escape"):
@@ -83,7 +81,7 @@ func _physics_process(delta):
 # Process function
 func _process(delta):
 	if Input.is_action_pressed("3Djump") and can_climb():
-		hang()
+		grab_ledge()
 
 # Climbing functions
 func can_climb():
@@ -95,24 +93,45 @@ func can_climb():
 	return true
 
 func grab_ledge():
-	print("Grabbed ledge")
 	enable_gravity = false
 	can_turn = false
-	if Input.is_action_just_released("3Djump"):
-		climb_ledge()
-	if Input.is_action_just_released("3Drelease"):
-		release_ledge()
+	velocity = Vector3.ZERO
+	#if called_grab:
+		#hanging()
+		
+	
+	#if Input.is_action_just_released("3Djump"):
+		#climb_ledge()
+	#if Input.is_action_just_released("3Drelease"):
+		#release_ledge()
+	
+	await get_tree().create_timer(2.0).timeout
+	called_grab = true
+	hanging()
 
+func hanging():
+	print("hanging")
+	if Input.is_action_pressed("3Djump"):
+		climb_ledge()
+	if Input.is_action_pressed("3Drelease"):
+		release_ledge()
+		
+		
 func hang():
 	print("hanging")
 	velocity = Vector3.ZERO
 	axis_lock_linear_y = true
 	enable_gravity = false
 	can_turn = false
+	if Input.is_action_pressed("3Djump"):
+		climb_ledge()
+	if Input.is_action_pressed("3Drelease"):
+		release_ledge()
 
 func release_ledge():
 	enable_gravity = true
 	can_turn = true
+	called_grab = false
 
 func climb_ledge():
 	if called_climb:
@@ -134,6 +153,7 @@ func climb():
 	await tween.finished
 	can_jump = true
 	called_climb = false
+	called_grab = false
 	can_turn = true
-	
+	enable_gravity = true
 

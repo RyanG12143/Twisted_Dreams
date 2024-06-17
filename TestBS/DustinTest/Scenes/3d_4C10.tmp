@@ -1,6 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bived31tg1brm"]
+[gd_scene load_steps=11 format=3 uid="uid://bived31tg1brm"]
 
-[ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/Brother_Older.gd" id="1_7ueab"]
+[ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/3D_Player_Older.gd" id="1_cj4bd"]
+[ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/Older_State_Maching.gd" id="2_epu0y"]
+[ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/Idle.gd" id="3_yk8as"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_klf3k"]
 radius = 0.414385
@@ -28,7 +30,7 @@ albedo_color = Color(0.988235, 0.498039, 0.498039, 1)
 
 [node name="3DPlayerOlder" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03182, 0)
-script = ExtResource("1_7ueab")
+script = ExtResource("1_cj4bd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_klf3k")
@@ -90,3 +92,9 @@ target_position = Vector3(0, 1.8, -1)
 [node name="Chest" type="RayCast3D" parent="PlayerVisual/Rays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.171991, 0)
 target_position = Vector3(0, 0, -0.6)
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_epu0y")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("3_yk8as")
