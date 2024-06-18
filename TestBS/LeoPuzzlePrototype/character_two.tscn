@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://pqhyjjoo1fcs"]
+[gd_scene load_steps=5 format=3 uid="uid://pqhyjjoo1fcs"]
 
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/character.gd" id="1_nw2x1"]
 [ext_resource type="Texture2D" uid="uid://dlx4odth1vk0n" path="res://TestBS/LeoPuzzlePrototype/Assets/_0001_Layer-2.png" id="2_q2u1r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lov0g"]
-size = Vector2(32, 64)
+size = Vector2(32, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6s1v"]
+size = Vector2(31.9493, 1.45874)
 
 [node name="character_one" type="CharacterBody2D" groups=["Can_Press_Buttons", "Player"]]
 z_index = 1
-scale = Vector2(1.00231, 0.990907)
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_nw2x1")
@@ -17,9 +19,18 @@ character_number = 2
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(2.99309, 0)
-scale = Vector2(2.0479, 1.69508)
+position = Vector2(2.76902, 0.603259)
+scale = Vector2(2.02431, 1.66333)
 texture = ExtResource("2_q2u1r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_lov0g")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -32)
+scale = Vector2(0.999999, 1)
+shape = SubResource("RectangleShape2D_q6s1v")

@@ -7,12 +7,21 @@ var reset_position:Vector2
 ## Is the position being reset.
 var reset_state:bool = false
 
+## Is the crate being flipped.
+var being_flipped:bool = false
+
 ## Sets the reset position for the crate.
 func _ready():
 	reset_position = position
 	
 ## Resets crate position if input pressed.
 func _process(delta):
+	if(!being_flipped):
+		if(linear_velocity.y < -1):
+			set_collision_mask_value(2,false)
+		else:
+			set_collision_mask_value(2,true)
+	
 	if(Input.is_action_pressed("ui_crate_reset")):
 		reset_state = true
 
@@ -27,6 +36,7 @@ func _integrate_forces(state):
 
 ## Called when crate is being pulled, moves crate to opposite side of player
 func _pull_crate():
+	being_flipped = true
 	set_collision_layer_value(3,false)
 	set_collision_mask_value(2,false)
 	await get_tree().create_timer(0.14).timeout
@@ -34,4 +44,5 @@ func _pull_crate():
 	await get_tree().create_timer(0.01).timeout
 	set_collision_layer_value(3,true)
 	set_collision_mask_value(2,true)
+	being_flipped = false
 	

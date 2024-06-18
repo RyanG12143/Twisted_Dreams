@@ -28,7 +28,7 @@ animations = [{
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nqm1j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hui82"]
-size = Vector2(16.1556, 63.8222)
+size = Vector2(16, 64)
 
 [node name="Door" type="AnimatedSprite2D"]
 z_index = -1

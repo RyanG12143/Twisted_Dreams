@@ -6,6 +6,8 @@ extends CharacterBody2D
 
 @onready var Sprite:Sprite2D = $Sprite2D
 
+@onready var Area:Area2D = $Area2D
+
 ## Upwards direction.
 const UP:Vector2 = Vector2(0, -1)
 ## The force applied to pushable objects(crates).
@@ -73,26 +75,33 @@ func apply_movement():
 	is_grounded = is_on_floor()
 	if(is_grounded):
 		is_jumping = false
-		
+	
+	for body in Area.get_overlapping_bodies():
+		if body is Crate:
+			if (body.global_position.x <= global_position.x):
+				body.set_deferred("linear_velocity", Vector2(-1.0  * push_force, body.linear_velocity.y))
+			else:
+				body.set_deferred("linear_velocity", Vector2(1.0  * push_force, body.linear_velocity.y))
+	
 	for index in get_slide_collision_count():
 		var collision = get_slide_collision(index)
 		if collision.get_collider() is Crate:
 			var coll:RigidBody2D = collision.get_collider()
-			if ((abs(coll.position.y - position.y) < 10 && character_number == 1) or (abs(coll.position.y - position.y) < 26 && character_number == 2)):
-				if(move_direction != 0 && collision.get_collider().position.y > (position.y - 5)):
+			if ((abs(coll.global_position.y - global_position.y) < 10 && character_number == 1) or (abs(coll.global_position.y - global_position.y) < 26 && character_number == 2)):
+				if(move_direction != 0 && collision.get_collider().global_position.y > (global_position.y - 5)):
 					if(Input.is_action_pressed("crate_pick_up")):
 						coll._pull_crate()
-						if(coll.position.x > position.x):
+						if(coll.global_position.x > global_position.x):
 							coll.set_deferred("linear_velocity", Vector2(-4 * push_force, coll.linear_velocity.y))
 						else:
 							coll.set_deferred("linear_velocity", Vector2(4 * push_force, coll.linear_velocity.y))
 					elif(prev_mov_dir == move_direction):
 						coll.set_deferred("linear_velocity", Vector2(move_direction * push_force, coll.linear_velocity.y))
-			elif(coll.position.y <= position.y):
-				if (coll.position.x <= position.x):
-					coll.set_deferred("linear_velocity", Vector2(-1.0  * push_force, coll.linear_velocity.y))
-				else:
-					coll.set_deferred("linear_velocity", Vector2(1.0  * push_force, coll.linear_velocity.y))
+			#elif(coll.global_position.y <= global_position.y):
+				#if (coll.global_position.x <= global_position.x):
+					#coll.set_deferred("linear_velocity", Vector2(-1.0  * push_force, coll.linear_velocity.y))
+				#else:
+					#coll.set_deferred("linear_velocity", Vector2(1.0  * push_force, coll.linear_velocity.y))
 
 ## Handle movement input.
 func handle_move_input():
@@ -122,3 +131,4 @@ func set_prev_mov_div():
 		prev_mov_dir = move_direction
 		await get_tree().create_timer(0.1).timeout
 		set_pmd_ready = true
+
