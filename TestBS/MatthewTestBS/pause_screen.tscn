@@ -257,7 +257,7 @@ text = "Brightness"
 label_settings = SubResource("LabelSettings_u1dj7")
 metadata/_edit_use_anchors_ = true
 
-[node name="BrightSlider" type="HSlider" parent="VisualMenu"]
+[node name="BrightnessSlider" type="HSlider" parent="VisualMenu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.427951
@@ -270,11 +270,13 @@ metadata/_edit_use_anchors_ = true
 
 [node name="SubtitleToggle" type="CheckButton" parent="VisualMenu"]
 layout_mode = 0
-offset_left = 508.0
-offset_top = 372.0
-offset_right = 624.0
-offset_bottom = 403.0
+anchor_left = 0.440972
+anchor_top = 0.574074
+anchor_right = 0.541667
+anchor_bottom = 0.621914
+offset_bottom = 3.05176e-05
 text = "Subtitles"
+metadata/_edit_use_anchors_ = true
 
 [node name="BackToSettings" type="Button" parent="VisualMenu"]
 layout_mode = 1
@@ -290,11 +292,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="SubtitleSample" type="Label" parent="VisualMenu"]
 layout_mode = 0
-offset_left = 492.0
-offset_top = 413.0
-offset_right = 638.0
-offset_bottom = 436.0
+anchor_left = 0.427083
+anchor_top = 0.637346
+anchor_right = 0.553819
+anchor_bottom = 0.67284
 text = "These are subtitles"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="MainScreen/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MainScreen/Settings" to="." method="_on_settings_pressed"]
