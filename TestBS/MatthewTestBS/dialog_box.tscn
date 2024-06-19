@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1t5prao4ntd5"]
+
+[ext_resource type="Script" path="res://TestBS/MatthewTestBS/dialog_box.gd" id="1_l3rlq"]
+
+[node name="DialogBox" type="Polygon2D"]
+color = Color(0.151276, 0.151276, 0.151276, 1)
+polygon = PackedVector2Array(48, 512, 48, 608, 1104, 608, 1104, 512)
+
+[node name="DialogText" type="RichTextLabel" parent="."]
+offset_left = 80.0
+offset_top = 543.0
+offset_right = 1072.0
+offset_bottom = 591.0
+bbcode_enabled = true
+script = ExtResource("1_l3rlq")
+
+[node name="ScrollingTimer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[connection signal="timeout" from="ScrollingTimer" to="DialogText" method="_on_scrolling_timer_timeout"]
