@@ -1,10 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1t5prao4ntd5"]
+[gd_scene load_steps=6 format=3 uid="uid://c1t5prao4ntd5"]
 
 [ext_resource type="Script" path="res://TestBS/MatthewTestBS/dialog_box.gd" id="1_l3rlq"]
+[ext_resource type="Texture2D" uid="uid://dgt428j75dvlt" path="res://TestBS/LeoPuzzlePrototype/Assets/_0000_Layer-1.png" id="2_f0y1u"]
+[ext_resource type="Texture2D" uid="uid://dlx4odth1vk0n" path="res://TestBS/LeoPuzzlePrototype/Assets/_0001_Layer-2.png" id="3_foc4x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_al8fi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f0y1u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p76jv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_foc4x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="DialogBox" type="Polygon2D"]
+process_mode = 3
 color = Color(0.151276, 0.151276, 0.151276, 1)
 polygon = PackedVector2Array(48, 512, 48, 608, 1104, 608, 1104, 512)
+script = ExtResource("1_l3rlq")
+dialog = Array[String](["This is a dialog box, yeah?", "Damn, that's crazy", "Woah I can't believe it!"])
 
 [node name="DialogText" type="RichTextLabel" parent="."]
 offset_left = 80.0
@@ -12,10 +39,20 @@ offset_top = 543.0
 offset_right = 1072.0
 offset_bottom = 591.0
 bbcode_enabled = true
-script = ExtResource("1_l3rlq")
 
 [node name="ScrollingTimer" type="Timer" parent="."]
 wait_time = 0.05
 autostart = true
 
-[connection signal="timeout" from="ScrollingTimer" to="DialogText" method="_on_scrolling_timer_timeout"]
+[node name="Character1" type="AnimatedSprite2D" parent="."]
+position = Vector2(101.125, 486.283)
+scale = Vector2(3.72826, 3.72826)
+sprite_frames = SubResource("SpriteFrames_al8fi")
+
+[node name="Character2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1058.38, 468.75)
+scale = Vector2(3.61842, 3.61842)
+sprite_frames = SubResource("SpriteFrames_p76jv")
+flip_h = true
+
+[connection signal="timeout" from="ScrollingTimer" to="." method="_on_scrolling_timer_timeout"]
