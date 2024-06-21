@@ -20,11 +20,11 @@ position = Vector2(665, 113)
 position = Vector2(328, 316)
 
 [node name="character_one" parent="." instance=ExtResource("4_j0gww")]
-position = Vector2(428, 134)
+position = Vector2(430, 73)
 collision_mask = 13
 
-[node name="character_one2" parent="." instance=ExtResource("5_gfuy7")]
-position = Vector2(1055, 181)
+[node name="character_two" parent="." instance=ExtResource("5_gfuy7")]
+position = Vector2(806, 83)
 
 [node name="Luminous_Crate" parent="." instance=ExtResource("5_48ade")]
-position = Vector2(827, 133)
+position = Vector2(945, 114)

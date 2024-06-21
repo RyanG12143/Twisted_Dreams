@@ -14,6 +14,8 @@ const GRAVITY:float = 1200
 ## [br]
 ## Does not handle flying
 @export var grounded:bool = true
+## (DEV TOOL) Disable proccessing of node.
+@export var disabled:bool = false
 
 ## Closest of the objects in targets
 var target:CharacterBody2D
@@ -31,13 +33,11 @@ var is_facing_right:bool = true
 
 
 func _ready():
-	pass
+	if disabled:
+		process_mode = Node.PROCESS_MODE_DISABLED
 
 
 func _physics_process(delta):
-	
-	#print(state_machine.current_state.name)
-	#print(targets)
 	
 	if state_machine.current_state:
 		state_machine.current_state.physics_update(self, delta)
@@ -56,6 +56,9 @@ func _physics_process(delta):
 		elif not is_facing_right and velocity.x > 0:
 			is_facing_right = true
 			$MeshInstance2D.scale.x = -$MeshInstance2D.scale.x
+			
+	#var print_string = "%s %s %s %s %s %s " % [name, state_machine.current_state.name, velocity, targets, target, is_facing_right]
+	#print(print_string)
 
 
 func _process(delta):
@@ -70,6 +73,7 @@ func _on_detection_radius_body_entered(body):
 		if not target_rays.has(body):
 			var ray:RayCast2D = RayCast2D.new()
 			ray.set_collision_mask_value(2, true)
+			ray.hit_from_inside = true
 			add_child(ray)
 			target_rays[body] = ray
 

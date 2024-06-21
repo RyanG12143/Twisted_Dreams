@@ -42,6 +42,7 @@ func update(body:CharacterBody2D, delta:float):
 		return
 	
 	body.target = valid_targets[0]
+	print(valid_targets)
 	if valid_targets.size() > 1:
 		for target in valid_targets:
 			var body_dist_target = body.global_position.distance_to(target.global_position)
