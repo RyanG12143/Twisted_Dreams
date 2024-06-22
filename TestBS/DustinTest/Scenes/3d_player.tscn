@@ -132,6 +132,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 1.167, -0.4)
 target_position = Vector3(0, 0, -0.285)
 collision_mask = 2
 
+[node name="PlayerNormal" type="RayCast3D" parent="PlayerVisual/Rays"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+target_position = Vector3(0, 0, -1)
+collision_mask = 2
+
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_8sine")
 initial_state = NodePath("Older_Idle")

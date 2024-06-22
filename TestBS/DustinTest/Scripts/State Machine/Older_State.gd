@@ -10,6 +10,7 @@ signal Transitioned
 @onready var chest_rays = %ChestRays
 @onready var ledge_height = %LedgeHeight
 @onready var lip_rays = %LipRays
+@onready var player_normal = %PlayerNormal
 
 @export var older_brother: Node3D
 
@@ -52,8 +53,10 @@ func Physics_Update(delta: float):
 	# Add gravity.
 	if !older_brother.is_on_floor() and enable_gravity:
 		older_brother.velocity.y -= gravity * delta
-	#print(ledge_height.to_local(ledge_height.get_collision_point()).y)
-
+	
+	if ledge_height.is_colliding():
+		player_normal.global_transform.origin.y = ledge_height.get_collision_point().y - 0.01
+		
 func _process(delta):
 	var fps = Engine.get_frames_per_second()
 	var lerp_interval = velocity_move / fps
