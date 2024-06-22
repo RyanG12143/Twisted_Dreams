@@ -103,40 +103,40 @@ target_position = Vector3(0, 0, -0.6)
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_8sine")
-initial_state = NodePath("Idle")
+initial_state = NodePath("Older_Idle")
 
-[node name="Idle" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
+[node name="Older_Idle" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
 script = ExtResource("3_1t0pm")
 older_brother = NodePath("../..")
 
-[node name="Walk" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
+[node name="Older_Walk" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
 script = ExtResource("4_3isag")
 older_brother = NodePath("../..")
 
-[node name="Run" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
+[node name="Older_Run" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
 script = ExtResource("5_ys415")
 older_brother = NodePath("../..")
 
-[node name="Jump" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
+[node name="Older_Jump" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
 script = ExtResource("6_8fvkl")
 older_brother = NodePath("../..")
 
-[node name="Grab" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
-script = ExtResource("7_aoyii")
-older_brother = NodePath("../..")
-
-[node name="Hang" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
-script = ExtResource("8_4pkva")
-older_brother = NodePath("../..")
-
-[node name="Fall" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
+[node name="Older_Fall" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
 script = ExtResource("11_b11tn")
 older_brother = NodePath("../..")
 
-[node name="Shimmy" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
-script = ExtResource("10_t0yyg")
+[node name="Older_Grab" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
+script = ExtResource("7_aoyii")
 older_brother = NodePath("../..")
 
-[node name="Climb" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
+[node name="Older_Hang" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
+script = ExtResource("8_4pkva")
+older_brother = NodePath("../..")
+
+[node name="Older_Climb" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
 script = ExtResource("4_ds08o")
+older_brother = NodePath("../..")
+
+[node name="Older_Shimmy" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
+script = ExtResource("10_t0yyg")
 older_brother = NodePath("../..")

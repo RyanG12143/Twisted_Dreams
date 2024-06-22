@@ -25,7 +25,8 @@ func Enter():
 func Update(delta: float):
 	pass
 
-func Physics_Update(_delta: float):
+func Physics_Update(delta: float):
+	super(delta)
 	if not movement_enabled: return
 	
 
@@ -33,4 +34,4 @@ func Physics_Update(_delta: float):
 		#Transitioned.emit(self, "Run")
 
 func _process(delta):
-	pass
+	super(delta)

@@ -84,10 +84,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05988, 1.09239, -6.58832)
 use_collision = true
 size = Vector3(1, 2.17798, 1)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Meshes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.52425, 1.21786, -6.60395)
+[node name="CSGBox3D18" type="CSGBox3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9798, 0.954637, -6.38031)
 use_collision = true
-size = Vector3(1, 2.43037, 1)
+size = Vector3(5.06006, 1.90392, 2.22803)
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4131, 2.88484, -6.38031)
+use_collision = true
+size = Vector3(1.92676, 1.41843, 2.22803)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="Meshes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.90149, 1.33055, -6.60395)

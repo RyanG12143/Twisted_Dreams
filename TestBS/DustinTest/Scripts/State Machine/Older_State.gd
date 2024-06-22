@@ -18,8 +18,8 @@ var can_turn: bool = true
 
 @export var walk_speed: float = 2.5
 @export var run_speed: float = 4.0
-@export var movement_speed: float
-@export var JUMP_VELOCITY: float = 10.0
+@export var movement_speed: float = walk_speed
+@export var JUMP_VELOCITY: float = 4.0
 @export var enable_gravity = true
 
 @onready var _player_visual: Node = $"."
@@ -45,7 +45,7 @@ func Update(_delta: float):
 	
 func Physics_Update(delta: float):
 	# Add gravity.
-	if older_brother.is_on_floor():
+	if !older_brother.is_on_floor() and enable_gravity:
 		older_brother.velocity.y -= gravity * delta
 	
 func _process(delta):
