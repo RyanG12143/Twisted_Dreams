@@ -71,7 +71,7 @@ func _physics_process(delta):
 	if Input.is_action_just_released("3Dzoom_in") && _player_pcam.get_spring_length() > 1.5:
 		_player_pcam.set_spring_length(_player_pcam.get_spring_length() - 0.2)
 
-	if Input.is_action_just_released("3Dzoom_out") && _player_pcam.get_spring_length() < 5:
+	if Input.is_action_just_released("3Dzoom_out") && _player_pcam.get_spring_length() < 20:
 		_player_pcam.set_spring_length(_player_pcam.get_spring_length() + 0.2)
 
 	
