@@ -3,13 +3,14 @@ class_name Older_Hang
 
 func Enter():
 	enable_gravity = false
-	older_brother.velocity = Vector3.ZERO
+	
 
 func Update(delta: float):
 	pass
 
 func Physics_Update(delta: float):
 	super(delta)
+	older_brother.velocity = Vector3.ZERO
 	if Input.is_action_pressed("3Djump")  and can_climb():
 		Transitioned.emit(self, "Older_Climb")
 		

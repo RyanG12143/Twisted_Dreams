@@ -4,7 +4,7 @@ class_name Older_Grab
 func Enter():
 	enable_gravity = false
 	older_brother.velocity = Vector3.ZERO
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(0.5).timeout
 	Transitioned.emit(self, "Older_Hang")
 
 func Update(delta: float):

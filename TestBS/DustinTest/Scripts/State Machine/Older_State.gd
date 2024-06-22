@@ -6,6 +6,9 @@ signal Transitioned
 # Raycasting
 @onready var chest_ray = %Chest
 @onready var head_climb_rays = %HeadClimbRays
+@onready var lip = %Lip
+@onready var ledge = %Ledge
+@onready var chest = %Chest
 
 @export var older_brother: Node3D
 
@@ -18,6 +21,7 @@ var can_turn: bool = true
 
 @export var walk_speed: float = 2.5
 @export var run_speed: float = 4.0
+@export var strafe_speed: float = 1.0
 @export var movement_speed: float = walk_speed
 @export var JUMP_VELOCITY: float = 4.0
 @export var enable_gravity = true
@@ -62,9 +66,15 @@ func _process(delta):
 
 # Climbing functions
 func can_climb():
-	if !chest_ray.is_colliding():
-		return false
 	for ray in head_climb_rays.get_children():
 		if ray.is_colliding():
 			return false
 	return true
+	
+# Climbing functions
+func can_grab():
+	if lip.is_colliding() and not ledge.is_colliding():
+		return true
+	if chest.is_colliding():
+		return true
+	return false

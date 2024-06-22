@@ -20,7 +20,7 @@ func Physics_Update(delta: float):
 	
 	# setting the look direction
 	var testVelocity: Vector3 = Vector3(older_brother.velocity.x, 0, older_brother.velocity.z)
-	if testVelocity.length() > 0.2 and !chest_ray.is_colliding() and can_turn:
+	if testVelocity.length() > 0.2 and can_turn:
 		var look_direction: Vector2 = -Vector2(older_brother.velocity.z, older_brother.velocity.x)
 		older_brother._player_direction.rotation.y = look_direction.angle()
 	

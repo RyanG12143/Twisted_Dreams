@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bived31tg1brm"]
+[gd_scene load_steps=17 format=3 uid="uid://bived31tg1brm"]
 
 [ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/Brother_Older.gd" id="1_7ueab"]
 [ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/State Machine/State_Machine_Older.gd" id="2_8sine"]
@@ -13,8 +13,8 @@
 [ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/State Machine/Older_Fall.gd" id="11_b11tn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_klf3k"]
-radius = 0.414385
-height = 1.7057
+radius = 0.4
+height = 1.7
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3tsmo"]
 albedo_color = Color(0.65098, 1, 1, 1)
@@ -29,12 +29,6 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_1q8vp"]
 material = SubResource("StandardMaterial3D_2mlbu")
-
-[sub_resource type="PrismMesh" id="PrismMesh_pkiyi"]
-size = Vector3(0.2, 0.5, 0.1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_titu6"]
-albedo_color = Color(0.988235, 0.498039, 0.498039, 1)
 
 [node name="3DPlayerOlder" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03182, 0)
@@ -58,13 +52,6 @@ mesh = SubResource("SphereMesh_1q8vp")
 transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0.222, 0.444455, -0.359777)
 mesh = SubResource("SphereMesh_1q8vp")
 
-[node name="PlayerDirection" type="MeshInstance3D" parent="PlayerVisual"]
-unique_name_in_owner = true
-transform = Transform3D(-1, -8.72949e-08, -4.72772e-09, 0, 0.0540789, -0.998537, 8.74228e-08, -0.998537, -0.0540789, -0.000458195, 1.08631, -0.365181)
-mesh = SubResource("PrismMesh_pkiyi")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_titu6")
-
 [node name="Rays" type="Node3D" parent="PlayerVisual"]
 unique_name_in_owner = true
 
@@ -73,33 +60,43 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57202, 0)
 
 [node name="Head" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.45, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.670131, 0)
 target_position = Vector3(0, 0, -1)
 
 [node name="Head2" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.670131, 0)
 target_position = Vector3(0, 0, -1)
 
 [node name="Head3" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.45, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.670131, 0)
 target_position = Vector3(0, 0, -1)
 
 [node name="Head4" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.670131, 0)
 target_position = Vector3(0, 1.8, -1)
 
 [node name="Head5" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.45, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.670131, 0)
 target_position = Vector3(0, 1.8, -1)
 
 [node name="Head6" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.45, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.670131, 0)
 target_position = Vector3(0, 1.8, -1)
 
 [node name="Chest" type="RayCast3D" parent="PlayerVisual/Rays"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.171991, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101239, 0)
 target_position = Vector3(0, 0, -0.6)
+
+[node name="Ledge" type="RayCast3D" parent="PlayerVisual/Rays"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24393, 0)
+target_position = Vector3(0, 0, -0.6)
+
+[node name="Lip" type="RayCast3D" parent="PlayerVisual/Rays"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16685, 0)
+target_position = Vector3(0, 0, -0.45)
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_8sine")
