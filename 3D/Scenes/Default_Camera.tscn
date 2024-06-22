@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://cy6esb5obqvo1"]
+
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="1_37uwm"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="2_hxkpb"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="3_tuw2l"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_bcb5r"]
+
+[sub_resource type="Resource" id="Resource_yrm47"]
+script = ExtResource("2_hxkpb")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="Resource" id="Resource_3lmts"]
+script = ExtResource("3_tuw2l")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[node name="DefaultCamera" type="Node3D"]
+editor_description = "DO NOT PLACE IN SCENE
+COPY PASTE CHILDREN"
+
+[node name="PhantomCamera3D" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 0, 1.19707, 3.28892)
+script = ExtResource("1_37uwm")
+priority = 10
+follow_mode = 6
+tween_resource = SubResource("Resource_yrm47")
+camera_3d_resource = SubResource("Resource_3lmts")
+follow_damping = true
+follow_distance = 3.5
+spring_length = 3.5
+collision_mask = 2
+
+[node name="MainCamera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 0, 1.19707, 3.28892)
+
+[node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
+script = ExtResource("4_bcb5r")

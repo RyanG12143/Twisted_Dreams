@@ -4,10 +4,11 @@ class_name Older_Grab
 func Enter():
 	enable_gravity = false
 	older_brother.velocity = Vector3.ZERO
-	await get_tree().create_timer(0.5).timeout
-	Transitioned.emit(self, "Older_Hang")
 	# Facing wall normal
 	mesh.rotation.y = -(atan2(player_normal.get_collision_normal().z, player_normal.get_collision_normal().x) - PI/2)
+	await get_tree().create_timer(0.5).timeout
+	Transitioned.emit(self, "Older_Hang")
+	
 
 func Update(delta: float):
 	pass

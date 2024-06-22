@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://deevgd82j1vg3"]
 
-[ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/Level_Select.gd" id="1_eq2sd"]
+[ext_resource type="Script" path="res://3D/Scripts/Level_Select.gd" id="1_eq2sd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8eq6s"]
 font_size = 50

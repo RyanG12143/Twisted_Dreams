@@ -1,27 +1,26 @@
 [gd_scene load_steps=14 format=3 uid="uid://bived31tg1brm"]
 
-[ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/Brother_Older.gd" id="1_7ueab"]
-[ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/State Machine/State_Machine_Older.gd" id="2_8sine"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_Brother.gd" id="1_65cqd"]
 [ext_resource type="PackedScene" uid="uid://bdybpifdrhrvm" path="res://3D/Assets/Characters/OlderSibling_Placeholder.glb" id="2_sc4yj"]
-[ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/State Machine/Older_Idle.gd" id="3_1t0pm"]
-[ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/State Machine/Older_Walk.gd" id="4_3isag"]
-[ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/State Machine/Older_Climb.gd" id="4_ds08o"]
-[ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/State Machine/Older_Run.gd" id="5_ys415"]
-[ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/State Machine/Older_Jump.gd" id="6_8fvkl"]
-[ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/State Machine/Older_Grab.gd" id="7_aoyii"]
-[ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/State Machine/Older_Hang.gd" id="8_4pkva"]
-[ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/State Machine/Older_Shimmy.gd" id="10_t0yyg"]
-[ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/State Machine/Older_Fall.gd" id="11_b11tn"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/State_Machine_Older.gd" id="3_bjnb2"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Idle.gd" id="4_ford2"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Walk.gd" id="5_xjdr7"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Run.gd" id="6_dh2d4"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Jump.gd" id="7_1pd3o"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Fall.gd" id="8_cbfxk"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Grab.gd" id="9_okwd0"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Hang.gd" id="10_mv7p7"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Climb.gd" id="11_t04ax"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Shimmy.gd" id="12_wnlxi"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_klf3k"]
 radius = 0.308549
 height = 1.7
 
-[node name="3DPlayerOlder" type="CharacterBody3D"]
+[node name="OlderBrother" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03182, 0)
-collision_layer = 5
 collision_mask = 7
-script = ExtResource("1_7ueab")
+script = ExtResource("1_65cqd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.153533, 0)
@@ -139,41 +138,41 @@ target_position = Vector3(0, 0, -1)
 collision_mask = 2
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
-script = ExtResource("2_8sine")
+script = ExtResource("3_bjnb2")
 initial_state = NodePath("Older_Idle")
 
 [node name="Older_Idle" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
-script = ExtResource("3_1t0pm")
+script = ExtResource("4_ford2")
 older_brother = NodePath("../..")
 
 [node name="Older_Walk" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
-script = ExtResource("4_3isag")
+script = ExtResource("5_xjdr7")
 older_brother = NodePath("../..")
 
 [node name="Older_Run" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
-script = ExtResource("5_ys415")
+script = ExtResource("6_dh2d4")
 older_brother = NodePath("../..")
 
 [node name="Older_Jump" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
-script = ExtResource("6_8fvkl")
+script = ExtResource("7_1pd3o")
 older_brother = NodePath("../..")
 
 [node name="Older_Fall" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
-script = ExtResource("11_b11tn")
+script = ExtResource("8_cbfxk")
 older_brother = NodePath("../..")
 
 [node name="Older_Grab" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
-script = ExtResource("7_aoyii")
+script = ExtResource("9_okwd0")
 older_brother = NodePath("../..")
 
 [node name="Older_Hang" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
-script = ExtResource("8_4pkva")
+script = ExtResource("10_mv7p7")
 older_brother = NodePath("../..")
 
 [node name="Older_Climb" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
-script = ExtResource("4_ds08o")
+script = ExtResource("11_t04ax")
 older_brother = NodePath("../..")
 
 [node name="Older_Shimmy" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
-script = ExtResource("10_t0yyg")
+script = ExtResource("12_wnlxi")
 older_brother = NodePath("../..")
