@@ -23,6 +23,11 @@ func Physics_Update(delta: float):
 	
 	velocity_move = lerp(older_brother.velocity, -move_dir * movement_speed, delta * acceleration)
 	
+	#Unsure?
+	#var wall_norm = ledge_height.get_collision_normal()
+	#var forward = older_brother.velocity + older_brother.global_position
+	#older_brother.look_at(forward, wall_norm)
+	
 	older_brother.velocity = velocity_move
 
 func _process(delta):

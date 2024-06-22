@@ -6,9 +6,10 @@ signal Transitioned
 # Raycasting
 @onready var chest_ray = %Chest
 @onready var head_climb_rays = %HeadClimbRays
-@onready var lip = %Lip
-@onready var ledge = %Ledge
-@onready var chest = %Chest
+@onready var ledge_rays = %LedgeRays
+@onready var chest_rays = %ChestRays
+@onready var ledge_height = %LedgeHeight
+@onready var lip_rays = %LipRays
 
 @export var older_brother: Node3D
 
@@ -23,7 +24,7 @@ var can_turn: bool = true
 @export var run_speed: float = 4.0
 @export var strafe_speed: float = 1.0
 @export var movement_speed: float = walk_speed
-@export var JUMP_VELOCITY: float = 4.0
+@export var JUMP_VELOCITY: float = 4.5
 @export var enable_gravity = true
 
 @onready var _player_visual: Node = $"."
@@ -51,11 +52,13 @@ func Physics_Update(delta: float):
 	# Add gravity.
 	if !older_brother.is_on_floor() and enable_gravity:
 		older_brother.velocity.y -= gravity * delta
-	
+	#print(ledge_height.to_local(ledge_height.get_collision_point()).y)
+
 func _process(delta):
 	var fps = Engine.get_frames_per_second()
 	var lerp_interval = velocity_move / fps
 	var lerp_position = older_brother.global_transform.origin + lerp_interval
+	
 	
 	if fps > 60:
 		mesh.top_level = true
@@ -70,11 +73,20 @@ func can_climb():
 		if ray.is_colliding():
 			return false
 	return true
-	
-# Climbing functions
+
 func can_grab():
-	if lip.is_colliding() and not ledge.is_colliding():
-		return true
-	if chest.is_colliding():
+	var lips_colliding
+	for lip_ray in lip_rays.get_children():
+		if not lip_ray.is_colliding():
+			lips_colliding = false
+	if lips_colliding != false:
+		for ledge_ray in ledge_rays.get_children():
+			if not ledge_ray.is_colliding():
+				return true
+	for chest_ray in chest_rays.get_children():
+		if not chest_ray.is_colliding():
+			return false
+	if ledge_height.is_colliding() and ledge_height.get_collision_point().y != 0:
 		return true
 	return false
+

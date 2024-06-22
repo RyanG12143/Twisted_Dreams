@@ -55,6 +55,21 @@ mesh = SubResource("SphereMesh_1q8vp")
 [node name="Rays" type="Node3D" parent="PlayerVisual"]
 unique_name_in_owner = true
 
+[node name="ChestRays" type="Node3D" parent="PlayerVisual/Rays"]
+unique_name_in_owner = true
+
+[node name="Chest" type="RayCast3D" parent="PlayerVisual/Rays/ChestRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.240832, 0)
+target_position = Vector3(0, 0, -0.6)
+
+[node name="Chest2" type="RayCast3D" parent="PlayerVisual/Rays/ChestRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.241, 0)
+target_position = Vector3(0, 0, -0.6)
+
+[node name="Chest3" type="RayCast3D" parent="PlayerVisual/Rays/ChestRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.241, 0)
+target_position = Vector3(0, 0, -0.6)
+
 [node name="HeadClimbRays" type="Node3D" parent="PlayerVisual/Rays"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57202, 0)
@@ -83,20 +98,39 @@ target_position = Vector3(0, 1.8, -1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.670131, 0)
 target_position = Vector3(0, 1.8, -1)
 
-[node name="Chest" type="RayCast3D" parent="PlayerVisual/Rays"]
+[node name="LedgeHeight" type="RayCast3D" parent="PlayerVisual/Rays"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101239, 0)
-target_position = Vector3(0, 0, -0.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00109506, 1.23668, -0.685304)
 
-[node name="Ledge" type="RayCast3D" parent="PlayerVisual/Rays"]
+[node name="LedgeRays" type="Node3D" parent="PlayerVisual/Rays"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24393, 0)
-target_position = Vector3(0, 0, -0.6)
 
-[node name="Lip" type="RayCast3D" parent="PlayerVisual/Rays"]
+[node name="Ledge" type="RayCast3D" parent="PlayerVisual/Rays/LedgeRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.244, -0.4)
+target_position = Vector3(0, 0, -0.425)
+
+[node name="Ledge2" type="RayCast3D" parent="PlayerVisual/Rays/LedgeRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.244, -0.4)
+target_position = Vector3(0, 0, -0.425)
+
+[node name="Ledge3" type="RayCast3D" parent="PlayerVisual/Rays/LedgeRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 1.244, -0.4)
+target_position = Vector3(0, 0, -0.425)
+
+[node name="LipRays" type="Node3D" parent="PlayerVisual/Rays"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16685, 0)
-target_position = Vector3(0, 0, -0.45)
+
+[node name="Lip" type="RayCast3D" parent="PlayerVisual/Rays/LipRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.167, -0.4)
+target_position = Vector3(0, 0, -0.285)
+
+[node name="Lip2" type="RayCast3D" parent="PlayerVisual/Rays/LipRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.167, -0.4)
+target_position = Vector3(0, 0, -0.285)
+
+[node name="Lip3" type="RayCast3D" parent="PlayerVisual/Rays/LipRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 1.167, -0.4)
+target_position = Vector3(0, 0, -0.285)
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_8sine")
