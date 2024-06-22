@@ -7,9 +7,9 @@ func Enter():
 	can_jump = false
 	var v_move_time = 1
 	var h_move_time = 0.4
-	var vertical_movement = older_brother.global_transform.origin + Vector3(0, ledge_height.to_local(ledge_height.get_collision_point()).y + 2.1, 0)
+	var vertical_movement = older_brother.global_transform.origin + Vector3(0, ledge_height.to_local(ledge_height.get_collision_point()).y + 1.8, 0)
 	var forward_movement = older_brother.global_transform.origin + (-older_brother._player_direction.global_transform.basis.z * 1.2)
-	forward_movement.y += ledge_height.to_local(ledge_height.get_collision_point()).y + 2.1
+	forward_movement.y += ledge_height.to_local(ledge_height.get_collision_point()).y + 1.8
 	
 	var tween = create_tween()
 	tween.tween_property(older_brother, "global_position", vertical_movement, v_move_time).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)

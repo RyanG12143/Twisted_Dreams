@@ -24,7 +24,7 @@ var can_turn: bool = true
 @export var run_speed: float = 4.0
 @export var strafe_speed: float = 1.0
 @export var movement_speed: float = walk_speed
-@export var JUMP_VELOCITY: float = 4.5
+@export var JUMP_VELOCITY: float = 4.7
 @export var enable_gravity = true
 
 @onready var _player_visual: Node = $"."
