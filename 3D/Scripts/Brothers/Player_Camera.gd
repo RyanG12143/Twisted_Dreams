@@ -1,5 +1,5 @@
 extends CharacterBody3D
-class_name Brother_Older
+class_name Player_Camera
 
 @export var mouse_sensitivity: float = 0.05
 
@@ -25,7 +25,7 @@ func _ready():
 	_camera = owner.get_node("%MainCamera3D")
 	_player_visual.top_level = true
 	
-	_player_pcam = get_node("../PhantomCamera3D")
+	_player_pcam = owner.get_node("%PhantomCamera3D")
 	if _player_pcam.get_follow_mode() == _player_pcam.FollowMode.THIRD_PERSON:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -67,6 +67,14 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("escape"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		get_tree().change_scene_to_file("res://TestBS/DustinTest/Scenes/TitleScreen.tscn")
+	
+	if Input.is_action_just_released("3Dzoom_in") && _player_pcam.get_spring_length() > 1.5:
+		_player_pcam.set_spring_length(_player_pcam.get_spring_length() - 0.2)
+
+	if Input.is_action_just_released("3Dzoom_out") && _player_pcam.get_spring_length() < 20:
+		_player_pcam.set_spring_length(_player_pcam.get_spring_length() + 0.2)
+
+	
 	
 	move_and_slide()
 

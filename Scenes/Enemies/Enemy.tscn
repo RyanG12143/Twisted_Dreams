@@ -1,12 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://yt3boj0lw4yf"]
+[gd_scene load_steps=14 format=3 uid="uid://yt3boj0lw4yf"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Enemy.gd" id="1_pbbsk"]
-[ext_resource type="Script" path="res://Scripts/Enemies/State_Machine.gd" id="2_gbq0s"]
+[ext_resource type="Script" path="res://Scripts/Enemies/Enemy_State_Machine.gd" id="2_gbq0s"]
 [ext_resource type="Script" path="res://Scripts/Enemies/States/Follow_State.gd" id="3_bma5r"]
 [ext_resource type="Script" path="res://Scripts/Enemies/States/Idle_State.gd" id="4_2egie"]
 [ext_resource type="Script" path="res://Scripts/Enemies/States/Roaming_State.gd" id="5_4yl3q"]
 [ext_resource type="Script" path="res://Scripts/Enemies/States/Charging_State.gd" id="6_5iv2v"]
 [ext_resource type="Script" path="res://Scripts/Enemies/States/Charge_Prep_State.gd" id="7_654hi"]
+[ext_resource type="Script" path="res://Scripts/Enemies/States/Weeping_State.gd" id="8_regu1"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_lm62n"]
 
@@ -63,8 +64,8 @@ target_position = Vector2(0, 19)
 hit_from_inside = true
 
 [node name="Ray_Cast_Side_Right" type="RayCast2D" parent="."]
-position = Vector2(8, 0)
-target_position = Vector2(4, 0)
+position = Vector2(7, 0)
+target_position = Vector2(5, 0)
 hit_from_inside = true
 
 [node name="Ray_Cast_Down_Left" type="RayCast2D" parent="."]
@@ -73,37 +74,40 @@ target_position = Vector2(0, 19)
 hit_from_inside = true
 
 [node name="Ray_Cast_Side_Left" type="RayCast2D" parent="."]
-position = Vector2(-8, 0)
-target_position = Vector2(-4, 0)
+position = Vector2(-7, 0)
+target_position = Vector2(-5, 0)
 hit_from_inside = true
 
-[node name="State_Machine" type="Node" parent="." node_paths=PackedStringArray("character_body", "default_state")]
+[node name="Enemy_State_Machine" type="Node" parent="." node_paths=PackedStringArray("character_body", "default_state")]
 script = ExtResource("2_gbq0s")
 character_body = NodePath("..")
 default_state = NodePath("Follow")
 
-[node name="Follow" type="Node" parent="State_Machine" node_paths=PackedStringArray("ray_cast_down_right", "ray_cast_down_left")]
+[node name="Follow" type="Node" parent="Enemy_State_Machine" node_paths=PackedStringArray("ray_cast_down_right", "ray_cast_down_left")]
 script = ExtResource("3_bma5r")
 ray_cast_down_right = NodePath("../../Ray_Cast_Down_Right")
 ray_cast_down_left = NodePath("../../Ray_Cast_Down_Left")
 
-[node name="Idle" type="Node" parent="State_Machine"]
+[node name="Idle" type="Node" parent="Enemy_State_Machine"]
 script = ExtResource("4_2egie")
 
-[node name="Roaming" type="Node" parent="State_Machine" node_paths=PackedStringArray("ray_cast_down_right", "ray_cast_side_right", "ray_cast_down_left", "ray_cast_side_left")]
+[node name="Roaming" type="Node" parent="Enemy_State_Machine" node_paths=PackedStringArray("ray_cast_down_right", "ray_cast_side_right", "ray_cast_down_left", "ray_cast_side_left")]
 script = ExtResource("5_4yl3q")
 ray_cast_down_right = NodePath("../../Ray_Cast_Down_Right")
 ray_cast_side_right = NodePath("../../Ray_Cast_Side_Right")
 ray_cast_down_left = NodePath("../../Ray_Cast_Down_Left")
 ray_cast_side_left = NodePath("../../Ray_Cast_Side_Left")
 
-[node name="Charging" type="Node" parent="State_Machine" node_paths=PackedStringArray("ray_cast_down_right", "ray_cast_down_left")]
+[node name="Charging" type="Node" parent="Enemy_State_Machine" node_paths=PackedStringArray("ray_cast_down_right", "ray_cast_down_left")]
 script = ExtResource("6_5iv2v")
 ray_cast_down_right = NodePath("../../Ray_Cast_Down_Right")
 ray_cast_down_left = NodePath("../../Ray_Cast_Down_Left")
 
-[node name="Charge_Prep" type="Node" parent="State_Machine"]
+[node name="Charge_Prep" type="Node" parent="Enemy_State_Machine"]
 script = ExtResource("7_654hi")
+
+[node name="Weeping" type="Node" parent="Enemy_State_Machine"]
+script = ExtResource("8_regu1")
 
 [connection signal="path_changed" from="NavigationAgent2D" to="." method="_path_changed"]
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_target_reached"]

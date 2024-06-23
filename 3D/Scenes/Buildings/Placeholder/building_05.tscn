@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://e3u4j2qms6n4"]
+
+[ext_resource type="PackedScene" uid="uid://cpdoyo0mddsun" path="res://3D/Assets/Buildings/Placeholder/Building05_Placeholder.glb" id="1_wopyf"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4xvpv"]
+data = PackedVector3Array(-1, -5.8504, 1, -1, 5.8504, -1, -1, 5.8504, 1, -1, -5.8504, 1, -1, -5.8504, -1, -1, 5.8504, -1, -1, -5.8504, -1, 1, 5.8504, -1, -1, 5.8504, -1, -1, -5.8504, -1, 1, -5.8504, -1, 1, 5.8504, -1, 1, -5.8504, -1, 1, 5.8504, 1, 1, 5.8504, -1, 1, -5.8504, -1, 1, -5.8504, 1, 1, 5.8504, 1, 1, -5.8504, 1, -1, 5.8504, 1, 1, 5.8504, 1, 1, -5.8504, 1, -1, -5.8504, 1, -1, 5.8504, 1, -1, -5.8504, -1, 1, -5.8504, 1, 1, -5.8504, -1, -1, -5.8504, -1, -1, -5.8504, 1, 1, -5.8504, 1, 1, 5.8504, -1, -1, 5.8504, 1, -1, 5.8504, -1, 1, 5.8504, -1, 1, 5.8504, 1, -1, 5.8504, 1)
+
+[node name="Building05_Placeholder" instance=ExtResource("1_wopyf")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Building05" index="0"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Building05/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_4xvpv")

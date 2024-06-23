@@ -42,7 +42,6 @@ func update(body:CharacterBody2D, delta:float):
 		return
 	
 	body.target = valid_targets[0]
-	print(valid_targets)
 	if valid_targets.size() > 1:
 		for target in valid_targets:
 			var body_dist_target = body.global_position.distance_to(target.global_position)
@@ -51,8 +50,22 @@ func update(body:CharacterBody2D, delta:float):
 			if body_dist_target < body_dist_curr_target:
 				body.target = target
 	
-	var charge_radius:Area2D = body.get_node("Charge_Radius")
+	if body.charging:
+		var charge_radius:Area2D = body.get_node("Charge_Radius")
+		
+		if charge_radius.get_overlapping_bodies().has(body.target):
+			emit_signal("transitioned", self, "Charge_Prep")
 	
-	if charge_radius.get_overlapping_bodies().has(body.target):
-		emit_signal("transitioned", self, "Charge_Prep")
+	if body.weeping:
+		
+		for target in body.targets:
+			body.target_rays[target].target_position = target.global_position - body.target_rays[target].global_position
+			if body.target_rays[target].get_collider() == target:
+				var direction:Vector2 = body.global_position.direction_to(target.global_position)
+				
+				if direction.x > 0 and not target.is_facing_right:
+					emit_signal("transitioned", self, "Weeping")
+				elif direction.x < 0 and target.is_facing_right:
+					emit_signal("transitioned", self, "Weeping")
+
 

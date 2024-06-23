@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://byyrt61qbinbu"]
 
 [ext_resource type="Script" path="res://TestBS/DustinTest/Scripts/GrayboxingTest.gd" id="1_hcxgs"]
-[ext_resource type="PackedScene" uid="uid://bived31tg1brm" path="res://TestBS/DustinTest/Scenes/3d_player.tscn" id="2_kwqkl"]
+[ext_resource type="PackedScene" uid="uid://bived31tg1brm" path="res://3D/Scenes/Brothers/Brother_Older.tscn" id="2_kwqkl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b3nko"]
 sky_top_color = Color(0.364013, 0.451352, 0.597576, 1)

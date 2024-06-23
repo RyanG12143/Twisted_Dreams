@@ -63,12 +63,12 @@ func _process(delta):
 	var lerp_position = older_brother.global_transform.origin + lerp_interval
 	
 	
-	if fps > 60:
-		mesh.top_level = true
-		mesh.global_transform.origin = mesh.global_transform.origin.lerp(lerp_position, 20 * delta)
-	else:
-		mesh.global_transform = older_brother.global_transform
-		mesh.top_level = false
+	#if fps > 60:
+		#mesh.top_level = true
+		#mesh.global_transform.origin = mesh.global_transform.origin.lerp(lerp_position, 20 * delta)
+	#else:
+		#mesh.global_transform = older_brother.global_transform
+		#mesh.top_level = false
 
 # Climbing functions
 func can_climb():
