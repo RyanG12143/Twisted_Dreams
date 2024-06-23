@@ -35,4 +35,5 @@ func update(body:CharacterBody2D, delta:float):
 		body.target_rays[target].target_position = target.global_position - body.target_rays[target].global_position
 		if body.target_rays[target].get_collider() == target:
 			emit_signal("transitioned", self, "Follow")
+			return
 	

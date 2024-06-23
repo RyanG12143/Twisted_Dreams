@@ -10,10 +10,16 @@ const GRAVITY:float = 1200
 @export var SPEED:float = 5000.0
 ## If enabled enemy roams when player is not in range
 @export var roaming:bool = true
-## If eneabled enemy will not leave platform
+## If enabled enemy will not leave platform
 ## [br]
 ## Does not handle flying
 @export var grounded:bool = true
+## If enabled enemy charges at character, after a short pause, when the character is inside the charge radius
+@export var charging:bool = true
+## If enabled the enemy will freeze when looked at
+## [br][br]
+## (Does not freeze charging)
+@export var weeping:bool = false
 ## (DEV TOOL) Disable proccessing of node.
 @export var disabled:bool = false
 
@@ -27,7 +33,7 @@ var target_rays:Dictionary = {}
 var is_facing_right:bool = true
 
 ## Enemy state machine which handles switching of states
-@onready var state_machine:State_Machine = $State_Machine
+@onready var state_machine:Enemy_State_Machine = $Enemy_State_Machine
 
 
 
@@ -57,8 +63,8 @@ func _physics_process(delta):
 			is_facing_right = true
 			$MeshInstance2D.scale.x = -$MeshInstance2D.scale.x
 			
-	#var print_string = "%s %s %s %s %s %s " % [name, state_machine.current_state.name, velocity, targets, target, is_facing_right]
-	#print(print_string)
+	var print_string = "%s %s %s %s %s %s " % [name, state_machine.current_state.name, velocity, targets, target, is_facing_right]
+	print(print_string)
 
 
 func _process(delta):

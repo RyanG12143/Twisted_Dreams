@@ -1,4 +1,4 @@
-class_name State_Machine
+class_name Enemy_State_Machine
 extends Node
 ##
 
