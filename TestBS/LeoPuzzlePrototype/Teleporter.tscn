@@ -1,0 +1,110 @@
+[gd_scene load_steps=13 format=3 uid="uid://dvsx34uuorgny"]
+
+[ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Teleporter.gd" id="1_e3282"]
+[ext_resource type="Texture2D" uid="uid://bt0nfb70rsp3h" path="res://TestBS/LeoPuzzlePrototype/Assets/teleporter-disabled.png" id="1_qho6b"]
+[ext_resource type="Texture2D" uid="uid://dq1eijgj1ups1" path="res://TestBS/LeoPuzzlePrototype/Assets/teleporter-enabled1.png" id="2_nf3mk"]
+[ext_resource type="Texture2D" uid="uid://dpbrbrhhtwijc" path="res://TestBS/LeoPuzzlePrototype/Assets/teleporter-enabled2.png" id="3_qc0fp"]
+[ext_resource type="Texture2D" uid="uid://w2tpvllfmrvg" path="res://TestBS/LeoPuzzlePrototype/Assets/teleporter-enabled3.png" id="4_e3mca"]
+[ext_resource type="Texture2D" uid="uid://tyyono4ava3o" path="res://TestBS/LeoPuzzlePrototype/Assets/teleporter-enabled4.png" id="5_pdpil"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p85jm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qho6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nf3mk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qc0fp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e3mca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pdpil")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="Animation" id="Animation_plhoi"]
+resource_name = "disabled"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_n282o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_2j8wg"]
+resource_name = "enabled"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tebs5"]
+_data = {
+"RESET": SubResource("Animation_n282o"),
+"disabled": SubResource("Animation_plhoi"),
+"enabled": SubResource("Animation_2j8wg")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gyff0"]
+size = Vector2(8, 47)
+
+[node name="Teleporter" type="AnimatedSprite2D"]
+texture_filter = 1
+texture_repeat = 1
+sprite_frames = SubResource("SpriteFrames_p85jm")
+script = ExtResource("1_e3282")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tebs5")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 3
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(12, 0.5)
+shape = SubResource("RectangleShape2D_gyff0")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

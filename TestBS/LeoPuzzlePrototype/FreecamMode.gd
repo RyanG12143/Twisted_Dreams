@@ -29,10 +29,10 @@ func _ready():
 ## Controls the position of the camera during a transition.
 func _process(delta):
 	
-	timer += delta
-	if (timer > TRANSITION_TIME): timer = TRANSITION_TIME
-	
-	lerp_weight = (tween.interpolate_value(0.0, 1.0, timer, TRANSITION_TIME, Tween.TRANS_SINE, Tween.EASE_OUT))
+	#timer += delta
+	#if (timer > TRANSITION_TIME): timer = TRANSITION_TIME
+	#
+	#lerp_weight = (tween.interpolate_value(0.0, 1.0, timer, TRANSITION_TIME, Tween.TRANS_SINE, Tween.EASE_OUT))
 	
 	if(Input.is_action_just_pressed("free_camera") && !globals.swap_active):
 		if(globals.character_control != 0):

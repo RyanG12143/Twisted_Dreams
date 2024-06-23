@@ -7,6 +7,12 @@ var reset_position:Vector2
 ## Is the position being reset.
 var reset_state:bool = false
 
+## Is the crate being teleported.
+var teleport_state:bool = false
+
+## Location the crate is teleporting to.
+var teleport_location:Vector2 = Vector2(0,0)
+
 ## Is the crate being flipped.
 var being_flipped:bool = false
 
@@ -33,6 +39,12 @@ func _integrate_forces(state):
 		state.linear_velocity = Vector2.ZERO
 		state.angular_velocity = 0
 		state.transform.origin = reset_position
+	if teleport_state:
+		teleport_state = false
+		
+		state.linear_velocity = Vector2.ZERO
+		state.angular_velocity = 0
+		state.transform.origin = teleport_location
 
 ## Called when crate is being pulled, moves crate to opposite side of player
 func _pull_crate():

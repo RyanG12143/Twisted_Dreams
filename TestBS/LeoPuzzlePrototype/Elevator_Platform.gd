@@ -64,48 +64,6 @@ func _process(delta):
 			animation.pause()
 	else:
 		animation.pause()
-	
-	#if (move_queue > 0 and !moving):
-		#moving = true
-		#move_queue -= 1
-		#
-		#var temp:int = 0
-		#
-		#for input in move_inputs:
-			#temp += input
-		#if(temp > 0):
-			#move_direction = 1
-		#elif(temp < 0):
-			#move_direction = -1
-		#else:
-			#move_direction = 0
-			#move_queue = 0
-			#move_inputs.clear()
-		#
-		#move_up_or_down()
-
-## Moves the platform up or down, according to the inputs given.
-#func move_up_or_down():
-	#if(move_direction == 1):
-		#animation.play("move_up")
-		#await get_tree().create_timer(1.0).timeout
-		#animation.stop()
-		#position.y -= MOVE_DISTANCE
-		#animation.seek(0, true)
-		#move_inputs.erase(move_direction)
-	#if(move_direction == -1):
-		#animation.play("move_up")
-		#animation.stop()
-		#position.y += MOVE_DISTANCE
-		#animation.seek(1, true)
-		#animation.play("move_down")
-		#await get_tree().create_timer(1.0).timeout
-		#animation.stop()
-		#animation.seek(1, true)
-		#move_inputs.erase(move_direction)
-		#
-	#move_direction = 0
-	#moving = false
 
 ## Handles additions of inputs.
 func add_input():
@@ -115,8 +73,6 @@ func add_input():
 			target_height += 0.1
 		else:
 			target_height -= 0.1
-		#move_inputs.append(1)
-		#move_queue += 1
 
 ## Handles removals of inputs.
 func remove_input():
@@ -126,8 +82,6 @@ func remove_input():
 			target_height += 0.1
 		else:
 			target_height -= 0.1
-		#move_inputs.append(-1)
-		#move_queue += 1
 
 
 func _on_area_2d_body_entered(body):
