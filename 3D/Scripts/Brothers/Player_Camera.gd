@@ -1,5 +1,5 @@
 extends CharacterBody3D
-class_name Brother_Older
+class_name Player_Camera
 
 @export var mouse_sensitivity: float = 0.05
 

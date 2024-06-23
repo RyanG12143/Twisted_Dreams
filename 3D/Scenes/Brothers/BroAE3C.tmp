@@ -1,56 +1,56 @@
-[gd_scene load_steps=14 format=3 uid="uid://bived31tg1brm"]
+[gd_scene load_steps=14 format=3 uid="uid://deg7i3dtq3kts"]
 
-[ext_resource type="Script" path="res://3D/Scripts/Brothers/Player_Camera.gd" id="1_xen6v"]
-[ext_resource type="PackedScene" uid="uid://bdybpifdrhrvm" path="res://3D/Assets/Characters/OlderSibling_Placeholder.glb" id="2_sc4yj"]
-[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/State_Machine_Older.gd" id="3_bjnb2"]
-[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Idle.gd" id="4_ford2"]
-[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Walk.gd" id="5_xjdr7"]
-[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Run.gd" id="6_dh2d4"]
-[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Jump.gd" id="7_1pd3o"]
-[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Fall.gd" id="8_cbfxk"]
-[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Grab.gd" id="9_okwd0"]
-[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Hang.gd" id="10_mv7p7"]
-[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Climb.gd" id="11_t04ax"]
-[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Shimmy.gd" id="12_wnlxi"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Younger_Brother.gd" id="1_qdxfh"]
+[ext_resource type="PackedScene" uid="uid://32u6080g3xtt" path="res://3D/Assets/Characters/YoungerSibling_Placeholder.glb" id="2_3fepo"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/State_Machine_Older.gd" id="3_erxdv"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Idle.gd" id="4_4uimj"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Walk.gd" id="5_vonb0"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Run.gd" id="6_3hh3i"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Jump.gd" id="7_emtcg"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Fall.gd" id="8_282yl"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Grab.gd" id="9_kvceb"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Hang.gd" id="10_kta8c"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Climb.gd" id="11_qxcid"]
+[ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Shimmy.gd" id="12_gc6cf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_klf3k"]
-radius = 0.308549
-height = 1.7
+radius = 0.250786
+height = 1.34159
 
-[node name="OlderBrother" type="CharacterBody3D"]
+[node name="YoungerBrother" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03182, 0)
 collision_mask = 7
-script = ExtResource("1_xen6v")
+script = ExtResource("1_qdxfh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.153533, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.295836, 0)
 shape = SubResource("CapsuleShape3D_klf3k")
 
 [node name="PlayerVisual" type="Node3D" parent="."]
 unique_name_in_owner = true
 
-[node name="OlderSibling_Placeholder" parent="PlayerVisual" instance=ExtResource("2_sc4yj")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0146236, -1, 0)
+[node name="YoungerSibling_Placeholder" parent="PlayerVisual" instance=ExtResource("2_3fepo")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.005, -1, 0)
 
 [node name="Rays" type="Node3D" parent="PlayerVisual"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.153533, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.532, 0)
 
 [node name="ChestRays" type="Node3D" parent="PlayerVisual/Rays"]
 unique_name_in_owner = true
 
 [node name="Chest" type="RayCast3D" parent="PlayerVisual/Rays/ChestRays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.240832, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.376, 0)
 target_position = Vector3(0, 0, -0.6)
 collision_mask = 2
 
 [node name="Chest2" type="RayCast3D" parent="PlayerVisual/Rays/ChestRays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.241, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.376, 0)
 target_position = Vector3(0, 0, -0.6)
 collision_mask = 2
 
 [node name="Chest3" type="RayCast3D" parent="PlayerVisual/Rays/ChestRays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.241, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.376, 0)
 target_position = Vector3(0, 0, -0.6)
 collision_mask = 2
 
@@ -59,7 +59,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.269711, 0)
 
 [node name="Head" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.670131, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0.67, 0)
 target_position = Vector3(0, 0, -1)
 collision_mask = 2
 
@@ -69,7 +69,7 @@ target_position = Vector3(0, 0, -1)
 collision_mask = 2
 
 [node name="Head3" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.670131, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 0.67, 0)
 target_position = Vector3(0, 0, -1)
 collision_mask = 2
 
@@ -79,12 +79,12 @@ target_position = Vector3(0, 1.8, -1)
 collision_mask = 2
 
 [node name="Head5" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.670131, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0.67, 0)
 target_position = Vector3(0, 1.8, -1)
 collision_mask = 2
 
 [node name="Head6" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.670131, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 0.67, 0)
 target_position = Vector3(0, 1.8, -1)
 collision_mask = 2
 
@@ -103,12 +103,12 @@ target_position = Vector3(0, 0, -0.425)
 collision_mask = 2
 
 [node name="Ledge2" type="RayCast3D" parent="PlayerVisual/Rays/LedgeRays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.244, -0.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1.244, -0.4)
 target_position = Vector3(0, 0, -0.425)
 collision_mask = 2
 
 [node name="Ledge3" type="RayCast3D" parent="PlayerVisual/Rays/LedgeRays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 1.244, -0.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1.244, -0.4)
 target_position = Vector3(0, 0, -0.425)
 collision_mask = 2
 
@@ -122,12 +122,12 @@ target_position = Vector3(0, 0, -0.285)
 collision_mask = 2
 
 [node name="Lip2" type="RayCast3D" parent="PlayerVisual/Rays/LipRays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.167, -0.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1.167, -0.4)
 target_position = Vector3(0, 0, -0.285)
 collision_mask = 2
 
 [node name="Lip3" type="RayCast3D" parent="PlayerVisual/Rays/LipRays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 1.167, -0.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1.167, -0.4)
 target_position = Vector3(0, 0, -0.285)
 collision_mask = 2
 
@@ -137,42 +137,42 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 target_position = Vector3(0, 0, -1)
 collision_mask = 2
 
-[node name="State Machine Older" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
-script = ExtResource("3_bjnb2")
+[node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_erxdv")
 initial_state = NodePath("Older_Idle")
 
-[node name="Older_Idle" type="Node" parent="State Machine Older" node_paths=PackedStringArray("older_brother")]
-script = ExtResource("4_ford2")
+[node name="Older_Idle" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
+script = ExtResource("4_4uimj")
 older_brother = NodePath("../..")
 
-[node name="Older_Walk" type="Node" parent="State Machine Older" node_paths=PackedStringArray("older_brother")]
-script = ExtResource("5_xjdr7")
+[node name="Older_Walk" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
+script = ExtResource("5_vonb0")
 older_brother = NodePath("../..")
 
-[node name="Older_Run" type="Node" parent="State Machine Older" node_paths=PackedStringArray("older_brother")]
-script = ExtResource("6_dh2d4")
+[node name="Older_Run" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
+script = ExtResource("6_3hh3i")
 older_brother = NodePath("../..")
 
-[node name="Older_Jump" type="Node" parent="State Machine Older" node_paths=PackedStringArray("older_brother")]
-script = ExtResource("7_1pd3o")
+[node name="Older_Jump" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
+script = ExtResource("7_emtcg")
 older_brother = NodePath("../..")
 
-[node name="Older_Fall" type="Node" parent="State Machine Older" node_paths=PackedStringArray("older_brother")]
-script = ExtResource("8_cbfxk")
+[node name="Older_Fall" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
+script = ExtResource("8_282yl")
 older_brother = NodePath("../..")
 
-[node name="Older_Grab" type="Node" parent="State Machine Older" node_paths=PackedStringArray("older_brother")]
-script = ExtResource("9_okwd0")
+[node name="Older_Grab" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
+script = ExtResource("9_kvceb")
 older_brother = NodePath("../..")
 
-[node name="Older_Hang" type="Node" parent="State Machine Older" node_paths=PackedStringArray("older_brother")]
-script = ExtResource("10_mv7p7")
+[node name="Older_Hang" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
+script = ExtResource("10_kta8c")
 older_brother = NodePath("../..")
 
-[node name="Older_Climb" type="Node" parent="State Machine Older" node_paths=PackedStringArray("older_brother")]
-script = ExtResource("11_t04ax")
+[node name="Older_Climb" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
+script = ExtResource("11_qxcid")
 older_brother = NodePath("../..")
 
-[node name="Older_Shimmy" type="Node" parent="State Machine Older" node_paths=PackedStringArray("older_brother")]
-script = ExtResource("12_wnlxi")
+[node name="Older_Shimmy" type="Node" parent="State Machine" node_paths=PackedStringArray("older_brother")]
+script = ExtResource("12_gc6cf")
 older_brother = NodePath("../..")

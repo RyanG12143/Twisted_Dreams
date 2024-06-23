@@ -567,11 +567,11 @@ sides = 20
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2681, -9.53674e-07, -22.5646)
 
 [node name="OlderBrother" parent="." instance=ExtResource("2_0atnt")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.32377, 1.0047, -8.24712)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03182, -10)
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
-transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, -1.32377, 2.50958, -4.11248)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 0, 2.5367, -5.86536)
 script = ExtResource("3_u66rk")
 priority = 10
 follow_mode = 6
@@ -585,7 +585,7 @@ collision_mask = 2
 
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, -1.32377, 2.50958, -4.11248)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 0, 2.5367, -5.86536)
 
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 script = ExtResource("6_bqxj8")

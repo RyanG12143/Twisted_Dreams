@@ -28,7 +28,7 @@ func set_character_two(character: CharacterBody2D):
 	character_two.top_level = true
 
 ## Controls character swaps.
-func _process(delta):
+func _process(_delta):
 	if(Input.is_action_just_pressed("ui_character_swap")) and character_one and character_two && character_control != 0:
 		swap_active = true
 		emit_signal("Character_Swapped")
