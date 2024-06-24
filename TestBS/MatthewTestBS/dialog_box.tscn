@@ -31,33 +31,6 @@ tracks/1/keys = {
 "values": [Vector2(1072, 560)]
 }
 
-[sub_resource type="Animation" id="Animation_c4da5"]
-resource_name = "go_up"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Character1:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(96, 560), Vector2(96, 512)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Character2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1072, 560), Vector2(1072, 496)]
-}
-
 [sub_resource type="Animation" id="Animation_x5dvm"]
 resource_name = "go_down"
 tracks/0/type = "value"
@@ -85,6 +58,33 @@ tracks/1/keys = {
 "values": [Vector2(1072, 496), Vector2(1072, 560)]
 }
 
+[sub_resource type="Animation" id="Animation_c4da5"]
+resource_name = "go_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(96, 560), Vector2(96, 512)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1072, 560), Vector2(1072, 496)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1oku0"]
 _data = {
 "RESET": SubResource("Animation_fyk7s"),
@@ -93,6 +93,7 @@ _data = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_l3rlq")
 dialog = Array[String](["This is a dialog box right?", "Damn that's crazy!", "Woah I can't believe it!"])
 

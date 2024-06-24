@@ -16,6 +16,8 @@ func _ready():
 
 ## Controls the opacity after it is initally made visible by character_swap().
 func _process(delta):
+	if((globals.character_one.visible == false) or (globals.character_two.visible == false)):
+		self_modulate.a = 0
 	if(self_modulate.a != 0):
 		timer += delta
 		if(globals.next_controlled_character == 1):

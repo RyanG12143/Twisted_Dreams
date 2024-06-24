@@ -23,6 +23,8 @@ var prev_mov_dir:int = 0
 var set_pmd_ready:bool = true
 ## Gravity(effects how far the character can jump and how fast they fall).
 var gravity:float = 1200
+## Is gravity enabled?
+var gravity_enabled:bool = true
 ## Maximum jump velocity.
 var max_jump_velocity:float
 ## Minimum jump velocity.
@@ -66,7 +68,8 @@ func _process(delta):
 
 ## Apply effects of gravity.
 func apply_gravity(delta):
-	velocity.y += gravity * delta
+	if(gravity_enabled):
+		velocity.y += gravity * delta
 
 
 ## Apply effects of movement.
@@ -97,11 +100,6 @@ func apply_movement():
 							coll.set_deferred("linear_velocity", Vector2(4 * push_force, coll.linear_velocity.y))
 					elif(prev_mov_dir == move_direction):
 						coll.set_deferred("linear_velocity", Vector2(move_direction * push_force, coll.linear_velocity.y))
-			#elif(coll.global_position.y <= global_position.y):
-				#if (coll.global_position.x <= global_position.x):
-					#coll.set_deferred("linear_velocity", Vector2(-1.0  * push_force, coll.linear_velocity.y))
-				#else:
-					#coll.set_deferred("linear_velocity", Vector2(1.0  * push_force, coll.linear_velocity.y))
 
 ## Handle movement input.
 func handle_move_input():
@@ -112,7 +110,7 @@ func handle_move_input():
 	elif move_direction == 1:
 		is_facing_right = true
 		get_node("Sprite2D").flip_h = false
-	if(Input.is_action_just_pressed("ui_jump") && !is_jumping):
+	if(Input.is_action_just_pressed("ui_jump") && !is_jumping && is_grounded):
 		velocity.y = max_jump_velocity
 		is_jumping = true
 	if(is_jumping && !Input.is_action_pressed("ui_jump") && (velocity.y < min_jump_velocity)):
