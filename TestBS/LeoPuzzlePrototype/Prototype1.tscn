@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dbkiu1hf1d1ne"]
+[gd_scene load_steps=15 format=3 uid="uid://dbkiu1hf1d1ne"]
 
 [ext_resource type="PackedScene" uid="uid://bkckmghf83dwj" path="res://TestBS/LeoPuzzlePrototype/UI.tscn" id="1_1mqmv"]
 [ext_resource type="Texture2D" uid="uid://cvumdn2cbyb2w" path="res://TestBS/LeoPuzzlePrototype/Assets/Tiles.png" id="2_i2qx8"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://dfgcelr51poc7" path="res://TestBS/LeoPuzzlePrototype/blue_arrow.tscn" id="9_w3wps"]
 [ext_resource type="PackedScene" uid="uid://bttpiegars2dr" path="res://TestBS/LeoPuzzlePrototype/Crate.tscn" id="10_npdwn"]
 [ext_resource type="PackedScene" uid="uid://dvsx34uuorgny" path="res://TestBS/LeoPuzzlePrototype/Teleporter.tscn" id="10_ujgrh"]
-[ext_resource type="PackedScene" uid="uid://dw42uct8lrrjy" path="res://TestBS/LeoPuzzlePrototype/Rune.tscn" id="11_6oj5a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qui52"]
 texture = ExtResource("2_i2qx8")
@@ -1446,7 +1445,7 @@ script = ExtResource("5_3omn7")
 priority = 10
 follow_mode = 3
 follow_targets = [NodePath("../character_one"), NodePath("../character_two")]
-zoom = Vector2(1.9625, 1.9625)
+zoom = Vector2(1.65937, 1.65937)
 tween_resource = SubResource("Resource_1p510")
 auto_zoom = true
 auto_zoom_min = -100.0
@@ -1456,7 +1455,7 @@ draw_limits = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(269, -480)
-zoom = Vector2(1.9625, 1.9625)
+zoom = Vector2(1.65937, 1.65937)
 
 [node name="FreecamMode" type="Node2D" parent="Camera2D"]
 script = ExtResource("7_mstdh")
@@ -1474,10 +1473,5 @@ teleports_to = NodePath("../Teleporter2")
 position = Vector2(-113, -496)
 rotation = 3.14159
 
-[node name="Rune" parent="." instance=ExtResource("11_6oj5a")]
-position = Vector2(357, -480)
-
 [node name="Crate" parent="." instance=ExtResource("10_npdwn")]
 position = Vector2(435, -507)
-
-[connection signal="Rune_Activated" from="Rune" to="Teleporter" method="add_input"]

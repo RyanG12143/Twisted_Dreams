@@ -30,8 +30,8 @@ animations = [{
 "speed": 0.0
 }]
 
-[sub_resource type="Animation" id="Animation_plhoi"]
-resource_name = "disabled"
+[sub_resource type="Animation" id="Animation_n282o"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -45,8 +45,8 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_n282o"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_plhoi"]
+resource_name = "disabled"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
