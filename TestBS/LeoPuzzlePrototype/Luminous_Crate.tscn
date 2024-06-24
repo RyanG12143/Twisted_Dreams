@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bd1ru2so26744"]
+[gd_scene load_steps=5 format=3 uid="uid://bd1ru2so26744"]
 
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Luminous_Crate.gd" id="1_0qp43"]
 [ext_resource type="Texture2D" uid="uid://cfrtftk551cr7" path="res://TestBS/LeoPuzzlePrototype/Assets/Crate sprite sheet.png" id="2_chdtv"]
@@ -6,9 +6,11 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_il00c"]
 friction = 0.15
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ysgm"]
+radius = 96.0
+
 [node name="Luminous_Crate" type="RigidBody2D" groups=["Can_Press_Buttons"]]
 z_index = 4
-position = Vector2(-9, -9)
 collision_layer = 4
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_il00c")
@@ -20,10 +22,22 @@ script = ExtResource("1_0qp43")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(9.006, 9.006)
 scale = Vector2(0.250187, 0.250187)
 texture = ExtResource("2_chdtv")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(9.1, 9.1)
 polygon = PackedVector2Array(-8.1, -8.1, -8.1, 6.9, -0.1, 7.9, 7.9, 6.9, 7.9, -8.1)
+
+[node name="Light_Range" type="Area2D" parent="."]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Light_Range"]
+shape = SubResource("CircleShape2D_1ysgm")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="body_entered" from="Light_Range" to="." method="_on_enemy_enter"]
+[connection signal="body_exited" from="Light_Range" to="." method="_on_enemy_exit"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -87,3 +87,9 @@ func _on_detection_radius_body_entered(body):
 func _on_detection_radius_body_exited(body):
 	if body.is_in_group("Player"):
 		targets.erase(body)
+
+
+func flee(body:RigidBody2D):
+	print("%s Flee" %name)
+	state_machine.on_flee(body)
+	

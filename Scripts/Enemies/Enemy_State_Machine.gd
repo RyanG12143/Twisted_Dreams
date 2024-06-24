@@ -24,3 +24,13 @@ func on_child_transition(state:Enemy_State, new_state:String):
 	current_state.exit(character_body)
 	current_state = states.get(new_state.to_lower())
 	current_state.enter(character_body)
+
+
+func on_flee(fleeing_object:PhysicsBody2D):
+	if current_state == states.get("Fleeing".to_lower()):
+		current_state.reset()
+		return
+	current_state.exit(character_body)
+	states.get("Fleeing".to_lower()).flee_object = fleeing_object
+	current_state = states.get("Fleeing".to_lower())
+	current_state.enter(character_body)

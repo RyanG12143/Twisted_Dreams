@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://yt3boj0lw4yf"]
+[gd_scene load_steps=15 format=3 uid="uid://yt3boj0lw4yf"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Enemy.gd" id="1_pbbsk"]
 [ext_resource type="Script" path="res://Scripts/Enemies/Enemy_State_Machine.gd" id="2_gbq0s"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/Enemies/States/Charging_State.gd" id="6_5iv2v"]
 [ext_resource type="Script" path="res://Scripts/Enemies/States/Charge_Prep_State.gd" id="7_654hi"]
 [ext_resource type="Script" path="res://Scripts/Enemies/States/Weeping_State.gd" id="8_regu1"]
+[ext_resource type="Script" path="res://Scripts/Enemies/States/Fleeing_State.gd" id="9_c2fj4"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_lm62n"]
 
@@ -23,7 +24,7 @@ radius = 200.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_7kixm"]
 radius = 92.0
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 8
 collision_mask = 3
 script = ExtResource("1_pbbsk")
@@ -108,6 +109,13 @@ script = ExtResource("7_654hi")
 
 [node name="Weeping" type="Node" parent="Enemy_State_Machine"]
 script = ExtResource("8_regu1")
+
+[node name="Fleeing" type="Node" parent="Enemy_State_Machine" node_paths=PackedStringArray("ray_cast_down_right", "ray_cast_side_right", "ray_cast_down_left", "ray_cast_side_left")]
+script = ExtResource("9_c2fj4")
+ray_cast_down_right = NodePath("../../Ray_Cast_Down_Right")
+ray_cast_side_right = NodePath("../../Ray_Cast_Side_Right")
+ray_cast_down_left = NodePath("../../Ray_Cast_Down_Left")
+ray_cast_side_left = NodePath("../../Ray_Cast_Side_Left")
 
 [connection signal="path_changed" from="NavigationAgent2D" to="." method="_path_changed"]
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_target_reached"]
