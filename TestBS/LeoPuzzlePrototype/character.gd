@@ -3,9 +3,11 @@ extends CharacterBody2D
 
 ## Character number.
 @export var character_number:int = 0
-
-@onready var Sprite:Sprite2D = $Sprite2D
-
+## Animation player.
+@onready var anim:AnimationPlayer = $AnimationPlayer
+## Animated sprite.
+@onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
+## Area2D.
 @onready var Area:Area2D = $Area2D
 
 ## Upwards direction.
@@ -106,10 +108,10 @@ func handle_move_input():
 	move_direction = -int(Input.is_action_pressed("ui_left")) + int(Input.is_action_pressed("ui_right"))
 	if move_direction == -1:
 		is_facing_right = false
-		get_node("Sprite2D").flip_h = true
+		sprite.flip_h = true
 	elif move_direction == 1:
 		is_facing_right = true
-		get_node("Sprite2D").flip_h = false
+		sprite.flip_h = false
 	if(Input.is_action_just_pressed("ui_jump") && !is_jumping && is_grounded):
 		velocity.y = max_jump_velocity
 		is_jumping = true

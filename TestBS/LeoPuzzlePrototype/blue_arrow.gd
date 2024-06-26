@@ -21,9 +21,9 @@ func _process(delta):
 	if(self_modulate.a != 0):
 		timer += delta
 		if(globals.next_controlled_character == 1):
-			position = Vector2(globals.character_one.position.x, globals.character_one.position.y - (globals.character_one.Sprite.texture.get_height()))
+			position = Vector2(globals.character_one.position.x, globals.character_one.position.y -25)
 		elif(globals.next_controlled_character == 2):
-			position = Vector2(globals.character_two.position.x, globals.character_two.position.y - (globals.character_two.Sprite.texture.get_height() * 1.2))
+			position = Vector2(globals.character_two.position.x, globals.character_two.position.y -40)
 		else:
 			self_modulate.a = 0
 			return

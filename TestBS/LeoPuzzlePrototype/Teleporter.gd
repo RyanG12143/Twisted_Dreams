@@ -61,7 +61,6 @@ func _ready():
 
 ## Handles most Teleporter logic.
 func _process(delta):
-	print(character_is_teleporting)
 	if(teleport_area.get_overlapping_bodies().front() != null):
 		if(teleporter_enabled):
 			var body = teleport_area.get_overlapping_bodies().front()
