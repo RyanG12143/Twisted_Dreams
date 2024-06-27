@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dga2kykieunpn"
-path="res://.godot/imported/YoungerSIbling_Idle.png-96ed815cbbc3c0f470bfd1b3f0bce8e8.ctex"
+uid="uid://wsmf4tg6yjp6"
+path="res://.godot/imported/YoungerSIbling_Idle (1).png-b92e050cb8992b33c446666e60c73591.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestBS/LeoPuzzlePrototype/Assets/Siblings/YoungerSIbling_Idle.png"
-dest_files=["res://.godot/imported/YoungerSIbling_Idle.png-96ed815cbbc3c0f470bfd1b3f0bce8e8.ctex"]
+source_file="res://TestBS/LeoPuzzlePrototype/Assets/Siblings/YoungerSIbling_Idle (1).png"
+dest_files=["res://.godot/imported/YoungerSIbling_Idle (1).png-b92e050cb8992b33c446666e60c73591.ctex"]
 
 [params]
 

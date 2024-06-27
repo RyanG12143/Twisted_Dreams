@@ -36,6 +36,8 @@ func _process(delta):
 	
 	if(Input.is_action_just_pressed("free_camera") && !globals.swap_active):
 		if(globals.character_control != 0):
+			globals.character_two.sprite.modulate = Color(1,1,1)
+			globals.character_one.sprite.modulate = Color(1,1,1)
 			reset_pos = get_parent().global_position
 			follow_cam.set_process(false)
 			follow_cam.set_physics_process(false)
@@ -46,6 +48,12 @@ func _process(delta):
 			globals.character_control = globals.next_controlled_character
 			character_swap()
 			globals.Character_Swapped.emit()
+			if(globals.character_control == 1):
+				globals.character_two.sprite.modulate = Color(0.1,0.1,0.1)
+				globals.character_one.sprite.modulate = Color(1,1,1)
+			elif(globals.character_control == 2):
+				globals.character_one.sprite.modulate = Color(0.1,0.1,0.1)
+				globals.character_two.sprite.modulate = Color(1,1,1)
 			reset_camera()
 			
 			

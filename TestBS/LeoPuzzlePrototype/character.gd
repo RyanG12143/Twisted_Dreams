@@ -54,6 +54,10 @@ func _ready():
 	gravity = 2 * max_jump_height / pow(jump_duration, 2)
 	max_jump_velocity = -sqrt(2 * gravity * max_jump_height)
 	min_jump_velocity = -sqrt(2 * gravity * min_jump_height)
+	if(globals.character_control != character_number):
+		sprite.modulate = Color(0.1,0.1,0.1)
+	else:
+		sprite.modulate = Color(1,1,1)
 
 ## Apply movement.
 func _physics_process(delta):
@@ -64,7 +68,7 @@ func _process(delta):
 	apply_gravity(delta)
 	if(globals.character_control == character_number):
 		handle_move_input()
-		set_prev_mov_div()
+		set_prev_mov_dir()
 	else:
 		velocity.x = lerp(float(velocity.x), float(move_speed * 0), get_h_weight())
 
@@ -125,10 +129,9 @@ func get_h_weight():
 	return 0.2 if is_grounded else 0.05
 	
 ## Previous move direction of the character(used to make crate moving less buggy)
-func set_prev_mov_div():
+func set_prev_mov_dir():
 	if(set_pmd_ready):
 		set_pmd_ready = false
 		prev_mov_dir = move_direction
 		await get_tree().create_timer(0.1).timeout
 		set_pmd_ready = true
-

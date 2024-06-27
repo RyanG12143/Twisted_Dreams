@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dbkiu1hf1d1ne"]
+[gd_scene load_steps=16 format=3 uid="uid://dbkiu1hf1d1ne"]
 
 [ext_resource type="PackedScene" uid="uid://bkckmghf83dwj" path="res://TestBS/LeoPuzzlePrototype/UI.tscn" id="1_1mqmv"]
 [ext_resource type="Texture2D" uid="uid://cvumdn2cbyb2w" path="res://TestBS/LeoPuzzlePrototype/Assets/Tiles.png" id="2_i2qx8"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dfgcelr51poc7" path="res://TestBS/LeoPuzzlePrototype/blue_arrow.tscn" id="9_w3wps"]
 [ext_resource type="PackedScene" uid="uid://bttpiegars2dr" path="res://TestBS/LeoPuzzlePrototype/Crate.tscn" id="10_npdwn"]
 [ext_resource type="PackedScene" uid="uid://dvsx34uuorgny" path="res://TestBS/LeoPuzzlePrototype/Teleporter.tscn" id="10_ujgrh"]
+[ext_resource type="PackedScene" uid="uid://daelj4hlba7qu" path="res://TestBS/LeoPuzzlePrototype/Floor_Button.tscn" id="12_4xro1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qui52"]
 texture = ExtResource("2_i2qx8")
@@ -1475,3 +1476,9 @@ rotation = 3.14159
 
 [node name="Crate" parent="." instance=ExtResource("10_npdwn")]
 position = Vector2(435, -507)
+
+[node name="Floor_Button" parent="." instance=ExtResource("12_4xro1")]
+position = Vector2(351, -477)
+
+[connection signal="Button_Pressed" from="Floor_Button" to="Teleporter" method="add_input"]
+[connection signal="Button_Released" from="Floor_Button" to="Teleporter" method="remove_input"]

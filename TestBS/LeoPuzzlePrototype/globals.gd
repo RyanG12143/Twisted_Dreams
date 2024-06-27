@@ -33,17 +33,21 @@ func _process(_delta):
 		swap_active = true
 		emit_signal("Character_Swapped")
 		if(character_control == 1):
+			character_one.sprite.modulate = Color(0.1,0.1,0.1)
+			character_two.sprite.modulate = Color(1,1,1)
 			next_controlled_character = 2
 			character_control = 0
 			character_two.z_index = 1
 			character_one.z_index = 0
-			await get_tree().create_timer(0.2).timeout
+			await get_tree().create_timer(0.1).timeout
 			character_control = 2
 		elif(character_control == 2):
+			character_two.sprite.modulate = Color(0.1,0.1,0.1)
+			character_one.sprite.modulate = Color(1,1,1)
 			next_controlled_character = 1
 			character_control = 0
 			character_one.z_index = 1
 			character_two.z_index = 0
-			await get_tree().create_timer(0.2).timeout
+			await get_tree().create_timer(0.1).timeout
 			character_control = 1
 		swap_active = false
