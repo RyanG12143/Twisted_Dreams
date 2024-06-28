@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://feaamxyeef4d"]
 
 [ext_resource type="TileSet" uid="uid://bmpcfur6aurb6" path="res://TestBS/RyanTestBS/Proto_Tilemap.tres" id="1_thtja"]
-[ext_resource type="PackedScene" uid="uid://yt3boj0lw4yf" path="res://Scenes/Enemies/Enemy.tscn" id="3_0f0yu"]
+[ext_resource type="PackedScene" uid="uid://yt3boj0lw4yf" path="res://2D/Scenes/Enemies/Enemy.tscn" id="3_0f0yu"]
 [ext_resource type="PackedScene" uid="uid://m23ls6buacwh" path="res://TestBS/LeoPuzzlePrototype/character_one.tscn" id="4_j0gww"]
 [ext_resource type="PackedScene" uid="uid://bd1ru2so26744" path="res://TestBS/LeoPuzzlePrototype/Luminous_Crate.tscn" id="5_48ade"]
 [ext_resource type="PackedScene" uid="uid://pqhyjjoo1fcs" path="res://TestBS/LeoPuzzlePrototype/character_two.tscn" id="5_gfuy7"]
