@@ -19,6 +19,7 @@ height = 1.7
 
 [node name="OlderBrother" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03182, 0)
+collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_xen6v")
 
@@ -42,17 +43,17 @@ unique_name_in_owner = true
 [node name="Chest" type="RayCast3D" parent="PlayerVisual/Rays/ChestRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.240832, 0)
 target_position = Vector3(0, 0, -0.6)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Chest2" type="RayCast3D" parent="PlayerVisual/Rays/ChestRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.241, 0)
 target_position = Vector3(0, 0, -0.6)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Chest3" type="RayCast3D" parent="PlayerVisual/Rays/ChestRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.241, 0)
 target_position = Vector3(0, 0, -0.6)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="HeadClimbRays" type="Node3D" parent="PlayerVisual/Rays"]
 unique_name_in_owner = true
@@ -61,37 +62,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.269711, 0)
 [node name="Head" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.670131, 0)
 target_position = Vector3(0, 0, -1)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Head2" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.670131, 0)
 target_position = Vector3(0, 0, -1)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Head3" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.670131, 0)
 target_position = Vector3(0, 0, -1)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Head4" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.670131, 0)
 target_position = Vector3(0, 1.8, -1)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Head5" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.670131, 0)
 target_position = Vector3(0, 1.8, -1)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Head6" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.670131, 0)
 target_position = Vector3(0, 1.8, -1)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="LedgeHeight" type="RayCast3D" parent="PlayerVisual/Rays"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00109506, 0.934371, -0.685304)
-collision_mask = 2
 
 [node name="LedgeRays" type="Node3D" parent="PlayerVisual/Rays"]
 unique_name_in_owner = true
@@ -100,17 +100,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.302309, 0.0811958)
 [node name="Ledge" type="RayCast3D" parent="PlayerVisual/Rays/LedgeRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.244, -0.4)
 target_position = Vector3(0, 0, -0.425)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Ledge2" type="RayCast3D" parent="PlayerVisual/Rays/LedgeRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.244, -0.4)
 target_position = Vector3(0, 0, -0.425)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Ledge3" type="RayCast3D" parent="PlayerVisual/Rays/LedgeRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 1.244, -0.4)
 target_position = Vector3(0, 0, -0.425)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="LipRays" type="Node3D" parent="PlayerVisual/Rays"]
 unique_name_in_owner = true
@@ -135,7 +135,7 @@ collision_mask = 2
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 target_position = Vector3(0, 0, -1)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="State Machine Older" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_bjnb2")
