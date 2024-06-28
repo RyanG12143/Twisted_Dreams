@@ -1413,7 +1413,7 @@ sources/0 = SubResource("TileSetAtlasSource_05fo7")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfedh"]
 size = Vector2(64, 20)
 
-[node name="World" type="Node2D"]
+[node name="world" type="Node2D"]
 
 [node name="PauseScreen" parent="." instance=ExtResource("7_v6g86")]
 
