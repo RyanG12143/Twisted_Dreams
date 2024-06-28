@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bived31tg1brm"]
 
 [ext_resource type="Script" path="res://3D/Scripts/Brothers/Player_Camera.gd" id="1_xen6v"]
-[ext_resource type="PackedScene" uid="uid://bdybpifdrhrvm" path="res://3D/Assets/Characters/OlderSibling_Placeholder.glb" id="2_sc4yj"]
+[ext_resource type="PackedScene" uid="uid://bdybpifdrhrvm" path="res://3D/Assets/Placeholder/Characters/OlderSibling_Placeholder.glb" id="2_m1ibo"]
 [ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/State_Machine_Older.gd" id="3_bjnb2"]
 [ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Idle.gd" id="4_ford2"]
 [ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Walk.gd" id="5_xjdr7"]
@@ -30,7 +30,7 @@ shape = SubResource("CapsuleShape3D_klf3k")
 [node name="PlayerVisual" type="Node3D" parent="."]
 unique_name_in_owner = true
 
-[node name="OlderSibling_Placeholder" parent="PlayerVisual" instance=ExtResource("2_sc4yj")]
+[node name="OlderSibling_Placeholder" parent="PlayerVisual" instance=ExtResource("2_m1ibo")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0146236, -1, 0)
 
 [node name="Rays" type="Node3D" parent="PlayerVisual"]
@@ -92,6 +92,7 @@ hit_from_inside = true
 [node name="LedgeHeight" type="RayCast3D" parent="PlayerVisual/Rays"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00109506, 0.934371, -0.685304)
+hit_from_inside = true
 
 [node name="LedgeRays" type="Node3D" parent="PlayerVisual/Rays"]
 unique_name_in_owner = true
@@ -119,17 +120,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.302309, 0.0811958)
 [node name="Lip" type="RayCast3D" parent="PlayerVisual/Rays/LipRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.167, -0.4)
 target_position = Vector3(0, 0, -0.285)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Lip2" type="RayCast3D" parent="PlayerVisual/Rays/LipRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.167, -0.4)
 target_position = Vector3(0, 0, -0.285)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Lip3" type="RayCast3D" parent="PlayerVisual/Rays/LipRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 1.167, -0.4)
 target_position = Vector3(0, 0, -0.285)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="PlayerNormal" type="RayCast3D" parent="PlayerVisual/Rays"]
 unique_name_in_owner = true

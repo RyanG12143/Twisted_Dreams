@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bdybpifdrhrvm"
-path="res://.godot/imported/OlderSibling_Placeholder.glb-6ac7e0806d648d88d0c53d753878aca6.scn"
+uid="uid://32u6080g3xtt"
+path="res://.godot/imported/YoungerSibling_Placeholder.glb-8d7052e8eda7d35bab55fd0db2bfd226.scn"
 
 [deps]
 
-source_file="res://3D/Assets/Characters/OlderSibling_Placeholder.glb"
-dest_files=["res://.godot/imported/OlderSibling_Placeholder.glb-6ac7e0806d648d88d0c53d753878aca6.scn"]
+source_file="res://3D/Assets/Placeholder/Characters/YoungerSibling_Placeholder.glb"
+dest_files=["res://.godot/imported/YoungerSibling_Placeholder.glb-8d7052e8eda7d35bab55fd0db2bfd226.scn"]
 
 [params]
 

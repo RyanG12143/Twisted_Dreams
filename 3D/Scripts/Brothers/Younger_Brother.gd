@@ -66,7 +66,7 @@ func _physics_process(delta):
 	# Quitting to menu
 	if Input.is_action_just_pressed("escape"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		get_tree().change_scene_to_file("res://TestBS/DustinTest/Scenes/TitleScreen.tscn")
+		get_tree().change_scene_to_file("uid://5cd0615q4al1")
 	
 	if Input.is_action_just_released("3Dzoom_in") && _player_pcam.get_spring_length() > 1.5:
 		_player_pcam.set_spring_length(_player_pcam.get_spring_length() - 0.2)
