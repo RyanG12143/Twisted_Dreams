@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dre0o1tw818oq"]
+[gd_scene load_steps=21 format=3 uid="uid://dre0o1tw818oq"]
 
 [ext_resource type="Material" uid="uid://dqh67xl8hqsyw" path="res://3D/Scenes/AreaGreyboxing/Prototype_Dark_Accent.tres" id="1_5cd8q"]
 [ext_resource type="Script" path="res://3D/Scenes/AreaGreyboxing/Market_District.gd" id="1_nsir7"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_cr0xv"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_y4wnn"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_84xg3"]
-[ext_resource type="Script" path="res://3D/Scripts/Level_Design/Home_District_Teleport.gd" id="7_tul88"]
 [ext_resource type="Script" path="res://3D/Scripts/Level_Design/Transition_Manager_Market_District.gd" id="8_6m0yp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_isqim"]
@@ -61,33 +60,6 @@ far = 4000.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_1rj5c"]
 size = Vector3(3.2, 2.7, 2.3)
 
-[sub_resource type="Animation" id="Animation_806sw"]
-resource_name = "fade_out"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Transition_Manager_Home_District/Transition/ColorRect:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Transition_Manager_Home_District/Transition/ColorRect:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="Animation" id="Animation_x7ax8"]
 resource_name = "fade_in"
 tracks/0/type = "value"
@@ -113,6 +85,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [null]
+}
+
+[sub_resource type="Animation" id="Animation_806sw"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition_Manager_Home_District/Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition_Manager_Home_District/Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bgjpk"]
@@ -326,7 +325,6 @@ script = ExtResource("6_84xg3")
 
 [node name="NextLevelVolume" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.7, 25.4, 166.2)
-script = ExtResource("7_tul88")
 
 [node name="Area3D" type="Area3D" parent="NextLevelVolume"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.3, 0)
