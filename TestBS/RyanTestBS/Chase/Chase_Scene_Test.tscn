@@ -1,0 +1,114 @@
+[gd_scene load_steps=14 format=3 uid="uid://xuteggk5aiph"]
+
+[ext_resource type="PackedScene" uid="uid://cu7wqioxho4ft" path="res://Chase_Character.tscn" id="1_08itc"]
+[ext_resource type="PackedScene" uid="uid://deg7i3dtq3kts" path="res://3D/Scenes/Brothers/Brother_Younger.tscn" id="2_vy1ac"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_wdovb"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_qw5bw"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_rcgjv"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_fivi7"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_3jsns"]
+vertices = PackedVector3Array(-2.5, 1, -4, 0, 1, -4, 0, 1, -49.5, -2.75, 1, -2.75, -2.5, 1, -4, 0, 1, -49.5, -49.5, 1, -49.5, -49.5, 1, -2.75, 0, 1, -49.5, 0, 1, -4, 2.5, 1, -4, 0, 1, -49.5, 2.5, 1, -4, 2.75, 1, -2.75, 49.5, 1, -2.75, 49.5, 1, -49.5, -2.5, 1, -1.75, -2.75, 1, -2.75, -49.5, 1, -2.75, -49.5, 1, 49.5, -1.25, 1, 49.5, -1.25, 1, 49.5, -1, 1, -1.75, -2.5, 1, -1.75, 49.5, 1, -2.75, 2.75, 1, -2.75, 2.5, 1, -1.75, 1.25, 1, 49.5, 49.5, 1, 49.5, 2.5, 1, -1.75, 1, 1, -1.75, 1.25, 1, 49.5, -1.25, 1, 49.5, 1.25, 1, 49.5, 1, 1, -1.75, -1, 1, -1.75)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 7), PackedInt32Array(5, 7, 6), PackedInt32Array(10, 9, 8), PackedInt32Array(12, 11, 13), PackedInt32Array(13, 11, 14), PackedInt32Array(14, 11, 15), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(19, 16, 20), PackedInt32Array(23, 22, 21), PackedInt32Array(25, 24, 26), PackedInt32Array(26, 24, 28), PackedInt32Array(26, 28, 27), PackedInt32Array(31, 30, 29), PackedInt32Array(35, 34, 32), PackedInt32Array(32, 34, 33)]
+geometry_parsed_geometry_type = 1
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_54bqd"]
+
+[sub_resource type="Sky" id="Sky_rivwb"]
+sky_material = SubResource("ProceduralSkyMaterial_54bqd")
+
+[sub_resource type="Environment" id="Environment_l6bgl"]
+background_mode = 2
+sky = SubResource("Sky_rivwb")
+
+[sub_resource type="Resource" id="Resource_waxb2"]
+script = ExtResource("4_qw5bw")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="Resource" id="Resource_876wb"]
+script = ExtResource("5_rcgjv")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[sub_resource type="TorusMesh" id="TorusMesh_am4xg"]
+
+[node name="Chase scene test" type="Node3D"]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_3jsns")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
+use_collision = true
+size = Vector3(100, 1, 100)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0612566, 0.881485, -2.85991)
+use_collision = true
+size = Vector3(4.22314, 2.01953, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l6bgl")
+
+[node name="YoungerBrother" parent="." instance=ExtResource("2_vy1ac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90859, 1.85896, 1.71783)
+
+[node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
+unique_name_in_owner = true
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 1.90859, 3.05602, 5.00675)
+script = ExtResource("3_wdovb")
+priority = 10
+follow_mode = 6
+follow_target = NodePath("../YoungerBrother")
+tween_resource = SubResource("Resource_waxb2")
+camera_3d_resource = SubResource("Resource_876wb")
+follow_damping = true
+follow_distance = 3.5
+spring_length = 3.5
+collision_mask = 2
+
+[node name="MainCamera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 1.90859, 3.05602, 5.00675)
+
+[node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
+script = ExtResource("6_fivi7")
+
+[node name="CharacterBody3D" parent="." node_paths=PackedStringArray("positionsContainer") instance=ExtResource("1_08itc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.111195, 2.06188, -6.28709)
+loop = true
+positionsContainer = NodePath("../Markers")
+
+[node name="Markers" type="Node3D" parent="."]
+
+[node name="Marker3D" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17483, 0.84428, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Markers/Marker3D"]
+mesh = SubResource("TorusMesh_am4xg")
+
+[node name="Marker3D2" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.65639, 0.84428, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Markers/Marker3D2"]
+mesh = SubResource("TorusMesh_am4xg")
+
+[node name="Marker3D3" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.65639, 0.84428, -9.79923)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Markers/Marker3D3"]
+mesh = SubResource("TorusMesh_am4xg")
+
+[node name="Marker3D4" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64742, 0.84428, -9.79923)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Markers/Marker3D4"]
+mesh = SubResource("TorusMesh_am4xg")

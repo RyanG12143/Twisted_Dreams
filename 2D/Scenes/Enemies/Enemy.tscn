@@ -1,14 +1,14 @@
 [gd_scene load_steps=15 format=3 uid="uid://yt3boj0lw4yf"]
 
-[ext_resource type="Script" path="res://Scripts/Enemies/Enemy.gd" id="1_pbbsk"]
-[ext_resource type="Script" path="res://Scripts/Enemies/Enemy_State_Machine.gd" id="2_gbq0s"]
-[ext_resource type="Script" path="res://Scripts/Enemies/States/Follow_State.gd" id="3_bma5r"]
-[ext_resource type="Script" path="res://Scripts/Enemies/States/Idle_State.gd" id="4_2egie"]
-[ext_resource type="Script" path="res://Scripts/Enemies/States/Roaming_State.gd" id="5_4yl3q"]
-[ext_resource type="Script" path="res://Scripts/Enemies/States/Charging_State.gd" id="6_5iv2v"]
-[ext_resource type="Script" path="res://Scripts/Enemies/States/Charge_Prep_State.gd" id="7_654hi"]
-[ext_resource type="Script" path="res://Scripts/Enemies/States/Weeping_State.gd" id="8_regu1"]
-[ext_resource type="Script" path="res://Scripts/Enemies/States/Fleeing_State.gd" id="9_c2fj4"]
+[ext_resource type="Script" path="res://2D/Scripts/Enemies/Enemy.gd" id="1_pbbsk"]
+[ext_resource type="Script" path="res://2D/Scripts/Enemies/Enemy_State_Machine.gd" id="2_gbq0s"]
+[ext_resource type="Script" path="res://2D/Scripts/Enemies/States/Follow_State.gd" id="3_bma5r"]
+[ext_resource type="Script" path="res://2D/Scripts/Enemies/States/Idle_State.gd" id="4_2egie"]
+[ext_resource type="Script" path="res://2D/Scripts/Enemies/States/Roaming_State.gd" id="5_4yl3q"]
+[ext_resource type="Script" path="res://2D/Scripts/Enemies/States/Charging_State.gd" id="6_5iv2v"]
+[ext_resource type="Script" path="res://2D/Scripts/Enemies/States/Charge_Prep_State.gd" id="7_654hi"]
+[ext_resource type="Script" path="res://2D/Scripts/Enemies/States/Weeping_State.gd" id="8_regu1"]
+[ext_resource type="Script" path="res://2D/Scripts/Enemies/States/Fleeing_State.gd" id="9_c2fj4"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_lm62n"]
 
