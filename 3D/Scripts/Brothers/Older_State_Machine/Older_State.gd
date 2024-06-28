@@ -22,7 +22,7 @@ var grab_start = false
 var can_turn: bool = true
 
 @export var walk_speed: float = 4.0
-@export var run_speed: float = 8.0
+@export var run_speed: float = 20.0 #8.0 normally
 @export var strafe_speed: float = 1.0
 @export var movement_speed: float = walk_speed
 @export var JUMP_VELOCITY: float = 4.7
