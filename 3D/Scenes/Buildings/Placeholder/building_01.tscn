@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dgn3q8o1c2cxr"]
 
-[ext_resource type="PackedScene" uid="uid://coxsl45djvs5n" path="res://3D/Assets/Buildings/Placeholder/Building01_Placeholder.glb" id="1_suy8j"]
+[ext_resource type="PackedScene" uid="uid://coxsl45djvs5n" path="res://3D/Assets/Placeholder/Buildings/Building01_Placeholder.glb" id="1_suy8j"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0ajom"]
 data = PackedVector3Array(-1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1)

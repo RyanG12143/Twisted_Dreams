@@ -5,10 +5,10 @@ class_name Younger_Climb
 
 func Enter():
 	can_jump = false
-	var v_move_time = 1
-	var h_move_time = 0.4
+	var v_move_time = 1.5
+	var h_move_time = 0.6
 	var vertical_movement = younger_brother.global_transform.origin + Vector3(0, ledge_height.to_local(ledge_height.get_collision_point()).y + 1.4, 0)
-	var forward_movement = younger_brother.global_transform.origin + (-younger_brother._player_direction.global_transform.basis.z * 1.2)
+	var forward_movement = younger_brother.global_transform.origin + (-younger_brother._player_direction.global_transform.basis.z * 0.6)
 	forward_movement.y += ledge_height.to_local(ledge_height.get_collision_point()).y + 1.4
 	
 	var tween = create_tween()

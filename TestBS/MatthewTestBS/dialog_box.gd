@@ -31,6 +31,7 @@ func _on_scrolling_timer_timeout():
 	$DialogText.set_visible_characters($DialogText.get_visible_characters() + 1)
 
 func start_dialog():
+	await get_tree().create_timer(0.1).timeout
 	get_tree().paused = true
 	show()
 	$AnimationPlayer.play("go_up")

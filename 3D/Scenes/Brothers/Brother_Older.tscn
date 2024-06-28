@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bived31tg1brm"]
 
 [ext_resource type="Script" path="res://3D/Scripts/Brothers/Player_Camera.gd" id="1_xen6v"]
-[ext_resource type="PackedScene" uid="uid://bdybpifdrhrvm" path="res://3D/Assets/Characters/OlderSibling_Placeholder.glb" id="2_sc4yj"]
+[ext_resource type="PackedScene" uid="uid://bdybpifdrhrvm" path="res://3D/Assets/Placeholder/Characters/OlderSibling_Placeholder.glb" id="2_m1ibo"]
 [ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/State_Machine_Older.gd" id="3_bjnb2"]
 [ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Idle.gd" id="4_ford2"]
 [ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Walk.gd" id="5_xjdr7"]
@@ -19,7 +19,8 @@ height = 1.7
 
 [node name="OlderBrother" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03182, 0)
-collision_mask = 7
+collision_layer = 2
+collision_mask = 15
 script = ExtResource("1_xen6v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -29,7 +30,7 @@ shape = SubResource("CapsuleShape3D_klf3k")
 [node name="PlayerVisual" type="Node3D" parent="."]
 unique_name_in_owner = true
 
-[node name="OlderSibling_Placeholder" parent="PlayerVisual" instance=ExtResource("2_sc4yj")]
+[node name="OlderSibling_Placeholder" parent="PlayerVisual" instance=ExtResource("2_m1ibo")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0146236, -1, 0)
 
 [node name="Rays" type="Node3D" parent="PlayerVisual"]
@@ -42,17 +43,17 @@ unique_name_in_owner = true
 [node name="Chest" type="RayCast3D" parent="PlayerVisual/Rays/ChestRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.240832, 0)
 target_position = Vector3(0, 0, -0.6)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Chest2" type="RayCast3D" parent="PlayerVisual/Rays/ChestRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.241, 0)
 target_position = Vector3(0, 0, -0.6)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Chest3" type="RayCast3D" parent="PlayerVisual/Rays/ChestRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.241, 0)
 target_position = Vector3(0, 0, -0.6)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="HeadClimbRays" type="Node3D" parent="PlayerVisual/Rays"]
 unique_name_in_owner = true
@@ -61,37 +62,37 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.269711, 0)
 [node name="Head" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.670131, 0)
 target_position = Vector3(0, 0, -1)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Head2" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.670131, 0)
 target_position = Vector3(0, 0, -1)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Head3" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.670131, 0)
 target_position = Vector3(0, 0, -1)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Head4" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.670131, 0)
 target_position = Vector3(0, 1.8, -1)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Head5" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.670131, 0)
 target_position = Vector3(0, 1.8, -1)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Head6" type="RayCast3D" parent="PlayerVisual/Rays/HeadClimbRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.670131, 0)
 target_position = Vector3(0, 1.8, -1)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="LedgeHeight" type="RayCast3D" parent="PlayerVisual/Rays"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00109506, 0.934371, -0.685304)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="LedgeRays" type="Node3D" parent="PlayerVisual/Rays"]
 unique_name_in_owner = true
@@ -100,17 +101,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.302309, 0.0811958)
 [node name="Ledge" type="RayCast3D" parent="PlayerVisual/Rays/LedgeRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.244, -0.4)
 target_position = Vector3(0, 0, -0.425)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Ledge2" type="RayCast3D" parent="PlayerVisual/Rays/LedgeRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.244, -0.4)
 target_position = Vector3(0, 0, -0.425)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Ledge3" type="RayCast3D" parent="PlayerVisual/Rays/LedgeRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 1.244, -0.4)
 target_position = Vector3(0, 0, -0.425)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="LipRays" type="Node3D" parent="PlayerVisual/Rays"]
 unique_name_in_owner = true
@@ -119,23 +120,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.302309, 0.0811958)
 [node name="Lip" type="RayCast3D" parent="PlayerVisual/Rays/LipRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.167, -0.4)
 target_position = Vector3(0, 0, -0.285)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Lip2" type="RayCast3D" parent="PlayerVisual/Rays/LipRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.167, -0.4)
 target_position = Vector3(0, 0, -0.285)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="Lip3" type="RayCast3D" parent="PlayerVisual/Rays/LipRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 1.167, -0.4)
 target_position = Vector3(0, 0, -0.285)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="PlayerNormal" type="RayCast3D" parent="PlayerVisual/Rays"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 target_position = Vector3(0, 0, -1)
-collision_mask = 2
+hit_from_inside = true
 
 [node name="State Machine Older" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_bjnb2")
