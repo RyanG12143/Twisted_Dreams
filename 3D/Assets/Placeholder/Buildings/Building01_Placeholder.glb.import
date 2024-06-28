@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://coxsl45djvs5n"
-path="res://.godot/imported/Building01_Placeholder.glb-ac4bda3c1089d42163995875bb0ecc28.scn"
+path="res://.godot/imported/Building01_Placeholder.glb-b578404746bfad2b89b9b8b32012c565.scn"
 
 [deps]
 
-source_file="res://3D/Assets/Buildings/Placeholder/Building01_Placeholder.glb"
-dest_files=["res://.godot/imported/Building01_Placeholder.glb-ac4bda3c1089d42163995875bb0ecc28.scn"]
+source_file="res://3D/Assets/Placeholder/Buildings/Building01_Placeholder.glb"
+dest_files=["res://.godot/imported/Building01_Placeholder.glb-b578404746bfad2b89b9b8b32012c565.scn"]
 
 [params]
 

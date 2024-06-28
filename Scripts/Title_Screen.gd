@@ -10,7 +10,7 @@ func _on_play_pressed():
 	pass
 
 func _on_level_select_pressed():
-	get_tree().change_scene_to_file("res://TestBS/DustinTest/Scenes/LevelSelect.tscn")
+	get_tree().change_scene_to_file("uid://deevgd82j1vg3")
 
 func _on_quit_pressed():
 	Utils.saveGame()

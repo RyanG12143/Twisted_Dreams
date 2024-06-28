@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://deg7i3dtq3kts"]
 
 [ext_resource type="Script" path="res://3D/Scripts/Brothers/Player_Camera.gd" id="1_io42p"]
-[ext_resource type="PackedScene" uid="uid://32u6080g3xtt" path="res://3D/Assets/Characters/YoungerSibling_Placeholder.glb" id="2_3fepo"]
+[ext_resource type="PackedScene" uid="uid://32u6080g3xtt" path="res://3D/Assets/Placeholder/Characters/YoungerSibling_Placeholder.glb" id="2_3fepo"]
 [ext_resource type="Script" path="res://3D/Scripts/Brothers/Younger_State_Machine/State_Machine_Younger.gd" id="3_nqvev"]
 [ext_resource type="Script" path="res://3D/Scripts/Brothers/Younger_State_Machine/Younger_Idle.gd" id="4_l3mib"]
 [ext_resource type="Script" path="res://3D/Scripts/Brothers/Younger_State_Machine/Younger_Walk.gd" id="5_gsrc8"]
