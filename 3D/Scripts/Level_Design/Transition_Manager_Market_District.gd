@@ -1,7 +1,7 @@
 extends Node
 
 @onready var transition = $Transition
-var home_district = preload("uid://cq62xwmqwdoot")
+@onready var home_district = load("uid://cq62xwmqwdoot")
 
 func _on_area_3d_body_entered(body):
 	if body is CharacterBody3D:

@@ -23,6 +23,10 @@ Game_State="*res://Scripts/Global/Game_State.gd"
 Utils="*res://Scripts/Global/Utils.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
+[display]
+
+window/size/mode=3
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/gut/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
@@ -153,12 +157,13 @@ interact={
 [layer_names]
 
 2d_physics/layer_1="world"
-3d_physics/layer_1="Player"
+3d_physics/layer_1="Static Enviornment"
 2d_physics/layer_2="player"
-3d_physics/layer_2="Static Enviornment"
+3d_physics/layer_2="Player"
 2d_physics/layer_3="objects"
 3d_physics/layer_3="NPC"
 2d_physics/layer_4="enemies"
+3d_physics/layer_4="Trigger Volume"
 
 [physics]
 

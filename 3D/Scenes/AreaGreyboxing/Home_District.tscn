@@ -160,7 +160,7 @@ collision_mask = 0
 mesh = SubResource("PlaneMesh_cgwp7")
 
 [node name="Brothers_House" type="Node3D" parent="CSG_Meshes"]
-transform = Transform3D(-0.45, 0, -0.779423, 0, 0.9, 0, 0.779423, 0, -0.45, -3.33333, 0, 0)
+transform = Transform3D(-0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, -0.5, -3.33333, 0, 0)
 
 [node name="Structure" type="Node3D" parent="CSG_Meshes/Brothers_House"]
 
@@ -17591,7 +17591,7 @@ spring_length = 3.5
 
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, -6, 2.29707, 4.28892)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, -6, 2.29707, 4.28892)
 
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 script = ExtResource("6_bqxj8")
@@ -17603,7 +17603,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.1, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.7, 25.4, 166.2)
 
 [node name="Area3D" type="Area3D" parent="NextLevelVolume"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8, 5.3, -1)
 collision_layer = 8
 collision_mask = 2
 
