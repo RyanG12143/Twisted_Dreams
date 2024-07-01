@@ -19,7 +19,7 @@ func physics_update(body:CharacterBody2D, delta:float):
 			if not ray_cast_down_right.is_colliding():
 				body.velocity.x = 0
 		else:
-			if not ray_cast_down_left.is_colliding():
+			if not ray_cast_down_right.is_colliding():
 				body.velocity.x = 0
 
 

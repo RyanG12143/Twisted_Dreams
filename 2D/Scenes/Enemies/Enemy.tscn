@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://yt3boj0lw4yf"]
+[gd_scene load_steps=24 format=3 uid="uid://yt3boj0lw4yf"]
 
 [ext_resource type="Script" path="res://2D/Scripts/Enemies/Enemy.gd" id="1_pbbsk"]
 [ext_resource type="Script" path="res://2D/Scripts/Enemies/Enemy_State_Machine.gd" id="2_gbq0s"]
@@ -82,13 +82,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_lm62n"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_eilrv"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8iehw"]
-radius = 7.0
-height = 32.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hyo0g"]
+size = Vector2(43, 56)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bjfyg"]
 radius = 200.0
@@ -109,20 +104,9 @@ animation = &"idle"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-position = Vector2(5.36442e-07, 3.33786e-06)
-scale = Vector2(14, 16)
-mesh = SubResource("CapsuleMesh_lm62n")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="MeshInstance2D"]
-position = Vector2(0.571429, -0.3125)
-scale = Vector2(1.14286, 0.625)
-mesh = SubResource("QuadMesh_eilrv")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_8iehw")
+position = Vector2(-4.5, 4)
+shape = SubResource("RectangleShape2D_hyo0g")
 
 [node name="Detection_Radius" type="Area2D" parent="."]
 collision_layer = 0
@@ -140,23 +124,23 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_7kixm")
 
 [node name="Ray_Cast_Down_Right" type="RayCast2D" parent="."]
-position = Vector2(8, 0)
+position = Vector2(18, 16)
 target_position = Vector2(0, 19)
 hit_from_inside = true
 
 [node name="Ray_Cast_Side_Right" type="RayCast2D" parent="."]
-position = Vector2(8, -13)
-target_position = Vector2(0, 27)
+position = Vector2(19, -23)
+target_position = Vector2(0, 53)
 hit_from_inside = true
 
 [node name="Ray_Cast_Down_Left" type="RayCast2D" parent="."]
-position = Vector2(-8, 0)
+position = Vector2(-27, 16)
 target_position = Vector2(0, 19)
 hit_from_inside = true
 
 [node name="Ray_Cast_Side_Left" type="RayCast2D" parent="."]
-position = Vector2(-8, -13)
-target_position = Vector2(0, 27)
+position = Vector2(-28, -23)
+target_position = Vector2(0, 53)
 hit_from_inside = true
 
 [node name="Enemy_State_Machine" type="Node" parent="." node_paths=PackedStringArray("character_body", "default_state")]
@@ -197,7 +181,5 @@ ray_cast_side_right = NodePath("../../Ray_Cast_Side_Right")
 ray_cast_down_left = NodePath("../../Ray_Cast_Down_Left")
 ray_cast_side_left = NodePath("../../Ray_Cast_Side_Left")
 
-[connection signal="path_changed" from="NavigationAgent2D" to="." method="_path_changed"]
-[connection signal="target_reached" from="NavigationAgent2D" to="." method="_target_reached"]
 [connection signal="body_entered" from="Detection_Radius" to="." method="_on_detection_radius_body_entered"]
 [connection signal="body_exited" from="Detection_Radius" to="." method="_on_detection_radius_body_exited"]

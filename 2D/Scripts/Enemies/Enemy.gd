@@ -35,6 +35,8 @@ var is_facing_right:bool = true
 
 ## Enemy state machine which handles switching of states
 @onready var state_machine:Enemy_State_Machine = $Enemy_State_Machine
+## Animated sprite
+@onready var anim:AnimatedSprite2D = $AnimatedSprite2D
 
 
 
@@ -42,6 +44,9 @@ var is_facing_right:bool = true
 func _ready():
 	if disabled:
 		process_mode = Node.PROCESS_MODE_DISABLED
+	
+	anim.play("idle")
+	
 
 
 func _physics_process(delta):
@@ -59,10 +64,14 @@ func _physics_process(delta):
 	if not state_machine.current_state is Charge_Prep:
 		if is_facing_right and velocity.x < 0:
 			is_facing_right = false
-			$MeshInstance2D.scale.x = -$MeshInstance2D.scale.x
+			scale.x *= -1
+			#$AnimatedSprite2D.flip_h = not $AnimatedSprite2D.flip_h
+			#$CollisionShape2D.scale.x *= -1
 		elif not is_facing_right and velocity.x > 0:
 			is_facing_right = true
-			$MeshInstance2D.scale.x = -$MeshInstance2D.scale.x
+			scale.x *= -1
+			#$AnimatedSprite2D.flip_h = not $AnimatedSprite2D.flip_h
+			#$CollisionShape2D.scale.x *= -1
 			
 	var print_string = "%s %s %s %s %s %s " % [name, state_machine.current_state.name, velocity, targets, target, is_facing_right]
 	print(print_string)

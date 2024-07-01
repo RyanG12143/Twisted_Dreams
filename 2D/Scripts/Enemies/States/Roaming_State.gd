@@ -24,7 +24,7 @@ func update(body:CharacterBody2D, delta:float):
 		if not ray_cast_down_right.is_colliding() or ray_cast_side_right.is_colliding():
 			roam_right = false
 	else:
-		if not ray_cast_down_left.is_colliding() or ray_cast_side_left.is_colliding():
+		if not ray_cast_down_right.is_colliding() or ray_cast_side_right.is_colliding():
 			roam_right = true
 	
 	
