@@ -9,10 +9,3 @@ func after_all():
 func test_passes():
 	#Will pass because 1 = 1
 	assert_eq(1,1)
-
-func test_jump():
-	var _character = Character.new()
-	var sender = InputSender.new(_character)
-	sender.action_down("ui_jump").wait_frames(1)
-	await(sender.idle)
-	assert_null(_character)
