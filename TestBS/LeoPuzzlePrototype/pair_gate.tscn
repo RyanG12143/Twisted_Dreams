@@ -22,7 +22,6 @@ position = Vector2(8, 0)
 texture = ExtResource("1_pts8u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_topjx")
 
 [node name="Area2D" type="Area2D" parent="."]

@@ -33,7 +33,7 @@ func _process(delta):
 	#
 	#lerp_weight = (tween.interpolate_value(0.0, 1.0, timer, TRANSITION_TIME, Tween.TRANS_SINE, Tween.EASE_OUT))
 	
-	if(Input.is_action_just_pressed("free_camera") && !globals.swap_active):
+	if(Input.is_action_just_pressed("free_camera") and !globals.swap_active and !globals.death_state):
 		if(globals.character_control != 0):
 			globals.character_two.sprite.modulate = Color(1,1,1)
 			globals.character_one.sprite.modulate = Color(1,1,1)

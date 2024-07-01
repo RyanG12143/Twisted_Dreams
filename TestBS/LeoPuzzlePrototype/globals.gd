@@ -18,6 +18,9 @@ var swap_active:bool = false
 ## Is follow state enabled?
 var follow_state:bool = false
 
+## Is death state enabled?
+var death_state:bool = false
+
 signal Character_Swapped
 
 ## Gets called by character one to set it.

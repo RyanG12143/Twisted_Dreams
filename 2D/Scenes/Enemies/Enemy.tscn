@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://yt3boj0lw4yf"]
+[gd_scene load_steps=25 format=3 uid="uid://yt3boj0lw4yf"]
 
 [ext_resource type="Script" path="res://2D/Scripts/Enemies/Enemy.gd" id="1_pbbsk"]
 [ext_resource type="Script" path="res://2D/Scripts/Enemies/Enemy_State_Machine.gd" id="2_gbq0s"]
@@ -91,16 +91,18 @@ radius = 200.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_7kixm"]
 radius = 92.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tckrk"]
+size = Vector2(34, 56.25)
+
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 8
-collision_mask = 3
 script = ExtResource("1_pbbsk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_pv2yx")
 animation = &"idle"
-frame_progress = 0.678854
+frame_progress = 0.845308
 flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -183,5 +185,12 @@ ray_cast_side_right = NodePath("../../Ray_Cast_Side_Right")
 ray_cast_down_left = NodePath("../../Ray_Cast_Down_Left")
 ray_cast_side_left = NodePath("../../Ray_Cast_Side_Left")
 
+[node name="DeathBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBox"]
+position = Vector2(0, 3.875)
+shape = SubResource("RectangleShape2D_tckrk")
+
 [connection signal="body_entered" from="Detection_Radius" to="." method="_on_detection_radius_body_entered"]
 [connection signal="body_exited" from="Detection_Radius" to="." method="_on_detection_radius_body_exited"]
+[connection signal="body_entered" from="DeathBox" to="." method="_on_death_box_body_entered"]
