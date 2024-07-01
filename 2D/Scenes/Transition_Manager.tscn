@@ -7,7 +7,7 @@ resource_name = "fade_in"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Transition_Manager_Home_District/Transition/ColorRect:self_modulate")
+tracks/0/path = NodePath("Transition_Manager/Transition/ColorRect:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -19,7 +19,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Transition_Manager_Home_District/Transition/ColorRect:visible")
+tracks/1/path = NodePath("Transition_Manager/Transition/ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -34,7 +34,7 @@ resource_name = "fade_out"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Transition_Manager_Home_District/Transition/ColorRect:self_modulate")
+tracks/0/path = NodePath("Transition_Manager/Transition/ColorRect:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -46,7 +46,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Transition_Manager_Home_District/Transition/ColorRect:visible")
+tracks/1/path = NodePath("Transition_Manager/Transition/ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -62,7 +62,7 @@ _data = {
 "fade_out": SubResource("Animation_806sw")
 }
 
-[node name="Transition_Manager_Home_District" type="Node"]
+[node name="Transition_Manager" type="Node"]
 script = ExtResource("1_1076g")
 
 [node name="Transition" type="AnimationPlayer" parent="."]
