@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://yt3boj0lw4yf"]
+[gd_scene load_steps=36 format=3 uid="uid://yt3boj0lw4yf"]
 
 [ext_resource type="Script" path="res://2D/Scripts/Enemies/Enemy.gd" id="1_pbbsk"]
 [ext_resource type="Script" path="res://2D/Scripts/Enemies/Enemy_State_Machine.gd" id="2_gbq0s"]
+[ext_resource type="Texture2D" uid="uid://c0187pe07qxdo" path="res://2D/Assets/Monsters/ShadowMonser_PoliceOfficer_Walk.png" id="3_440us"]
 [ext_resource type="Script" path="res://2D/Scripts/Enemies/States/Follow_State.gd" id="3_bma5r"]
 [ext_resource type="Script" path="res://2D/Scripts/Enemies/States/Idle_State.gd" id="4_2egie"]
 [ext_resource type="Script" path="res://2D/Scripts/Enemies/States/Roaming_State.gd" id="5_4yl3q"]
@@ -47,6 +48,46 @@ region = Rect2(448, 0, 64, 64)
 atlas = ExtResource("10_xl5wj")
 region = Rect2(512, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ar5ef"]
+atlas = ExtResource("3_440us")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qmms"]
+atlas = ExtResource("3_440us")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3gjk"]
+atlas = ExtResource("3_440us")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxtyn"]
+atlas = ExtResource("3_440us")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkdov"]
+atlas = ExtResource("3_440us")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrwrx"]
+atlas = ExtResource("3_440us")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tq2ni"]
+atlas = ExtResource("3_440us")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1ruq"]
+atlas = ExtResource("3_440us")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kctfj"]
+atlas = ExtResource("3_440us")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwlp4"]
+atlas = ExtResource("3_440us")
+region = Rect2(576, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_pv2yx"]
 animations = [{
 "frames": [{
@@ -80,6 +121,41 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ar5ef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qmms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3gjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxtyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkdov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrwrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tq2ni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1ruq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kctfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwlp4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hyo0g"]
@@ -101,9 +177,7 @@ script = ExtResource("1_pbbsk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_pv2yx")
-animation = &"idle"
-frame_progress = 0.571096
-flip_h = true
+animation = &"walk"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
@@ -133,7 +207,7 @@ target_position = Vector2(0, 19)
 hit_from_inside = true
 
 [node name="Ray_Cast_Side_Right" type="RayCast2D" parent="."]
-position = Vector2(19, -23)
+position = Vector2(24, -23)
 target_position = Vector2(0, 53)
 hit_from_inside = true
 
@@ -143,7 +217,7 @@ target_position = Vector2(0, 19)
 hit_from_inside = true
 
 [node name="Ray_Cast_Side_Left" type="RayCast2D" parent="."]
-position = Vector2(-19, -23)
+position = Vector2(-26, -22)
 target_position = Vector2(0, 53)
 hit_from_inside = true
 

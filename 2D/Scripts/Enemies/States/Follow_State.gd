@@ -5,6 +5,10 @@ extends Enemy_State
 @export var ray_cast_down_left:RayCast2D
 
 
+func enter(body:CharacterBody2D):
+	body.anim.play("walk")
+
+
 func physics_update(body:CharacterBody2D, delta:float):
 	if not body.target:
 		return

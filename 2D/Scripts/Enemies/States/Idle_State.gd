@@ -2,6 +2,9 @@ class_name Idle
 extends Enemy_State
 
 
+func enter(body:CharacterBody2D):
+	body.anim.play("idle")
+
 func update(body:CharacterBody2D, delta:float):
 	if not body.targets:
 		return
