@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_twgrn"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_0yf22"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_bqxj8"]
-[ext_resource type="PackedScene" uid="uid://butxc7wbg1vs1" path="res://2D/Scenes/Transition_Manager.tscn" id="8_xm0uh"]
+[ext_resource type="PackedScene" uid="uid://butxc7wbg1vs1" path="res://2D/Scenes/3D_Transition_Manager.tscn" id="8_xm0uh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_isqim"]
 sky_top_color = Color(0.364013, 0.451352, 0.597576, 1)
@@ -550,7 +550,7 @@ sides = 20
 [node name="Neighborhood_Buildings" type="Node3D" parent="CSG_Meshes"]
 
 [node name="Placeholder_House" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, 14.4444, 0, -13.3333)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 14.4444, 0, -13.3333)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -923,7 +923,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House10" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, 35.5556, 0, -13.3333)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 35.5556, 0, -13.3333)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House10"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -1296,7 +1296,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House11" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, 57.7778, 0, -13.3333)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 57.7778, 0, -13.3333)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House11"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -1669,7 +1669,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House12" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, 78.8889, 0, -13.3333)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 78.8889, 0, -13.3333)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House12"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -2042,7 +2042,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House13" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, 101.111, 0, -13.3333)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 101.111, 0, -13.3333)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House13"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -2415,7 +2415,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House14" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, 123.333, 0, -13.3333)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 123.333, 0, -13.3333)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House14"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -2788,7 +2788,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House15" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(-0.45, 0, 0.779423, 0, 0.9, 0, -0.779423, 0, -0.45, 148.889, 0, -6.66667)
+transform = Transform3D(-0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, -0.5, 148.889, 0, -6.66667)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House15"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -3161,7 +3161,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House16" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(-3.93403e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.93403e-08, 154.444, 0, 17.7778)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 154.444, 0, 17.7778)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House16"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -3534,7 +3534,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House17" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(-3.93403e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.93403e-08, 154.444, 0, 40)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 154.444, 0, 40)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House17"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -3907,7 +3907,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House18" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(-3.93403e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.93403e-08, 154.444, 0, 61.1111)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 154.444, 0, 61.1111)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House18"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -4280,7 +4280,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House19" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(-3.93403e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.93403e-08, 154.444, 0, 83.3333)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 154.444, 0, 83.3333)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House19"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -4653,7 +4653,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House20" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(-3.93403e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.93403e-08, 154.444, 0, 104.444)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 154.444, 0, 104.444)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House20"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -5026,7 +5026,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House21" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(-3.93403e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.93403e-08, 154.444, 0, 125.556)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 154.444, 0, 125.556)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House21"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -5399,7 +5399,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House22" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(1.75236e-07, 0, -0.9, 0, 0.9, 0, 0.9, 0, 1.75236e-07, 131.111, 0, 134.444)
+transform = Transform3D(1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 131.111, 0, 134.444)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House22"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -5772,7 +5772,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House23" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(1.75236e-07, 0, -0.9, 0, 0.9, 0, 0.9, 0, 1.75236e-07, 131.111, 0, 113.333)
+transform = Transform3D(1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 131.111, 0, 113.333)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House23"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -6145,7 +6145,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House24" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(1.75236e-07, 0, -0.9, 0, 0.9, 0, 0.9, 0, 1.75236e-07, 131.111, 0, 88.889)
+transform = Transform3D(1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 131.111, 0, 88.889)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House24"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -6518,7 +6518,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House25" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(1.75236e-07, 0, -0.9, 0, 0.9, 0, 0.9, 0, 1.75236e-07, 131.111, 0, 67.7778)
+transform = Transform3D(1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 131.111, 0, 67.7778)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House25"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -6891,7 +6891,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House26" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(1.75236e-07, 0, -0.9, 0, 0.9, 0, 0.9, 0, 1.75236e-07, 131.111, 0, 43.3334)
+transform = Transform3D(1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 131.111, 0, 43.3334)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House26"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -7264,7 +7264,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House27" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(1.75236e-07, 0, -0.9, 0, 0.9, 0, 0.9, 0, 1.75236e-07, 131.111, 0, 22.2223)
+transform = Transform3D(1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 131.111, 0, 22.2223)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House27"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -7637,7 +7637,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House2" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(6.79481e-08, 0, -0.9, 0, 0.9, 0, 0.9, 0, 6.79481e-08, -6.66667, 0, 25.5556)
+transform = Transform3D(7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, -6.66667, 0, 25.5556)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House2"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -8010,7 +8010,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House32" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(-1.46629e-07, 0, 0.9, 0, 0.9, 0, -0.9, 0, -1.46629e-07, 43.3333, 0, 25.5556)
+transform = Transform3D(-1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 43.3333, 0, 25.5556)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House32"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -8383,7 +8383,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House46" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(2.25309e-07, 0, -0.9, 0, 0.9, 0, 0.9, 0, 2.25309e-07, 19.3333, 0, 25.5556)
+transform = Transform3D(1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 19.3333, 0, 25.5556)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House46"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -8756,7 +8756,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House33" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(-1.46629e-07, 0, 0.9, 0, 0.9, 0, -0.9, 0, -1.46629e-07, 43.3333, 0, 44.4445)
+transform = Transform3D(-1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 43.3333, 0, 44.4445)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House33"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -9129,7 +9129,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House34" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(6.79481e-08, 0, -0.9, 0, 0.9, 0, 0.9, 0, 6.79481e-08, 63.3333, 0, 45.5556)
+transform = Transform3D(7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, 63.3333, 0, 45.5556)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House34"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -9502,7 +9502,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House36" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(-0.779423, 0, 0.45, 0, 0.9, 0, -0.45, 0, -0.779423, 81.1111, 0, 55.5556)
+transform = Transform3D(-0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866026, 81.1111, 0, 55.5556)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House36"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -9875,7 +9875,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House37" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(-0.636396, 0, 0.636396, 0, 0.9, 0, -0.636396, 0, -0.636396, 98.8889, 0, 68.8889)
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 98.8889, 0, 68.8889)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House37"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -10248,7 +10248,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House38" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(-3.93403e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.93403e-08, 106.667, 0, 90)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 106.667, 0, 90)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House38"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -10621,7 +10621,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House39" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(-3.93403e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.93403e-08, 106.667, 0, 112.222)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 106.667, 0, 112.222)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House39"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -10994,7 +10994,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House40" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(-3.93403e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.93403e-08, 106.667, 0, 134.444)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 106.667, 0, 134.444)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House40"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -11322,7 +11322,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House41" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(1.75236e-07, 0, -0.9, 0, 0.9, 0, 0.9, 0, 1.75236e-07, 83.3334, 0, 136.667)
+transform = Transform3D(1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 83.3334, 0, 136.667)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House41"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -11695,7 +11695,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House42" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(1.75236e-07, 0, -0.9, 0, 0.9, 0, 0.9, 0, 1.75236e-07, 83.3334, 0, 115.556)
+transform = Transform3D(1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 83.3334, 0, 115.556)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House42"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -12068,7 +12068,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House43" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(1.75236e-07, 0, -0.9, 0, 0.9, 0, 0.9, 0, 1.75236e-07, 83.3334, 0, 96.6667)
+transform = Transform3D(1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 83.3334, 0, 96.6667)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House43"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -12441,7 +12441,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House44" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(0.779423, 0, -0.45, 0, 0.9, 0, 0.45, 0, 0.779423, 70, 0, 76.6667)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 70, 0, 76.6667)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House44"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -12814,7 +12814,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House45" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(0.9, 0, 1.78814e-07, 0, 0.9, 0, -1.78814e-07, 0, 0.9, 47.7778, 0, 75.5556)
+transform = Transform3D(1, 0, 1.98682e-07, 0, 1, 0, -1.98682e-07, 0, 1, 47.7778, 0, 75.5556)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House45"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -13187,7 +13187,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House35" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(6.79481e-08, 0, -0.9, 0, 0.9, 0, 0.9, 0, 6.79481e-08, 63.3333, 0, 25.5556)
+transform = Transform3D(7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, 63.3333, 0, 25.5556)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House35"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -13560,7 +13560,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House4" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(6.79481e-08, 0, -0.9, 0, 0.9, 0, 0.9, 0, 6.79481e-08, -6.66667, 0, 47.7778)
+transform = Transform3D(7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, -6.66667, 0, 47.7778)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House4"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -13933,7 +13933,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House5" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(2.25309e-07, 0, -0.9, 0, 0.9, 0, 0.9, 0, 2.25309e-07, 18.4444, 0, 47.4445)
+transform = Transform3D(1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 18.4444, 0, 47.4445)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House5"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -14306,7 +14306,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House6" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(6.79481e-08, 0, -0.9, 0, 0.9, 0, 0.9, 0, 6.79481e-08, -6.66667, 0, 67.7778)
+transform = Transform3D(7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, -6.66667, 0, 67.7778)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House6"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -14679,7 +14679,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House7" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(2.25309e-07, 0, -0.9, 0, 0.9, 0, 0.9, 0, 2.25309e-07, 18.4444, 0, 136.111)
+transform = Transform3D(1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 18.4444, 0, 136.111)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House7"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -15052,7 +15052,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House8" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(6.79481e-08, 0, -0.9, 0, 0.9, 0, 0.9, 0, 6.79481e-08, -6.66667, 0, 88.8889)
+transform = Transform3D(7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, -6.66667, 0, 88.8889)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House8"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -15425,7 +15425,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House9" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(2.25309e-07, 0, -0.9, 0, 0.9, 0, 0.9, 0, 2.25309e-07, 18.4444, 0, 115)
+transform = Transform3D(1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 18.4444, 0, 115)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House9"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -15798,7 +15798,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House28" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(6.79481e-08, 0, -0.9, 0, 0.9, 0, 0.9, 0, 6.79481e-08, -6.66667, 0, 110)
+transform = Transform3D(7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, -6.66667, 0, 110)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House28"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -16171,7 +16171,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House29" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(2.25309e-07, 0, -0.9, 0, 0.9, 0, 0.9, 0, 2.25309e-07, 18.4444, 0, 91.6667)
+transform = Transform3D(1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 18.4444, 0, 91.6667)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House29"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -16544,7 +16544,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House30" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(6.79481e-08, 0, -0.9, 0, 0.9, 0, 0.9, 0, 6.79481e-08, -6.66667, 0, 130)
+transform = Transform3D(7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, -6.66667, 0, 130)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House30"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -16917,7 +16917,7 @@ collision_mask = 0
 size = Vector3(1.6, 0.0875977, 0.4)
 
 [node name="Placeholder_House31" type="Node3D" parent="CSG_Meshes/Neighborhood_Buildings"]
-transform = Transform3D(2.25309e-07, 0, -0.9, 0, 0.9, 0, 0.9, 0, 2.25309e-07, 18.4444, 0, 69.4444)
+transform = Transform3D(1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 18.4444, 0, 69.4444)
 
 [node name="Floor" type="CSGBox3D" parent="CSG_Meshes/Neighborhood_Buildings/Placeholder_House31"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.05, 0.5)
@@ -17531,7 +17531,7 @@ spring_length = 3.5
 
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, -6, 2.29707, 4.28892)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, -6, 2.29707, 4.28892)
 
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 script = ExtResource("6_bqxj8")
@@ -17543,7 +17543,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.1, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.7, 25.4, 166.2)
 
 [node name="Area3D" type="Area3D" parent="NextLevelVolume"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8, 5.3, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.794441, 0.377619, -0.116348)
 collision_layer = 8
 collision_mask = 2
 
@@ -17551,4 +17551,6 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35, 0.649994)
 shape = SubResource("BoxShape3D_pdrss")
 
-[node name="Transition_Manager_Home_District" parent="." instance=ExtResource("8_xm0uh")]
+[node name="3D_Transition_Manager" parent="." instance=ExtResource("8_xm0uh")]
+
+[connection signal="body_entered" from="NextLevelVolume/Area3D" to="3D_Transition_Manager" method="_on_area_3d_body_entered"]

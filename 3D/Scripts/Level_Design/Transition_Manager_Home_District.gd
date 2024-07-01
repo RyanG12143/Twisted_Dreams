@@ -3,7 +3,8 @@ extends Node
 @onready var transition = $Transition
 @export var scene_to_load: PackedScene
 
-func ready():
+func _ready():
+	await owner.ready
 	transition.play("fade_in")
 
 func _on_area_3d_body_entered(body):
