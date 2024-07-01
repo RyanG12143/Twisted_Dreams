@@ -4,7 +4,8 @@ extends CharacterBody3D
 const SPEED = 5.0
 
 @export var loop:bool = false
-@export var positionsContainer:Node3D
+@export var positions_container:Node3D
+@export var turn_Speed:float = 10
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -18,10 +19,10 @@ var child_look_at
 
 
 func _ready():
-	if not positionsContainer:
+	if not positions_container:
 		process_mode = Node.PROCESS_MODE_DISABLED
 		return
-	for marker in positionsContainer.get_children():
+	for marker in positions_container.get_children():
 		if marker is Marker3D:
 			positions.append(marker.global_position)
 	
@@ -37,18 +38,16 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	
+	navAgent.target_position = positions[currentPosition - 1]
+	
 	var target = navAgent.get_next_path_position()
-	
-	var direction = (target - global_position).normalized()
-	
-	
-	child_look_at.look_at(target, Vector3.UP, true)
+	child_look_at.look_at(Vector3(target.x, child_look_at.global_position.y, target.z), Vector3.UP, true)
 	var target_rotation = Quaternion(child_look_at.global_transform.basis)
 	var current_rotation = Quaternion(global_transform.basis)
-	var next_rotation = current_rotation.slerp(target_rotation, delta*1.0)
+	var next_rotation = current_rotation.slerp(target_rotation, delta * turn_Speed)
 	global_transform.basis = Basis(next_rotation)
 	
-	
+	var direction = ($Front.global_position - global_position).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED

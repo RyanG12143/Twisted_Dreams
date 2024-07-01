@@ -82,10 +82,10 @@ transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.93
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 script = ExtResource("6_fivi7")
 
-[node name="CharacterBody3D" parent="." node_paths=PackedStringArray("positionsContainer") instance=ExtResource("1_08itc")]
+[node name="Chase_Character" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_08itc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.111195, 2.06188, -6.28709)
 loop = true
-positionsContainer = NodePath("../Markers")
+positions_container = NodePath("../Markers")
 
 [node name="Markers" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.298242, 0)

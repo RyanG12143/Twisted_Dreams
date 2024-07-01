@@ -21,6 +21,7 @@ func _ready():
 
 
 func enter(body:CharacterBody2D):
+	print("enter")
 	body.set_collision_mask_value(2, false)
 	
 	var direction = body.global_position.direction_to(flee_object.global_position)
@@ -40,10 +41,10 @@ func physics_update(body:CharacterBody2D, delta:float):
 	if body.grounded:
 		if body.velocity.x > 0:
 			if not ray_cast_down_right.is_colliding() or ray_cast_side_right.is_colliding():
-				flee_right = not flee_right
+				flee_right = false
 		else:
-			if not ray_cast_down_right.is_colliding() or ray_cast_side_left.is_colliding():
-				flee_right = not flee_right
+			if not ray_cast_down_left.is_colliding() or ray_cast_side_left.is_colliding():
+				flee_right = true
 
 
 func update(body:CharacterBody2D, delta:float):
