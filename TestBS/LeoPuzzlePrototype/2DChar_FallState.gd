@@ -3,15 +3,15 @@ class_name FallState
 ## Fall state of 2D characters.
 
 func Enter():
-	parent.anim.play("Fall")
+	owner.anim.play("Fall")
 
 func Exit():
 	pass
 
 func Update(delta):
-	if parent.is_grounded:
+	if owner.is_grounded:
 		Transitioned.emit(self, "Land")
-	elif parent.velocity.y < 0:
+	elif owner.velocity.y < 0:
 			Transitioned.emit(self, "Jump")
 		
 		

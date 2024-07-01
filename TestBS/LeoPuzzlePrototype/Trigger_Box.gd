@@ -1,15 +1,19 @@
-extends Sprite2D
+extends Area2D
 ## Triggers that call somethin to happen when a character walks through it.
 
-signal Trigger_Activated
+## Is this trigger box a trigger for changing whether follow state is enabled.
+@export var follow_trigger:bool = false
 
-@onready var Area:Area2D = $Area2D
+signal Trigger_Activated
 
 ## Whether or not the trigger is activated.
 var trigger_activated:bool = false
 
-## Detects if player enters the trigger area and automatically activates it.
-func _on_area_2d_body_entered(body):
-	if((!trigger_activated) and body.is_in_group("Player")):
+## Detects if player enters/exits the trigger area and automatically activates it.
+func _trigger_dectected_body(body):
+	if((!trigger_activated) and body.is_in_group("Player") and globals.character_control != 0):
 		trigger_activated = true
-		emit_signal("Trigger_Activated")
+		if(follow_trigger):
+			globals.toggle_follow_state()
+		else:
+			emit_signal("Trigger_Activated")

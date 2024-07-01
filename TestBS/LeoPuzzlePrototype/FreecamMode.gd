@@ -17,14 +17,13 @@ var tween:Tween
 ## Character controlled before going freecam.
 var prev_char_control:int = 1
 
-var follow_cam:PhantomCameraHost = null
+@export var follow_cam:PhantomCameraHost = null
 var reset_pos:Vector2 = Vector2(0,0)
 
 ## Connects signals and creates the tween.
 func _ready():
 	globals.Character_Swapped.connect(character_swap)
 	tween = get_tree().create_tween().set_trans(Tween.TRANS_SINE)
-	follow_cam = get_tree().get_root().get_node("world/Camera2D/PhantomCameraHost")
 
 ## Controls the position of the camera during a transition.
 func _process(delta):

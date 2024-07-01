@@ -3,6 +3,9 @@ extends CharacterBody2D
 
 ## Character number.
 @export var character_number:int = 0
+## Raycasts.
+@export var left_raycast:RayCast2D = null
+@export var right_raycast:RayCast2D = null
 ## Animation player.
 @onready var anim:AnimationPlayer = $AnimationPlayer
 ## Animated sprite.
@@ -45,6 +48,11 @@ var jump_duration:float = 0.4
 ## Wether or not the character is facing right.
 var is_facing_right:bool = true
 
+## Is this character in follow state?
+var is_following:bool = false
+## The target to be followed while follow state is enabled.
+var follow_target:CharacterBody2D = null
+
 ## Sets some default values.
 func _ready():
 	if(character_number == 1):
@@ -58,6 +66,13 @@ func _ready():
 		sprite.modulate = Color(0.1,0.1,0.1)
 	else:
 		sprite.modulate = Color(1,1,1)
+		
+	await get_parent().ready
+	
+	if(character_number == 1):
+		follow_target = globals.character_two
+	elif(character_number == 2):
+		follow_target = globals.character_one
 
 ## Apply movement.
 func _physics_process(delta):
@@ -80,6 +95,31 @@ func apply_gravity(delta):
 
 ## Apply effects of movement.
 func apply_movement():
+	if(is_following and follow_target):
+		
+		## Direction to follow
+		var direction:Vector2 = global_position.direction_to(follow_target.global_position)
+		direction.x = 1 if direction.x > 0 else -1
+		if(abs(global_position.x - follow_target.global_position.x) > 50):
+			velocity.x = direction.x * move_speed
+		if(velocity.x < 0):
+			is_facing_right = false
+			sprite.flip_h = true
+		elif(velocity.x > 0):
+			is_facing_right = true
+			sprite.flip_h = false
+		
+		if left_raycast.is_colliding() or right_raycast.is_colliding() and is_on_floor():
+			velocity.y = max_jump_velocity
+		
+		
+		
+		move_and_slide()
+		is_grounded = is_on_floor()
+		if(is_grounded):
+			is_jumping = false
+		return
+		
 	move_and_slide()
 	is_grounded = is_on_floor()
 	if(is_grounded):

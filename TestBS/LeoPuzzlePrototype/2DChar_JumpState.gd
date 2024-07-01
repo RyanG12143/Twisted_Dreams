@@ -3,15 +3,15 @@ class_name JumpState
 ## Jump state of 2D characters.
 
 func Enter():
-	parent.anim.play("Jump")
+	owner.anim.play("Jump")
 
 func Exit():
 	pass
 
 func Update(delta):
-	if parent.is_grounded:
+	if owner.is_grounded:
 		Transitioned.emit(self, "Land")
-	elif parent.velocity.y >= 200:
+	elif owner.velocity.y >= 200:
 		Transitioned.emit(self, "Fall")
 
 func Physics_Update(delta):

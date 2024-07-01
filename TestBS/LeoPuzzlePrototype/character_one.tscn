@@ -382,18 +382,20 @@ size = Vector2(20, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_befiv"]
 size = Vector2(20, 1.45874)
 
-[node name="character_one" type="CharacterBody2D" groups=["Can_Press_Buttons", "Player"]]
+[node name="character_one" type="CharacterBody2D" node_paths=PackedStringArray("left_raycast", "right_raycast") groups=["Can_Press_Buttons", "Player"]]
 z_index = 2
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_hdimr")
 character_number = 1
+left_raycast = NodePath("RayCastLeft")
+right_raycast = NodePath("RayCastRight")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(0, -0.029)
-scale = Vector2(1.21875, 1.00112)
+position = Vector2(-0.5, -0.8)
+scale = Vector2(1.05, 1.05)
 sprite_frames = SubResource("SpriteFrames_05c8r")
 animation = &"Idle"
 
@@ -436,3 +438,13 @@ script = ExtResource("9_ictel")
 script = ExtResource("10_wojww")
 
 [node name="Disabled" type="Node" parent="StateMachine"]
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(11, -15)
+target_position = Vector2(0, 30)
+hit_from_inside = true
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(-11, -15)
+target_position = Vector2(0, 30)
+hit_from_inside = true

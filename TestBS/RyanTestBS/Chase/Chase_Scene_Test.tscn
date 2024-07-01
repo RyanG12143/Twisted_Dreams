@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://xuteggk5aiph"]
 
-[ext_resource type="PackedScene" uid="uid://cu7wqioxho4ft" path="res://Chase_Character.tscn" id="1_08itc"]
+[ext_resource type="PackedScene" uid="uid://cu7wqioxho4ft" path="res://TestBS/LeoPuzzlePrototype/Chase_Character.tscn" id="1_08itc"]
 [ext_resource type="PackedScene" uid="uid://deg7i3dtq3kts" path="res://3D/Scenes/Brothers/Brother_Younger.tscn" id="2_vy1ac"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_wdovb"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_qw5bw"]
