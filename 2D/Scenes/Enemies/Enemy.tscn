@@ -97,12 +97,6 @@ size = Vector2(34, 56.25)
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 8
 script = ExtResource("1_pbbsk")
-SPEED = null
-roaming = null
-grounded = null
-charging = null
-weeping = null
-disabled = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -153,6 +147,12 @@ position = Vector2(-19, -23)
 target_position = Vector2(0, 53)
 hit_from_inside = true
 
+[node name="DeathBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBox"]
+position = Vector2(0, 3.875)
+shape = SubResource("RectangleShape2D_tckrk")
+
 [node name="Enemy_State_Machine" type="Node" parent="." node_paths=PackedStringArray("character_body", "default_state")]
 script = ExtResource("2_gbq0s")
 character_body = NodePath("..")
@@ -190,12 +190,6 @@ ray_cast_down_right = NodePath("../../Ray_Cast_Down_Right")
 ray_cast_side_right = NodePath("../../Ray_Cast_Side_Right")
 ray_cast_down_left = NodePath("../../Ray_Cast_Down_Left")
 ray_cast_side_left = NodePath("../../Ray_Cast_Side_Left")
-
-[node name="DeathBox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBox"]
-position = Vector2(0, 3.875)
-shape = SubResource("RectangleShape2D_tckrk")
 
 [connection signal="body_entered" from="Detection_Radius" to="." method="_on_detection_radius_body_entered"]
 [connection signal="body_exited" from="Detection_Radius" to="." method="_on_detection_radius_body_exited"]

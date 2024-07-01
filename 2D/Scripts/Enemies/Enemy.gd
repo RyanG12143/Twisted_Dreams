@@ -45,7 +45,10 @@ func _ready():
 	
 	anim.play("idle")
 	
-	owner.get_node("2D_Transition_Manager")
+	
+	
+	await owner.ready
+	owner.get_node("2D_Transition_Manager").connect_enemy($DeathBox)
 
 
 func _physics_process(delta):
