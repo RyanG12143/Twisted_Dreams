@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://yt3boj0lw4yf"]
+[gd_scene load_steps=26 format=3 uid="uid://yt3boj0lw4yf"]
 
 [ext_resource type="Script" path="res://2D/Scripts/Enemies/Enemy.gd" id="1_pbbsk"]
 [ext_resource type="Script" path="res://2D/Scripts/Enemies/Enemy_State_Machine.gd" id="2_gbq0s"]
@@ -9,6 +9,78 @@
 [ext_resource type="Script" path="res://2D/Scripts/Enemies/States/Charge_Prep_State.gd" id="7_654hi"]
 [ext_resource type="Script" path="res://2D/Scripts/Enemies/States/Weeping_State.gd" id="8_regu1"]
 [ext_resource type="Script" path="res://2D/Scripts/Enemies/States/Fleeing_State.gd" id="9_c2fj4"]
+[ext_resource type="Texture2D" uid="uid://cgwls5nt75eru" path="res://2D/Assets/Monsters/ShadowMonster_PoliceOfficer_Idle.png" id="10_xl5wj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wii8"]
+atlas = ExtResource("10_xl5wj")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtssa"]
+atlas = ExtResource("10_xl5wj")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjxpj"]
+atlas = ExtResource("10_xl5wj")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fndrh"]
+atlas = ExtResource("10_xl5wj")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kagac"]
+atlas = ExtResource("10_xl5wj")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gatjy"]
+atlas = ExtResource("10_xl5wj")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akstm"]
+atlas = ExtResource("10_xl5wj")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ok75b"]
+atlas = ExtResource("10_xl5wj")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25b4q"]
+atlas = ExtResource("10_xl5wj")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pv2yx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wii8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtssa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjxpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fndrh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kagac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gatjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akstm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ok75b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25b4q")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_lm62n"]
 
@@ -28,6 +100,14 @@ radius = 92.0
 collision_layer = 8
 collision_mask = 3
 script = ExtResource("1_pbbsk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_pv2yx")
+animation = &"idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
@@ -65,8 +145,8 @@ target_position = Vector2(0, 19)
 hit_from_inside = true
 
 [node name="Ray_Cast_Side_Right" type="RayCast2D" parent="."]
-position = Vector2(7, 0)
-target_position = Vector2(5, 0)
+position = Vector2(8, -13)
+target_position = Vector2(0, 27)
 hit_from_inside = true
 
 [node name="Ray_Cast_Down_Left" type="RayCast2D" parent="."]
@@ -75,8 +155,8 @@ target_position = Vector2(0, 19)
 hit_from_inside = true
 
 [node name="Ray_Cast_Side_Left" type="RayCast2D" parent="."]
-position = Vector2(-7, 0)
-target_position = Vector2(-5, 0)
+position = Vector2(-8, -13)
+target_position = Vector2(0, 27)
 hit_from_inside = true
 
 [node name="Enemy_State_Machine" type="Node" parent="." node_paths=PackedStringArray("character_body", "default_state")]
