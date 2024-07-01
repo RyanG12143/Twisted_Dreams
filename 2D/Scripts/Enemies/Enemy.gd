@@ -44,6 +44,8 @@ func _ready():
 		process_mode = Node.PROCESS_MODE_DISABLED
 	
 	anim.play("idle")
+	
+	owner.get_node("2D_Transition_Manager")
 
 
 func _physics_process(delta):
@@ -96,10 +98,3 @@ func flee(body:RigidBody2D):
 	print("%s Flee" %name)
 	state_machine.on_flee(body)
 	
-
-
-func _on_death_box_body_entered(body):
-	if body.is_in_group("Player"):
-		globals.death_state = true
-		globals.character_control = 0
-		
