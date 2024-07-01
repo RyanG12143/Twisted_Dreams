@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://xuteggk5aiph"]
 
-[ext_resource type="PackedScene" uid="uid://cu7wqioxho4ft" path="res://Chase_Character.tscn" id="1_08itc"]
+[ext_resource type="PackedScene" uid="uid://cu7wqioxho4ft" path="res://TestBS/RyanTestBS/Chase/Chase_Character.tscn" id="1_08itc"]
 [ext_resource type="PackedScene" uid="uid://deg7i3dtq3kts" path="res://3D/Scenes/Brothers/Brother_Younger.tscn" id="2_vy1ac"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_wdovb"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_qw5bw"]
@@ -59,11 +59,11 @@ size = Vector3(4.22314, 2.01953, 1)
 environment = SubResource("Environment_l6bgl")
 
 [node name="YoungerBrother" parent="." instance=ExtResource("2_vy1ac")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90859, 1.85896, 1.71783)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0684642, 1.85896, 1.87246)
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
-transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 1.90859, 3.05602, 5.00675)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, -0.0684642, 3.05603, 5.16138)
 script = ExtResource("3_wdovb")
 priority = 10
 follow_mode = 6
@@ -77,7 +77,7 @@ collision_mask = 2
 
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 1.90859, 3.05602, 5.00675)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, -0.0684642, 3.05603, 5.16138)
 
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 script = ExtResource("6_fivi7")
@@ -88,6 +88,7 @@ loop = true
 positionsContainer = NodePath("../Markers")
 
 [node name="Markers" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.298242, 0)
 
 [node name="Marker3D" type="Marker3D" parent="Markers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17483, 0.84428, 0)

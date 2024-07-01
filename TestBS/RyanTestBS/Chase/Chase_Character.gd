@@ -10,8 +10,10 @@ const SPEED = 5.0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var currentPosition:int = 0
 var positions:Array[Vector3]
+var look:Vector3
 
 @onready var navAgent:NavigationAgent3D = $NavigationAgent3D
+@onready var sample:Node3D = $Node3D
 
 
 
@@ -32,11 +34,23 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	
-	print (navAgent.get_next_path_position())
-	print (global_position)
-	
 	
 	var direction = (navAgent.get_next_path_position() - global_position).normalized()
+	
+	var forward:Vector3 = global_position.direction_to($Marker3D.global_position)
+	var dot = direction.dot(forward)
+	var angle = rad_to_deg(acos(dot))
+	print(angle)
+	
+	var angle_to_turn = clampf(250 * delta, 0, angle)
+	
+	var FCrossP = forward.cross(direction)
+	if FCrossP.z < 0:
+		angle_to_turn *= -1
+	print(angle_to_turn)
+	
+	rotation_degrees.y = move_toward(rotation_degrees.y, angle_to_turn, 10)
+	
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED

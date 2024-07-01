@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://dre0o1tw818oq"]
 
-[ext_resource type="Material" uid="uid://dqh67xl8hqsyw" path="res://3D/Scenes/AreaGreyboxing/Prototype_Dark_Accent.tres" id="1_5cd8q"]
+[ext_resource type="Material" path="res://3D/Scenes/AreaGreyboxing/Prototype_Dark_Accent.tres" id="1_5cd8q"]
 [ext_resource type="Script" path="res://3D/Scenes/AreaGreyboxing/Market_District.gd" id="1_nsir7"]
 [ext_resource type="PackedScene" uid="uid://bived31tg1brm" path="res://3D/Scenes/Brothers/Brother_Older.tscn" id="2_gtjnm"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_n7vig"]

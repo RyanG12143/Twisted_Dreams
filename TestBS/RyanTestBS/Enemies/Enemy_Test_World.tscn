@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bd1ru2so26744" path="res://TestBS/LeoPuzzlePrototype/Luminous_Crate.tscn" id="5_48ade"]
 [ext_resource type="PackedScene" uid="uid://pqhyjjoo1fcs" path="res://TestBS/LeoPuzzlePrototype/character_two.tscn" id="5_gfuy7"]
 
-[node name="Node2D" type="Node2D"]
+[node name="world" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_thtja")
