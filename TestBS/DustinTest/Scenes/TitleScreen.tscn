@@ -1,6 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://crr856pc46668"]
-
-[ext_resource type="Script" path="res://3D/Scripts/Title_Screen.gd" id="1_l72fx"]
+[gd_scene load_steps=2 format=3 uid="uid://crr856pc46668"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_np4vy"]
 font_size = 50
@@ -10,7 +8,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_l72fx")
 
 [node name="Play" type="Button" parent="."]
 layout_mode = 0
