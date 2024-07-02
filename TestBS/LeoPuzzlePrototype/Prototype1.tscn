@@ -1432,7 +1432,7 @@ ease = 2
 script = ExtResource("1_11rm0")
 
 [node name="Enemy" parent="." instance=ExtResource("2_5x4c0")]
-position = Vector2(-136, -629)
+position = Vector2(75, -574)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("1_1mqmv")]
 follow_viewport_scale = 1000.0
@@ -1457,7 +1457,7 @@ script = ExtResource("5_3omn7")
 priority = 10
 follow_mode = 3
 follow_targets = [NodePath("../character_one"), NodePath("../character_two")]
-zoom = Vector2(1.73438, 1.73438)
+zoom = Vector2(1.9625, 1.9625)
 tween_resource = SubResource("Resource_1p510")
 auto_zoom = true
 auto_zoom_min = -100.0
@@ -1467,7 +1467,7 @@ draw_limits = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(269, -480)
-zoom = Vector2(1.73438, 1.73438)
+zoom = Vector2(1.9625, 1.9625)
 
 [node name="FreecamMode" type="Node2D" parent="Camera2D" node_paths=PackedStringArray("follow_cam")]
 script = ExtResource("7_mstdh")
