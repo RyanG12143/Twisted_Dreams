@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgqaw5gst3wpc"]
+
+[ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/world.gd" id="1_13iy5"]
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_13iy5")

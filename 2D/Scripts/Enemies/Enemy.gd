@@ -48,7 +48,7 @@ func _ready():
 	
 	
 	await owner.ready
-	owner.get_node("2D_Transition_Manager").connect_enemy($DeathBox)
+	owner.get_node("CanvasLayer/2D_Transition_Manager").connect_enemy($DeathBox)
 
 
 func _physics_process(delta):
@@ -72,7 +72,7 @@ func _physics_process(delta):
 			$AnimatedSprite2D.flip_h = false
 			
 	var print_string = "%s %s %s %s %s %s " % [name, state_machine.current_state.name, velocity, targets, target, is_facing_right]
-	print(print_string)
+	#print(print_string)
 
 
 func _process(delta):
@@ -98,6 +98,6 @@ func _on_detection_radius_body_exited(body):
 
 
 func flee(body:RigidBody2D):
-	print("%s Flee" %name)
+	#print("%s Flee" %name)
 	state_machine.on_flee(body)
 	

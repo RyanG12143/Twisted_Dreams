@@ -62,13 +62,12 @@ func _ready():
 	gravity = 2 * max_jump_height / pow(jump_duration, 2)
 	max_jump_velocity = -sqrt(2 * gravity * max_jump_height)
 	min_jump_velocity = -sqrt(2 * gravity * min_jump_height)
+		
+	await get_parent().ready
 	if(globals.character_control != character_number):
 		sprite.modulate = Color(0.1,0.1,0.1)
 	else:
 		sprite.modulate = Color(1,1,1)
-		
-	await get_parent().ready
-	
 	if(character_number == 1):
 		follow_target = globals.character_two
 	elif(character_number == 2):

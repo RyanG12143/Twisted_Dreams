@@ -33,6 +33,14 @@ func set_character_two(character: CharacterBody2D):
 	character_two = character
 	character_two.top_level = true
 
+## Resets global values to defaults.
+func reset_values():
+	character_control = 1
+	next_controlled_character = 1
+	swap_active = false
+	follow_state = false
+	death_state = false
+
 ## Controls character swaps.
 func _process(_delta):
 	if(Input.is_action_just_pressed("ui_character_swap")) and character_one and character_two && character_control != 0:

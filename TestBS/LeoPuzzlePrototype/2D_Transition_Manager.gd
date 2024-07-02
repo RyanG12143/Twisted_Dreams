@@ -1,9 +1,10 @@
 extends Node
 
 @onready var transition = $Transition
-@export var scene_to_load: PackedScene
+#@export var scene_to_load: PackedScene
 
-func ready():
+func _ready():
+	await owner.ready
 	transition.play("fade_in")
 	
 
@@ -16,7 +17,9 @@ func _on_area_2d_body_entered(body):
 
 func _on_transition_animation_finished(anim_name):
 	if(anim_name == "fade_out"):
-		get_tree().change_scene_to_packed(scene_to_load)
+		#get_tree().change_scene_to_packed(scene_to_load)
+		print(get_tree().current_scene)
+		get_tree().reload_current_scene()
 
 
 func connect_enemy(death_area:Area2D):
