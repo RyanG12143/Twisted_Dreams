@@ -2888,7 +2888,7 @@ script = ExtResource("5_j2csa")
 priority = 10
 follow_mode = 3
 follow_targets = [NodePath("../character_one"), NodePath("../character_two")]
-zoom = Vector2(2.24667, 2.24667)
+zoom = Vector2(1.85, 1.85)
 tween_resource = SubResource("Resource_mwhnt")
 auto_zoom = true
 auto_zoom_min = -100.0
@@ -2898,7 +2898,7 @@ draw_limits = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(22, -36)
-zoom = Vector2(2.24667, 2.24667)
+zoom = Vector2(1.85, 1.85)
 
 [node name="FreecamMode" type="Node2D" parent="Camera2D"]
 script = ExtResource("7_50awh")
@@ -2915,7 +2915,7 @@ position = Vector2(160, 0)
 inputs_required = 1
 
 [node name="Lever" parent="Part1" instance=ExtResource("11_jxflr")]
-position = Vector2(61, -16)
+position = Vector2(59, -17)
 
 [node name="Door" parent="Part1" instance=ExtResource("12_yyips")]
 position = Vector2(240, -32)
@@ -3029,7 +3029,7 @@ starting_progress = 0.1
 position = Vector2(1504, -864)
 
 [node name="Floor_Button2" parent="SYNC_ELEVATORS" instance=ExtResource("15_bmxq0")]
-position = Vector2(1030, -541)
+position = Vector2(1028, -541)
 
 [node name="Crate" parent="SYNC_ELEVATORS" instance=ExtResource("14_030n1")]
 position = Vector2(1459, -839)

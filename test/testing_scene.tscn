@@ -1421,4 +1421,4 @@ script = ExtResource("2_21ui5")
 position = Vector2(302, 192)
 
 [node name="character_two" parent="." instance=ExtResource("4_ctmjp")]
-position = Vector2(173, 166)
+position = Vector2(175, 177)

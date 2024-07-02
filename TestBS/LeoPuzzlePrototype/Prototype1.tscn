@@ -1,6 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://dbkiu1hf1d1ne"]
+[gd_scene load_steps=20 format=3 uid="uid://dbkiu1hf1d1ne"]
 
 [ext_resource type="PackedScene" uid="uid://bkckmghf83dwj" path="res://TestBS/LeoPuzzlePrototype/UI.tscn" id="1_1mqmv"]
+[ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/world.gd" id="1_11rm0"]
+[ext_resource type="PackedScene" uid="uid://ccfaoptopbktn" path="res://TestBS/LeoPuzzlePrototype/2d_transition_manager.tscn" id="1_het2d"]
+[ext_resource type="PackedScene" uid="uid://yt3boj0lw4yf" path="res://2D/Scenes/Enemies/Enemy.tscn" id="2_5x4c0"]
 [ext_resource type="Texture2D" uid="uid://cvumdn2cbyb2w" path="res://TestBS/LeoPuzzlePrototype/Assets/Tiles.png" id="2_i2qx8"]
 [ext_resource type="PackedScene" uid="uid://m23ls6buacwh" path="res://TestBS/LeoPuzzlePrototype/character_one.tscn" id="3_h7cyb"]
 [ext_resource type="PackedScene" uid="uid://pqhyjjoo1fcs" path="res://TestBS/LeoPuzzlePrototype/character_two.tscn" id="4_mbl01"]
@@ -1426,8 +1429,15 @@ transition = 0
 ease = 2
 
 [node name="world" type="Node2D"]
+script = ExtResource("1_11rm0")
+
+[node name="Enemy" parent="." instance=ExtResource("2_5x4c0")]
+position = Vector2(75, -574)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("1_1mqmv")]
+follow_viewport_scale = 1000.0
+
+[node name="2D_Transition_Manager" parent="CanvasLayer" instance=ExtResource("1_het2d")]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-1, 0)
@@ -1447,7 +1457,7 @@ script = ExtResource("5_3omn7")
 priority = 10
 follow_mode = 3
 follow_targets = [NodePath("../character_one"), NodePath("../character_two")]
-zoom = Vector2(0.00333333, 0.00333333)
+zoom = Vector2(1.9625, 1.9625)
 tween_resource = SubResource("Resource_1p510")
 auto_zoom = true
 auto_zoom_min = -100.0
@@ -1457,7 +1467,7 @@ draw_limits = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(269, -480)
-zoom = Vector2(0.00333333, 0.00333333)
+zoom = Vector2(1.9625, 1.9625)
 
 [node name="FreecamMode" type="Node2D" parent="Camera2D" node_paths=PackedStringArray("follow_cam")]
 script = ExtResource("7_mstdh")
