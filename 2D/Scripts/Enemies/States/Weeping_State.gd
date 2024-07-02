@@ -4,6 +4,9 @@ extends Enemy_State
 
 func enter(body:CharacterBody2D):
 	body.velocity = Vector2(0,0)
+	
+	body.anim.play("idle")
+	body.anim.stop()
 
 
 func update(body:CharacterBody2D, delta:float):

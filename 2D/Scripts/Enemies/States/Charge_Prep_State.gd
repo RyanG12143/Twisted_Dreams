@@ -14,6 +14,8 @@ func _ready():
 
 func enter(body:CharacterBody2D):
 	timer.start(prep_time)
+	
+	body.anim.play("idle")
 
 
 func update(body:CharacterBody2D, delta:float):

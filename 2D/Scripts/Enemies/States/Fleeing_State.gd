@@ -27,6 +27,9 @@ func enter(body:CharacterBody2D):
 	var direction = body.global_position.direction_to(flee_object.global_position)
 	flee_right = true if direction.x < 0 else false
 	timer.start(flee_time)
+	
+	
+	body.anim.play("walk")
 
 
 func exit(body:CharacterBody2D):

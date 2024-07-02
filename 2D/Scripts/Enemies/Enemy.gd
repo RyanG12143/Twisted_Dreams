@@ -45,8 +45,8 @@ func _ready():
 	
 	anim.play("idle")
 	
-	
-	
+	if not owner:
+		return
 	await owner.ready
 	owner.get_node("CanvasLayer/2D_Transition_Manager").connect_enemy($DeathBox)
 

@@ -11,6 +11,8 @@ var roam_right:bool = true
 
 func enter(body:CharacterBody2D):
 	roam_right = body.is_facing_right
+	
+	body.anim.play("walk")
 
 
 func physics_update(body:CharacterBody2D, delta:float):
