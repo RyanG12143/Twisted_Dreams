@@ -23,10 +23,6 @@ Game_State="*res://Scripts/Global/Game_State.gd"
 Utils="*res://Scripts/Global/Utils.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
-[display]
-
-window/size/mode=3
-
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/gut/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")

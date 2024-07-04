@@ -2,13 +2,17 @@ extends Node
 
 @onready var transition = $Transition
 @export var scene_to_load: PackedScene
+@export var transition_collider: Area3D
+@export var player: CharacterBody3D
+
+signal change_level
 
 func _ready():
 	await owner.ready
 	transition.play("fade_in")
 
-func _on_area_3d_body_entered(body):
-	if body is CharacterBody3D:
+func _process(delta):
+	if transition_collider.overlaps_body(player):
 		transition.play("fade_out")
 
 func _on_transition_animation_finished(anim_name):
