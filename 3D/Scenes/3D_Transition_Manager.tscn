@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://butxc7wbg1vs1"]
 
-[ext_resource type="Script" path="res://3D/Scripts/Level_Design/Transition_Manager_Home_District.gd" id="1_1076g"]
+[ext_resource type="Script" path="res://3D/Scripts/Level_Design/Transition_Manager.gd" id="1_1076g"]
 [ext_resource type="PackedScene" uid="uid://dre0o1tw818oq" path="res://3D/Scenes/AreaGreyboxing/Market_District.tscn" id="2_fhhit"]
 
 [sub_resource type="Animation" id="Animation_x7ax8"]
