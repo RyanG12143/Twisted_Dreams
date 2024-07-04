@@ -1,6 +1,5 @@
-[gd_scene load_steps=21 format=3 uid="uid://cq62xwmqwdoot"]
+[gd_scene load_steps=20 format=3 uid="uid://cq62xwmqwdoot"]
 
-[ext_resource type="Script" path="res://3D/Scenes/AreaGreyboxing/Home_District.gd" id="1_4o1rs"]
 [ext_resource type="Material" uid="uid://dqh67xl8hqsyw" path="res://3D/Scenes/AreaGreyboxing/Prototype_Dark_Accent.tres" id="1_8oaqj"]
 [ext_resource type="PackedScene" uid="uid://bived31tg1brm" path="res://3D/Scenes/Brothers/Brother_Older.tscn" id="2_0atnt"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_u66rk"]
@@ -82,7 +81,6 @@ far = 4000.0
 size = Vector3(3.2, 2.7, 2.3)
 
 [node name="Home_District" type="Node3D"]
-script = ExtResource("1_4o1rs")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bvf0e")
@@ -17551,6 +17549,7 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35, 0.649994)
 shape = SubResource("BoxShape3D_pdrss")
 
-[node name="3D_Transition_Manager" parent="." instance=ExtResource("8_xm0uh")]
+[node name="3D_Transition_Manager" parent="." node_paths=PackedStringArray("transition_collider") instance=ExtResource("8_xm0uh")]
+transition_collider = NodePath("../NextLevelVolume/Area3D")
 
 [connection signal="body_entered" from="NextLevelVolume/Area3D" to="3D_Transition_Manager" method="_on_area_3d_body_entered"]
