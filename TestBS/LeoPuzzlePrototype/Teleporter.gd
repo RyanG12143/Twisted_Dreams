@@ -67,9 +67,9 @@ func _process(delta):
 			if(body.is_in_group("Can_Press_Buttons")):
 				if(body.is_in_group("Player") && character_is_teleporting == false):
 					if(teleports_to.rotation_degrees == 0):
-						endpoint = teleports_to.global_position - Vector2(15,0)
+						endpoint = teleports_to.global_position - Vector2(15, 7)
 					else:
-						endpoint = teleports_to.global_position - Vector2(-15,0)
+						endpoint = teleports_to.global_position - Vector2(-15, 7)
 					globals.character_control = 0
 					body.set_collision_layer_value(2, false)
 					body.set_collision_mask_value(1, false)
@@ -110,6 +110,7 @@ func _process(delta):
 			character_teleporting.gravity_enabled = true
 			add_character_velocity(character_teleporting, delta)
 			globals.Character_Swapped.emit()
+			print("yeah")
 			character_is_teleporting = false
 			if (teleporter_enabled == false):
 				anim.play("disabled")
@@ -117,7 +118,7 @@ func _process(delta):
 
 ## Adds velocity to characters after they exit teleporters.
 func add_character_velocity(character, delta):
-	var temp:int = 20
+	var temp:int = 32
 	if(teleports_to.rotation_degrees == 0):
 		while(temp > 0):
 			character.velocity.x -= temp

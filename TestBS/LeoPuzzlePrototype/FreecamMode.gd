@@ -72,6 +72,10 @@ func _process(delta):
 				get_parent().zoom += Vector2(0.01,0.01)
 			if(Input.is_action_pressed("zoom_out") and get_parent().zoom.x > 0.5 ):
 				get_parent().zoom -= Vector2(0.01,0.01)
+				
+				
+			if(globals.death_state):
+				reset_camera()
 	
 
 func reset_camera():

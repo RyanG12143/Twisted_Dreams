@@ -18,7 +18,6 @@ func _on_area_2d_body_entered(body):
 func _on_transition_animation_finished(anim_name):
 	if(anim_name == "fade_out"):
 		#get_tree().change_scene_to_packed(scene_to_load)
-		print(get_tree().current_scene)
 		get_tree().reload_current_scene()
 
 
