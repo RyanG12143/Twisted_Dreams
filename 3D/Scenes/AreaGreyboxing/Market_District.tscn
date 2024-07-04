@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_cr0xv"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_y4wnn"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_84xg3"]
-[ext_resource type="PackedScene" uid="uid://butxc7wbg1vs1" path="res://3D/Scenes/3D_Transition_Manager.tscn" id="7_tjytl"]
+[ext_resource type="PackedScene" uid="uid://butxc7wbg1vs1" path="res://2D/Scenes/3D_Transition_Manager.tscn" id="7_tjytl"]
 [ext_resource type="PackedScene" uid="uid://cq62xwmqwdoot" path="res://3D/Scenes/AreaGreyboxing/Home_District.tscn" id="8_vueth"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_isqim"]
