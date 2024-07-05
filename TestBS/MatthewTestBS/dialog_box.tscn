@@ -1,94 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1t5prao4ntd5"]
+[gd_scene load_steps=2 format=3 uid="uid://c1t5prao4ntd5"]
 
 [ext_resource type="Script" path="res://TestBS/MatthewTestBS/dialog_box.gd" id="1_l3rlq"]
-
-[sub_resource type="Animation" id="Animation_fyk7s"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Character1:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(96, 560)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Character2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1072, 560)]
-}
-
-[sub_resource type="Animation" id="Animation_x5dvm"]
-resource_name = "go_down"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Character1:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(96, 512), Vector2(96, 560)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Character2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1072, 496), Vector2(1072, 560)]
-}
-
-[sub_resource type="Animation" id="Animation_c4da5"]
-resource_name = "go_up"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Character1:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(96, 560), Vector2(96, 512)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Character2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1072, 560), Vector2(1072, 496)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1oku0"]
-_data = {
-"RESET": SubResource("Animation_fyk7s"),
-"go_down": SubResource("Animation_x5dvm"),
-"go_up": SubResource("Animation_c4da5")
-}
 
 [node name="CanvasLayer" type="CanvasLayer"]
 process_mode = 3
@@ -99,23 +11,6 @@ dialog = Array[String](["This is a dialog box right?", "Damn that's crazy!", "Wo
 process_mode = 3
 color = Color(0.151276, 0.151276, 0.151276, 1)
 polygon = PackedVector2Array(48, 512, 48, 608, 1104, 608, 1104, 512)
-
-[node name="Character1" type="Sprite2D" parent="DialogBox"]
-show_behind_parent = true
-position = Vector2(96, 560)
-scale = Vector2(3.28261, 3.28261)
-
-[node name="Character2" type="Sprite2D" parent="DialogBox"]
-show_behind_parent = true
-position = Vector2(1072, 560)
-scale = Vector2(2.35526, 2.35526)
-flip_h = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../DialogBox")
-libraries = {
-"": SubResource("AnimationLibrary_1oku0")
-}
 
 [node name="ScrollingTimer" type="Timer" parent="."]
 wait_time = 0.05
