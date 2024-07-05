@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dbkiu1hf1d1ne"]
+[gd_scene load_steps=22 format=3 uid="uid://dbkiu1hf1d1ne"]
 
 [ext_resource type="PackedScene" uid="uid://bkckmghf83dwj" path="res://TestBS/LeoPuzzlePrototype/UI.tscn" id="1_1mqmv"]
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/world.gd" id="1_11rm0"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://daelj4hlba7qu" path="res://TestBS/LeoPuzzlePrototype/Floor_Button.tscn" id="12_4xro1"]
 [ext_resource type="PackedScene" uid="uid://d04kov6vp75gk" path="res://TestBS/LeoPuzzlePrototype/Trigger_Box.tscn" id="13_wfm73"]
 [ext_resource type="PackedScene" uid="uid://qlpfl8cduums" path="res://TestBS/LeoPuzzlePrototype/pair_gate.tscn" id="17_wq8ac"]
+[ext_resource type="PackedScene" uid="uid://ckg3s6aysm80r" path="res://TestBS/LeoPuzzlePrototype/Lever.tscn" id="18_a27tq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qui52"]
 texture = ExtResource("2_i2qx8")
@@ -1505,6 +1506,10 @@ follow_trigger = true
 
 [node name="Pair_Gate" parent="." instance=ExtResource("17_wq8ac")]
 position = Vector2(790, -608)
+
+[node name="Lever" parent="." instance=ExtResource("18_a27tq")]
+position = Vector2(616, -612)
+frame = 4
 
 [connection signal="Button_Pressed" from="Floor_Button" to="Teleporter" method="add_input"]
 [connection signal="Button_Released" from="Floor_Button" to="Teleporter" method="remove_input"]
