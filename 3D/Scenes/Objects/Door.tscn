@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://vw56thmaglcq"]
+
+[ext_resource type="Material" uid="uid://dqh67xl8hqsyw" path="res://3D/Scenes/AreaGreyboxing/Prototype_Dark_Accent.tres" id="1_rsdfm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_c4vgp"]
+size = Vector3(1.4, 2.5, 0.1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2s33m"]
+points = PackedVector3Array(-0.7, -1.2, -0.05, -0.7, -1.2, 0.05, -0.7, 1.2, -0.05, 0.6, -1.2, -0.05, 0.6, -1.2, 0.05, -0.7, 1.2, 0.05, 0.6, 1.2, -0.05, 0.6, 1.2, 0.05)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wepc8"]
+material = ExtResource("1_rsdfm")
+size = Vector3(0.1, 2.5, 0.1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y6gu8"]
+points = PackedVector3Array(-0.05, -1.25, -0.05, -0.05, -1.25, 0.05, -0.05, 1.25, -0.05, 0.05, -1.25, -0.05, 0.05, -1.25, 0.05, -0.05, 1.25, 0.05, 0.05, 1.25, -0.05, 0.05, 1.25, 0.05)
+
+[node name="Door" type="Node3D"]
+
+[node name="PhysicsDoor" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00571811, 0, 0)
+collision_layer = 16
+collision_mask = 15
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PhysicsDoor"]
+mesh = SubResource("BoxMesh_c4vgp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicsDoor"]
+shape = SubResource("ConvexPolygonShape3D_2s33m")
+
+[node name="DoorFrame" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00280941, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DoorFrame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.759494, 0, 0)
+mesh = SubResource("BoxMesh_wepc8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorFrame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.759494, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_y6gu8")
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.704088, 0, 0)
+node_a = NodePath("../PhysicsDoor")
+node_b = NodePath("../DoorFrame")
+angular_limit/enable = true
+angular_limit/upper = 1.91986
+angular_limit/lower = -1.91986

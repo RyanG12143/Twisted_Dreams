@@ -11,12 +11,12 @@
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_isqim"]
 sky_top_color = Color(0.364013, 0.451352, 0.597576, 1)
 
-[sub_resource type="Sky" id="Sky_heus7"]
+[sub_resource type="Sky" id="Sky_swumh"]
 sky_material = SubResource("ProceduralSkyMaterial_isqim")
 
 [sub_resource type="Environment" id="Environment_bvf0e"]
 background_mode = 2
-sky = SubResource("Sky_heus7")
+sky = SubResource("Sky_swumh")
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.01
 volumetric_fog_albedo = Color(0.336294, 0.458462, 0.698309, 1)
