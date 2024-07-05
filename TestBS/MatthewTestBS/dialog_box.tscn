@@ -1,8 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1t5prao4ntd5"]
+[gd_scene load_steps=6 format=3 uid="uid://c1t5prao4ntd5"]
 
 [ext_resource type="Script" path="res://TestBS/MatthewTestBS/dialog_box.gd" id="1_l3rlq"]
-[ext_resource type="Texture2D" uid="uid://dgt428j75dvlt" path="res://TestBS/LeoPuzzlePrototype/Assets/_0000_Layer-1.png" id="2_f0y1u"]
-[ext_resource type="Texture2D" uid="uid://dlx4odth1vk0n" path="res://TestBS/LeoPuzzlePrototype/Assets/_0001_Layer-2.png" id="3_foc4x"]
 
 [sub_resource type="Animation" id="Animation_fyk7s"]
 length = 0.001
@@ -106,13 +104,11 @@ polygon = PackedVector2Array(48, 512, 48, 608, 1104, 608, 1104, 512)
 show_behind_parent = true
 position = Vector2(96, 560)
 scale = Vector2(3.28261, 3.28261)
-texture = ExtResource("2_f0y1u")
 
 [node name="Character2" type="Sprite2D" parent="DialogBox"]
 show_behind_parent = true
 position = Vector2(1072, 560)
 scale = Vector2(2.35526, 2.35526)
-texture = ExtResource("3_foc4x")
 flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
