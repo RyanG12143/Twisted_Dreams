@@ -61,37 +61,38 @@ func _ready():
 
 ## Handles most Teleporter logic.
 func _process(delta):
-	if(teleport_area.get_overlapping_bodies().front() != null):
-		if(teleporter_enabled):
-			var body = teleport_area.get_overlapping_bodies().front()
-			if(body.is_in_group("Can_Press_Buttons")):
-				if(body.is_in_group("Player") && character_is_teleporting == false):
-					if(teleports_to.rotation_degrees == 0):
-						endpoint = teleports_to.global_position - Vector2(15, 7)
-					else:
-						endpoint = teleports_to.global_position - Vector2(-15, 7)
-					globals.character_control = 0
-					body.set_collision_layer_value(2, false)
-					body.set_collision_mask_value(1, false)
-					body.set_collision_mask_value(3, false)
-					body.visible = false
-					body.gravity_enabled = false
-					timer = 0
-					startpoint = body.global_position
-					character_teleporting = body
-					character_is_teleporting = true
-				if(body is Crate):
-					if(teleports_to.rotation_degrees == 0):
-						body.teleport_location = teleports_to.global_position - Vector2(10,-10)
-					else:
-						body.teleport_location = teleports_to.global_position - Vector2(-10,-10)
-					body.teleport_state = true
-					await get_tree().create_timer(0.05).timeout
-					if(teleports_to.rotation_degrees == 0):
-						body.set_deferred("linear_velocity", Vector2(-225, body.linear_velocity.y))
-					else:
-						body.set_deferred("linear_velocity", Vector2(225, body.linear_velocity.y))
-	
+	if(teleport_area.get_overlapping_bodies()):
+		if(teleport_area.get_overlapping_bodies().front() != null):
+			if(teleporter_enabled):
+				var body = teleport_area.get_overlapping_bodies().front()
+				if(body.is_in_group("Can_Press_Buttons")):
+					if(body.is_in_group("Player") && character_is_teleporting == false):
+						if(teleports_to.rotation_degrees == 0):
+							endpoint = teleports_to.global_position - Vector2(15, 7)
+						else:
+							endpoint = teleports_to.global_position - Vector2(-15, 7)
+						globals.character_control = 0
+						body.set_collision_layer_value(2, false)
+						body.set_collision_mask_value(1, false)
+						body.set_collision_mask_value(3, false)
+						body.visible = false
+						body.gravity_enabled = false
+						timer = 0
+						startpoint = body.global_position
+						character_teleporting = body
+						character_is_teleporting = true
+					if(body is Crate):
+						if(teleports_to.rotation_degrees == 0):
+							body.teleport_location = teleports_to.global_position - Vector2(10,-10)
+						else:
+							body.teleport_location = teleports_to.global_position - Vector2(-10,-10)
+						body.teleport_state = true
+						await get_tree().create_timer(0.05).timeout
+						if(teleports_to.rotation_degrees == 0):
+							body.set_deferred("linear_velocity", Vector2(-225, body.linear_velocity.y))
+						else:
+							body.set_deferred("linear_velocity", Vector2(225, body.linear_velocity.y))
+		
 	timer += delta
 	if (timer > TRANSITION_TIME): timer = TRANSITION_TIME
 	lerp_weight = (tween.interpolate_value(0.0, 1.0, timer, TRANSITION_TIME, Tween.TRANS_SINE, Tween.EASE_OUT))

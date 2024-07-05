@@ -1,31 +1,62 @@
-[gd_scene load_steps=4 format=3 uid="uid://qlpfl8cduums"]
+[gd_scene load_steps=7 format=3 uid="uid://qlpfl8cduums"]
 
+[ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/pair_gate.gd" id="1_iihnw"]
 [ext_resource type="Texture2D" uid="uid://dhkpnolp6jqa0" path="res://TestBS/LeoPuzzlePrototype/Assets/pair-gate.png" id="1_pts8u"]
+[ext_resource type="Texture2D" uid="uid://bw5f81y27uylc" path="res://TestBS/LeoPuzzlePrototype/Assets/pair-gate-rocks.png" id="2_a41us"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_topjx"]
 size = Vector2(16, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5uqxo"]
+size = Vector2(22, 32)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_65r25"]
 size = Vector2(16, 32)
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="Pair_Gate" type="Node2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_iihnw")
+
+[node name="Gate" type="RigidBody2D" parent="."]
 collision_mask = 0
 gravity_scale = 0.0
 sleeping = true
 lock_rotation = true
 freeze = true
 
-[node name="Pair_Gate" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="Gate"]
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(8, 0)
 texture = ExtResource("1_pts8u")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gate"]
 shape = SubResource("RectangleShape2D_topjx")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Path_Blocker" type="RigidBody2D" parent="."]
+collision_mask = 0
+gravity_scale = 0.0
+sleeping = true
+lock_rotation = true
+freeze = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Path_Blocker"]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-130, 0)
+texture = ExtResource("2_a41us")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path_Blocker"]
+position = Vector2(-131, 0)
+shape = SubResource("RectangleShape2D_5uqxo")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 scale = Vector2(6, 1)
 shape = SubResource("RectangleShape2D_65r25")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

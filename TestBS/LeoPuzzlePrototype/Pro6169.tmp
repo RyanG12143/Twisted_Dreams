@@ -1458,7 +1458,7 @@ script = ExtResource("5_3omn7")
 priority = 10
 follow_mode = 3
 follow_targets = [NodePath("../character_one"), NodePath("../character_two")]
-zoom = Vector2(1.85, 1.85)
+zoom = Vector2(1.9625, 1.9625)
 tween_resource = SubResource("Resource_1p510")
 auto_zoom = true
 auto_zoom_min = -100.0
@@ -1468,7 +1468,7 @@ draw_limits = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(269, -480)
-zoom = Vector2(1.85, 1.85)
+zoom = Vector2(1.9625, 1.9625)
 
 [node name="FreecamMode" type="Node2D" parent="Camera2D" node_paths=PackedStringArray("follow_cam")]
 script = ExtResource("7_mstdh")
@@ -1504,7 +1504,7 @@ scale = Vector2(0.0997455, 5.35844)
 follow_trigger = true
 
 [node name="Pair_Gate" parent="." instance=ExtResource("17_wq8ac")]
-position = Vector2(790, -608)
+position = Vector2(686, -592)
 
 [connection signal="Button_Pressed" from="Floor_Button" to="Teleporter" method="add_input"]
 [connection signal="Button_Released" from="Floor_Button" to="Teleporter" method="remove_input"]

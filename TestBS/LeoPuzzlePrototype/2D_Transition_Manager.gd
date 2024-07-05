@@ -1,4 +1,5 @@
 extends Node
+## Manages 2D scene transitions (currently just deaths).
 
 @onready var transition = $Transition
 #@export var scene_to_load: PackedScene
