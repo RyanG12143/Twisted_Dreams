@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://butxc7wbg1vs1"]
 
-[ext_resource type="Script" path="res://3D/Scripts/Level_Design/Transition_Manager_Home_District.gd" id="1_1076g"]
+[ext_resource type="Script" path="res://3D/Scripts/Level_Design/3D_Transition_Manager.gd" id="1_ke60k"]
 
 [sub_resource type="Animation" id="Animation_x7ax8"]
 resource_name = "fade_in"
@@ -63,7 +63,7 @@ _data = {
 }
 
 [node name="3D_Transition_Manager" type="Node"]
-script = ExtResource("1_1076g")
+script = ExtResource("1_ke60k")
 
 [node name="Transition" type="AnimationPlayer" parent="."]
 root_node = NodePath("../..")
