@@ -108,3 +108,9 @@ size = Vector3(1.4, 0.25, 2.5)
 
 [node name="Door" parent="." instance=ExtResource("7_qclqq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24506, -6.6)
+
+[node name="Door3" parent="." instance=ExtResource("7_qclqq")]
+transform = Transform3D(0.5945, 0, -0.804096, 0, 1, 0, 0.804096, 0, 0.5945, 5.55698, 1.24506, -6.6)
+
+[node name="Door2" parent="." instance=ExtResource("7_qclqq")]
+transform = Transform3D(-0.132014, 0, -0.991248, 0, 1, 0, 0.991248, 0, -0.132014, -3.61235, 1.35138, -6.12736)
