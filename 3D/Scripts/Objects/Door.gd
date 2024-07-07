@@ -4,7 +4,7 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	physics_door.constant_force = physics_door.global_transform.basis.x * Vector3(11, 11, 11)
+	physics_door.constant_force = physics_door.global_transform.basis.x * Vector3(20, 20, 20)
 	print(physics_door.global_transform.basis.x)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -548,13 +548,13 @@ height = 0.6
 sides = 20
 
 [node name="Door" parent="CSG_Meshes/Brothers_House/Interior" instance=ExtResource("2_l10e2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50032, 1.34704, -1.99303)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52577, 1.34704, -1.99303)
 
 [node name="Door2" parent="CSG_Meshes/Brothers_House/Interior" instance=ExtResource("2_l10e2")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.00032, 1.34704, 2.00697)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.02577, 1.34704, 2.02655)
 
 [node name="Door3" parent="CSG_Meshes/Brothers_House/Interior" instance=ExtResource("2_l10e2")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -0.000318903, 1.34704, 2.30697)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0257691, 1.34704, 2.29908)
 
 [node name="Neighborhood_Buildings" type="Node3D" parent="CSG_Meshes"]
 
