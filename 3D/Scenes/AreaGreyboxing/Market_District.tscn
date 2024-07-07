@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dre0o1tw818oq"]
+[gd_scene load_steps=16 format=3 uid="uid://dre0o1tw818oq"]
 
 [ext_resource type="Material" uid="uid://dqh67xl8hqsyw" path="res://3D/Scenes/AreaGreyboxing/Prototype_Dark_Accent.tres" id="1_5cd8q"]
 [ext_resource type="PackedScene" uid="uid://bived31tg1brm" path="res://3D/Scenes/Brothers/Brother_Older.tscn" id="2_gtjnm"]
@@ -22,18 +22,11 @@ volumetric_fog_density = 0.01
 volumetric_fog_albedo = Color(0.336294, 0.458462, 0.698309, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cgwp7"]
-size = Vector2(400, 400)
+size = Vector2(400, 1000)
 
 [sub_resource type="Curve3D" id="Curve3D_8jpnq"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 14, 0, -33, 0, 0, 0, 0, 0, 0, 125, 0, -32, -3, 0, 0, 3, 0, 0, 155, 0, -30, 0, 0, 0, 0, 0, 0, 174, 0, -16, 0, 0, 0, 0, 0, 0, 182, 0, 7, 0, 0, 0, 0, 0, 0, 185.349, 0.148178, 148.577, 0, 0, 0, 0, 0, 0, 178.398, 0, 169.148, 0, 0, 0, 0, 0, 0, 160.022, 0, 185.095, 0, 0, 0, 0, 0, 0, 0.954, 0, 183.296, 0, 0, 0, 0, 0, 0, -27.063, 0, 178.031, 0, 0, 0, 0, 0, 0, -39, 0, 159, 0, 0, 3, 0, 0, -3, -37, 0, -9, 0, 0, 0, 0, 0, 0, -32, 0, -23, 0, 0, 0, 0, 0, 0, -14, 0, -32, 0, 0, 0, 0, 0, 0, 14, 0, -33),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-}
-point_count = 15
-
-[sub_resource type="Curve3D" id="Curve3D_7twl0"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 12, 3, -52, -42, 2, 0, 42, -2, 0, 83, 53, -83, -3, 0, 0, 3, 0, 0, 155, 1, -38, 0, 0, 0, 0, 0, 0, 176, 2, -27, 0, 0, 0, 0, 0, 0, 208, 49, -5, 0, 0, 0, 0, 0, 0, 201, 1, 151, 0, 0, 0, 0, 0, 0, 184, -6, 193, 0, 0, 0, 0, 0, 0, 162, 33, 204, 0, 0, 0, 0, 0, 0, -6, 34, 204, 0, 0, 0, 0, 0, 0, -27, -1, 198, 0, 0, 0, 0, 0, 0, -52, 0, 159, 0, 0, 3, 0, 0, -3, -76, 53, -17, 0, 0, 0, 0, 0, 0, -33, 1, -39, 0, 0, 0, 0, 0, 0, -13, -5, -32, 0, 0, 0, 0, 0, 0, 10, -8, -47),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 75.7854, -0.0500488, -317.829, 0, 0, 0, 0, 0, 0, 120.31, 0.00679016, -317.933, -3, 0, 0, 3, 0, 0, 156.332, 0.00285339, -317.524, 0, 0, 0, 0, 0, 0, 175.891, 0.00154114, -308.729, 0, 0, 0, 0, 0, 0, 186.905, -0.00289917, -290.931, 0, 0, 0, 0, 0, 0, 185.349, 0.148178, 148.577, 0, 0, 0, 0, 0, 0, 178.398, 0, 169.148, 0, 0, 0, 0, 0, 0, 160.022, 0, 185.095, 0, 0, 0, 0, 0, 0, 0.954, 0, 183.296, 0, 0, 0, 0, 0, 0, -27.063, 0, 178.031, 0, 0, 0, 0, 0, 0, -39, 0, 159, 0, 0, 3, 0, 0, -3, -33.9029, -0.00131226, -292.715, 0, 0, 0, 0, 0, 0, -27.3402, -0.0353088, -309.709, 0, 0, 0, 0, 0, 0, -8.213, -0.00378418, -318.754, 0, 0, 0, 0, 0, 0, 75.5967, -0.0501709, -317.83),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 15
@@ -70,7 +63,7 @@ shadow_enabled = true
 [node name="CSG_Meshes" type="Node3D" parent="."]
 
 [node name="Floor" type="CSGMesh3D" parent="CSG_Meshes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79, 0, 73.8889)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79, 0, -207.056)
 use_collision = true
 collision_layer = 2
 collision_mask = 0
@@ -84,75 +77,200 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 [node name="Walls" type="Node3D" parent="CSG_Meshes"]
 
 [node name="Security_Wall" type="CSGBox3D" parent="CSG_Meshes/Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.2778, 11.5, 165.945)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.2778, 11.5, 165.945)
 use_collision = true
 collision_mask = 7
 size = Vector3(242, 24, 26)
 
 [node name="Security_Gate6" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2, -6.16667, -9.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.8, -6.16667, -9.2)
 operation = 2
 use_collision = true
 size = Vector3(6, 5, 9)
 
-[node name="Security_Gate7" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
-transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 40.642, 3.13333, -8.2)
+[node name="Security_Gate8" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.6885, -6.16667, -9.2)
+operation = 2
+use_collision = true
+size = Vector3(6, 5, 9)
+
+[node name="Train_Stairs2" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, -24.358, 3.13333, -8.2)
 operation = 2
 use_collision = true
 size = Vector3(42, 3, 3)
 
-[node name="Security_Gate8" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
-transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 61.7934, 11.8583, -8.2)
+[node name="Train_Stairs" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, -3.2066, 11.8583, -8.2)
 use_collision = true
 size = Vector3(4.7, 3, 3)
 
-[node name="Security_Gate9" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.4292, 12.8294, -8.2)
+[node name="Train_Stairs5" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(-0.866025, 0.5, -8.74228e-08, 0.5, 0.866025, 0, 7.57103e-08, -4.37114e-08, -1, 30.242, 3.13333, -8.2)
+operation = 2
+use_collision = true
+size = Vector3(42, 3, 3)
+
+[node name="Train_Stairs6" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(-0.866025, 0.5, -8.74228e-08, 0.5, 0.866025, 0, 7.57103e-08, -4.37114e-08, -1, 9.0906, 11.8583, -8.2)
 use_collision = true
 size = Vector3(4.7, 3, 3)
 
-[node name="Security_Gate10" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.7792, 12.8294, -3.94998)
+[node name="Train_Platform2" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.429199, 12.8294, -8.2)
 use_collision = true
-size = Vector3(34, 3, 5.5)
+size = Vector3(4.7, 3, 3)
 
-[node name="Security_Gate13" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+[node name="Security_Gate7" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.8, -6.16667, -9.2)
+operation = 2
+use_collision = true
+size = Vector3(6, 5, 9)
+
+[node name="Train_Stairs3" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, -24.358, 3.13333, -8.2)
+operation = 2
+use_collision = true
+size = Vector3(42, 3, 3)
+
+[node name="Train_Stairs4" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, -3.2066, 11.8583, -8.2)
+use_collision = true
+size = Vector3(4.7, 3, 3)
+
+[node name="Train_Platform3" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.429199, 12.8294, -8.2)
+use_collision = true
+size = Vector3(4.7, 3, 3)
+
+[node name="Train_Platform4" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.429199, 12.8294, -8.2)
+use_collision = true
+size = Vector3(4.7, 3, 3)
+
+[node name="Train_Platform5" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2792, 12.8294, -8.2)
+use_collision = true
+size = Vector3(5, 3, 3)
+
+[node name="Train_Platform" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0708, 12.8294, -3.94998)
+use_collision = true
+size = Vector3(31.7, 3, 5.5)
+
+[node name="Train_Platform6" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6292, 12.8294, -3.94998)
+use_collision = true
+size = Vector3(31.7, 3, 5.5)
+
+[node name="Train_Platform7" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.3292, 12.8294, -3.94998)
+use_collision = true
+size = Vector3(31.7, 3, 5.5)
+
+[node name="Train_Platform8" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.7708, 12.8294, -3.94998)
+use_collision = true
+size = Vector3(31.7, 3, 5.5)
+
+[node name="Train_Platform9" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.7708, 12.8294, -8.54999)
+use_collision = true
+size = Vector3(31.7, 3, 3.7)
+
+[node name="Train_Platform10" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.2292, 12.8294, -8.54999)
+use_collision = true
+size = Vector3(31.7, 3, 3.7)
+
+[node name="Train_Platform11" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.1292, 13.1641, -8.54999)
+use_collision = true
+size = Vector3(16.5, 2.33066, 3.7)
+
+[node name="Train_Platform12" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4619, 13.1641, -8.54999)
+use_collision = true
+size = Vector3(16.9178, 2.33066, 3.7)
+
+[node name="Train_Support12" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.7292, 14.7294, -10.4)
 use_collision = true
 size = Vector3(2.1, 6.2, 1)
 
-[node name="Security_Gate15" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+[node name="Train_Support11" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
 transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 66.7292, 17.4377, 7.29628)
 use_collision = true
 size = Vector3(2.1, 12.7, 1)
 
-[node name="Security_Gate16" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+[node name="Train_Support10" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
 transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 34.7292, 17.4377, 7.29628)
 use_collision = true
 size = Vector3(2.1, 12.7, 1)
 
-[node name="Security_Gate14" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+[node name="Train_Support9" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.8292, 14.7294, -10.4)
 use_collision = true
 size = Vector3(2.1, 6.2, 1)
 
-[node name="Security_Gate12" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
-transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 51.1792, 20.8121, -2.11154)
+[node name="Train_Support8" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 2.7292, 17.4377, 7.29628)
 use_collision = true
-size = Vector3(36.8, 0.5, 20)
+size = Vector3(2.1, 12.7, 1)
+
+[node name="Train_Support7" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8292, 14.7294, -10.4)
+use_collision = true
+size = Vector3(2.1, 6.2, 1)
+
+[node name="Train_Roof" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 2.2792, 20.8121, -2.11154)
+use_collision = true
+size = Vector3(135, 0.5, 20)
+
+[node name="Train_Support6" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, -29.1295, 17.4377, 7.29628)
+use_collision = true
+size = Vector3(2.1, 12.7, 1)
+
+[node name="Train_Support5" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.0295, 14.7294, -10.4)
+use_collision = true
+size = Vector3(2.1, 6.2, 1)
+
+[node name="Train_Support4" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, -60.9177, 17.4377, 7.29628)
+use_collision = true
+size = Vector3(2.1, 12.7, 1)
+
+[node name="Train_Support3" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.8177, 14.7294, -10.4)
+use_collision = true
+size = Vector3(2.1, 6.2, 1)
+
+[node name="Train_Support2" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, -60.9177, 17.4377, 7.29628)
+use_collision = true
+size = Vector3(2.1, 12.7, 1)
+
+[node name="Train_Support" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.8177, 14.7294, -10.4)
+use_collision = true
+size = Vector3(2.1, 6.2, 1)
 
 [node name="Train" type="Node3D" parent="CSG_Meshes/Walls/Security_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65, 0, 0)
 
 [node name="Security_Gate11" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall/Train"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.8792, 16.0794, 1.10002)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.7292, 16.0794, 1.10002)
 use_collision = true
-size = Vector3(32.8, 4.3, 3.8)
+size = Vector3(31.9, 4.3, 3.8)
 
 [node name="Security_Gate12" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall/Train/Security_Gate11"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 operation = 2
 use_collision = true
-size = Vector3(31.8, 3.7, 2.8)
+size = Vector3(31.8, 3.4, 2.8)
 
 [node name="Security_Gate13" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall/Train/Security_Gate11"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650002, -0.350002, -0.75)
@@ -189,26 +307,8 @@ path_u_distance = 1.0
 path_joined = false
 material = ExtResource("1_5cd8q")
 
-[node name="Cosmetic_Wall" type="Path3D" parent="CSG_Meshes/Walls"]
-curve = SubResource("Curve3D_7twl0")
-
-[node name="Cosmetic_Wall_Mesh" type="CSGPolygon3D" parent="CSG_Meshes/Walls"]
-use_collision = true
-polygon = PackedVector2Array(-5, -0.4, -5, 21, 5, 21, 5, 0)
-mode = 2
-path_node = NodePath("../Cosmetic_Wall")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 2
-path_local = false
-path_continuous_u = true
-path_u_distance = 1.0
-path_joined = false
-material = ExtResource("1_5cd8q")
-
 [node name="Security_Gate" type="CSGBox3D" parent="CSG_Meshes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.8778, 9.33337, 149.445)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.8778, 9.33337, 149.445)
 use_collision = true
 collision_mask = 0
 size = Vector3(22.8, 19, 7)
@@ -231,19 +331,48 @@ operation = 2
 use_collision = true
 size = Vector3(2, 1.5, 4.7)
 
+[node name="Security_Ramp" type="CSGBox3D" parent="CSG_Meshes/Security_Gate"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0.0999985, -9.63471, -6.65501)
+use_collision = true
+size = Vector3(9.6, 3, 8.34893)
+
 [node name="Security_Gate2" type="CSGBox3D" parent="CSG_Meshes"]
-transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 95.9778, -0.301336, 142.79)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.366, 9.33337, 149.445)
+use_collision = true
+collision_mask = 0
+size = Vector3(22.8, 19, 7)
+
+[node name="Security_Gate3" type="CSGBox3D" parent="CSG_Meshes/Security_Gate2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0999985, -2.5, -0.5)
+operation = 2
+use_collision = true
+size = Vector3(11, 8, 8)
+
+[node name="Security_Gate4" type="CSGBox3D" parent="CSG_Meshes/Security_Gate2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9, -4.8, 0.149994)
+operation = 2
+use_collision = true
+size = Vector3(2, 2, 4.7)
+
+[node name="Security_Gate5" type="CSGBox3D" parent="CSG_Meshes/Security_Gate2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9, -4.55, 0.149994)
+operation = 2
+use_collision = true
+size = Vector3(2, 1.5, 4.7)
+
+[node name="Security_Ramp2" type="CSGBox3D" parent="CSG_Meshes/Security_Gate2"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0.0999985, -9.63471, -6.65501)
 use_collision = true
 size = Vector3(9.6, 3, 8.34893)
 
 [node name="Prefab_Structures" type="Node3D" parent="."]
 
 [node name="OlderBrother" parent="." instance=ExtResource("2_gtjnm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.5, 26.8318, 163)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.3, 26.8318, 163)
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
-transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 125.5, 28.3367, 167.135)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 61.3, 28.3367, 167.135)
 script = ExtResource("3_n7vig")
 priority = 10
 follow_mode = 6
@@ -256,13 +385,13 @@ spring_length = 4.4
 
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 125.5, 28.3367, 167.135)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 61.3, 28.3367, 167.135)
 
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 script = ExtResource("6_84xg3")
 
 [node name="NextLevelVolume" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.7, 25.4, 166.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.6, 25.4, 166.2)
 
 [node name="Area3D" type="Area3D" parent="NextLevelVolume"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.3, 0)

@@ -6,11 +6,3 @@ extends Node
 func _ready():
 	physics_door.constant_force = physics_door.global_transform.basis.x * Vector3(20, 20, 20)
 	print(physics_door.global_transform.basis.x)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-func _physics_process(delta):
-	pass
-	#print()
-
