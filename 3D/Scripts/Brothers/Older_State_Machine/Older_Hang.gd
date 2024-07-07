@@ -20,6 +20,9 @@ func Physics_Update(delta: float):
 		
 	if Input.is_action_pressed("3Dleft") || Input.is_action_pressed("3Dright"):
 		Transitioned.emit(self, "Older_Shimmy")
+		
+	if older_brother.is_on_floor():
+		Transitioned.emit(self, "Older_Fall")
 
 	
 	

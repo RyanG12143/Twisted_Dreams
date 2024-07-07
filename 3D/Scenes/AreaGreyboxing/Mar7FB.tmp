@@ -58,7 +58,6 @@ size = Vector3(3.2, 2.7, 2.3)
 environment = SubResource("Environment_bvf0e")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 0.907044, 0.421036, 0, -0.421036, 0.907044, 0, 0, 0)
 shadow_enabled = true
 
 [node name="CSG_Meshes" type="Node3D" parent="."]
@@ -70,7 +69,7 @@ collision_layer = 2
 collision_mask = 0
 mesh = SubResource("PlaneMesh_cgwp7")
 
-[node name="Buildings" type="Node3D" parent="CSG_Meshes"]
+[node name="Neighborhood_Buildings" type="Node3D" parent="CSG_Meshes"]
 
 [node name="Roads" type="Node3D" parent="CSG_Meshes"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
@@ -158,9 +157,9 @@ use_collision = true
 size = Vector3(31.7, 3, 5.5)
 
 [node name="Train_Platform13" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0708, 13.1794, -3.95584)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0708, 12.8294, -3.69998)
 use_collision = true
-size = Vector3(31.7, 2.3, 5.51172)
+size = Vector3(31.7, 3, 5)
 
 [node name="Train_Platform9" type="CSGBox3D" parent="CSG_Meshes/Walls/Security_Wall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.7708, 12.8294, -8.54999)
@@ -296,18 +295,6 @@ path_u_distance = 1.0
 path_joined = false
 material = ExtResource("1_5cd8q")
 
-[node name="Marketplace_Wall" type="CSGBox3D" parent="CSG_Meshes/Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.5278, 11.3, 94.545)
-use_collision = true
-collision_mask = 7
-size = Vector3(213.9, 24, 22.2)
-
-[node name="Marketplace_Wall2" type="CSGBox3D" parent="CSG_Meshes/Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.5278, 11.3, -209.455)
-use_collision = true
-collision_mask = 7
-size = Vector3(213.9, 24, 22.2)
-
 [node name="Security_Gate" type="CSGBox3D" parent="CSG_Meshes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.8778, 9.33337, 149.445)
 use_collision = true
@@ -369,11 +356,11 @@ size = Vector3(9.6, 3, 8.34893)
 [node name="Prefab_Structures" type="Node3D" parent="."]
 
 [node name="OlderBrother" parent="." instance=ExtResource("2_gtjnm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.287, 26.8318, 163)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.3, 26.8318, 163)
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
-transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 54.287, 28.3367, 167.135)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 61.3, 28.3367, 167.135)
 script = ExtResource("3_n7vig")
 priority = 10
 follow_mode = 6
@@ -386,7 +373,7 @@ spring_length = 4.4
 
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 54.287, 28.3367, 167.135)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 61.3, 28.3367, 167.135)
 
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 script = ExtResource("6_84xg3")
