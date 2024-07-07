@@ -58,10 +58,11 @@ size = Vector3(3.2, 2.7, 2.3)
 environment = SubResource("Environment_bvf0e")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 0.907044, 0.421036, 0, -0.421036, 0.907044, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.34366, 0.939094, 0, -0.939094, 0.34366, 0, 0, 0)
 shadow_enabled = true
 
 [node name="CSG_Meshes" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416, 0, 0)
 
 [node name="Buildings" type="Node3D" parent="CSG_Meshes"]
 
@@ -360,13 +361,14 @@ use_collision = true
 size = Vector3(9.6, 3, 8.34893)
 
 [node name="Prefab_Structures" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416, 0, 0)
 
 [node name="OlderBrother" parent="." instance=ExtResource("2_gtjnm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.287, 26.8318, 163)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 470.287, 26.8318, 163)
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
-transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 54.287, 28.3367, 167.135)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 470.287, 28.3367, 167.135)
 script = ExtResource("3_n7vig")
 priority = 10
 follow_mode = 6
@@ -379,13 +381,13 @@ spring_length = 4.4
 
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 54.287, 28.3367, 167.135)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 470.287, 28.3367, 167.135)
 
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 script = ExtResource("6_84xg3")
 
 [node name="NextLevelVolume" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.6, 25.4, 166.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 476.6, 25.4, 166.2)
 
 [node name="Area3D" type="Area3D" parent="NextLevelVolume"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.3, 0)

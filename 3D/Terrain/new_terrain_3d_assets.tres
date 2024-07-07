@@ -1,4 +1,9 @@
-[gd_resource type="Terrain3DAssets" load_steps=3 format=3 uid="uid://c5w6cm1au8k7l"]
+[gd_resource type="Terrain3DAssets" load_steps=9 format=3 uid="uid://c5w6cm1au8k7l"]
+
+[ext_resource type="Texture2D" uid="uid://csvbdlxiiw01" path="res://3D/Assets/TerrainTextures/Desert Rock/Desert_Rock_albedo_height.png" id="1_2nfgq"]
+[ext_resource type="Texture2D" uid="uid://cu1njg82vji64" path="res://3D/Assets/TerrainTextures/Desert Rock/Desert_Rock_normal_roughness.png" id="2_hw0cv"]
+[ext_resource type="Texture2D" uid="uid://cb75y7pxm8qi8" path="res://3D/Assets/TerrainTextures/Sand/Sand_albedo_height.png" id="3_abuvs"]
+[ext_resource type="Texture2D" uid="uid://f8jp42r0apkt" path="res://3D/Assets/TerrainTextures/Sand/Sand_normal_roughness.png" id="4_1e80a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qx546"]
 cull_mode = 2
@@ -12,5 +17,17 @@ density = 10.0
 material_override = SubResource("StandardMaterial3D_qx546")
 generated_type = 1
 
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_amu2j"]
+name = "Ground054_1K-PNG_Color"
+albedo_texture = ExtResource("3_abuvs")
+normal_texture = ExtResource("4_1e80a")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_ptkk6"]
+name = "Desert_Rock_albedo_height"
+id = 1
+albedo_texture = ExtResource("1_2nfgq")
+normal_texture = ExtResource("2_hw0cv")
+
 [resource]
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_u15p0")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_amu2j"), SubResource("Terrain3DTextureAsset_ptkk6")])
