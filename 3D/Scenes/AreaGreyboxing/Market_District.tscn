@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dre0o1tw818oq"]
+[gd_scene load_steps=22 format=3 uid="uid://dre0o1tw818oq"]
 
 [ext_resource type="Material" uid="uid://dqh67xl8hqsyw" path="res://3D/Scenes/AreaGreyboxing/Prototype_Dark_Accent.tres" id="1_5cd8q"]
 [ext_resource type="PackedScene" uid="uid://bived31tg1brm" path="res://3D/Scenes/Brothers/Brother_Older.tscn" id="2_gtjnm"]
@@ -24,12 +24,33 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.01
 volumetric_fog_albedo = Color(0.336294, 0.458462, 0.698309, 1)
 
+[sub_resource type="Curve3D" id="Curve3D_ktpdx"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 145.9, 0, -119.255, 0, 0, 0, 0, 0, 0, 69.9, 0, -119.255),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_bamjw"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 147, 0, -24, 0, 0, 0, 0, 0, 0, 70, 0, -24),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
 [sub_resource type="Curve3D" id="Curve3D_8jpnq"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 75.7854, -0.0500488, -317.829, 0, 0, 0, 0, 0, 0, 120.31, 0.00679016, -317.933, -3, 0, 0, 3, 0, 0, 156.332, 0.00285339, -317.524, 0, 0, 0, 0, 0, 0, 175.891, 0.00154114, -308.729, 0, 0, 0, 0, 0, 0, 186.905, -0.00289917, -290.931, 0, 0, 0, 0, 0, 0, 185.349, 0.148178, 148.577, 0, 0, 0, 0, 0, 0, 178.398, 0, 169.148, 0, 0, 0, 0, 0, 0, 160.022, 0, 185.095, 0, 0, 0, 0, 0, 0, 0.954, 0, 183.296, 0, 0, 0, 0, 0, 0, -27.063, 0, 178.031, 0, 0, 0, 0, 0, 0, -39, 0, 159, 0, 0, 3, 0, 0, -3, -33.9029, -0.00131226, -292.715, 0, 0, 0, 0, 0, 0, -27.3402, -0.0353088, -309.709, 0, 0, 0, 0, 0, 0, -8.213, -0.00378418, -318.754, 0, 0, 0, 0, 0, 0, 75.5967, -0.0501709, -317.83),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 15
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_trs20"]
+radius = 0.4
+height = 1.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_0v02h"]
+size = Vector3(16, 12, 30)
 
 [sub_resource type="Resource" id="Resource_fthof"]
 script = ExtResource("4_cr0xv")
@@ -68,6 +89,44 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416, 0, 0)
 
 [node name="Roads" type="Node3D" parent="CSG_Meshes"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Train_Path" type="Path3D" parent="CSG_Meshes/Roads"]
+curve = SubResource("Curve3D_ktpdx")
+
+[node name="Road_Mesh" type="CSGPolygon3D" parent="CSG_Meshes/Roads"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81839e-05, 0.1, 416)
+use_collision = true
+polygon = PackedVector2Array(-8.2, -0.4, -8.2, 0, 7.9, 0, 7.9, -0.4)
+mode = 2
+path_node = NodePath("../Train_Path")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = ExtResource("1_5cd8q")
+
+[node name="Train _Path2" type="Path3D" parent="CSG_Meshes/Roads"]
+curve = SubResource("Curve3D_bamjw")
+
+[node name="Road_Mesh2" type="CSGPolygon3D" parent="CSG_Meshes/Roads"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81839e-05, 0.1, 416)
+use_collision = true
+polygon = PackedVector2Array(-8.2, -0.4, -8.2, 0, 7.9, 0, 7.9, -0.4)
+mode = 2
+path_node = NodePath("../Train _Path2")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = ExtResource("1_5cd8q")
 
 [node name="Walls" type="Node3D" parent="CSG_Meshes"]
 
@@ -276,6 +335,7 @@ size = Vector3(241.8, 1, 3.2)
 curve = SubResource("Curve3D_8jpnq")
 
 [node name="District_Wall_Mesh" type="CSGPolygon3D" parent="CSG_Meshes/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -416, 0, 0)
 use_collision = true
 polygon = PackedVector2Array(-5, -0.4, -5, 21, 5, 21, 5, 0)
 mode = 2
@@ -295,6 +355,134 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.5278, 11.3, 94.545)
 use_collision = true
 collision_mask = 7
 size = Vector3(213.9, 24, 22.2)
+
+[node name="Security_checkpoint3" type="Node3D" parent="CSG_Meshes/Walls/Marketplace_Wall"]
+
+[node name="Security Camera" type="CSGSphere3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.7, -0.2, 0)
+use_collision = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint3/Security Camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+radius = 0.656
+height = 0.838
+
+[node name="Security Camera2" type="CSGSphere3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.1, -0.2, 0)
+use_collision = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint3/Security Camera2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+radius = 0.656
+height = 0.838
+
+[node name="Fence2" type="CSGBox3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.2, -8.95, 10.95)
+use_collision = true
+size = Vector3(3, 4.5, 0.1)
+
+[node name="Fence3" type="CSGBox3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.8, -8.95, 10.95)
+use_collision = true
+size = Vector3(3, 4.5, 0.1)
+
+[node name="Fence4" type="CSGBox3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.3, -8.95, 10.95)
+use_collision = true
+size = Vector3(3, 4.5, 0.1)
+
+[node name="Fence5" type="CSGBox3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.2, -8.95, -11.05)
+use_collision = true
+size = Vector3(3, 4.5, 0.1)
+
+[node name="Fence6" type="CSGBox3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.8, -8.95, -11.05)
+use_collision = true
+size = Vector3(3, 4.5, 0.1)
+
+[node name="Fence7" type="CSGBox3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.3, -8.95, -11.05)
+use_collision = true
+size = Vector3(3, 4.5, 0.1)
+
+[node name="Metal Scanner2" type="CSGBox3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.05, -10.25, -0.700005)
+use_collision = true
+size = Vector3(3.1, 3.5, 1)
+
+[node name="Metal Scanner2" type="CSGBox3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint3/Metal Scanner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+operation = 2
+size = Vector3(2, 3.3, 1)
+
+[node name="Metal Scanner3" type="CSGBox3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.45, -10.25, -0.700005)
+use_collision = true
+size = Vector3(3.1, 3.5, 1)
+
+[node name="Metal Scanner2" type="CSGBox3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint3/Metal Scanner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+operation = 2
+size = Vector3(2, 3.3, 1)
+
+[node name="Table" type="CSGBox3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.85, -10.7, -0.0499954)
+use_collision = true
+size = Vector3(1.5, 1, 21.9)
+
+[node name="Guard" type="MeshInstance3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.15, -10.45, -0.599998)
+mesh = SubResource("CapsuleMesh_trs20")
+skeleton = NodePath(".")
+
+[node name="Guide Divider" type="CSGBox3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.4, -10.65, 9)
+use_collision = true
+size = Vector3(5.4, 1.1, 0.2)
+
+[node name="Guide Divider2" type="CSGBox3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.4, -10.65, 7)
+use_collision = true
+size = Vector3(5.4, 1.1, 0.2)
+
+[node name="Guide Divider3" type="CSGBox3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.4, -10.65, 5)
+use_collision = true
+size = Vector3(5.4, 1.1, 0.2)
+
+[node name="Guide Divider4" type="CSGBox3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.4, -10.65, 3)
+use_collision = true
+size = Vector3(5.4, 1.1, 0.2)
+
+[node name="Security_checkpoint4" type="Node3D" parent="CSG_Meshes/Walls/Marketplace_Wall"]
+
+[node name="Security Camera3" type="CSGSphere3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0999, 3.2, 0)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint4/Security Camera3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+radius = 0.656
+height = 0.838
+
+[node name="Security Camera4" type="CSGSphere3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.7, 3.2, 0)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSG_Meshes/Walls/Marketplace_Wall/Security_checkpoint4/Security Camera4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+radius = 0.656
+height = 0.838
+
+[node name="Security_checkpoint" type="CSGMesh3D" parent="CSG_Meshes/Walls/Marketplace_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.7, -5.9, 0)
+operation = 2
+mesh = SubResource("BoxMesh_0v02h")
+
+[node name="Security_checkpoint2" type="CSGMesh3D" parent="CSG_Meshes/Walls/Marketplace_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.6, -3.9, 0)
+operation = 2
+mesh = SubResource("BoxMesh_0v02h")
 
 [node name="Marketplace_Wall2" type="CSGBox3D" parent="CSG_Meshes/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.5278, 11.3, -209.455)
@@ -364,11 +552,11 @@ size = Vector3(9.6, 3, 8.34893)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416, 0, 0)
 
 [node name="OlderBrother" parent="." instance=ExtResource("2_gtjnm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 470.287, 26.8318, 163)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 444.287, 1.1318, 109)
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
-transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 470.287, 28.3367, 167.135)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 444.287, 2.63668, 113.135)
 script = ExtResource("3_n7vig")
 priority = 10
 follow_mode = 6
@@ -381,7 +569,7 @@ spring_length = 4.4
 
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 470.287, 28.3367, 167.135)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 444.287, 2.63668, 113.135)
 
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 script = ExtResource("6_84xg3")
