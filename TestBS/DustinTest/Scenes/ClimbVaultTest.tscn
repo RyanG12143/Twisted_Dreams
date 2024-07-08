@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bd2sq84ss3jap"]
 
-[ext_resource type="PackedScene" uid="uid://deg7i3dtq3kts" path="res://3D/Scenes/Brothers/Brother_Younger.tscn" id="1_b4hwr"]
+[ext_resource type="PackedScene" uid="uid://deg7i3dtq3kts" path="res://3D/Scenes/Characters/Brother_Younger.tscn" id="1_b4hwr"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_3yh0r"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_p7r67"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="4_6t5lc"]

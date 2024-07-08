@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://cq62xwmqwdoot"]
 
 [ext_resource type="Material" uid="uid://dqh67xl8hqsyw" path="res://3D/Scenes/AreaGreyboxing/Prototype_Dark_Accent.tres" id="1_8oaqj"]
-[ext_resource type="PackedScene" uid="uid://bived31tg1brm" path="res://3D/Scenes/Brothers/Brother_Older.tscn" id="2_0atnt"]
+[ext_resource type="PackedScene" uid="uid://bived31tg1brm" path="res://3D/Scenes/Characters/Brother_Older.tscn" id="2_0atnt"]
 [ext_resource type="PackedScene" uid="uid://vw56thmaglcq" path="res://3D/Scenes/Objects/Door.tscn" id="2_l10e2"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_u66rk"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_twgrn"]
