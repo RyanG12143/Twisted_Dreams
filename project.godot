@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/TitleScreen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://TestBS/MatthewTestBS/default_bus_layout.tres"
+
 [autoload]
 
 globals="*res://TestBS/LeoPuzzlePrototype/globals.gd"
