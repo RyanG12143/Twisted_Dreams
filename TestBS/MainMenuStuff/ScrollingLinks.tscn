@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://dr1hhnbulqf5v"]
+
+[ext_resource type="Texture2D" uid="uid://7qgdp5xgtppi" path="res://TestBS/MainMenuStuff/Assets/Discord.png" id="1_jcrs4"]
+[ext_resource type="Texture2D" uid="uid://cyh423etk2rab" path="res://TestBS/MainMenuStuff/Assets/Donate.png" id="2_wmfaa"]
+[ext_resource type="Texture2D" uid="uid://p2cv4488wvoe" path="res://TestBS/MainMenuStuff/Assets/DevLogs.png" id="3_vml2n"]
+[ext_resource type="Texture2D" uid="uid://bfre0ssqqh5jn" path="res://TestBS/MainMenuStuff/Assets/X.png" id="4_b6jmi"]
+[ext_resource type="Texture2D" uid="uid://cvqbtxxl8etw4" path="res://TestBS/MainMenuStuff/Assets/Instagram.png" id="5_e0f12"]
+[ext_resource type="Texture2D" uid="uid://c0hsukqkvbs86" path="res://TestBS/MainMenuStuff/Assets/TikTok.png" id="6_0u6ak"]
+[ext_resource type="Texture2D" uid="uid://dqgaq6qnbcsnj" path="res://TestBS/MainMenuStuff/Assets/Abyssal.png" id="7_qdh6i"]
+[ext_resource type="Script" path="res://TestBS/MainMenuStuff/ScrollingLinks.gd" id="8_ahdgs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hwnwg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jcrs4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wmfaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vml2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b6jmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e0f12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0u6ak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qdh6i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="ScrollingLinks" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_hwnwg")
+script = ExtResource("8_ahdgs")
+
+[node name="LinkButton" type="LinkButton" parent="."]
+offset_left = -539.0
+offset_top = -540.0
+offset_right = 540.0
+offset_bottom = 540.0
+action_mode = 0
+
+[connection signal="pressed" from="LinkButton" to="." method="_on_link_button_pressed"]
