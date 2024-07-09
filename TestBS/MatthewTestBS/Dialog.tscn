@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://cymsy7cclwwld"]
+
+[ext_resource type="Script" path="res://TestBS/MatthewTestBS/Dialog.gd" id="1_6xspg"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6xspg")
+dialog = Array[String](["Hello how are you?", "Good you?"])
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(384, 128, 512, 128, 560, 192, 496, 256, 384, 256, 336, 192)
+
+[node name="DialogText" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 144.0
+offset_right = 528.0
+offset_bottom = 224.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="WaitTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
