@@ -1,13 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://2x3yfefbgqkl"]
+[gd_scene load_steps=11 format=3 uid="uid://2x3yfefbgqkl"]
 
 [ext_resource type="Texture2D" uid="uid://cvumdn2cbyb2w" path="res://TestBS/LeoPuzzlePrototype/Assets/Tiles.png" id="1_6qvpe"]
 [ext_resource type="PackedScene" uid="uid://m23ls6buacwh" path="res://TestBS/LeoPuzzlePrototype/character_one.tscn" id="2_y3h2e"]
 [ext_resource type="Script" path="res://TestBS/MatthewTestBS/Camera2D.gd" id="4_epy6n"]
+[ext_resource type="PackedScene" uid="uid://cymsy7cclwwld" path="res://TestBS/MatthewTestBS/Dialog.tscn" id="4_vkhun"]
 [ext_resource type="PackedScene" uid="uid://pqhyjjoo1fcs" path="res://TestBS/LeoPuzzlePrototype/character_two.tscn" id="5_kj2l7"]
 [ext_resource type="PackedScene" uid="uid://bttpiegars2dr" path="res://TestBS/LeoPuzzlePrototype/Crate.tscn" id="6_x63rw"]
 [ext_resource type="PackedScene" uid="uid://q6vqenn7ndre" path="res://TestBS/MatthewTestBS/platforms_old.tscn" id="7_iaaq0"]
 [ext_resource type="PackedScene" uid="uid://fnabxih0s6b4" path="res://TestBS/MatthewTestBS/pause_screen.tscn" id="7_v6g86"]
-[ext_resource type="PackedScene" uid="uid://c1t5prao4ntd5" path="res://TestBS/MatthewTestBS/dialog_box.tscn" id="8_hj86g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_05fo7"]
 texture = ExtResource("1_6qvpe")
@@ -1410,9 +1410,6 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 7
 sources/0 = SubResource("TileSetAtlasSource_05fo7")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfedh"]
-size = Vector2(64, 20)
-
 [node name="world" type="Node2D"]
 
 [node name="PauseScreen" parent="." instance=ExtResource("7_v6g86")]
@@ -1424,6 +1421,12 @@ layer_0/tile_data = PackedInt32Array(524293, 458752, 14, 589829, 458752, 14, 589
 
 [node name="character_one" parent="." instance=ExtResource("2_y3h2e")]
 position = Vector2(367, 59)
+
+[node name="Control" parent="character_one" instance=ExtResource("4_vkhun")]
+offset_left = -511.0
+offset_top = -283.0
+offset_right = -511.0
+offset_bottom = -283.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -1437,15 +1440,3 @@ position = Vector2(438, 101)
 
 [node name="RigidBody2D" parent="." instance=ExtResource("6_x63rw")]
 position = Vector2(547, 97)
-
-[node name="Dialog" parent="." instance=ExtResource("8_hj86g")]
-dialog = Array[String](["Man we must be in some kind of Twisted Dream", "Shut up"])
-
-[node name="Area2D" type="Area2D" parent="."]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(304, 128)
-shape = SubResource("RectangleShape2D_dfedh")
-
-[connection signal="body_entered" from="Area2D" to="Dialog" method="_on_area_2d_body_entered"]

@@ -10,24 +10,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6xspg")
-dialog = Array[String](["Hello how are you?", "Good you?"])
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(420, 192)
+scale = Vector2(0.25, 0.25)
 polygon = PackedVector2Array(384, 128, 512, 128, 560, 192, 496, 256, 384, 256, 336, 192)
 
-[node name="DialogText" type="RichTextLabel" parent="."]
-layout_mode = 0
+[node name="DialogText" type="RichTextLabel" parent="Polygon2D"]
 offset_left = 368.0
 offset_top = 144.0
 offset_right = 528.0
 offset_bottom = 224.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
+metadata/_edit_lock_ = true
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
-
-[node name="WaitTimer" type="Timer" parent="."]
-one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
