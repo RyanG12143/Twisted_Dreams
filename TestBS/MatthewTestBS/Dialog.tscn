@@ -1,32 +1,51 @@
-[gd_scene load_steps=2 format=3 uid="uid://cymsy7cclwwld"]
+[gd_scene load_steps=4 format=3 uid="uid://cymsy7cclwwld"]
 
 [ext_resource type="Script" path="res://TestBS/MatthewTestBS/Dialog.gd" id="1_6xspg"]
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_baj0m"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_8rb5t"]
+
 [node name="Control" type="Control"]
+z_index = 10
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_6xspg")
 dialog = Array[String](["hello", "hi"])
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(70.0001, 32)
-scale = Vector2(0.875, 0.875)
-polygon = PackedVector2Array(384, 128, 512, 128, 560, 192, 496, 256, 384, 256, 336, 192)
+[node name="Polygon2D" type="MeshInstance2D" parent="."]
+rotation = 1.5708
+scale = Vector2(100, 100)
+mesh = SubResource("CapsuleMesh_baj0m")
 
-[node name="DialogText" type="RichTextLabel" parent="Polygon2D"]
-offset_left = 368.0
-offset_top = 144.0
-offset_right = 528.0
-offset_bottom = 224.0
+[node name="DialogText" type="RichTextLabel" parent="."]
+offset_left = -72.0
+offset_top = -46.0
+offset_right = 288.0
+offset_bottom = 184.0
+scale = Vector2(0.4, 0.4)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
 bbcode_enabled = true
-metadata/_edit_lock_ = true
+text = "
+"
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(-26.0276, 59.9242)
+rotation = -0.338855
+scale = Vector2(30, 42.6452)
+mesh = SubResource("PrismMesh_8rb5t")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

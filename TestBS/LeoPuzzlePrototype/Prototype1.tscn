@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dbkiu1hf1d1ne"]
+[gd_scene load_steps=25 format=3 uid="uid://dbkiu1hf1d1ne"]
 
 [ext_resource type="PackedScene" uid="uid://bkckmghf83dwj" path="res://TestBS/LeoPuzzlePrototype/UI.tscn" id="1_1mqmv"]
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/world.gd" id="1_11rm0"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://d04kov6vp75gk" path="res://TestBS/LeoPuzzlePrototype/Trigger_Box.tscn" id="13_wfm73"]
 [ext_resource type="PackedScene" uid="uid://qlpfl8cduums" path="res://TestBS/LeoPuzzlePrototype/pair_gate.tscn" id="17_wq8ac"]
 [ext_resource type="PackedScene" uid="uid://ckg3s6aysm80r" path="res://TestBS/LeoPuzzlePrototype/Lever.tscn" id="18_a27tq"]
+[ext_resource type="PackedScene" uid="uid://cymsy7cclwwld" path="res://TestBS/MatthewTestBS/Dialog.tscn" id="20_dse32"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lrbjd"]
 texture = ExtResource("5_rtq1l")
@@ -1453,7 +1454,7 @@ ease = 2
 script = ExtResource("1_11rm0")
 
 [node name="Enemy" parent="." instance=ExtResource("2_5x4c0")]
-position = Vector2(-57, -604)
+position = Vector2(866, -631)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("1_1mqmv")]
 follow_viewport_scale = 1000.0
@@ -1471,6 +1472,11 @@ layer_0/tile_data = PackedInt32Array(393198, 131072, 3, 393199, 131072, 3, 39320
 
 [node name="character_one" parent="." instance=ExtResource("3_h7cyb")]
 position = Vector2(269, -480)
+
+[node name="Control" parent="character_one" instance=ExtResource("20_dse32")]
+offset_top = -65.0
+offset_bottom = -65.0
+char_speaking = 1
 
 [node name="character_two" parent="." instance=ExtResource("4_mbl01")]
 position = Vector2(302, -496)
