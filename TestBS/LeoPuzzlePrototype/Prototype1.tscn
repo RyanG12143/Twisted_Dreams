@@ -1481,7 +1481,7 @@ script = ExtResource("5_3omn7")
 priority = 10
 follow_mode = 3
 follow_targets = [NodePath("../character_one"), NodePath("../character_two")]
-zoom = Vector2(1.675, 1.675)
+zoom = Vector2(1.85, 1.85)
 tween_resource = SubResource("Resource_1p510")
 auto_zoom = true
 auto_zoom_min = -100.0
@@ -1491,7 +1491,7 @@ draw_limits = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(269, -480)
-zoom = Vector2(1.68655, 1.68655)
+zoom = Vector2(1.85, 1.85)
 
 [node name="FreecamMode" type="Node2D" parent="Camera2D" node_paths=PackedStringArray("follow_cam")]
 script = ExtResource("7_mstdh")

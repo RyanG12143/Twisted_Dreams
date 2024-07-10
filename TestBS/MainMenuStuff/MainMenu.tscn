@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://baapsc4104dfh"]
+
+[ext_resource type="Texture2D" uid="uid://bl028423wngyn" path="res://TestBS/MainMenuStuff/Assets/TitleText.png" id="1_ualkt"]
+[ext_resource type="PackedScene" uid="uid://dr1hhnbulqf5v" path="res://TestBS/MainMenuStuff/ScrollingLinks.tscn" id="1_ye1am"]
+
+[node name="MainMenu" type="CanvasLayer"]
+
+[node name="TopCenter" type="HBoxContainer" parent="."]
+z_index = -1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="TitleText" type="Sprite2D" parent="TopCenter"]
+position = Vector2(0, 200)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_ualkt")
+
+[node name="BottomRight" type="HBoxContainer" parent="."]
+z_index = -2
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ScrollingLinks" parent="BottomRight" instance=ExtResource("1_ye1am")]
+position = Vector2(-78.75, -78.75)
+scale = Vector2(0.200463, 0.200463)
+
+[node name="Background" type="HBoxContainer" parent="."]
+z_index = -10
+offset_right = 10000.0
+offset_bottom = 10000.0
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+custom_minimum_size = Vector2(10000, 10000)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
