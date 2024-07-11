@@ -6,7 +6,7 @@
 
 [sub_resource type="PrismMesh" id="PrismMesh_8rb5t"]
 
-[node name="Control" type="Control"]
+[node name="Dialog" type="Control"]
 z_index = 10
 layout_mode = 3
 anchors_preset = 15
@@ -24,6 +24,7 @@ scale = Vector2(100, 100)
 mesh = SubResource("CapsuleMesh_baj0m")
 
 [node name="DialogText" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = -72.0
 offset_top = -46.0
 offset_right = 288.0
@@ -39,13 +40,13 @@ bbcode_enabled = true
 text = "
 "
 
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 position = Vector2(-26.0276, 59.9242)
 rotation = -0.338855
 scale = Vector2(30, 42.6452)
 mesh = SubResource("PrismMesh_8rb5t")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
