@@ -1,4 +1,7 @@
 extends CharacterBody3D
+## Walk path to store
+## Cops look at passerby
+## Inverse Loop
 
 
 const SPEED = 5.0

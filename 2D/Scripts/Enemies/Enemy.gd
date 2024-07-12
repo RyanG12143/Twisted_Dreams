@@ -48,7 +48,8 @@ func _ready():
 	if not owner:
 		return
 	await owner.ready
-	owner.get_node("CanvasLayer/2D_Transition_Manager").connect_enemy($DeathBox)
+	if owner.get_node("CanvasLayer/2D_Transition_Manager"):
+		owner.get_node("CanvasLayer/2D_Transition_Manager").connect_enemy($DeathBox)
 
 
 func _physics_process(delta):
@@ -66,13 +67,13 @@ func _physics_process(delta):
 	if not state_machine.current_state is Charge_Prep:
 		if is_facing_right and velocity.x < 0:
 			is_facing_right = false
-			$AnimatedSprite2D.flip_h = true
+			anim.flip_h = true
 		elif not is_facing_right and velocity.x > 0:
 			is_facing_right = true
-			$AnimatedSprite2D.flip_h = false
+			anim.flip_h = false
 			
 	var print_string = "%s %s %s %s %s %s " % [name, state_machine.current_state.name, velocity, targets, target, is_facing_right]
-	#print(print_string)
+	print(print_string)
 
 
 func _process(delta):
