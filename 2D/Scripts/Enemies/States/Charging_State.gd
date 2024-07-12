@@ -19,6 +19,7 @@ func enter(body:CharacterBody2D):
 	body.velocity.x = 0
 	charge_right = body.is_facing_right
 	timer.start(1)
+	body.anim.play("attack")
 
 
 func physics_update(body:CharacterBody2D, delta:float):

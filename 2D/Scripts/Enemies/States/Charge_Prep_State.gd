@@ -13,6 +13,13 @@ func _ready():
 
 
 func enter(body:CharacterBody2D):
+	var target_right = 
+	if body.is_facing_right and velocity.x < 0:
+		body.is_facing_right = false
+		body.anim.flip_h = true
+	elif not body.is_facing_right and velocity.x > 0:
+		body.is_facing_right = true
+		body.anim.flip_h = false
 	timer.start(prep_time)
 	
 	body.anim.play("idle")
