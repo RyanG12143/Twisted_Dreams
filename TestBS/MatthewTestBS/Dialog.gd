@@ -52,7 +52,7 @@ func _on_trigger_box_send_dialog(char_1, char_2, start):
 		elif ((character == 1 and start == 2) or character == 2 and start == 1):
 			await(get_tree().create_timer(wait_time).timeout)
 			show()
-		else:
+		elif (start == 0):
 			show()
 		d_text.bbcode_text = dialog[page]
 		d_text.set_visible_characters(0)
