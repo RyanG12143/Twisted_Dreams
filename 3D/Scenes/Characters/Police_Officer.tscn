@@ -6,7 +6,7 @@
 radius = 0.315481
 height = 1.57905
 
-[node name="PoliceOfficer" type="Node3D"]
+[node name="CharacterBody3D" type="CharacterBody3D"]
 
 [node name="PoliceOfficer_Placeholder" parent="." instance=ExtResource("1_ueefd")]
 
