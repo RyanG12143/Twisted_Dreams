@@ -43,6 +43,10 @@ func update(body:CharacterBody2D, delta:float):
 			valid_targets.append(target)
 	
 	if not valid_targets:
+		if body.roaming:
+			emit_signal("transitioned", self, "Roaming")
+		else:
+			emit_signal("transitioned", self, "Idle")
 		return
 	
 	body.target = valid_targets[0]

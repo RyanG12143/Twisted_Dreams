@@ -229,6 +229,7 @@ position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_hyo0g")
 
 [node name="Detection_Radius" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -237,6 +238,7 @@ position = Vector2(4, 0)
 shape = SubResource("CircleShape2D_bjfyg")
 
 [node name="Charge_Radius" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -298,7 +300,6 @@ ray_cast_down_left = NodePath("../../Ray_Cast_Down_Left")
 
 [node name="Charge_Prep" type="Node" parent="Enemy_State_Machine"]
 script = ExtResource("7_654hi")
-prep_time = null
 
 [node name="Weeping" type="Node" parent="Enemy_State_Machine"]
 script = ExtResource("8_regu1")
