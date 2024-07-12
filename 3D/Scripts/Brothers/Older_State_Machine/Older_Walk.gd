@@ -37,6 +37,7 @@ func Physics_Update(delta: float):
 	velocity_move = lerp(older_brother.velocity, -move_dir * movement_speed, delta * acceleration)
 	
 	older_brother.velocity = velocity_move
+	
 
 func _process(delta):
 	super(delta)
