@@ -19,6 +19,8 @@ class_name Player_Camera
 
 @onready var _player_visual: Node3D = $"."
 
+var last_position: Vector3 = Vector3(0, 0, 0)
+
 # Ready function
 func _ready():
 	# Setting up key values and action values for player input
@@ -61,6 +63,12 @@ func _set_pcam_rotation(pcam: PhantomCamera3D, event: InputEvent) -> void:
 
 # Physics process function
 func _physics_process(delta):
+	#print(last_position > $PlayerVisual.global_position)
+	#print($PlayerVisual.global_position)
+	#last_position = $PlayerVisual.global_position
+	
+
+
 	var cam_dir: Vector3 = _camera.global_transform.basis.z
 	
 	# Quitting to menu

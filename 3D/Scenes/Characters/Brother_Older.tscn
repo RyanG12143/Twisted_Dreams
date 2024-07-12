@@ -96,7 +96,7 @@ hit_from_inside = true
 
 [node name="LedgeRays" type="Node3D" parent="PlayerVisual/Rays"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.302309, 0.0811958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.302309, 0.111)
 
 [node name="Ledge" type="RayCast3D" parent="PlayerVisual/Rays/LedgeRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.244, -0.4)
@@ -115,7 +115,7 @@ hit_from_inside = true
 
 [node name="LipRays" type="Node3D" parent="PlayerVisual/Rays"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.302309, 0.0811958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.302309, 0.111)
 
 [node name="Lip" type="RayCast3D" parent="PlayerVisual/Rays/LipRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.167, -0.4)

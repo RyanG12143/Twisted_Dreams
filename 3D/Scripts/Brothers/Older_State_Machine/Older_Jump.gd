@@ -4,6 +4,7 @@ class_name Older_Jump
 func Enter():
 	#movement_speed = strafe_speed
 	older_brother.velocity.y = JUMP_VELOCITY
+	acceleration = 1
 
 func Update(delta: float):
 	pass

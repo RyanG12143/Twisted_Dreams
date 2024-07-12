@@ -65,7 +65,7 @@ func _process(delta):
 	
 	#if fps > 60:
 		#mesh.top_level = true
-		#mesh.global_transform.origin = mesh.global_transform.origin.lerp(lerp_position, 20 * delta)
+		#mesh.global_transform.origin = mesh.global_transform.origin.lerp(lerp_position, 40 * delta)
 	#else:
 		#mesh.global_transform = older_brother.global_transform
 		#mesh.top_level = false
