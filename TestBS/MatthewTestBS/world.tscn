@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://2x3yfefbgqkl"]
+[gd_scene load_steps=11 format=3 uid="uid://2x3yfefbgqkl"]
 
 [ext_resource type="Texture2D" uid="uid://cvumdn2cbyb2w" path="res://TestBS/LeoPuzzlePrototype/Assets/Tiles.png" id="1_6qvpe"]
 [ext_resource type="PackedScene" uid="uid://m23ls6buacwh" path="res://TestBS/LeoPuzzlePrototype/character_one.tscn" id="2_y3h2e"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://pqhyjjoo1fcs" path="res://TestBS/LeoPuzzlePrototype/character_two.tscn" id="5_kj2l7"]
 [ext_resource type="PackedScene" uid="uid://bttpiegars2dr" path="res://TestBS/LeoPuzzlePrototype/Crate.tscn" id="6_x63rw"]
 [ext_resource type="PackedScene" uid="uid://fnabxih0s6b4" path="res://TestBS/MatthewTestBS/pause_screen.tscn" id="7_v6g86"]
+[ext_resource type="PackedScene" uid="uid://d04kov6vp75gk" path="res://TestBS/LeoPuzzlePrototype/Trigger_Box.tscn" id="8_r3ac1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_05fo7"]
 texture = ExtResource("1_6qvpe")
@@ -1421,18 +1422,35 @@ layer_0/tile_data = PackedInt32Array(524293, 458752, 14, 589829, 458752, 14, 589
 [node name="character_one" parent="." instance=ExtResource("2_y3h2e")]
 position = Vector2(367, 59)
 
-[node name="Control" parent="character_one" instance=ExtResource("4_vkhun")]
-offset_left = -511.0
-offset_top = -283.0
-offset_right = -511.0
-offset_bottom = -283.0
+[node name="Dialog" parent="character_one" instance=ExtResource("4_vkhun")]
+offset_left = 1.0
+offset_top = -59.0
+offset_right = 1.0
+offset_bottom = -59.0
+character = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 script = ExtResource("4_epy6n")
 
 [node name="character_two" parent="." instance=ExtResource("5_kj2l7")]
-position = Vector2(120, 86)
+position = Vector2(531, 93)
+
+[node name="Dialog" parent="character_two" instance=ExtResource("4_vkhun")]
+offset_top = -75.0
+offset_bottom = -75.0
+character = 2
 
 [node name="RigidBody2D" parent="." instance=ExtResource("6_x63rw")]
 position = Vector2(560, 160)
+
+[node name="Trigger_Box" parent="." instance=ExtResource("8_r3ac1")]
+position = Vector2(464, 112)
+scale = Vector2(0.15, 4)
+dialog_trigger = true
+char_1_dialog = Array[String](["Hey there's a box over here", "Let's push it"])
+char_2_dialog = Array[String](["Woah, you're right", "Ok!"])
+starting = 1
+
+[connection signal="Send_Dialog" from="Trigger_Box" to="character_one/Dialog" method="_on_trigger_box_send_dialog"]
+[connection signal="Send_Dialog" from="Trigger_Box" to="character_two/Dialog" method="_on_trigger_box_send_dialog"]

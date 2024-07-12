@@ -1477,6 +1477,7 @@ position = Vector2(269, -480)
 offset_top = -65.0
 offset_bottom = -65.0
 wait_time = 1.0
+character = 1
 
 [node name="character_two" parent="." instance=ExtResource("4_mbl01")]
 position = Vector2(302, -496)
@@ -1486,6 +1487,7 @@ offset_left = 3.0
 offset_top = -77.0
 offset_right = 3.0
 offset_bottom = -77.0
+character = 2
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_targets")]
 position = Vector2(269, -480)
