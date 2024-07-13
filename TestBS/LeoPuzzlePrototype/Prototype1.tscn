@@ -1477,6 +1477,7 @@ position = Vector2(269, -480)
 offset_top = -65.0
 offset_bottom = -65.0
 wait_time = 1.0
+character = 1
 
 [node name="character_two" parent="." instance=ExtResource("4_mbl01")]
 position = Vector2(302, -496)
@@ -1486,6 +1487,7 @@ offset_left = 3.0
 offset_top = -77.0
 offset_right = 3.0
 offset_bottom = -77.0
+character = 2
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_targets")]
 position = Vector2(269, -480)
@@ -1493,7 +1495,7 @@ script = ExtResource("5_3omn7")
 priority = 10
 follow_mode = 3
 follow_targets = [NodePath("../character_one"), NodePath("../character_two")]
-zoom = Vector2(2.10313, 2.10313)
+zoom = Vector2(0.00333333, 0.00333333)
 tween_resource = SubResource("Resource_1p510")
 auto_zoom = true
 auto_zoom_min = -100.0
@@ -1503,7 +1505,7 @@ draw_limits = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(269, -480)
-zoom = Vector2(2.10313, 2.10313)
+zoom = Vector2(0.00333333, 0.00333333)
 
 [node name="FreecamMode" type="Node2D" parent="Camera2D" node_paths=PackedStringArray("follow_cam")]
 script = ExtResource("7_mstdh")
