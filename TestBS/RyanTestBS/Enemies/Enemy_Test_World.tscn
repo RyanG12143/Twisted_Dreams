@@ -21,7 +21,7 @@ position = Vector2(304, 329)
 disabled = true
 
 [node name="character_one" parent="." instance=ExtResource("4_j0gww")]
-position = Vector2(369, 120)
+position = Vector2(381, 121)
 
 [node name="character_two" parent="." instance=ExtResource("5_gfuy7")]
 position = Vector2(936, 126)
