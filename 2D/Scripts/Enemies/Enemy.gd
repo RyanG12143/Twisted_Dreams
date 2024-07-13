@@ -73,7 +73,7 @@ func _physics_process(delta):
 			anim.flip_h = false
 			
 	var print_string = "%s %s %s %s %s %s " % [name, state_machine.current_state.name, velocity, targets, target, is_facing_right]
-	print(print_string)
+	#print(print_string)
 
 
 func _process(delta):
