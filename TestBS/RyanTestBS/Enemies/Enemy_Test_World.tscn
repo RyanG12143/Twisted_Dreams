@@ -27,4 +27,4 @@ position = Vector2(381, 121)
 position = Vector2(936, 126)
 
 [node name="Luminous_Crate" parent="." instance=ExtResource("5_48ade")]
-position = Vector2(989, 36)
+position = Vector2(224, 111)

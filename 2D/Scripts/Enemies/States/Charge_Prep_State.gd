@@ -30,6 +30,5 @@ func enter(body:CharacterBody2D):
 
 func update(body:CharacterBody2D, delta:float):
 	if timer.is_stopped():
-		if body.roaming:
-			emit_signal("transitioned", self, "Charging")
+		emit_signal("transitioned", self, "Charging")
 

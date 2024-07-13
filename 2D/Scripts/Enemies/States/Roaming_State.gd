@@ -13,6 +13,7 @@ func enter(body:CharacterBody2D):
 	roam_right = body.is_facing_right
 	
 	body.anim.play("walk")
+	
 
 
 func physics_update(body:CharacterBody2D, delta:float):
@@ -35,6 +36,7 @@ func update(body:CharacterBody2D, delta:float):
 	
 	for target in body.targets:
 		body.target_rays[target].target_position = target.global_position - body.target_rays[target].global_position
+		body.target_rays[target].force_raycast_update()
 		if body.target_rays[target].get_collider() == target:
 			emit_signal("transitioned", self, "Follow")
 			return
