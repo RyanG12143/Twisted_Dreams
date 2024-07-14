@@ -108,7 +108,6 @@ script = ExtResource("6_fivi7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.111195, 1.11838, -6.28709)
 speed = 10.0
 loop = true
-inverse_loop = true
 positions_container = NodePath("../Markers")
 
 [node name="Markers" type="Node3D" parent="."]
@@ -124,8 +123,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4045)
 mesh = SubResource("TorusMesh_am4xg")
 skeleton = NodePath("")
 
-[node name="Waypoint2" parent="Markers" instance=ExtResource("8_gleb1")]
+[node name="Waypoint2" parent="Markers" node_paths=PackedStringArray("new_paths") instance=ExtResource("8_gleb1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.65639, 0.84428, 0)
+give_new_path = true
+new_paths = [NodePath("../../Node3D")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Markers/Waypoint2"]
 mesh = SubResource("TorusMesh_am4xg")
@@ -149,6 +150,29 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64742, 0.84428, -9.79923)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Markers/Waypoint5"]
+mesh = SubResource("TorusMesh_am4xg")
+skeleton = NodePath("")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Waypoint2" parent="Node3D" instance=ExtResource("8_gleb1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.735, 0.49995, 8.22924)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D/Waypoint2"]
+mesh = SubResource("TorusMesh_am4xg")
+skeleton = NodePath("")
+
+[node name="Waypoint" parent="Node3D" instance=ExtResource("8_gleb1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5734, 0.49995, 9.56692)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D/Waypoint"]
+mesh = SubResource("TorusMesh_am4xg")
+skeleton = NodePath("")
+
+[node name="Waypoint3" parent="Node3D" instance=ExtResource("8_gleb1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0402, 0.49995, 15.579)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D/Waypoint3"]
 mesh = SubResource("TorusMesh_am4xg")
 skeleton = NodePath("")
 
