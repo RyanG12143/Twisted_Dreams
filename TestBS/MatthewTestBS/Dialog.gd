@@ -12,23 +12,37 @@ extends Control
 @onready var d_text = $DialogText
 ##Which "page" in the array it's on
 var page: int = 0
+##Checks if the page is the last page
+var last: bool = false
+##Timer
+var timer: float = 0.0
+##How long the dialog box is visible after the last line
+const STAY_TIMER: float = 0.25
 
 func _ready():
 	hide()
+
+func _process(delta):
+	if(last):
+		if(modulate.a != 0):
+			timer += delta
+			modulate.a = (STAY_TIMER - timer)
+			if(timer > STAY_TIMER):
+				modulate.a = 0
+				timer = 0
+				hide()
 
 ##Either changes to the new dialog or gets rid of the dialog bubble
 func change_page():
 	if (page < dialog.size() - 1):
 		await(get_tree().create_timer(wait_time).timeout)
-		print(page)
 		page += 1
-		print(page)
 		d_text.bbcode_text = dialog[page]
 		d_text.set_visible_characters(0)
 		$Timer.start()
 	elif (page == dialog.size() - 1):
 		await(get_tree().create_timer(wait_time).timeout)
-		hide()
+		last = true
 
 ##Scrolls the text for the dialog
 func _on_timer_timeout():
@@ -41,6 +55,8 @@ func set_dialog(new_dialog: Array[String]):
 	dialog = new_dialog
 
 func _on_trigger_box_send_dialog(char_1, char_2, start):
+	modulate.a = 1
+	last = false
 	page = 0
 	if (character == 1):
 		set_dialog(char_1)
@@ -55,6 +71,7 @@ func _on_trigger_box_send_dialog(char_1, char_2, start):
 		elif (start == 0):
 			show()
 		d_text.bbcode_text = dialog[page]
+		print(page)
 		d_text.set_visible_characters(0)
 		$Timer.set_wait_time(scroll_time)
 		$Timer.start()
