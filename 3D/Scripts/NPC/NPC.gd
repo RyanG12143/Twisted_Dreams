@@ -77,20 +77,22 @@ func _on_target_reached():
 	
 	var marker = markers[current_marker]
 	
-	if marker.wait:
-		waiting = true
-		timer.start(marker.wait_time)
+	if marker.get_script() != null:
+		if marker.wait:
+			waiting = true
+			timer.start(marker.wait_time)
+		
+		if marker.change_speed:
+			if marker.speed_value > 0:
+				speed = marker.speed_value
+			if marker.speed_multiplyer > 0:
+				speed *= marker.speed_multiplyer
+		
+		if marker.turn_towards:
+			wait_turn_target = marker.turn_target.global_position
+		else:
+			wait_turn_target = global_position
 	
-	if marker.change_speed:
-		if marker.speed_value > 0:
-			speed = marker.speed_value
-		if marker.speed_multiplyer > 0:
-			speed *= marker.speed_multiplyer
-	
-	if marker.turn_towards:
-		wait_turn_target = marker.turn_target.global_position
-	else:
-		wait_turn_target = global_position
 	
 	if markers.size() > current_marker + 1 and not (current_marker + (1 * traverse_direction)) < 0:
 		current_marker += 1 * traverse_direction

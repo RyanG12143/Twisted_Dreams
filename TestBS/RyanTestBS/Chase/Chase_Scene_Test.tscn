@@ -116,8 +116,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.298242, 0)
 
 [node name="Waypoint" parent="Markers" instance=ExtResource("8_gleb1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17483, 0.937884, 0)
-wait = true
-turn_towards = true
 
 [node name="Marker3D" parent="Markers/Waypoint" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4045)
