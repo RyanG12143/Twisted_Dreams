@@ -10,7 +10,8 @@ extends Marker3D
 @export var speed_value:float = 0
 ## NPC will set speed multiplyer to given value
 @export var speed_multiplyer:float = 0
-## NPC will turn towards Marker3D Child when enabled
+## NPC will turn towards Marker3D Child when enabled. [br][br]
+## ENABLE EDITABLE CHILDREN
 @export var turn_towards:bool = false
 ## NPC will be given a new path from New Paths when enabled
 @export var give_new_path:bool = false

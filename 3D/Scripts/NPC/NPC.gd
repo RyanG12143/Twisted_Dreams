@@ -11,10 +11,10 @@ signal finished_path
 @export var turn_Speed:float = 10
 ## If true NPC will travel in loop through each waypoint
 @export var loop:bool = false
-## If true npc will backtrack through waypoints. (1234321)[br]
+## If true npc will backtrack through waypoints. (1234321)[br][br]
 ## MUST HAVE LOOP ENABLED
 @export var inverse_loop:bool = false
-## Node3d containing all waypoints for npc travel to
+## Node3D containing all waypoints for npc travel to
 @export var positions_container:Node3D
 
 
