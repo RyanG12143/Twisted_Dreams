@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://n6rf8a232l5n"]
+
+[ext_resource type="Script" path="res://3D/Scripts/NPC/Waypoint.gd" id="1_bo0e7"]
+
+[node name="Waypoint" type="Marker3D"]
+script = ExtResource("1_bo0e7")
+
+[node name="Marker3D" type="Marker3D" parent="."]

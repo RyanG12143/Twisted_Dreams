@@ -21,7 +21,6 @@ func _ready():
 
 
 func enter(body:CharacterBody2D):
-	print("enter")
 	body.set_collision_mask_value(2, false)
 	
 	var direction = body.global_position.direction_to(flee_object.global_position)

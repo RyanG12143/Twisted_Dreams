@@ -1,11 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://xuteggk5aiph"]
+[gd_scene load_steps=15 format=3 uid="uid://xuteggk5aiph"]
 
-[ext_resource type="PackedScene" uid="uid://cu7wqioxho4ft" path="res://TestBS/RyanTestBS/Chase/Chase_Character.tscn" id="1_08itc"]
+[ext_resource type="PackedScene" uid="uid://cu7wqioxho4ft" path="res://3D/Scenes/NPC/NPC.tscn" id="1_08itc"]
 [ext_resource type="PackedScene" uid="uid://deg7i3dtq3kts" path="res://3D/Scenes/Characters/Brother_Younger.tscn" id="2_vy1ac"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_wdovb"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_qw5bw"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_rcgjv"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_fivi7"]
+[ext_resource type="PackedScene" uid="uid://n6rf8a232l5n" path="res://3D/Scenes/NPC/Waypoint.tscn" id="8_gleb1"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_3jsns"]
 vertices = PackedVector3Array(-1, 0.95945, -40.75, 1.25, 0.95945, -41, 1.25, 0.95945, -49.5, -49.5, 0.95945, -49.5, -49.5, 0.95945, -20.25, -1, 0.95945, -20.25, -1, 0.95945, -40.75, -49.5, 0.95945, -49.5, 1.25, 0.95945, -41, 15.5, 0.95945, -41, 15.5, 0.95945, -49.5, 1.25, 0.95945, -49.5, 15.5, 0.95945, -49.5, 15.5, 0.95945, -41, 17.75, 0.95945, -40.75, 49.5, 0.95945, -49.5, 17.75, 0.95945, -40.75, 17.75, 0.95945, -19.75, 49.5, 0.95945, -19.5, 49.5, 0.95945, -49.5, 6.5, 5.70945, -33.75, 7, 5.70945, -33.75, 7, 5.70945, -40, -12.75, 5.70945, -40, -12.75, 5.70945, -19, 6.5, 5.70945, -19, 6.5, 5.70945, -33.75, -12.75, 5.70945, -40, 14.25, 5.70945, -33.75, 14.25, 5.70945, -31.75, 16.75, 5.70945, -31.75, 16.75, 5.70945, -40, 7.5, 5.45945, -33.75, 7.5, 4.95945, -32, 13.25, 4.95945, -32, 13.25, 5.45945, -33.75, 13.25, 5.45945, -33.75, 16.75, 5.70945, -40, 7, 5.70945, -40, 7.5, 5.45945, -33.75, 7, 5.70945, -40, 7, 5.70945, -33.75, 7.5, 5.45945, -33.75, 13.25, 5.45945, -33.75, 14.25, 5.70945, -33.75, 16.75, 5.70945, -40, 0.25, 0.95945, -23.75, 6.25, 0.95945, -23.75, 6.5, 0.95945, -26, 0.25, 0.95945, -39.75, 14.25, 0.95945, -26, 14.5, 0.95945, -19.25, 16.5, 0.95945, -19.25, 16.5, 0.95945, -39.75, 6.5, 0.95945, -26, 14.25, 0.95945, -26, 16.5, 0.95945, -39.75, 0.25, 0.95945, -39.75, 7.5, 0.95945, -20, 13.25, 0.95945, -20, 13.25, 4.95945, -32, 7.5, 4.95945, -32, 8.475, 4.20945, -30.525, 16.75, 5.70945, -31.75, 14.25, 5.70945, -31.75, 14.25, 5.70945, -19, 16.75, 5.70945, -19, 6.25, 0.95945, -23.75, 0.25, 0.95945, -23.75, 0.25, 0.95945, -19.25, 6.25, 0.95945, -19.25, 1, 0.95945, -4, 1, 0.95945, -18, -1, 0.95945, -18.25, -2.5, 0.95945, -4, -2.75, 0.95945, -2.75, -2.5, 0.95945, -4, -1, 0.95945, -18.25, -1, 0.95945, -20.25, -49.5, 0.95945, -20.25, -49.5, 0.95945, -2.75, 13.5, 0.95945, -18, 13.25, 0.95945, -20, 7.5, 0.95945, -20, 7.25, 0.95945, -18, 49.5, 0.95945, -19.5, 17.75, 0.95945, -19.75, 17.5, 0.95945, -18, 1, 0.95945, -18, 1, 0.95945, -4, 2.75, 0.95945, -3.75, 7.25, 0.95945, -18, 49.5, 0.95945, -19.5, 17.5, 0.95945, -18, 2.75, 0.95945, -2, 1.25, 0.95945, 49.5, 49.5, 0.95945, 49.5, 7.25, 0.95945, -18, 2.75, 0.95945, -3.75, 2.75, 0.95945, -2, 13.5, 0.95945, -18, 2.75, 0.95945, -2, 1, 0.95945, -1.75, 1.25, 0.95945, 49.5, 17.5, 0.95945, -18, 13.5, 0.95945, -18, 2.75, 0.95945, -2, -2.5, 0.95945, -1.75, -2.75, 0.95945, -2.75, -49.5, 0.95945, -2.75, -49.5, 0.95945, 49.5, -1.25, 0.95945, 49.5, -1.25, 0.95945, 49.5, -1, 0.95945, -1.75, -2.5, 0.95945, -1.75, -1.25, 0.95945, 49.5, 1.25, 0.95945, 49.5, 1, 0.95945, -1.75, -1, 0.95945, -1.75)
@@ -99,46 +100,58 @@ collision_mask = 2
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, -0.0684642, 2.52145, 5.16138)
-current = true
 
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 script = ExtResource("6_fivi7")
 
-[node name="Chase_Character" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_08itc")]
+[node name="NPC" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_08itc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.111195, 1.11838, -6.28709)
 speed = 10.0
 loop = true
+inverse_loop = true
 positions_container = NodePath("../Markers")
 
 [node name="Markers" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.298242, 0)
 
-[node name="Marker3D" type="Marker3D" parent="Markers"]
+[node name="Waypoint" parent="Markers" instance=ExtResource("8_gleb1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17483, 0.937884, 0)
+wait = true
+turn_towards = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Markers/Marker3D"]
+[node name="Marker3D" parent="Markers/Waypoint" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4045)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Markers/Waypoint"]
 mesh = SubResource("TorusMesh_am4xg")
+skeleton = NodePath("")
 
-[node name="Marker3D2" type="Marker3D" parent="Markers"]
+[node name="Waypoint2" parent="Markers" instance=ExtResource("8_gleb1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.65639, 0.84428, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Markers/Marker3D2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Markers/Waypoint2"]
 mesh = SubResource("TorusMesh_am4xg")
+skeleton = NodePath("")
 
-[node name="Marker3D3" type="Marker3D" parent="Markers"]
+[node name="Waypoint3" parent="Markers" instance=ExtResource("8_gleb1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.13482, 1.20304, -16.5113)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Markers/Marker3D3"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Markers/Waypoint3"]
 mesh = SubResource("TorusMesh_am4xg")
+skeleton = NodePath("")
 
-[node name="Marker3D5" type="Marker3D" parent="Markers"]
+[node name="Waypoint4" parent="Markers" instance=ExtResource("8_gleb1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.82489, 5.61272, -27.3636)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Markers/Marker3D5"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Markers/Waypoint4"]
 mesh = SubResource("TorusMesh_am4xg")
+skeleton = NodePath("")
 
-[node name="Marker3D4" type="Marker3D" parent="Markers"]
+[node name="Waypoint5" parent="Markers" instance=ExtResource("8_gleb1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64742, 0.84428, -9.79923)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Markers/Marker3D4"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Markers/Waypoint5"]
 mesh = SubResource("TorusMesh_am4xg")
+skeleton = NodePath("")
+
+[editable path="Markers/Waypoint"]

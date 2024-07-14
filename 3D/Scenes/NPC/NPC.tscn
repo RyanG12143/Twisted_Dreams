@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu7wqioxho4ft"]
+
+[ext_resource type="Script" path="res://3D/Scripts/NPC/NPC.gd" id="1_aymty"]
+[ext_resource type="PackedScene" uid="uid://dnmmld2jvdj65" path="res://3D/Assets/Placeholder/Characters/PoliceOfficer_Placeholder.glb" id="2_glabd"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rsqqe"]
+radius = 0.313997
+height = 1.6293
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_yo15t"]
+length = 0.5
+
+[node name="NPC" type="CharacterBody3D"]
+collision_layer = 4
+script = ExtResource("1_aymty")
+
+[node name="PoliceOfficer_Placeholder" parent="." instance=ExtResource("2_glabd")]
+
+[node name="Character_Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.790831, 0)
+shape = SubResource("CapsuleShape3D_rsqqe")
+
+[node name="Seperation_Ray" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0.55)
+shape = SubResource("SeparationRayShape3D_yo15t")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+target_desired_distance = 0.2
+debug_enabled = true
+
+[node name="Front" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00346, 0.887075)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_target_reached"]
+[connection signal="timeout" from="Timer" to="." method="_on_wait_timeout"]
