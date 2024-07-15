@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dre0o1tw818oq"]
+[gd_scene load_steps=32 format=3 uid="uid://dre0o1tw818oq"]
 
 [ext_resource type="Material" uid="uid://dqh67xl8hqsyw" path="res://3D/Scenes/AreaGreyboxing/Prototype_Dark_Accent.tres" id="1_5cd8q"]
 [ext_resource type="PackedScene" uid="uid://yg72f38gg1sg" path="res://3D/Scenes/Objects/Double_Door_With_Frame.tscn" id="1_p72i5"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://chfmwuj54wyib" path="res://3D/Scenes/Objects/Door_With_Frame.tscn" id="5_hatbl"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_y4wnn"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_84xg3"]
+[ext_resource type="Script" path="res://addons/proto_shape/proto_ramp/proto_ramp.gd" id="7_4uedy"]
 [ext_resource type="PackedScene" uid="uid://butxc7wbg1vs1" path="res://3D/Scenes/3D_Transition_Manager.tscn" id="7_ys8uk"]
 [ext_resource type="Terrain3DStorage" uid="uid://cswn4h5yrohb3" path="res://3D/Terrain/new_terrain_3d_storage.res" id="8_1n6rm"]
 [ext_resource type="Terrain3DMaterial" uid="uid://caml41jx0wogn" path="res://3D/Terrain/new_terrain_3d_material.tres" id="9_iklmi"]
@@ -989,6 +990,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4549, -0.390955, 30.9303)
 radius = 2.18016
 height = 8.12237
 sides = 14
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/CSG_Meshes/Buildings/Market_Building/First_Floor"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -3.20752, 16.1757)
+use_collision = true
+size = Vector3(2, 1.6, 2.1)
+
+[node name="ProtoRamp" type="CSGCombiner3D" parent="NavigationRegion3D/CSG_Meshes/Buildings/Market_Building/First_Floor"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -4.40752, 20.2257)
+use_collision = true
+script = ExtResource("7_4uedy")
+type = 1
+width = 2.001
+height = 2.001
+depth = 2.99262
+anchor = 0
+anchor_fixed = true
+material = null
+calculation = 0
+steps = 8
+fill = true
+
+[node name="ProtoRamp2" type="CSGCombiner3D" parent="NavigationRegion3D/CSG_Meshes/Buildings/Market_Building/First_Floor"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3, -4.40752, 20.2257)
+use_collision = true
+script = ExtResource("7_4uedy")
+type = 0
+width = 2.001
+height = 4.82386
+depth = 2.99262
+anchor = 0
+anchor_fixed = true
+material = null
 
 [node name="Market_Building4" type="CSGBox3D" parent="NavigationRegion3D/CSG_Meshes/Buildings"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.5, 6.5, -9)
@@ -2091,11 +2124,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, -10.9, -92)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416, 0, 0)
 
 [node name="OlderBrother" parent="." instance=ExtResource("2_gtjnm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.68, 1.4318, 17.0199)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 431.68, 1.1318, 9.0199)
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
-transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 432.68, 2.93668, 21.1546)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 431.68, 2.63668, 13.1545)
 script = ExtResource("3_n7vig")
 priority = 10
 follow_mode = 6
@@ -2108,7 +2141,7 @@ spring_length = 4.4
 
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 432.68, 2.93668, 21.1546)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 431.68, 2.63668, 13.1545)
 
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 script = ExtResource("6_84xg3")

@@ -21,6 +21,7 @@ class_name Player_Camera
 
 var last_position: Vector3 = Vector3(0, 0, 0)
 
+
 # Ready function
 func _ready():
 	# Setting up key values and action values for player input
@@ -83,8 +84,71 @@ func _physics_process(delta):
 		_player_pcam.set_spring_length(_player_pcam.get_spring_length() + 0.2)
 
 	
-	
+	_rotate_step_up_seperation_ray()
 	move_and_slide()
+	_snap_down_to_stairs_check()
+
+# Snapping down stairs
+var _was_on_floor_last_frame = false
+var _snapped_to_stairs_last_frame = false
+
+func _snap_down_to_stairs_check():
+	var did_snap = false
+	if not is_on_floor() and velocity.y <= 0 and (_was_on_floor_last_frame or _snapped_to_stairs_last_frame) and $PlayerVisual/Rays/StairsBelowRayCast3D.is_colliding():
+		var body_test_result = PhysicsTestMotionResult3D.new()
+		var params = PhysicsTestMotionParameters3D.new()
+		var max_step_down = -0.5
+		params.from = self.global_transform
+		params.motion = Vector3(0,max_step_down,0)
+		if PhysicsServer3D.body_test_motion(self.get_rid(), params, body_test_result):
+			var translate_y = body_test_result.get_travel().y
+			self.position.y += translate_y
+			apply_floor_snap()
+			did_snap = true
+		
+	_was_on_floor_last_frame = is_on_floor()
+	_snapped_to_stairs_last_frame = did_snap
+
+# Rotate step up rays
+@onready var _initial_seperation_ray_dist = abs($StairsBelowRayCast3D_F.position.z)
+var _last_xz_vel : Vector3 = Vector3(0,0,0)
+func _rotate_step_up_seperation_ray():
+	var xz_vel = velocity * Vector3(1,0,1)
+	
+	if xz_vel.length() < 0.1:
+		xz_vel = _last_xz_vel
+	else:
+		_last_xz_vel = xz_vel
+	
+	var xz_f_ray_pos = xz_vel.normalized() * _initial_seperation_ray_dist
+	$StairsBelowRayCast3D_F.global_position.x = self.global_position.x + xz_f_ray_pos.x
+	$StairsBelowRayCast3D_F.global_position.z = self.global_position.z + xz_f_ray_pos.z
+	
+	var xz_l_ray_pos = xz_f_ray_pos.rotated(Vector3(0,1.0,0), deg_to_rad(-50))
+	$StairsBelowRayCast3D_L.global_position.x = self.global_position.x + xz_l_ray_pos.x
+	$StairsBelowRayCast3D_L.global_position.z = self.global_position.z + xz_l_ray_pos.z
+	
+	var xz_r_ray_pos = xz_f_ray_pos.rotated(Vector3(0,1.0,0), deg_to_rad(50))
+	$StairsBelowRayCast3D_R.global_position.x = self.global_position.x + xz_r_ray_pos.x
+	$StairsBelowRayCast3D_R.global_position.z = self.global_position.z + xz_r_ray_pos.z
+	
+	# To prevent character from running up walls, we do a check for how steep
+	# the slope in contact with our seperation ray is
+	$StairsBelowRayCast3D_F/RayCast3D.force_raycast_update()
+	$StairsBelowRayCast3D_L/RayCast3D.force_raycast_update()
+	$StairsBelowRayCast3D_R/RayCast3D.force_raycast_update()
+	var max_slope_ang_dot = Vector3(0,1,0).rotated(Vector3(1.0,0,0), self.floor_max_angle).dot(Vector3(0,1,0))
+	var any_too_steep = false
+	if $StairsBelowRayCast3D_F/RayCast3D.is_colliding() and $StairsBelowRayCast3D_F/RayCast3D.get_collision_normal().dot(Vector3(0,1,0)) < max_slope_ang_dot:
+		any_too_steep = true
+	if $StairsBelowRayCast3D_L/RayCast3D.is_colliding() and $StairsBelowRayCast3D_L/RayCast3D.get_collision_normal().dot(Vector3(0,1,0)) < max_slope_ang_dot:
+		any_too_steep = true
+	if $StairsBelowRayCast3D_R/RayCast3D.is_colliding() and $StairsBelowRayCast3D_R/RayCast3D.get_collision_normal().dot(Vector3(0,1,0)) < max_slope_ang_dot:
+		any_too_steep = true
+		
+	$StairsBelowRayCast3D_F.disabled = any_too_steep
+	$StairsBelowRayCast3D_L.disabled = any_too_steep
+	$StairsBelowRayCast3D_R.disabled = any_too_steep
 
 # Process function
 func _process(delta):

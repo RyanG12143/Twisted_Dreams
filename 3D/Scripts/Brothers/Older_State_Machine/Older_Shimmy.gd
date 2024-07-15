@@ -30,7 +30,7 @@ func Physics_Update(delta: float):
 	direction = Vector3(h_input, f_input, 0).rotated(Vector3.UP, rot).normalized()
 	
 	# Facing wall normal
-	mesh.rotation.y = -(atan2(player_normal.get_collision_normal().z, player_normal.get_collision_normal().x) - PI/2)
+	older_brother.rotation.y = -(atan2(player_normal.get_collision_normal().z, player_normal.get_collision_normal().x) - PI/2)
 	
 	var move_dir = direction
 	

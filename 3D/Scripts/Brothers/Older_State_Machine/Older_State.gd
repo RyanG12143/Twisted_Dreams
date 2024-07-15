@@ -11,6 +11,7 @@ signal Transitioned
 @onready var ledge_height = %LedgeHeight
 @onready var lip_rays = %LipRays
 @onready var player_normal = %PlayerNormal
+@onready var _player_stair_rays: Node3D = $PlayerVisual/Rays/Stair_Rays
 
 @export var older_brother: Node3D
 
@@ -25,7 +26,7 @@ var can_turn: bool = true
 @export var run_speed: float = 20.0 #8.0 normally
 @export var strafe_speed: float = 1.0
 @export var movement_speed: float = walk_speed
-@export var JUMP_VELOCITY: float = 4.7
+@export var JUMP_VELOCITY: float = 4.0
 @export var enable_gravity = true
 
 @onready var _player_visual: Node = $"."
@@ -58,10 +59,10 @@ func Physics_Update(delta: float):
 		player_normal.global_transform.origin.y = ledge_height.get_collision_point().y - 0.01
 		
 func _process(delta):
-	var fps = Engine.get_frames_per_second()
-	var lerp_interval = velocity_move / fps
-	var lerp_position = older_brother.global_transform.origin + lerp_interval
-	
+	#var fps = Engine.get_frames_per_second()
+	#var lerp_interval = velocity_move / fps
+	#var lerp_position = older_brother.global_transform.origin + lerp_interval
+	pass
 	
 	#if fps > 60:
 		#mesh.top_level = true

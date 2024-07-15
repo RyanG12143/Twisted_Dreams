@@ -22,7 +22,7 @@ func Physics_Update(delta: float):
 	var testVelocity: Vector3 = Vector3(older_brother.velocity.x, 0, older_brother.velocity.z)
 	if testVelocity.length() > 0.2 and can_turn:
 		var look_direction: Vector2 = -Vector2(older_brother.velocity.z, older_brother.velocity.x)
-		older_brother._player_direction.rotation.y = look_direction.angle()
+		older_brother.rotation.y = look_direction.angle()
 	
 	direction = Vector3(Input.get_action_strength("3Dleft") - Input.get_action_strength("3Dright"), 0, Input.get_action_strength("3Dforward") - Input.get_action_strength("3Dbackward"))
 	

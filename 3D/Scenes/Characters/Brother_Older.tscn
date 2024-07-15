@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bived31tg1brm"]
+[gd_scene load_steps=15 format=3 uid="uid://bived31tg1brm"]
 
 [ext_resource type="Script" path="res://3D/Scripts/Brothers/Player_Camera.gd" id="1_xen6v"]
 [ext_resource type="PackedScene" uid="uid://bjx5fr4s3kv31" path="res://3D/Assets/Placeholder/Characters/OlderSibling_Placeholder02.glb" id="2_607xc"]
@@ -17,6 +17,9 @@
 radius = 0.308549
 height = 1.7
 
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_ngfeu"]
+length = 0.3
+
 [node name="OlderBrother" type="CharacterBody3D" groups=["Player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03182, 0)
 collision_layer = 2
@@ -26,6 +29,33 @@ script = ExtResource("1_xen6v")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.153533, 0)
 shape = SubResource("CapsuleShape3D_klf3k")
+
+[node name="StairsBelowRayCast3D_F" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.7, -0.395324)
+shape = SubResource("SeparationRayShape3D_ngfeu")
+
+[node name="RayCast3D" type="RayCast3D" parent="StairsBelowRayCast3D_F"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+enabled = false
+target_position = Vector3(0, -0.35, 0)
+
+[node name="StairsBelowRayCast3D_L" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.7, -0.395324)
+shape = SubResource("SeparationRayShape3D_ngfeu")
+
+[node name="RayCast3D" type="RayCast3D" parent="StairsBelowRayCast3D_L"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+enabled = false
+target_position = Vector3(0, -0.35, 0)
+
+[node name="StairsBelowRayCast3D_R" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.7, -0.395324)
+shape = SubResource("SeparationRayShape3D_ngfeu")
+
+[node name="RayCast3D" type="RayCast3D" parent="StairsBelowRayCast3D_R"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+enabled = false
+target_position = Vector3(0, -0.35, 0)
 
 [node name="PlayerVisual" type="Node3D" parent="."]
 unique_name_in_owner = true
@@ -137,6 +167,10 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 target_position = Vector3(0, 0, -1)
 hit_from_inside = true
+
+[node name="StairsBelowRayCast3D" type="RayCast3D" parent="PlayerVisual/Rays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.851162, 0)
+target_position = Vector3(0, -0.5, 0)
 
 [node name="State Machine Older" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_bjnb2")
