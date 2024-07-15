@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://fnabxih0s6b4"]
+[gd_scene load_steps=15 format=3 uid="uid://fnabxih0s6b4"]
 
 [ext_resource type="Script" path="res://TestBS/MatthewTestBS/pause_screen.gd" id="1_pypjs"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_frxje"]
-font_size = 50
+[ext_resource type="Texture2D" uid="uid://ctp66q1owd1yv" path="res://TestBS/MatthewTestBS/Assets/ContinueIcon_UI_Unlicked_2D_ElaineK.png" id="2_dxvud"]
+[ext_resource type="Texture2D" uid="uid://b0y45dxmarxym" path="res://TestBS/MatthewTestBS/Assets/ContinueIcon_UI_clicked_2D_ElaineK.png" id="3_eqntn"]
+[ext_resource type="Texture2D" uid="uid://bm8of4dt7r0ye" path="res://TestBS/MatthewTestBS/Assets/OptionsIcon_UI_Unlicked_2D_ElaineK.png" id="3_tv3kc"]
+[ext_resource type="Texture2D" uid="uid://gr4bxdw5k71q" path="res://TestBS/MatthewTestBS/Assets/SoundIcon_UI_Unlicked_2D_ElaineK.png" id="4_6idb3"]
+[ext_resource type="Texture2D" uid="uid://cy678ja46n7k8" path="res://TestBS/MatthewTestBS/Assets/PausePlant_UI_2D_ElaineKelling_01.png" id="5_1g0qo"]
+[ext_resource type="Texture2D" uid="uid://s2fh84ss178w" path="res://TestBS/MatthewTestBS/Assets/OptionsIcon_UI_clicked_2D_ElaineK.png" id="5_atm4j"]
+[ext_resource type="Texture2D" uid="uid://b80qxnfvh8w50" path="res://TestBS/MatthewTestBS/Assets/SoundIcon_UI_clicked_2D_ElaineK.png" id="7_umxkw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bk304"]
 font_size = 50
@@ -28,54 +32,55 @@ process_mode = 3
 script = ExtResource("1_pypjs")
 
 [node name="MainScreen" type="Control" parent="."]
-visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Pause" type="Label" parent="MainScreen"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 483.5
-offset_top = 116.0
-offset_right = 628.5
-offset_bottom = 185.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Pause"
-label_settings = SubResource("LabelSettings_frxje")
 
-[node name="Back" type="Button" parent="MainScreen"]
+[node name="Back" type="TextureButton" parent="MainScreen"]
+z_index = 1
 layout_mode = 0
-offset_left = 510.0
-offset_top = 277.0
-offset_right = 654.0
-offset_bottom = 326.0
-text = "Back to Game
-"
+offset_left = 514.0
+offset_top = 497.0
+offset_right = 738.0
+offset_bottom = 649.0
+texture_normal = ExtResource("2_dxvud")
+texture_pressed = ExtResource("3_eqntn")
 
-[node name="Settings" type="Button" parent="MainScreen"]
+[node name="Settings" type="TextureButton" parent="MainScreen"]
+z_index = 1
 layout_mode = 0
-offset_left = 510.0
-offset_top = 351.0
-offset_right = 654.0
-offset_bottom = 405.0
-text = "Settings
-"
+offset_left = 514.0
+offset_top = 172.0
+offset_right = 738.0
+offset_bottom = 324.0
+texture_normal = ExtResource("3_tv3kc")
+texture_pressed = ExtResource("5_atm4j")
 
 [node name="ReturnToTitle" type="Button" parent="MainScreen"]
+z_index = 1
 layout_mode = 0
-offset_left = 510.0
-offset_top = 432.0
-offset_right = 654.0
-offset_bottom = 486.0
-text = "Quit to Title
-"
+offset_left = 557.0
+offset_top = 659.0
+offset_right = 701.0
+offset_bottom = 713.0
+text = "Quit to title"
+
+[node name="Audio" type="TextureButton" parent="MainScreen"]
+z_index = 1
+layout_mode = 0
+offset_left = 511.0
+offset_top = 349.0
+offset_right = 735.0
+offset_bottom = 501.0
+texture_normal = ExtResource("4_6idb3")
+texture_pressed = ExtResource("7_umxkw")
+
+[node name="PausePlantUi2dElaineKelling01" type="Sprite2D" parent="MainScreen"]
+position = Vector2(627, 364)
+texture = ExtResource("5_1g0qo")
 
 [node name="SettingsMenu" type="Control" parent="."]
 visible = false
@@ -117,14 +122,6 @@ offset_top = 355.0
 offset_right = 740.0
 offset_bottom = 405.0
 text = "Save"
-
-[node name="Audio" type="Button" parent="SettingsMenu"]
-layout_mode = 0
-offset_left = 418.0
-offset_top = 355.0
-offset_right = 561.0
-offset_bottom = 405.0
-text = "Audio"
 
 [node name="Visual" type="Button" parent="SettingsMenu"]
 layout_mode = 0
@@ -224,6 +221,7 @@ offset_bottom = 506.0
 text = "Back"
 
 [node name="VisualMenu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -303,9 +301,9 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="MainScreen/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MainScreen/Settings" to="SettingsMenu" method="_on_settings_pressed"]
 [connection signal="pressed" from="MainScreen/ReturnToTitle" to="." method="_on_return_to_title_pressed"]
+[connection signal="pressed" from="MainScreen/Audio" to="." method="_on_audio_pressed"]
 [connection signal="pressed" from="SettingsMenu/BackToMain" to="." method="_on_back_to_main_pressed"]
 [connection signal="pressed" from="SettingsMenu/Save" to="." method="_on_save_pressed"]
-[connection signal="pressed" from="SettingsMenu/Audio" to="." method="_on_audio_pressed"]
 [connection signal="pressed" from="SettingsMenu/Visual" to="." method="_on_visual_pressed"]
 [connection signal="pressed" from="AudioMenu/BackToSettings" to="." method="_on_back_to_settings_pressed"]
 [connection signal="toggled" from="VisualMenu/SubtitleToggle" to="." method="_on_subtitle_toggle_toggled"]

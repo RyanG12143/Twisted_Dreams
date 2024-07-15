@@ -45,7 +45,7 @@ func _on_save_pressed():
 
 #Goes to the audio menu
 func _on_audio_pressed():
-	$SettingsMenu.hide()
+	$MainScreen.hide()
 	$AudioMenu.show()
 
 #Goes back to the settings menu
