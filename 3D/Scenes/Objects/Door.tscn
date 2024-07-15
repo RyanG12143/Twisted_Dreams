@@ -36,6 +36,8 @@ shape = SubResource("ConvexPolygonShape3D_2s33m")
 
 [node name="DoorFrame" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0224098, 0, 0)
+collision_layer = 16
+collision_mask = 14
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="DoorFrame"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.759494, 0, 0)
