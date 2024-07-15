@@ -980,13 +980,6 @@ radius = 2.18016
 height = 8.12237
 sides = 14
 
-[node name="Building_Support3" type="CSGCylinder3D" parent="NavigationRegion3D/CSG_Meshes/Buildings/Market_Building/First_Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4884, -0.390955, 26.9303)
-use_collision = true
-radius = 2.18016
-height = 8.12237
-sides = 14
-
 [node name="Staircase" type="CSGCylinder3D" parent="NavigationRegion3D/CSG_Meshes/Buildings/Market_Building/First_Floor"]
 transform = Transform3D(-0.858432, 0, 0.512927, 0, 1, 0, -0.512927, 0, -0.858432, -23.3887, 0.509045, 36.175)
 use_collision = true
@@ -1332,6 +1325,14 @@ radius = 6.2
 height = 2.6
 sides = 14
 
+[node name="Main_Hole" type="CSGCylinder3D" parent="NavigationRegion3D/CSG_Meshes/Buildings/Market_Building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0115967, 4.60905, 3.0303)
+operation = 2
+use_collision = true
+radius = 15.0
+height = 5.4
+sides = 12
+
 [node name="Market_Building_Second_Floor" type="CSGBox3D" parent="NavigationRegion3D/CSG_Meshes/Buildings"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 14.5, -12.5)
 use_collision = true
@@ -1353,6 +1354,29 @@ sides = 14
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/CSG_Meshes/Buildings/Market_Building_Second_Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0005, -3.9, 32.6524)
 size = Vector3(14.706, 1, 7.47314)
+
+[node name="Main_Hole" type="CSGCylinder3D" parent="NavigationRegion3D/CSG_Meshes/Buildings/Market_Building_Second_Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0115967, -5.39095, 3.0303)
+operation = 2
+use_collision = true
+radius = 15.0
+height = 5.4
+sides = 12
+
+[node name="Main_Hole2" type="CSGCylinder3D" parent="NavigationRegion3D/CSG_Meshes/Buildings/Market_Building_Second_Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0115967, -2.99096, 3.0303)
+use_collision = true
+radius = 15.2
+height = 1.4
+sides = 12
+
+[node name="Main_Hole3" type="CSGCylinder3D" parent="NavigationRegion3D/CSG_Meshes/Buildings/Market_Building_Second_Floor/Main_Hole2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.7, 0)
+operation = 2
+use_collision = true
+radius = 15.0
+height = 5.4
+sides = 12
 
 [node name="Market_Building4" type="CSGBox3D" parent="NavigationRegion3D/CSG_Meshes/Buildings"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.5, 6.5, -9)
@@ -2455,11 +2479,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, -10.9, -92)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416, 0, 0)
 
 [node name="OlderBrother" parent="." instance=ExtResource("2_gtjnm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 431.68, 1.1318, 9.0199)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 431.68, 12.1318, 9.0199)
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
-transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 431.68, 2.63668, 13.1545)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 431.68, 13.6367, 13.1545)
 script = ExtResource("3_n7vig")
 priority = 10
 follow_mode = 6
@@ -2472,7 +2496,7 @@ spring_length = 4.4
 
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 431.68, 2.63668, 13.1545)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 431.68, 13.6367, 13.1545)
 
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 script = ExtResource("6_84xg3")
