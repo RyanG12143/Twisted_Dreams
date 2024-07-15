@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f8jp42r0apkt"
-path.s3tc="res://.godot/imported/Sand_normal_roughness.png-f4554591bfbe6402b95ad87cc3828bea.s3tc.ctex"
+uid="uid://cb75y7pxm8qi8"
+path.s3tc="res://.godot/imported/Sand_albedo_height.png-86cf64e0bfb5c04c1df33278392b41a8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://3D/Assets/TerrainTextures/Sand/Sand_normal_roughness.png"
-dest_files=["res://.godot/imported/Sand_normal_roughness.png-f4554591bfbe6402b95ad87cc3828bea.s3tc.ctex"]
+source_file="res://3D/Assets/Textures/Enviornment_Textures/Sand/Sand_albedo_height.png"
+dest_files=["res://.godot/imported/Sand_albedo_height.png-86cf64e0bfb5c04c1df33278392b41a8.s3tc.ctex"]
 
 [params]
 

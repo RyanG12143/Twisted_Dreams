@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csvbdlxiiw01"
-path.s3tc="res://.godot/imported/Desert_Rock_albedo_height.png-da8aae0ad0c372f119a33e9ac3629d7d.s3tc.ctex"
+uid="uid://cu1njg82vji64"
+path.s3tc="res://.godot/imported/Desert_Rock_normal_roughness.png-0aa8177fc36c0dd310f50ef799aac111.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://3D/Assets/TerrainTextures/Desert Rock/Desert_Rock_albedo_height.png"
-dest_files=["res://.godot/imported/Desert_Rock_albedo_height.png-da8aae0ad0c372f119a33e9ac3629d7d.s3tc.ctex"]
+source_file="res://3D/Assets/Textures/Enviornment_Textures/Desert Rock/Desert_Rock_normal_roughness.png"
+dest_files=["res://.godot/imported/Desert_Rock_normal_roughness.png-0aa8177fc36c0dd310f50ef799aac111.s3tc.ctex"]
 
 [params]
 

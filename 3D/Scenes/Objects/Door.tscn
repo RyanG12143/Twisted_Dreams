@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://vw56thmaglcq"]
 
-[ext_resource type="Material" uid="uid://dqh67xl8hqsyw" path="res://3D/Scenes/AreaGreyboxing/Prototype_Dark_Accent.tres" id="1_rsdfm"]
+[ext_resource type="Material" uid="uid://dqh67xl8hqsyw" path="res://3D/Assets/Textures/Material_Textures/Dark_Grey.tres" id="1_rsdfm"]
 [ext_resource type="Script" path="res://3D/Scripts/Objects/Door.gd" id="1_sjcxd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_c4vgp"]

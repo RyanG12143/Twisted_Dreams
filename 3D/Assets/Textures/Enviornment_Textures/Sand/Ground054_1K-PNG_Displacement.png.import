@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkyxs73fhxkjh"
-path.s3tc="res://.godot/imported/Ground054_1K-PNG_Displacement.png-ab12a48eb7c948f97304913ff6020d88.s3tc.ctex"
+path.s3tc="res://.godot/imported/Ground054_1K-PNG_Displacement.png-2364f9291af78bd513e608eecbaba53e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://3D/Assets/TerrainTextures/Sand/Ground054_1K-PNG_Displacement.png"
-dest_files=["res://.godot/imported/Ground054_1K-PNG_Displacement.png-ab12a48eb7c948f97304913ff6020d88.s3tc.ctex"]
+source_file="res://3D/Assets/Textures/Enviornment_Textures/Sand/Ground054_1K-PNG_Displacement.png"
+dest_files=["res://.godot/imported/Ground054_1K-PNG_Displacement.png-2364f9291af78bd513e608eecbaba53e.s3tc.ctex"]
 
 [params]
 

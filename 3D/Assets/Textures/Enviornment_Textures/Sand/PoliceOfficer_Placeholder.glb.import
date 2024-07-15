@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://kmx6osjapj02"
-path="res://.godot/imported/PoliceOfficer_Placeholder.glb-1b45db234edb46b5c85036dda1bbc2e6.scn"
+path="res://.godot/imported/PoliceOfficer_Placeholder.glb-4012f55134b026f64768284cbc7ce046.scn"
 
 [deps]
 
-source_file="res://3D/Assets/TerrainTextures/Sand/PoliceOfficer_Placeholder.glb"
-dest_files=["res://.godot/imported/PoliceOfficer_Placeholder.glb-1b45db234edb46b5c85036dda1bbc2e6.scn"]
+source_file="res://3D/Assets/Textures/Enviornment_Textures/Sand/PoliceOfficer_Placeholder.glb"
+dest_files=["res://.godot/imported/PoliceOfficer_Placeholder.glb-4012f55134b026f64768284cbc7ce046.scn"]
 
 [params]
 

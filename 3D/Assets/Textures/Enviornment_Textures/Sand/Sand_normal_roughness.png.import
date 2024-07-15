@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dssc42f1st8it"
-path.s3tc="res://.godot/imported/Ground054_1K-PNG_Color.png-bf6793d058cd774a7aadd00c263f5515.s3tc.ctex"
+uid="uid://f8jp42r0apkt"
+path.s3tc="res://.godot/imported/Sand_normal_roughness.png-85bf7a9f4f086930b6134070443f1809.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://3D/Assets/TerrainTextures/Sand/Ground054_1K-PNG_Color.png"
-dest_files=["res://.godot/imported/Ground054_1K-PNG_Color.png-bf6793d058cd774a7aadd00c263f5515.s3tc.ctex"]
+source_file="res://3D/Assets/Textures/Enviornment_Textures/Sand/Sand_normal_roughness.png"
+dest_files=["res://.godot/imported/Sand_normal_roughness.png-85bf7a9f4f086930b6134070443f1809.s3tc.ctex"]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=2
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1

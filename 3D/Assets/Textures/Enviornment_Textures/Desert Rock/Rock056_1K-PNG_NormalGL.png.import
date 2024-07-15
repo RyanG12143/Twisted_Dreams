@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://odinhppd2rkl"
-path="res://.godot/imported/Ground054_1K-PNG_NormalGL.png-83d53a4994bade2195545b72f751f2ec.ctex"
+uid="uid://bqyr112ts7px2"
+path="res://.godot/imported/Rock056_1K-PNG_NormalGL.png-7bb9c7314b83a69f4184b2d93420a48e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://3D/Assets/TerrainTextures/Sand/Ground054_1K-PNG_NormalGL.png"
-dest_files=["res://.godot/imported/Ground054_1K-PNG_NormalGL.png-83d53a4994bade2195545b72f751f2ec.ctex"]
+source_file="res://3D/Assets/Textures/Enviornment_Textures/Desert Rock/Rock056_1K-PNG_NormalGL.png"
+dest_files=["res://.godot/imported/Rock056_1K-PNG_NormalGL.png-7bb9c7314b83a69f4184b2d93420a48e.ctex"]
 
 [params]
 

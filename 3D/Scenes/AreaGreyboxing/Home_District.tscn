@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://cq62xwmqwdoot"]
 
-[ext_resource type="Material" uid="uid://dqh67xl8hqsyw" path="res://3D/Scenes/AreaGreyboxing/Prototype_Dark_Accent.tres" id="1_8oaqj"]
+[ext_resource type="Material" uid="uid://dqh67xl8hqsyw" path="res://3D/Assets/Textures/Material_Textures/Dark_Grey.tres" id="1_8oaqj"]
 [ext_resource type="PackedScene" uid="uid://bived31tg1brm" path="res://3D/Scenes/Characters/Brother_Older.tscn" id="2_0atnt"]
 [ext_resource type="PackedScene" uid="uid://vw56thmaglcq" path="res://3D/Scenes/Objects/Door.tscn" id="2_l10e2"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_u66rk"]
@@ -17540,7 +17540,7 @@ spring_length = 3.5
 
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, -6, 2.29707, 4.28892)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, -6, 2.29707, 4.28892)
 
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 script = ExtResource("6_bqxj8")
