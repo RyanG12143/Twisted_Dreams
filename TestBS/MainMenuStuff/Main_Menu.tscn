@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://baapsc4104dfh"]
+[gd_scene load_steps=8 format=3 uid="uid://baapsc4104dfh"]
 
 [ext_resource type="Texture2D" uid="uid://6kh8jskj8q6d" path="res://TestBS/MainMenuStuff/Assets/Title_transparent_background.png" id="1_27c4x"]
 [ext_resource type="PackedScene" uid="uid://d2c5suo67k66j" path="res://TestBS/MainMenuStuff/Play_Button.tscn" id="2_ksyv1"]
 [ext_resource type="PackedScene" uid="uid://dr1hhnbulqf5v" path="res://TestBS/MainMenuStuff/Scrolling_Links.tscn" id="2_pyj11"]
+[ext_resource type="Script" path="res://TestBS/MainMenuStuff/TitleText_Glow.gd" id="2_vmy3j"]
 [ext_resource type="PackedScene" uid="uid://ckfb0yf8iaqeh" path="res://TestBS/MainMenuStuff/Settings_Button.tscn" id="3_jqhpk"]
 [ext_resource type="PackedScene" uid="uid://b2quymqk0yrdo" path="res://TestBS/MainMenuStuff/Quit_Button.tscn" id="4_iq7tg"]
+
+[sub_resource type="Environment" id="Environment_fi0jc"]
+background_mode = 3
+glow_enabled = true
+glow_blend_mode = 1
 
 [node name="MainMenu" type="Node"]
 
@@ -13,10 +19,15 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TitleText" type="Sprite2D" parent="HBoxContainer"]
+self_modulate = Color(1.1, 1.1, 1.1, 1)
 texture_repeat = 1
 position = Vector2(960, 289)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_27c4x")
+script = ExtResource("2_vmy3j")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="HBoxContainer/TitleText"]
+environment = SubResource("Environment_fi0jc")
 
 [node name="Play_Button" parent="HBoxContainer" instance=ExtResource("2_ksyv1")]
 position = Vector2(960, 600)
