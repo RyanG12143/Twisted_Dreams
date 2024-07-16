@@ -89,9 +89,9 @@ func _process(delta):
 						body.teleport_state = true
 						await get_tree().create_timer(0.05).timeout
 						if(teleports_to.rotation_degrees == 0):
-							body.set_deferred("linear_velocity", Vector2(-225, body.linear_velocity.y))
+							body.set_deferred("linear_velocity", Vector2(-150, body.linear_velocity.y))
 						else:
-							body.set_deferred("linear_velocity", Vector2(225, body.linear_velocity.y))
+							body.set_deferred("linear_velocity", Vector2(150, body.linear_velocity.y))
 		
 	timer += delta
 	if (timer > TRANSITION_TIME): timer = TRANSITION_TIME

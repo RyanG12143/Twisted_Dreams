@@ -135,7 +135,8 @@ func apply_movement():
 		var collision = get_slide_collision(index)
 		if collision.get_collider() is Crate:
 			var coll:RigidBody2D = collision.get_collider()
-			if ((abs(coll.global_position.y - global_position.y) < 10 && character_number == 1) or (abs(coll.global_position.y - global_position.y) < 26 && character_number == 2)):
+			print(abs(coll.global_position.y - global_position.y))
+			if ((abs(coll.global_position.y - global_position.y) < 26 && character_number == 1) or (abs(coll.global_position.y - global_position.y) < 41 && character_number == 2)):
 				if(move_direction != 0 && collision.get_collider().global_position.y > (global_position.y - 5)):
 					if(Input.is_action_pressed("crate_pick_up")):
 						coll._pull_crate()
