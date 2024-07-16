@@ -2,8 +2,6 @@ extends AnimatedSprite2D
 
 @onready var link_button:LinkButton = $LinkButton
 
-@onready var anim:AnimationPlayer = $AnimationPlayer
-
 var links_list:Array[String] = ["https://discord.com/invite/2K3Z8gHs5A", "https://bit.ly/support_abysmal", "https://www.youtube.com/playlist?list=PLZyki5ywlF11ckxdBZVth1z9GVXwcTMg1", "https://x.com/abysmal_studios", "https://www.instagram.com/abysmal_studios/", "https://www.tiktok.com/@abysmal_studios", "https://ryang12143.itch.io/abyssal"]
 
 var current_link:String = ""

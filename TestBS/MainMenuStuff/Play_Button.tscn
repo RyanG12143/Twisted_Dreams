@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2c5suo67k66j"]
+
+[ext_resource type="Texture2D" uid="uid://d0igxvamg416r" path="res://TestBS/MainMenuStuff/Assets/play.png" id="1_iwskh"]
+[ext_resource type="Texture2D" uid="uid://cuccmflowslvl" path="res://TestBS/MainMenuStuff/Assets/play_hover.png" id="2_4u6yp"]
+[ext_resource type="Script" path="res://TestBS/MainMenuStuff/Play_Button.gd" id="3_0ms2u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3i6l5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_iwskh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4u6yp")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="Play_Button" type="AnimatedSprite2D"]
+texture_repeat = 1
+sprite_frames = SubResource("SpriteFrames_3i6l5")
+script = ExtResource("3_0ms2u")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+texture_repeat = 1
+offset_left = -540.0
+offset_top = -162.0
+offset_right = 540.0
+offset_bottom = 162.0
+action_mode = 0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

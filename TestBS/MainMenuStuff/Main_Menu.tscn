@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://baapsc4104dfh"]
+
+[ext_resource type="Texture2D" uid="uid://6kh8jskj8q6d" path="res://TestBS/MainMenuStuff/Assets/Title_transparent_background.png" id="1_27c4x"]
+[ext_resource type="PackedScene" uid="uid://d2c5suo67k66j" path="res://TestBS/MainMenuStuff/Play_Button.tscn" id="2_ksyv1"]
+[ext_resource type="PackedScene" uid="uid://dr1hhnbulqf5v" path="res://TestBS/MainMenuStuff/Scrolling_Links.tscn" id="2_pyj11"]
+[ext_resource type="PackedScene" uid="uid://ckfb0yf8iaqeh" path="res://TestBS/MainMenuStuff/Settings_Button.tscn" id="3_jqhpk"]
+[ext_resource type="PackedScene" uid="uid://b2quymqk0yrdo" path="res://TestBS/MainMenuStuff/Quit_Button.tscn" id="4_iq7tg"]
+
+[node name="MainMenu" type="Node"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleText" type="Sprite2D" parent="HBoxContainer"]
+texture_repeat = 1
+position = Vector2(960, 289)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_27c4x")
+
+[node name="Play_Button" parent="HBoxContainer" instance=ExtResource("2_ksyv1")]
+position = Vector2(960, 600)
+scale = Vector2(0.35, 0.35)
+
+[node name="Settings_Button" parent="HBoxContainer" instance=ExtResource("3_jqhpk")]
+position = Vector2(960, 750)
+scale = Vector2(0.35, 0.35)
+
+[node name="Quit_Button" parent="HBoxContainer" instance=ExtResource("4_iq7tg")]
+position = Vector2(960, 900)
+scale = Vector2(0.35, 0.35)
+
+[node name="ScrollingLinks" parent="HBoxContainer" instance=ExtResource("2_pyj11")]
+position = Vector2(1802, 962)
+scale = Vector2(0.200463, 0.200463)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
+custom_minimum_size = Vector2(10000, 10000)
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

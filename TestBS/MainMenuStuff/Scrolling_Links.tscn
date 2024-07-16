@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cvqbtxxl8etw4" path="res://TestBS/MainMenuStuff/Assets/Instagram.png" id="5_e0f12"]
 [ext_resource type="Texture2D" uid="uid://c0hsukqkvbs86" path="res://TestBS/MainMenuStuff/Assets/TikTok.png" id="6_0u6ak"]
 [ext_resource type="Texture2D" uid="uid://dqgaq6qnbcsnj" path="res://TestBS/MainMenuStuff/Assets/Abyssal.png" id="7_qdh6i"]
-[ext_resource type="Script" path="res://TestBS/MainMenuStuff/ScrollingLinks.gd" id="8_ahdgs"]
+[ext_resource type="Script" path="res://TestBS/MainMenuStuff/Scrolling_Links.gd" id="8_ahdgs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hwnwg"]
 animations = [{
@@ -39,6 +39,7 @@ animations = [{
 }]
 
 [node name="ScrollingLinks" type="AnimatedSprite2D"]
+texture_repeat = 1
 sprite_frames = SubResource("SpriteFrames_hwnwg")
 script = ExtResource("8_ahdgs")
 
