@@ -2,11 +2,40 @@ extends Crate
 class_name Luminous_Cr
 ## Moveable, weighted luminous crates.
 
+const MIN_LIGHT:float = 1.4
+
+const MAX_LIGHT:float = 1.7
+
+const LIGHT_CHANGE_AMOUNT = 0.0005
+
+@onready var sprite:Sprite2D = $Sprite2D
 
 var enemies:Array[CharacterBody2D] = []
 var target_rays:Dictionary = {}
 
+var glow_increasing:bool = true
 
+func _ready():
+	sprite.self_modulate.r = MIN_LIGHT
+	sprite.self_modulate.g = MIN_LIGHT
+	sprite.self_modulate.b = MIN_LIGHT
+
+func _process(delta):
+	print(sprite.self_modulate.r)
+	if(sprite.self_modulate.r < MAX_LIGHT and glow_increasing):
+		sprite.self_modulate.r += LIGHT_CHANGE_AMOUNT
+		sprite.self_modulate.g += LIGHT_CHANGE_AMOUNT
+		sprite.self_modulate.b += LIGHT_CHANGE_AMOUNT
+	elif(sprite.self_modulate.r >= MAX_LIGHT and glow_increasing):
+		glow_increasing = false
+		
+	if (sprite.self_modulate.r > MIN_LIGHT and !glow_increasing):
+		sprite.self_modulate.r -= LIGHT_CHANGE_AMOUNT
+		sprite.self_modulate.g -= LIGHT_CHANGE_AMOUNT
+		sprite.self_modulate.b -= LIGHT_CHANGE_AMOUNT
+	elif(sprite.self_modulate.r <= MIN_LIGHT and !glow_increasing):
+		glow_increasing = true
+	
 
 func _on_enemy_enter(body):
 	if body.is_in_group("Enemy"):

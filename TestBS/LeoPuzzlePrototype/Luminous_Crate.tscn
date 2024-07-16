@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd1ru2so26744"]
+[gd_scene load_steps=6 format=3 uid="uid://bd1ru2so26744"]
 
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Luminous_Crate.gd" id="1_0qp43"]
-[ext_resource type="Texture2D" uid="uid://cfrtftk551cr7" path="res://TestBS/LeoPuzzlePrototype/Assets/Crate sprite sheet.png" id="2_chdtv"]
+[ext_resource type="Texture2D" uid="uid://g1mgf5kwg3df" path="res://TestBS/LeoPuzzlePrototype/Assets/Luminous_Crate.png" id="2_km4q7"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_il00c"]
 friction = 0.15
@@ -9,8 +9,13 @@ friction = 0.15
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ysgm"]
 radius = 96.0
 
+[sub_resource type="Environment" id="Environment_fsq4q"]
+background_mode = 3
+glow_enabled = true
+glow_blend_mode = 1
+
 [node name="Luminous_Crate" type="RigidBody2D" groups=["Can_Press_Buttons"]]
-z_index = 4
+z_index = 2
 collision_layer = 4
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_il00c")
@@ -20,13 +25,14 @@ lock_rotation = true
 script = ExtResource("1_0qp43")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1.7, 1.7, 1.7, 1)
 texture_filter = 1
 texture_repeat = 1
 scale = Vector2(0.250187, 0.250187)
-texture = ExtResource("2_chdtv")
+texture = ExtResource("2_km4q7")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-8.1, -8.1, -8.1, 6.9, -0.1, 7.9, 7.9, 6.9, 7.9, -8.1)
+polygon = PackedVector2Array(-16, -16, -16, 15, 0, 16, 16, 15, 16, -16)
 
 [node name="Light_Range" type="Area2D" parent="."]
 collision_mask = 8
@@ -37,6 +43,9 @@ shape = SubResource("CircleShape2D_1ysgm")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fsq4q")
 
 [connection signal="body_entered" from="Light_Range" to="." method="_on_enemy_enter"]
 [connection signal="body_exited" from="Light_Range" to="." method="_on_enemy_exit"]

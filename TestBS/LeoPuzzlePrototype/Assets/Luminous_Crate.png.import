@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfrtftk551cr7"
-path="res://.godot/imported/Crate sprite sheet.png-2245bca0e7386bc0f55f4add48f7c7b4.ctex"
+uid="uid://g1mgf5kwg3df"
+path="res://.godot/imported/Luminous_Crate.png-6d3d8ba3883c4650dd02d09a4b2f18cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestBS/LeoPuzzlePrototype/Assets/Crate sprite sheet.png"
-dest_files=["res://.godot/imported/Crate sprite sheet.png-2245bca0e7386bc0f55f4add48f7c7b4.ctex"]
+source_file="res://TestBS/LeoPuzzlePrototype/Assets/Luminous_Crate.png"
+dest_files=["res://.godot/imported/Luminous_Crate.png-6d3d8ba3883c4650dd02d09a4b2f18cf.ctex"]
 
 [params]
 
