@@ -1,7 +1,7 @@
 extends Control
 
 ##Contains all of the dialog said
-@export var dialog: Array[String] = []
+var dialog: Array[String] = []
 ##How fast the text scroll
 @export var scroll_time: float = 0.05
 ##Delay between new dialog and the dialog bubble being on screen
