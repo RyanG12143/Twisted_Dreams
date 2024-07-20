@@ -1488,7 +1488,7 @@ offset_left = 3.0
 offset_top = -77.0
 offset_right = 3.0
 offset_bottom = -77.0
-wait_time = 5.0
+wait_time = 1.0
 character = 2
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_targets")]
@@ -1497,7 +1497,7 @@ script = ExtResource("5_3omn7")
 priority = 10
 follow_mode = 3
 follow_targets = [NodePath("../character_one"), NodePath("../character_two")]
-zoom = Vector2(1.85, 1.85)
+zoom = Vector2(1.85312, 1.85312)
 tween_resource = SubResource("Resource_1p510")
 auto_zoom = true
 auto_zoom_min = -100.0
@@ -1507,7 +1507,7 @@ draw_limits = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(269, -480)
-zoom = Vector2(1.85, 1.85)
+zoom = Vector2(1.85312, 1.85312)
 
 [node name="FreecamMode" type="Node2D" parent="Camera2D" node_paths=PackedStringArray("follow_cam")]
 script = ExtResource("7_mstdh")
@@ -1564,5 +1564,5 @@ position = Vector2(134, -521)
 [connection signal="Send_Dialog" from="TriggerBox" to="character_one/char_one_dialog" method="_on_trigger_box_send_dialog"]
 [connection signal="Send_Dialog" from="TriggerBox" to="character_two/char_two_dialog" method="_on_trigger_box_send_dialog"]
 [connection signal="Send_Dialog" from="Trigger_Box" to="character_one/char_one_dialog" method="_on_trigger_box_send_dialog"]
-[connection signal="Send_Dialog" from="Trigger_Box2" to="character_one/char_one_dialog" method="_on_trigger_box_2_send_dialog"]
+[connection signal="Send_Dialog" from="Trigger_Box2" to="character_one/char_one_dialog" method="_on_trigger_box_send_dialog"]
 [connection signal="Send_Dialog" from="Trigger_Box2" to="character_two/char_two_dialog" method="_on_trigger_box_send_dialog"]

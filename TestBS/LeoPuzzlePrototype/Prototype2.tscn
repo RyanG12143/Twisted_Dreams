@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ymhhgjst5sh"]
+[gd_scene load_steps=22 format=3 uid="uid://ymhhgjst5sh"]
 
 [ext_resource type="PackedScene" uid="uid://bkckmghf83dwj" path="res://TestBS/LeoPuzzlePrototype/UI.tscn" id="1_qlguu"]
 [ext_resource type="Texture2D" uid="uid://cvumdn2cbyb2w" path="res://TestBS/LeoPuzzlePrototype/Assets/Tiles.png" id="2_3rv75"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_j2csa"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_ncb8k"]
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/FreecamMode.gd" id="7_50awh"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_jr0jl"]
 [ext_resource type="PackedScene" uid="uid://dfgcelr51poc7" path="res://TestBS/LeoPuzzlePrototype/blue_arrow.tscn" id="9_er2m3"]
 [ext_resource type="PackedScene" uid="uid://5wfhqfkebi8e" path="res://TestBS/LeoPuzzlePrototype/Elevator_Platform.tscn" id="10_ojpja"]
 [ext_resource type="PackedScene" uid="uid://ckg3s6aysm80r" path="res://TestBS/LeoPuzzlePrototype/Lever.tscn" id="11_jxflr"]
@@ -2854,7 +2853,7 @@ duration = 1.0
 transition = 0
 ease = 2
 
-[node name="world" type="Node2D"]
+[node name="world2" type="Node2D"]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("1_qlguu")]
 
@@ -2902,9 +2901,6 @@ zoom = Vector2(1.85, 1.85)
 
 [node name="FreecamMode" type="Node2D" parent="Camera2D"]
 script = ExtResource("7_50awh")
-
-[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
-script = ExtResource("8_jr0jl")
 
 [node name="blue_arrow" parent="." instance=ExtResource("9_er2m3")]
 
