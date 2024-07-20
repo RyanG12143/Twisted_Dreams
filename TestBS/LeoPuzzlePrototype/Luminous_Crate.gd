@@ -21,7 +21,6 @@ func _ready():
 	sprite.self_modulate.b = MIN_LIGHT
 
 func _process(delta):
-	print(sprite.self_modulate.r)
 	if(sprite.self_modulate.r < MAX_LIGHT and glow_increasing):
 		sprite.self_modulate.r += LIGHT_CHANGE_AMOUNT
 		sprite.self_modulate.g += LIGHT_CHANGE_AMOUNT
