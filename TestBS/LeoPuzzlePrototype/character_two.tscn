@@ -389,7 +389,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lov0g"]
-size = Vector2(24, 63)
+size = Vector2(24, 63.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6s1v"]
 size = Vector2(24, 1.72937)
@@ -406,7 +406,6 @@ right_raycast = NodePath("RayCastRight")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(0, -0.5)
 sprite_frames = SubResource("SpriteFrames_t04bn")
 animation = &"Idle"
 
@@ -416,6 +415,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.25)
 shape = SubResource("RectangleShape2D_lov0g")
 
 [node name="Area2D" type="Area2D" parent="."]

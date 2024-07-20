@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g5smoawtrh8j"
-path="res://.godot/imported/Crate.png-61b3b390242aa6f211d849f84a8db02a.ctex"
+uid="uid://m8wnyq8xuljw"
+path="res://.godot/imported/Background_Grass.png-cb445e747a4423bb92560c071b61970e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestBS/LeoPuzzlePrototype/Assets/Crate.png"
-dest_files=["res://.godot/imported/Crate.png-61b3b390242aa6f211d849f84a8db02a.ctex"]
+source_file="res://TestBS/LeoPuzzlePrototype/Assets/Tiles/Background Tiles/Background_Grass.png"
+dest_files=["res://.godot/imported/Background_Grass.png-cb445e747a4423bb92560c071b61970e.ctex"]
 
 [params]
 
