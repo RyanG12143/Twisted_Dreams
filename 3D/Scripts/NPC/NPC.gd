@@ -8,7 +8,7 @@ signal finished_path
 ## Movement speed of NPC
 @export var speed = 5.0
 ## Turn speed of NPC
-@export var turn_Speed:float = 10
+@export var turn_Speed:float = 20
 ## If true NPC will travel in loop through each waypoint
 @export var loop:bool = false
 ## If true npc will backtrack through waypoints. (1234321)[br][br]

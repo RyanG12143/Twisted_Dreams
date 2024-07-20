@@ -24,10 +24,10 @@ disabled = true
 position = Vector2(381, 121)
 
 [node name="character_two" parent="." instance=ExtResource("5_gfuy7")]
-position = Vector2(936, 126)
+position = Vector2(1308, 126)
 
 [node name="Luminous_Crate" parent="." instance=ExtResource("5_48ade")]
-position = Vector2(374, 150)
+position = Vector2(872, 165)
 
 [node name="Luminous_Crate2" parent="." instance=ExtResource("5_48ade")]
-position = Vector2(718, 146)
+position = Vector2(992, 151)

@@ -1,8 +1,8 @@
-[gd_scene load_steps=42 format=3 uid="uid://yt3boj0lw4yf"]
+[gd_scene load_steps=43 format=3 uid="uid://yt3boj0lw4yf"]
 
 [ext_resource type="Script" path="res://2D/Scripts/Enemies/Enemy.gd" id="1_pbbsk"]
 [ext_resource type="Script" path="res://2D/Scripts/Enemies/Enemy_State_Machine.gd" id="2_gbq0s"]
-[ext_resource type="Texture2D" uid="uid://xgfrc00m116j" path="res://2D/Assets/Monsters/ShadowMonster_PoliceOfficer_Attack.png" id="2_ucpv3"]
+[ext_resource type="Texture2D" uid="uid://djwylld0l0g3" path="res://2D/Assets/Monsters/ShadowMonster_PoliceOfficer_Attack.png" id="2_ucpv3"]
 [ext_resource type="Script" path="res://2D/Scripts/Enemies/States/Follow_State.gd" id="3_bma5r"]
 [ext_resource type="Script" path="res://2D/Scripts/Enemies/States/Idle_State.gd" id="4_2egie"]
 [ext_resource type="Texture2D" uid="uid://ce4un4eqcv5a7" path="res://2D/Assets/Monsters/ShadowMonster_PoliceOfficer_Walk.png" id="4_aq3so"]
@@ -13,25 +13,29 @@
 [ext_resource type="Script" path="res://2D/Scripts/Enemies/States/Fleeing_State.gd" id="9_c2fj4"]
 [ext_resource type="Texture2D" uid="uid://cgwls5nt75eru" path="res://2D/Assets/Monsters/ShadowMonster_PoliceOfficer_Idle.png" id="10_xl5wj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6xybk"]
-atlas = ExtResource("2_ucpv3")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tbf5i"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2m8uf"]
 atlas = ExtResource("2_ucpv3")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qe2he"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxkpd"]
 atlas = ExtResource("2_ucpv3")
 region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ha5ot"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kg3r0"]
 atlas = ExtResource("2_ucpv3")
 region = Rect2(192, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ju562"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1g1y"]
 atlas = ExtResource("2_ucpv3")
 region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v47n8"]
+atlas = ExtResource("2_ucpv3")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p12dv"]
+atlas = ExtResource("2_ucpv3")
+region = Rect2(384, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1wii8"]
 atlas = ExtResource("10_xl5wj")
@@ -113,19 +117,22 @@ region = Rect2(576, 0, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6xybk")
+"texture": SubResource("AtlasTexture_2m8uf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tbf5i")
+"texture": SubResource("AtlasTexture_hxkpd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qe2he")
+"texture": SubResource("AtlasTexture_kg3r0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ha5ot")
+"texture": SubResource("AtlasTexture_i1g1y")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ju562")
+"texture": SubResource("AtlasTexture_v47n8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p12dv")
 }],
 "loop": true,
 "name": &"attack",
@@ -219,7 +226,7 @@ script = ExtResource("1_pbbsk")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_pv2yx")
 animation = &"attack"
-frame_progress = 0.943149
+frame_progress = 0.234439
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
