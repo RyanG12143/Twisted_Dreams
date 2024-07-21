@@ -1,16 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhjch3woimdoe"]
+[gd_scene load_steps=2 format=3 uid="uid://bhjch3woimdoe"]
 
-[ext_resource type="PackedScene" uid="uid://dnmmld2jvdj65" path="res://3D/Assets/Placeholder/Characters/PoliceOfficer_Placeholder.glb" id="1_ueefd"]
+[ext_resource type="PackedScene" uid="uid://cpqe14df5cb1a" path="res://3D/Assets/Placeholder/Characters/PLEASE DONT BE CRUSTY HELP .glb" id="1_5ov5r"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_chscx"]
-radius = 0.315481
-height = 1.57905
-
-[node name="CharacterBody3D" type="CharacterBody3D"]
-collision_layer = 4
-
-[node name="PoliceOfficer_Placeholder" parent="." instance=ExtResource("1_ueefd")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.777768, 0)
-shape = SubResource("CapsuleShape3D_chscx")
+[node name="PLEASE DONT BE CRUSTY HELP " instance=ExtResource("1_5ov5r")]

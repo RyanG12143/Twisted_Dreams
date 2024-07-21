@@ -1,19 +1,25 @@
 extends CharacterBody3D
-# Walk path to store
-# Cops look at passerby
-# Inverse Loop
 
+## Emitted when NPC has no more positions to path towards
 signal finished_path
+
+@export var player:Node3D
 
 ## Movement speed of NPC
 @export var speed = 5.0
 ## Turn speed of NPC
 @export var turn_Speed:float = 20
+## IF true NPC will look at Observable Characters/NPC's in radius
+@export var observe:bool = false
+## Head to turn towards observable Character/NPC
+@export var head:MeshInstance3D
 ## If true NPC will travel in loop through each waypoint
 @export var loop:bool = false
 ## If true npc will backtrack through waypoints. (1234321)[br][br]
 ## MUST HAVE LOOP ENABLED
 @export var inverse_loop:bool = false
+## If true npc queue_free() will be called on node after path is travelled
+@export var free_on_end:bool = false
 ## Node3D containing all waypoints for npc travel to
 @export var positions_container:Node3D
 
@@ -36,26 +42,36 @@ var wait_turn_target:Vector3 = Vector3.ZERO
 ## Navigation agent to provide pathfinding for npc
 @onready var nav_agent:NavigationAgent3D = $NavigationAgent3D
 ## Timer to set wait time
-@onready var timer:Timer = $Timer
+@onready var wait_timer:Timer = $Wait_Timer
+## Timer to trigger look at target update
+@onready var update_timer:Timer = $Update_Timer
 ## Marker to enable correct desired rotation
-@onready var child_look_at:Marker3D = Marker3D.new()
+@onready var rotation_helper:Marker3D = Marker3D.new()
+@onready var head_rotation_helper:Marker3D = Marker3D.new()
+## Area in which NPC will look at "Observable" Character/NPC's
+@onready var look_at_detection_box:Area3D = $Area3D
 
 
 
 func _ready():
 	# Disable processing if not given path to follow (Easier to debug)
 	if not positions_container:
-		process_mode = Node.PROCESS_MODE_DISABLED
 		return
 	_fill_waypoints()
 	
-	add_child(child_look_at)
+	add_child(rotation_helper)
+	head.add_child(head_rotation_helper)
 
 
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+	
+	# Catch no position_container
+	if not positions_container:
+		move_and_slide()
+		return
 	
 	# Waiting at waypoint
 	if waiting:
@@ -65,6 +81,8 @@ func _physics_process(delta):
 	nav_agent.target_position = markers[current_marker].global_position
 	
 	_turn(delta, nav_agent.get_next_path_position())
+	_head_turn_clamp(delta, nav_agent.get_next_path_position(), 90)
+	#head.look_at(nav_agent.get_next_path_position(), Vector3.UP, true)
 	
 	# Character movement
 	var direction = ($Front.global_position - global_position).normalized()
@@ -96,7 +114,7 @@ func _on_target_reached():
 	if marker.get_script() != null:
 		if marker.wait:
 			waiting = true
-			timer.start(marker.wait_time)
+			wait_timer.start(marker.wait_time)
 		
 		if marker.change_speed:
 			if marker.speed_value > 0:
@@ -138,6 +156,8 @@ func _on_target_reached():
 	
 	
 	emit_signal("finished_path")
+	if free_on_end:
+		queue_free()
 
 
 func _on_wait_timeout():
@@ -146,11 +166,32 @@ func _on_wait_timeout():
 
 ## Turns the chracter towards target
 func _turn(delta, target:Vector3):
-	child_look_at.look_at(Vector3(target.x, child_look_at.global_position.y, target.z), Vector3.UP, true)
-	var target_rotation = Quaternion(child_look_at.global_transform.basis)
+	rotation_helper.look_at(Vector3(target.x, rotation_helper.global_position.y, target.z), Vector3.UP, true)
+	var target_rotation = Quaternion(rotation_helper.global_transform.basis)
 	var current_rotation = Quaternion(global_transform.basis)
 	var next_rotation = current_rotation.slerp(target_rotation, delta * turn_Speed)
+	#print(rad_to_deg(current_rotation.normalized().get_angle()))
 	global_transform.basis = Basis(next_rotation)
+
+## Turns the chracter towards target
+func _head_turn_clamp(delta, target:Vector3, clamp:float):
+	target = player.global_position
+	#head_rotation_helper.look_at(Vector3(target.x, head_rotation_helper.global_position.y, target.z), Vector3.UP, true)
+	#var target_rotation = Quaternion(head_rotation_helper.global_transform.basis)
+	#var current_rotation = Quaternion(head.global_transform.basis)
+	#var next_rotation = current_rotation.slerp(target_rotation, delta * 20)
+	#print(next_rotation.angle_to(quaternion))
+	#head.global_transform.basis = Basis(next_rotation)
+	
+	var new_transform = head.global_transform.looking_at(target, Vector3.UP, true)
+	head.global_transform = head.global_transform.interpolate_with(new_transform, delta * 5)
+	head.rotation_degrees.y = clampf(head.rotation_degrees.y, -clamp, clamp)
+	
+	print(head.rotation_degrees.y)
+	
+	head.scale = Vector3(1,1,1)
+	
+	#head.look_at(target, Vector3.UP, true)
 
 
 ## Refills markers from positions_container while setting current_marker to 0
@@ -162,3 +203,7 @@ func _fill_waypoints():
 			markers.append(marker)
 	
 	nav_agent.target_position = markers[current_marker].global_position
+
+
+func _on_update_timeout():
+	pass # Replace with function body.

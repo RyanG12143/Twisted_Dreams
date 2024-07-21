@@ -104,8 +104,10 @@ transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.93
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 script = ExtResource("6_fivi7")
 
-[node name="NPC" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_08itc")]
+[node name="NPC" parent="." node_paths=PackedStringArray("player", "positions_container") instance=ExtResource("1_08itc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.111195, 1.11838, -6.28709)
+player = NodePath("../OlderBrother")
+turn_Speed = 5.0
 loop = true
 positions_container = NodePath("../Markers")
 
@@ -172,5 +174,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0402, 0.49995, 15.579)
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D/Waypoint3"]
 mesh = SubResource("TorusMesh_am4xg")
 skeleton = NodePath("")
+
+[node name="NPC2" parent="." instance=ExtResource("1_08itc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.94549, 0.499949, 14.924)
 
 [editable path="Markers/Waypoint"]

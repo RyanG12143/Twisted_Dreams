@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dnmmld2jvdj65"
-path="res://.godot/imported/PoliceOfficer_Placeholder.glb-d15d3244d893b41a8f91946ed5e25682.scn"
+uid="uid://dg58hpadhmj7y"
+path="res://.godot/imported/PoliceOfficer_Placeholder04.glb-f5f2bb2a2adf2581cc87c47bd46e205d.scn"
 
 [deps]
 
-source_file="res://3D/Assets/Placeholder/Characters/PoliceOfficer_Placeholder.glb"
-dest_files=["res://.godot/imported/PoliceOfficer_Placeholder.glb-d15d3244d893b41a8f91946ed5e25682.scn"]
+source_file="res://3D/Assets/Placeholder/Characters/PoliceOfficer_Placeholder04.glb"
+dest_files=["res://.godot/imported/PoliceOfficer_Placeholder04.glb-f5f2bb2a2adf2581cc87c47bd46e205d.scn"]
 
 [params]
 

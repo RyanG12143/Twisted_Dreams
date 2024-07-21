@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu7wqioxho4ft"]
+[gd_scene load_steps=6 format=3 uid="uid://cu7wqioxho4ft"]
 
 [ext_resource type="Script" path="res://3D/Scripts/NPC/NPC.gd" id="1_aymty"]
-[ext_resource type="PackedScene" uid="uid://dnmmld2jvdj65" path="res://3D/Assets/Placeholder/Characters/PoliceOfficer_Placeholder.glb" id="2_glabd"]
+[ext_resource type="PackedScene" uid="uid://bhjch3woimdoe" path="res://3D/Scenes/Characters/Police_Officer.tscn" id="2_pyh7e"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rsqqe"]
 radius = 0.313997
@@ -10,11 +10,15 @@ height = 1.6293
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_yo15t"]
 length = 0.5
 
-[node name="NPC" type="CharacterBody3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_2vtsd"]
+size = Vector3(8.34918, 2.9082, 7.56543)
+
+[node name="NPC" type="CharacterBody3D" node_paths=PackedStringArray("head")]
 collision_layer = 4
 script = ExtResource("1_aymty")
+head = NodePath("PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 
-[node name="PoliceOfficer_Placeholder" parent="." instance=ExtResource("2_glabd")]
+[node name="PoliceOfficer_Placeholder04" parent="." instance=ExtResource("2_pyh7e")]
 
 [node name="Character_Collision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.790831, 0)
@@ -31,8 +35,20 @@ debug_enabled = true
 [node name="Front" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00346, 0.887075)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Wait_Timer" type="Timer" parent="."]
 one_shot = true
 
+[node name="Update_Timer" type="Timer" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.603017, 0.524247)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0433044, 0.954102, 3.28271)
+shape = SubResource("BoxShape3D_2vtsd")
+
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_target_reached"]
-[connection signal="timeout" from="Timer" to="." method="_on_wait_timeout"]
+[connection signal="timeout" from="Wait_Timer" to="." method="_on_wait_timeout"]
+[connection signal="timeout" from="Update_Timer" to="." method="_on_update_timeout"]
+
+[editable path="PoliceOfficer_Placeholder04"]
