@@ -81,7 +81,8 @@ func _physics_process(delta):
 	nav_agent.target_position = markers[current_marker].global_position
 	
 	_turn(delta, nav_agent.get_next_path_position())
-	_head_turn_clamp(delta, nav_agent.get_next_path_position(), 90)
+	if player and head:
+		_head_turn_clamp(delta, nav_agent.get_next_path_position(), 90)
 	#head.look_at(nav_agent.get_next_path_position(), Vector3.UP, true)
 	
 	# Character movement

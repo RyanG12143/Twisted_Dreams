@@ -104,9 +104,8 @@ transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.93
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 script = ExtResource("6_fivi7")
 
-[node name="NPC" parent="." node_paths=PackedStringArray("player", "positions_container") instance=ExtResource("1_08itc")]
+[node name="NPC" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_08itc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.111195, 1.11838, -6.28709)
-player = NodePath("../OlderBrother")
 turn_Speed = 5.0
 loop = true
 positions_container = NodePath("../Markers")
