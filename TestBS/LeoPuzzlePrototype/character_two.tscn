@@ -395,7 +395,7 @@ size = Vector2(24, 63.5)
 size = Vector2(24, 1.72937)
 
 [node name="character_two" type="CharacterBody2D" node_paths=PackedStringArray("left_raycast", "right_raycast") groups=["Can_Press_Buttons", "Player"]]
-z_index = 1
+z_index = 2
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_nw2x1")
