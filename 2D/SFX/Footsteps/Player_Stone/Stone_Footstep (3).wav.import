@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cs8u4m02j8d3v"
+path="res://.godot/imported/Stone_Footstep (3).wav-eab1c0e56b53fbcff4940d7b36b4a666.sample"
+
+[deps]
+
+source_file="res://2D/SFX/Footsteps/Player_Stone/Stone_Footstep (3).wav"
+dest_files=["res://.godot/imported/Stone_Footstep (3).wav-eab1c0e56b53fbcff4940d7b36b4a666.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
