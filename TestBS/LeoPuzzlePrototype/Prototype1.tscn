@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dbkiu1hf1d1ne"]
+[gd_scene load_steps=26 format=3 uid="uid://dbkiu1hf1d1ne"]
 
 [ext_resource type="PackedScene" uid="uid://bkckmghf83dwj" path="res://TestBS/LeoPuzzlePrototype/UI.tscn" id="1_1mqmv"]
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/world.gd" id="1_11rm0"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://dm5fkpah2e5u2" path="res://TestBS/LeoPuzzlePrototype/Assets/GrassSlope_Sketch_2D_ElaineKelling_01.png" id="5_rtq1l"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_m8yig"]
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/FreecamMode.gd" id="7_mstdh"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_y08y0"]
 [ext_resource type="PackedScene" uid="uid://dfgcelr51poc7" path="res://TestBS/LeoPuzzlePrototype/blue_arrow.tscn" id="9_w3wps"]
 [ext_resource type="PackedScene" uid="uid://bttpiegars2dr" path="res://TestBS/LeoPuzzlePrototype/Crate.tscn" id="10_npdwn"]
 [ext_resource type="PackedScene" uid="uid://dvsx34uuorgny" path="res://TestBS/LeoPuzzlePrototype/Teleporter.tscn" id="10_ujgrh"]
@@ -1452,7 +1451,7 @@ duration = 1.0
 transition = 0
 ease = 2
 
-[node name="world" type="Node2D"]
+[node name="world2" type="Node2D"]
 script = ExtResource("1_11rm0")
 
 [node name="Enemy" parent="." instance=ExtResource("2_5x4c0")]
@@ -1510,12 +1509,8 @@ draw_limits = true
 position = Vector2(269, -480)
 zoom = Vector2(1.85312, 1.85312)
 
-[node name="FreecamMode" type="Node2D" parent="Camera2D" node_paths=PackedStringArray("follow_cam")]
+[node name="FreecamMode" type="Node2D" parent="Camera2D"]
 script = ExtResource("7_mstdh")
-follow_cam = NodePath("../PhantomCameraHost")
-
-[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
-script = ExtResource("8_y08y0")
 
 [node name="blue_arrow" parent="." instance=ExtResource("9_w3wps")]
 

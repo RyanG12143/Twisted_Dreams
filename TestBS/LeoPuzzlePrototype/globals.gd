@@ -54,8 +54,8 @@ func _process(_delta):
 			character_two.sprite.modulate = Color(1,1,1)
 			next_controlled_character = 2
 			character_control = 0
-			character_two.z_index = 1
-			character_one.z_index = 0
+			character_two.z_index = 3
+			character_one.z_index = 2
 			await get_tree().create_timer(0.1).timeout
 			character_control = 2
 		elif(character_control == 2):
@@ -63,8 +63,8 @@ func _process(_delta):
 			character_one.sprite.modulate = Color(1,1,1)
 			next_controlled_character = 1
 			character_control = 0
-			character_one.z_index = 1
-			character_two.z_index = 0
+			character_one.z_index = 3
+			character_two.z_index = 2
 			await get_tree().create_timer(0.1).timeout
 			character_control = 1
 		swap_active = false

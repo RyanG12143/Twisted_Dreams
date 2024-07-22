@@ -272,5 +272,5 @@ position = Vector2(1232, -592)
 position = Vector2(1712, -432)
 
 [node name="Lever" parent="." instance=ExtResource("16_fqvc5")]
-position = Vector2(232, -417)
+position = Vector2(282, -400)
 color = "blue"

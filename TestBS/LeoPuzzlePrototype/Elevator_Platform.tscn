@@ -72,6 +72,7 @@ _data = {
 }
 
 [node name="Elevator_Platform" type="Path2D"]
+z_index = 1
 position = Vector2(-32, -6)
 scale = Vector2(2, 2)
 curve = SubResource("Curve2D_45ob3")
@@ -81,6 +82,7 @@ script = ExtResource("1_yj7td")
 texture_filter = 1
 texture_repeat = 1
 rotation = 0.000253677
+scale = Vector2(1, 1)
 collision_mask = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
