@@ -1448,15 +1448,11 @@ position = Vector2(560, 160)
 position = Vector2(464, 112)
 scale = Vector2(0.15, 4)
 dialog_trigger = true
-char_1_dialog = Array[String](["Hey there's a box over here", "Let's push it"])
-char_2_dialog = Array[String](["Woah, you're right", "Ok!"])
-starting = 1
 
 [node name="Trigger_Box2" parent="." instance=ExtResource("8_r3ac1")]
 position = Vector2(605, 111)
 scale = Vector2(0.15, 4)
 dialog_trigger = true
-char_1_dialog = Array[String](["Other test dialog"])
 
 [connection signal="Send_Dialog" from="Trigger_Box" to="character_one/Dialog" method="_on_trigger_box_send_dialog"]
 [connection signal="Send_Dialog" from="Trigger_Box" to="character_two/Dialog" method="_on_trigger_box_send_dialog"]

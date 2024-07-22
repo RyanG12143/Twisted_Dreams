@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dbkiu1hf1d1ne"]
+[gd_scene load_steps=27 format=3 uid="uid://dbkiu1hf1d1ne"]
 
 [ext_resource type="PackedScene" uid="uid://bkckmghf83dwj" path="res://TestBS/LeoPuzzlePrototype/UI.tscn" id="1_1mqmv"]
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/world.gd" id="1_11rm0"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://ckg3s6aysm80r" path="res://TestBS/LeoPuzzlePrototype/Rune.tscn" id="18_a27tq"]
 [ext_resource type="PackedScene" uid="uid://cymsy7cclwwld" path="res://TestBS/MatthewTestBS/Dialog.tscn" id="20_dse32"]
 [ext_resource type="PackedScene" uid="uid://bd1ru2so26744" path="res://TestBS/LeoPuzzlePrototype/Luminous_Crate.tscn" id="21_h8f47"]
+[ext_resource type="PackedScene" uid="uid://vbhaprerkq6n" path="res://2d_level_dialog.tscn" id="22_1a3to"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lrbjd"]
 texture = ExtResource("5_rtq1l")
@@ -1497,7 +1498,7 @@ script = ExtResource("5_3omn7")
 priority = 10
 follow_mode = 3
 follow_targets = [NodePath("../character_one"), NodePath("../character_two")]
-zoom = Vector2(1.8375, 1.8375)
+zoom = Vector2(1.85312, 1.85312)
 tween_resource = SubResource("Resource_1p510")
 auto_zoom = true
 auto_zoom_min = -100.0
@@ -1507,7 +1508,7 @@ draw_limits = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(269, -480)
-zoom = Vector2(1.8375, 1.8375)
+zoom = Vector2(1.85312, 1.85312)
 
 [node name="FreecamMode" type="Node2D" parent="Camera2D" node_paths=PackedStringArray("follow_cam")]
 script = ExtResource("7_mstdh")
@@ -1548,16 +1549,26 @@ position = Vector2(790, -608)
 [node name="Lever" parent="." instance=ExtResource("18_a27tq")]
 position = Vector2(175, -480)
 
-[node name="Trigger_Box2" parent="." instance=ExtResource("13_wfm73")]
+[node name="Trigger_Box2" parent="." node_paths=PackedStringArray("dialog") instance=ExtResource("13_wfm73")]
 position = Vector2(374, -540)
 scale = Vector2(0.127, 4.794)
 dialog_trigger = true
-char_1_dialog = Array[String](["We go box now", "Got it?"])
-char_2_dialog = Array[String](["ok", "yes sir"])
-starting = 1
+dialog = [NodePath("../Node/2D_level_dialog"), NodePath("../Node/2D_level_dialog2")]
 
 [node name="Luminous_Crate" parent="." instance=ExtResource("21_h8f47")]
 position = Vector2(134, -521)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="2D_level_dialog" parent="Node" instance=ExtResource("22_1a3to")]
+char_speaking = 1
+dialog_said = "Look at this!"
+duration = 1.0
+
+[node name="2D_level_dialog2" parent="Node" instance=ExtResource("22_1a3to")]
+char_speaking = 2
+dialog_said = "Yo!"
+duration = 1.0
 
 [connection signal="Button_Pressed" from="Floor_Button" to="Teleporter" method="add_input"]
 [connection signal="Button_Released" from="Floor_Button" to="Teleporter" method="remove_input"]
