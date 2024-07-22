@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn38mx6sv4gtd"
-path="res://.godot/imported/lever-red.png-ea81ff50675e07b1c251cf0d441ffe95.ctex"
+uid="uid://y21ewnsm1xr"
+path="res://.godot/imported/Rune_Transition_Animation.png-7009beec69e22e0062d3e49839daecdf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestBS/LeoPuzzlePrototype/Assets/lever-red.png"
-dest_files=["res://.godot/imported/lever-red.png-ea81ff50675e07b1c251cf0d441ffe95.ctex"]
+source_file="res://TestBS/LeoPuzzlePrototype/Assets/Rune_Transition_Animation.png"
+dest_files=["res://.godot/imported/Rune_Transition_Animation.png-7009beec69e22e0062d3e49839daecdf.ctex"]
 
 [params]
 

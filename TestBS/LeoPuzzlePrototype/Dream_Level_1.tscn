@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cyn2r4owpmtan"]
+[gd_scene load_steps=26 format=3 uid="uid://cyn2r4owpmtan"]
 
 [ext_resource type="Texture2D" uid="uid://d7c5t42xw5s" path="res://TestBS/LeoPuzzlePrototype/Assets/Tiles/Physical Tiles/Base_Tiles.png" id="1_rs8j4"]
 [ext_resource type="Texture2D" uid="uid://m8wnyq8xuljw" path="res://TestBS/LeoPuzzlePrototype/Assets/Tiles/Background Tiles/Background_Grass.png" id="2_p8xyi"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/FreecamMode.gd" id="13_yf7em"]
 [ext_resource type="PackedScene" uid="uid://bttpiegars2dr" path="res://TestBS/LeoPuzzlePrototype/Crate.tscn" id="14_cp6wq"]
 [ext_resource type="PackedScene" uid="uid://bd1ru2so26744" path="res://TestBS/LeoPuzzlePrototype/Luminous_Crate.tscn" id="15_25j7w"]
+[ext_resource type="PackedScene" uid="uid://ckg3s6aysm80r" path="res://TestBS/LeoPuzzlePrototype/Rune.tscn" id="16_fqvc5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a7ahr"]
 texture = ExtResource("1_rs8j4")
@@ -269,3 +270,7 @@ position = Vector2(1232, -592)
 
 [node name="Luminous_Crate" parent="." instance=ExtResource("15_25j7w")]
 position = Vector2(1712, -432)
+
+[node name="Lever" parent="." instance=ExtResource("16_fqvc5")]
+position = Vector2(232, -417)
+color = "blue"

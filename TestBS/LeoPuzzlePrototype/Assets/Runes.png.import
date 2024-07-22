@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bprb0g5l21t4i"
-path="res://.godot/imported/lever-green.png-46f59be7e0af08e38270796c571ce469.ctex"
+uid="uid://b8qmmdxrvi0p1"
+path="res://.godot/imported/Runes.png-d18fb9421eab663b021f05a0a51f5e95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestBS/LeoPuzzlePrototype/Assets/lever-green.png"
-dest_files=["res://.godot/imported/lever-green.png-46f59be7e0af08e38270796c571ce469.ctex"]
+source_file="res://TestBS/LeoPuzzlePrototype/Assets/Runes.png"
+dest_files=["res://.godot/imported/Runes.png-d18fb9421eab663b021f05a0a51f5e95.ctex"]
 
 [params]
 

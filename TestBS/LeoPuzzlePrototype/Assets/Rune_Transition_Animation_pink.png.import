@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlk3tci4y6hxu"
-path="res://.godot/imported/rune-disabled.png-cc9239452de7fc49cad8731b5a543587.ctex"
+uid="uid://c4u6ps2cpxbau"
+path="res://.godot/imported/Rune_Transition_Animation_pink.png-28429575c6326a1fbbfd8da0a6b3f410.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestBS/LeoPuzzlePrototype/Assets/rune-disabled.png"
-dest_files=["res://.godot/imported/rune-disabled.png-cc9239452de7fc49cad8731b5a543587.ctex"]
+source_file="res://TestBS/LeoPuzzlePrototype/Assets/Rune_Transition_Animation_pink.png"
+dest_files=["res://.godot/imported/Rune_Transition_Animation_pink.png-28429575c6326a1fbbfd8da0a6b3f410.ctex"]
 
 [params]
 

@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://daelj4hlba7qu" path="res://TestBS/LeoPuzzlePrototype/Floor_Button.tscn" id="12_4xro1"]
 [ext_resource type="PackedScene" uid="uid://d04kov6vp75gk" path="res://TestBS/LeoPuzzlePrototype/Trigger_Box.tscn" id="13_wfm73"]
 [ext_resource type="PackedScene" uid="uid://qlpfl8cduums" path="res://TestBS/LeoPuzzlePrototype/pair_gate.tscn" id="17_wq8ac"]
-[ext_resource type="PackedScene" uid="uid://ckg3s6aysm80r" path="res://TestBS/LeoPuzzlePrototype/Lever.tscn" id="18_a27tq"]
+[ext_resource type="PackedScene" uid="uid://ckg3s6aysm80r" path="res://TestBS/LeoPuzzlePrototype/Rune.tscn" id="18_a27tq"]
 [ext_resource type="PackedScene" uid="uid://cymsy7cclwwld" path="res://TestBS/MatthewTestBS/Dialog.tscn" id="20_dse32"]
 [ext_resource type="PackedScene" uid="uid://bd1ru2so26744" path="res://TestBS/LeoPuzzlePrototype/Luminous_Crate.tscn" id="21_h8f47"]
 
@@ -1497,7 +1497,7 @@ script = ExtResource("5_3omn7")
 priority = 10
 follow_mode = 3
 follow_targets = [NodePath("../character_one"), NodePath("../character_two")]
-zoom = Vector2(1.98167, 1.98167)
+zoom = Vector2(1.8375, 1.8375)
 tween_resource = SubResource("Resource_1p510")
 auto_zoom = true
 auto_zoom_min = -100.0
@@ -1507,7 +1507,7 @@ draw_limits = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(269, -480)
-zoom = Vector2(1.98167, 1.98167)
+zoom = Vector2(1.8375, 1.8375)
 
 [node name="FreecamMode" type="Node2D" parent="Camera2D" node_paths=PackedStringArray("follow_cam")]
 script = ExtResource("7_mstdh")
