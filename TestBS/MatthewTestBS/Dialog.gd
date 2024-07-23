@@ -12,8 +12,8 @@ var dialog: Array[Node] = []
 @onready var d_text = $DialogText
 ##Which "page" in the array it's on
 var page: int = 0
-##Checks if the page is the last page
-var last: bool = false
+##Checks the character is finished speaking
+var finished: bool = false
 ##Timer
 var timer: float = 0.0
 ##How long the dialog box is visible after the last line
@@ -23,7 +23,7 @@ func _ready():
 	hide()
 
 func _process(delta):
-	if(last):
+	if(finished):
 		if(modulate.a != 0):
 			timer += delta
 			modulate.a = (STAY_TIMER - timer)
@@ -31,21 +31,25 @@ func _process(delta):
 				modulate.a = 0
 				timer = 0
 				hide()
+				finished = false
 
 ##Either changes to the new dialog or gets rid of the dialog bubble
 func change_page():
 	if (page < dialog.size() - 1):
 		await(get_tree().create_timer(dialog[page].duration).timeout)
+		finished = true
 		page += 1
 		if((character == 1 and dialog[page].char_speaking == 1) or (character == 2 and 
 		dialog[page].char_speaking == 2) or dialog[page].char_speaking == 0):
+			finished = false
 			show()
+			modulate.a = 1
 			d_text.bbcode_text = dialog[page].dialog_said
 			d_text.set_visible_characters(0)
 		$Timer.start()
 	elif (page == dialog.size() - 1):
 		await(get_tree().create_timer(dialog[page].duration).timeout)
-		last = true
+		finished = true
 
 ##Scrolls the text for the dialog
 func _on_timer_timeout():
@@ -59,20 +63,10 @@ func set_dialog(new_dialog: Array[Node]):
 
 func _on_trigger_box_send_dialog(dialogue):
 	modulate.a = 1
-	last = false
+	finished = false
 	page = 0
 	set_dialog(dialogue)
-	#if (character == 1):
-		#set_dialog(char_1)
-	#elif character == 2:
-		#set_dialog(char_2)
 	if (page < dialog.size()):
-		#if ((character == 1 and start == 1) or character == 2 and start == 2):
-			#show()
-		#elif ((character == 1 and start == 2) or character == 2 and start == 1):
-			#await(get_tree().create_timer(wait_time).timeout)
-			#show()
-		#elif (start == 0):
 		if((character == 1 and dialog[page].char_speaking == 1) or (character == 2 and 
 		dialog[page].char_speaking == 2)):
 			d_text.bbcode_text = dialog[page].dialog_said
