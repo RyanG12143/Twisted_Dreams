@@ -3,8 +3,6 @@ extends CharacterBody3D
 ## Emitted when NPC has no more positions to path towards
 signal finished_path
 
-@export var player:Node3D
-
 ## Movement speed of NPC
 @export var speed = 5.0
 ## Turn speed of NPC
@@ -38,18 +36,17 @@ var markers:Array[Marker3D]
 var waiting:bool = false
 ## Target to turn towards when reaching waypoint
 var wait_turn_target:Vector3 = Vector3.ZERO
+## Array full of targets to observe
+var observe_targets:Array[Node3D] = []
+## Current target to turn head towards
+var observe_target
 
 ## Navigation agent to provide pathfinding for npc
 @onready var nav_agent:NavigationAgent3D = $NavigationAgent3D
 ## Timer to set wait time
 @onready var wait_timer:Timer = $Wait_Timer
-## Timer to trigger look at target update
-@onready var update_timer:Timer = $Update_Timer
 ## Marker to enable correct desired rotation
 @onready var rotation_helper:Marker3D = Marker3D.new()
-@onready var head_rotation_helper:Marker3D = Marker3D.new()
-## Area in which NPC will look at "Observable" Character/NPC's
-@onready var look_at_detection_box:Area3D = $Area3D
 
 
 
@@ -60,13 +57,33 @@ func _ready():
 	_fill_waypoints()
 	
 	add_child(rotation_helper)
-	head.add_child(head_rotation_helper)
 
 
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+	
+	if head:
+		if observe_target and observe:
+			_head_turn_clamp(delta, observe_target.global_position, 90)
+		elif observe and not positions_container:
+			var point = $Front.global_position
+			point.y = head.global_position.y
+			_head_turn_clamp(delta, point, 90)
+		else:
+			var path = nav_agent.get_current_navigation_path()
+			if path.size() > 0:
+				var path_index = nav_agent.get_current_navigation_path_index()
+				var point
+				if path_index + 1 < path.size():
+					point = path[path_index + 1]
+				else:
+					point = path[path_index]
+				point.y = head.global_position.y
+				_head_turn_clamp(delta, point, 90)
+			else:
+				_head_turn_clamp(delta, nav_agent.get_next_path_position(), 90)
 	
 	# Catch no position_container
 	if not positions_container:
@@ -81,9 +98,7 @@ func _physics_process(delta):
 	nav_agent.target_position = markers[current_marker].global_position
 	
 	_turn(delta, nav_agent.get_next_path_position())
-	if player and head:
-		_head_turn_clamp(delta, nav_agent.get_next_path_position(), 90)
-	#head.look_at(nav_agent.get_next_path_position(), Vector3.UP, true)
+	
 	
 	# Character movement
 	var direction = ($Front.global_position - global_position).normalized()
@@ -171,28 +186,17 @@ func _turn(delta, target:Vector3):
 	var target_rotation = Quaternion(rotation_helper.global_transform.basis)
 	var current_rotation = Quaternion(global_transform.basis)
 	var next_rotation = current_rotation.slerp(target_rotation, delta * turn_Speed)
-	#print(rad_to_deg(current_rotation.normalized().get_angle()))
+	
 	global_transform.basis = Basis(next_rotation)
 
 ## Turns the chracter towards target
 func _head_turn_clamp(delta, target:Vector3, clamp:float):
-	target = player.global_position
-	#head_rotation_helper.look_at(Vector3(target.x, head_rotation_helper.global_position.y, target.z), Vector3.UP, true)
-	#var target_rotation = Quaternion(head_rotation_helper.global_transform.basis)
-	#var current_rotation = Quaternion(head.global_transform.basis)
-	#var next_rotation = current_rotation.slerp(target_rotation, delta * 20)
-	#print(next_rotation.angle_to(quaternion))
-	#head.global_transform.basis = Basis(next_rotation)
 	
 	var new_transform = head.global_transform.looking_at(target, Vector3.UP, true)
 	head.global_transform = head.global_transform.interpolate_with(new_transform, delta * 5)
 	head.rotation_degrees.y = clampf(head.rotation_degrees.y, -clamp, clamp)
 	
-	print(head.rotation_degrees.y)
-	
-	head.scale = Vector3(1,1,1)
-	
-	#head.look_at(target, Vector3.UP, true)
+	head.scale = Vector3(1,1,1) # Scale gets weird with global transforms so this puts it back to normal
 
 
 ## Refills markers from positions_container while setting current_marker to 0
@@ -207,4 +211,29 @@ func _fill_waypoints():
 
 
 func _on_update_timeout():
-	pass # Replace with function body.
+	var ray:RayCast3D = $Observe_Ray
+	var valid_targets = []
+	for body in observe_targets:
+		ray.target_position = body.global_position - global_position
+		ray.force_raycast_update()
+		if ray.get_collider() == body or ray.get_collider() == null:
+			valid_targets.append(body)
+	
+	if not valid_targets:
+		observe_target = null
+		return
+	
+	observe_target = valid_targets[0]
+	
+	for body in valid_targets:
+		if global_position.distance_to(body.global_position) < global_position.distance_to(observe_target.global_position):
+			observe_target = body
+
+func _on_observe_area_entered(body):
+	if body.is_in_group("Observable"):
+		observe_targets.append(body)
+
+
+func _on_observe_area_body_exited(body):
+	if body.is_in_group("Observable"):
+		observe_targets.erase(body)

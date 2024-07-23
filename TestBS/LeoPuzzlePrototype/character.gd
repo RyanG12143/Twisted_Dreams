@@ -6,12 +6,22 @@ extends CharacterBody2D
 ## Raycasts.
 @export var left_raycast:RayCast2D = null
 @export var right_raycast:RayCast2D = null
+@export var ground_raycast:RayCast2D = null
+
+@export var grass_sounds:Array[AudioStreamWAV]
+@export var stone_sounds:Array[AudioStreamWAV]
+
 ## Animation player.
 @onready var anim:AnimationPlayer = $AnimationPlayer
 ## Animated sprite.
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
 ## Area2D.
 @onready var Area:Area2D = $Area2D
+
+@onready var audio:AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+@onready var audio_timer:Timer = Timer.new()
+
 
 ## Upwards direction.
 const UP:Vector2 = Vector2(0, -1)
@@ -53,6 +63,8 @@ var is_following:bool = false
 ## The target to be followed while follow state is enabled.
 var follow_target:CharacterBody2D = null
 
+var ground_type:String = "Grass"
+
 ## Sets some default values.
 func _ready():
 	if(character_number == 1):
@@ -62,7 +74,10 @@ func _ready():
 	gravity = 2 * max_jump_height / pow(jump_duration, 2)
 	max_jump_velocity = -sqrt(2 * gravity * max_jump_height)
 	min_jump_velocity = -sqrt(2 * gravity * min_jump_height)
-		
+	
+	audio_timer.one_shot = true
+	add_child(audio_timer)
+	
 	await get_parent().ready
 	if(globals.character_control != character_number):
 		sprite.modulate = Color(0.1,0.1,0.1)
@@ -174,3 +189,26 @@ func set_prev_mov_dir():
 		prev_mov_dir = move_direction
 		await get_tree().create_timer(0.1).timeout
 		set_pmd_ready = true
+
+
+func play_ground_sound():
+	if ground_raycast.is_colliding():
+		var map = ground_raycast.get_collider()
+		var body_rid = ground_raycast.get_collider_rid()
+		
+		var collided_tile_coords = map.get_coords_for_body_rid(body_rid)
+		
+		for index in map.get_layers_count():
+			var tile_data = map.get_cell_tile_data(index, collided_tile_coords)
+			if not tile_data is TileData:
+				continue
+			ground_type = tile_data.get_custom_data_by_layer_id(0)
+			break
+	
+	if audio_timer.is_stopped():
+		audio_timer.start(.2)
+		if ground_type == "Grass":
+			audio.stream = grass_sounds[randi_range(0, grass_sounds.size() - 1)]
+		elif ground_type == "Stone":
+			audio.stream = stone_sounds[randi_range(0, stone_sounds.size() - 1)]
+		audio.play()

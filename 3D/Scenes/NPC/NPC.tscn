@@ -39,16 +39,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00346, 0.887075)
 one_shot = true
 
 [node name="Update_Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Observe_Area" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.603017, 0.524247)
+collision_layer = 0
+collision_mask = 6
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Observe_Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0433044, 0.954102, 3.28271)
 shape = SubResource("BoxShape3D_2vtsd")
+
+[node name="Observe_Ray" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35133, 0)
+target_position = Vector3(0, 0, 1)
 
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_target_reached"]
 [connection signal="timeout" from="Wait_Timer" to="." method="_on_wait_timeout"]
 [connection signal="timeout" from="Update_Timer" to="." method="_on_update_timeout"]
+[connection signal="body_entered" from="Observe_Area" to="." method="_on_observe_area_entered"]
+[connection signal="body_exited" from="Observe_Area" to="." method="_on_observe_area_body_exited"]
 
 [editable path="PoliceOfficer_Placeholder04"]

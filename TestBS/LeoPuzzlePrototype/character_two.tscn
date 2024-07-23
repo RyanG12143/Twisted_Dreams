@@ -1,15 +1,29 @@
-[gd_scene load_steps=45 format=3 uid="uid://pqhyjjoo1fcs"]
+[gd_scene load_steps=59 format=3 uid="uid://pqhyjjoo1fcs"]
 
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/character.gd" id="1_nw2x1"]
 [ext_resource type="Texture2D" uid="uid://dsyylnduc8qnu" path="res://TestBS/LeoPuzzlePrototype/Assets/Siblings/OlderSibling_Jump.png" id="2_6gl8o"]
+[ext_resource type="AudioStream" uid="uid://dtk7e7kqf13yb" path="res://2D/SFX/Footsteps/Player_Grass/Grass_Footstep (1).wav" id="2_7jl7n"]
+[ext_resource type="AudioStream" uid="uid://bwcb01p0lh1bq" path="res://2D/SFX/Footsteps/Player_Grass/Grass_Footstep (2).wav" id="3_2dwpn"]
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/2DChar_SMachine.gd" id="3_8u82v"]
 [ext_resource type="Texture2D" uid="uid://1hwrapjjae5x" path="res://TestBS/LeoPuzzlePrototype/Assets/Siblings/OlderSibling_Idle.png" id="3_nmn5j"]
+[ext_resource type="AudioStream" uid="uid://b0x018nppvw1h" path="res://2D/SFX/Footsteps/Player_Grass/Grass_Footstep (3).wav" id="4_3dfn3"]
 [ext_resource type="Texture2D" uid="uid://bhwhrjlasg6px" path="res://TestBS/LeoPuzzlePrototype/Assets/Siblings/OlderSibling_Walk.png" id="4_hgo1b"]
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/2DChar_IdleState.gd" id="4_yyrf3"]
+[ext_resource type="AudioStream" uid="uid://sgs0bfpuykj0" path="res://2D/SFX/Footsteps/Player_Grass/Grass_Footstep (4).wav" id="5_s1enm"]
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/2DChar_WalkState.gd" id="5_tg33n"]
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/2DChar_JumpState.gd" id="6_bmkox"]
+[ext_resource type="AudioStream" uid="uid://twsg6b61t7ql" path="res://2D/SFX/Footsteps/Player_Grass/Grass_Footstep (5).wav" id="6_xeb4k"]
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/2DChar_FallState.gd" id="7_2agk8"]
+[ext_resource type="AudioStream" uid="uid://b571bu3624122" path="res://2D/SFX/Footsteps/Player_Grass/Grass_Footstep (6).wav" id="7_lafm0"]
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/2DChar_LandState.gd" id="8_ld3lc"]
+[ext_resource type="AudioStream" uid="uid://cobwb3k3akx08" path="res://2D/SFX/Footsteps/Player_Stone/Stone_Footstep (1).wav" id="8_o6lgo"]
+[ext_resource type="AudioStream" uid="uid://boqvdun6knjld" path="res://2D/SFX/Footsteps/Player_Stone/Stone_Footstep (2).wav" id="9_3srqt"]
+[ext_resource type="AudioStream" uid="uid://cs8u4m02j8d3v" path="res://2D/SFX/Footsteps/Player_Stone/Stone_Footstep (3).wav" id="10_12beq"]
+[ext_resource type="AudioStream" uid="uid://beu1s2ty7s114" path="res://2D/SFX/Footsteps/Player_Stone/Stone_Footstep (4).wav" id="11_7hka3"]
+[ext_resource type="AudioStream" uid="uid://c6q0bmkyxf8q4" path="res://2D/SFX/Footsteps/Player_Stone/Stone_Footstep (5).wav" id="12_hlr1g"]
+[ext_resource type="AudioStream" uid="uid://cgnxa01l5qkro" path="res://2D/SFX/Footsteps/Player_Stone/Stone_Footstep (6).wav" id="13_2osdt"]
+[ext_resource type="AudioStream" uid="uid://bbqlsddhattvv" path="res://2D/SFX/Footsteps/Player_Stone/Stone_Footstep (7).wav" id="14_clhtk"]
+[ext_resource type="AudioStream" uid="uid://db6sac5krmmom" path="res://2D/SFX/Footsteps/Player_Stone/Stone_Footstep (8).wav" id="15_q2l5i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5v5du"]
 atlas = ExtResource("2_6gl8o")
@@ -377,6 +391,23 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_ground_sound"
+}, {
+"args": [],
+"method": &"play_ground_sound"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ovj5y"]
 _data = {
@@ -394,7 +425,7 @@ size = Vector2(24, 63.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6s1v"]
 size = Vector2(24, 1.72937)
 
-[node name="character_two" type="CharacterBody2D" node_paths=PackedStringArray("left_raycast", "right_raycast") groups=["Can_Press_Buttons", "Player"]]
+[node name="character_two" type="CharacterBody2D" node_paths=PackedStringArray("left_raycast", "right_raycast", "ground_raycast") groups=["Can_Press_Buttons", "Player"]]
 z_index = 2
 collision_layer = 2
 collision_mask = 5
@@ -402,6 +433,9 @@ script = ExtResource("1_nw2x1")
 character_number = 2
 left_raycast = NodePath("RayCastLeft")
 right_raycast = NodePath("RayCastRight")
+ground_raycast = NodePath("RayCastGround")
+grass_sounds = Array[AudioStreamWAV]([ExtResource("2_7jl7n"), ExtResource("3_2dwpn"), ExtResource("4_3dfn3"), ExtResource("5_s1enm"), ExtResource("6_xeb4k"), ExtResource("7_lafm0")])
+stone_sounds = Array[AudioStreamWAV]([ExtResource("8_o6lgo"), ExtResource("9_3srqt"), ExtResource("10_12beq"), ExtResource("11_7hka3"), ExtResource("12_hlr1g"), ExtResource("13_2osdt"), ExtResource("14_clhtk"), ExtResource("15_q2l5i")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -458,3 +492,13 @@ hit_from_inside = true
 position = Vector2(-13, -31)
 target_position = Vector2(0, 62)
 hit_from_inside = true
+
+[node name="RayCastGround" type="RayCast2D" parent="."]
+position = Vector2(0, 31)
+target_position = Vector2(0, 4)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
