@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://r23b5ipm0uji"]
+
+[ext_resource type="Script" path="res://Menus/GameOpened/Game_Opened_Screen.gd" id="1_35u6e"]
+[ext_resource type="Texture2D" uid="uid://bblp5scudpae2" path="res://Menus/GameOpened/White_Logo.png" id="3_tes5d"]
+[ext_resource type="Texture2D" uid="uid://b0vl5p05amuop" path="res://Menus/GameOpened/Abysmal_Twisted_Dreams_Version.png" id="4_b1v3v"]
+[ext_resource type="PackedScene" uid="uid://7wrgj7hac2qw" path="res://Menus/MainMenu/Main_Menu_Transition_Manager.tscn" id="4_c1sb1"]
+[ext_resource type="PackedScene" uid="uid://baapsc4104dfh" path="res://Menus/MainMenu/Main_Menu.tscn" id="5_yhrx7"]
+
+[node name="GameOpenedScreen" type="Node"]
+script = ExtResource("1_35u6e")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
+custom_minimum_size = Vector2(10000, 10000)
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="WhiteLogo" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.863, 0.863)
+texture = ExtResource("3_tes5d")
+
+[node name="AbysmalTwistedDreamsVersion" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_b1v3v")
+
+[node name="Main_Menu_Transition_Manager" parent="." instance=ExtResource("4_c1sb1")]
+scene_to_load = ExtResource("5_yhrx7")

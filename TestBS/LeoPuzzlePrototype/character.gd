@@ -206,7 +206,7 @@ func play_ground_sound():
 			break
 	
 	if audio_timer.is_stopped():
-		audio_timer.start(.2)
+		audio_timer.start(.3)
 		if ground_type == "Grass":
 			audio.stream = grass_sounds[randi_range(0, grass_sounds.size() - 1)]
 		elif ground_type == "Stone":

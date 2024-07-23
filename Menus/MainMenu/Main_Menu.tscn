@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://baapsc4104dfh"]
+[gd_scene load_steps=10 format=3 uid="uid://baapsc4104dfh"]
 
 [ext_resource type="Texture2D" uid="uid://6kh8jskj8q6d" path="res://Menus/MainMenu/Assets/Title_transparent_background.png" id="1_27c4x"]
 [ext_resource type="PackedScene" uid="uid://d2c5suo67k66j" path="res://Menus/MainMenu/Play_Button.tscn" id="2_ksyv1"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://Menus/MainMenu/TitleText_Glow.gd" id="2_vmy3j"]
 [ext_resource type="PackedScene" uid="uid://ckfb0yf8iaqeh" path="res://Menus/MainMenu/Settings_Button.tscn" id="3_jqhpk"]
 [ext_resource type="PackedScene" uid="uid://b2quymqk0yrdo" path="res://Menus/MainMenu/Quit_Button.tscn" id="4_iq7tg"]
+[ext_resource type="PackedScene" uid="uid://7wrgj7hac2qw" path="res://Menus/MainMenu/Main_Menu_Transition_Manager.tscn" id="7_oq4ax"]
+[ext_resource type="PackedScene" uid="uid://dnp2n7366bsx4" path="res://Menus/PlayMenu/level_select_icon.tscn" id="8_g52kj"]
 
 [sub_resource type="Environment" id="Environment_fi0jc"]
 background_mode = 3
@@ -45,8 +47,18 @@ scale = Vector2(0.35, 0.35)
 position = Vector2(1802, 962)
 scale = Vector2(0.200463, 0.200463)
 
+[node name="Level_Select_Icon" parent="HBoxContainer" instance=ExtResource("8_g52kj")]
+position = Vector2(164, 420)
+
+[node name="Level_Select_Icon2" parent="HBoxContainer" instance=ExtResource("8_g52kj")]
+position = Vector2(161, 653)
+level_icon = "Real_1"
+level_type = "Real"
+
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -10
 custom_minimum_size = Vector2(10000, 10000)
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Main_Menu_Transition_Manager" parent="." instance=ExtResource("7_oq4ax")]

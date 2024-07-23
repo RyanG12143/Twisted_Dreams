@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://r23b5ipm0uji"]
+[gd_scene load_steps=7 format=3 uid="uid://r23b5ipm0uji"]
 
 [ext_resource type="Script" path="res://Menus/GameOpened/Game_Opened_Screen.gd" id="1_35u6e"]
 [ext_resource type="Texture2D" uid="uid://bblp5scudpae2" path="res://Menus/GameOpened/White_Logo.png" id="3_tes5d"]
 [ext_resource type="Texture2D" uid="uid://b0vl5p05amuop" path="res://Menus/GameOpened/Abysmal_Twisted_Dreams_Version.png" id="4_b1v3v"]
+[ext_resource type="PackedScene" uid="uid://7wrgj7hac2qw" path="res://Menus/MainMenu/Main_Menu_Transition_Manager.tscn" id="4_c1sb1"]
+[ext_resource type="PackedScene" uid="uid://baapsc4104dfh" path="res://Menus/MainMenu/Main_Menu.tscn" id="5_yhrx7"]
+[ext_resource type="AudioStream" uid="uid://h2h13yo062mr" path="res://Menus/GameOpened/Logo_Shine.mp3" id="6_63ng7"]
 
 [node name="GameOpenedScreen" type="Node"]
 script = ExtResource("1_35u6e")
@@ -22,3 +25,11 @@ texture = ExtResource("3_tes5d")
 position = Vector2(960, 540)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("4_b1v3v")
+
+[node name="Main_Menu_Transition_Manager" parent="." instance=ExtResource("4_c1sb1")]
+scene_to_load = ExtResource("5_yhrx7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_63ng7")
+autoplay = true
+bus = &"SFX"

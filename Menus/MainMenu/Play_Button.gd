@@ -40,4 +40,4 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://TestBS/LeoPuzzlePrototype/Prototype1.tscn")
+	get_tree().change_scene_to_file("res://TestBS/LeoPuzzlePrototype/Dream_Level_1.tscn")
