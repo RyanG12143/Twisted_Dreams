@@ -193,17 +193,19 @@ func set_prev_mov_dir():
 
 func play_ground_sound():
 	if ground_raycast.is_colliding():
-		var map = ground_raycast.get_collider()
-		var body_rid = ground_raycast.get_collider_rid()
-		
-		var collided_tile_coords = map.get_coords_for_body_rid(body_rid)
-		
-		for index in map.get_layers_count():
-			var tile_data = map.get_cell_tile_data(index, collided_tile_coords)
-			if not tile_data is TileData:
-				continue
-			ground_type = tile_data.get_custom_data_by_layer_id(0)
-			break
+		var coll = ground_raycast.get_collider()
+		if coll is TileMap:
+			var map = ground_raycast.get_collider()
+			var body_rid = ground_raycast.get_collider_rid()
+			
+			var collided_tile_coords = map.get_coords_for_body_rid(body_rid)
+			
+			for index in map.get_layers_count():
+				var tile_data = map.get_cell_tile_data(index, collided_tile_coords)
+				if not tile_data is TileData:
+					continue
+				ground_type = tile_data.get_custom_data_by_layer_id(0)
+				break
 	
 	if audio_timer.is_stopped():
 		audio_timer.start(.3)
