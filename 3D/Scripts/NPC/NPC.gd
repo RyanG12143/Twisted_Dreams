@@ -123,7 +123,8 @@ func _process(delta):
 
 
 func _on_target_reached():
-	
+	if not markers:
+		return
 	var marker = markers[current_marker]
 	
 	# Chekcing and assigning waypoint values
