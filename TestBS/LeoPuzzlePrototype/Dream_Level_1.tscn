@@ -276,17 +276,17 @@ script = ExtResource("10_gw17j")
 priority = 10
 follow_mode = 3
 follow_targets = [NodePath("../../Characters/character_one"), NodePath("../../Characters/character_two")]
-zoom = Vector2(0.00333333, 0.00333333)
+zoom = Vector2(1.6875, 1.6875)
 tween_resource = SubResource("Resource_bhbs3")
 auto_zoom = true
 auto_zoom_min = -100.0
-auto_zoom_max = 2.5
+auto_zoom_max = 3.0
 auto_zoom_margin = Vector4(150, 80, 150, 80)
 draw_limits = true
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
 position = Vector2(87, -400)
-zoom = Vector2(0.00333333, 0.00333333)
+zoom = Vector2(1.6875, 1.6875)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera/Camera2D"]
 script = ExtResource("12_14urq")
@@ -294,6 +294,9 @@ script = ExtResource("12_14urq")
 [node name="Freecam_Mode" type="Node2D" parent="Camera/Camera2D" node_paths=PackedStringArray("follow_cam")]
 script = ExtResource("13_yf7em")
 follow_cam = NodePath("../PhantomCameraHost")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="Camera/Camera2D"]
+current = true
 
 [node name="Crate" parent="." instance=ExtResource("14_cp6wq")]
 position = Vector2(1232, -592)
