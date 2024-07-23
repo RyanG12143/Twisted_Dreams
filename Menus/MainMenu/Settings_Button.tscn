@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckfb0yf8iaqeh"]
+
+[ext_resource type="Script" path="res://Menus/MainMenu/Settings_Button.gd" id="1_hs036"]
+[ext_resource type="Texture2D" uid="uid://d0chh0i0sxye6" path="res://Menus/MainMenu/Assets/settings.png" id="1_ppmgx"]
+[ext_resource type="Texture2D" uid="uid://bx3nyg3xrm6fh" path="res://Menus/MainMenu/Assets/settings_hover.png" id="2_kwcfk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cnnss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ppmgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kwcfk")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="Settings_Button" type="AnimatedSprite2D"]
+texture_repeat = 1
+sprite_frames = SubResource("SpriteFrames_cnnss")
+script = ExtResource("1_hs036")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+texture_repeat = 1
+offset_left = -540.0
+offset_top = -162.0
+offset_right = 540.0
+offset_bottom = 162.0
+mouse_default_cursor_shape = 2
+action_mode = 0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
