@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7qws6bwmttqw"
-path="res://.godot/imported/button.png-549e982c4f5c91a6d2e213f77bf1ef0d.ctex"
+uid="uid://b2fb4i2xakwsu"
+path="res://.godot/imported/Button_Pink_Animated.png-40da0bef4bf70519bbfdc99eac41a970.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestBS/LeoPuzzlePrototype/Assets/button.png"
-dest_files=["res://.godot/imported/button.png-549e982c4f5c91a6d2e213f77bf1ef0d.ctex"]
+source_file="res://TestBS/LeoPuzzlePrototype/Assets/Button_Pink_Animated.png"
+dest_files=["res://.godot/imported/Button_Pink_Animated.png-40da0bef4bf70519bbfdc99eac41a970.ctex"]
 
 [params]
 

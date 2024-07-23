@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkx5qlyoprdqv"
-path="res://.godot/imported/Interactable_Button_Sade_01.png-f1b97065d97008bcfcfb79604a3383b9.ctex"
+uid="uid://bab5gqcyb7bsy"
+path="res://.godot/imported/Button_Orange_Animated.png-6f85eb462a35635ce25affb785a1ff18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestBS/LeoPuzzlePrototype/Assets/Interactable_Button_Sade_01.png"
-dest_files=["res://.godot/imported/Interactable_Button_Sade_01.png-f1b97065d97008bcfcfb79604a3383b9.ctex"]
+source_file="res://TestBS/LeoPuzzlePrototype/Assets/Button_Orange_Animated.png"
+dest_files=["res://.godot/imported/Button_Orange_Animated.png-6f85eb462a35635ce25affb785a1ff18.ctex"]
 
 [params]
 

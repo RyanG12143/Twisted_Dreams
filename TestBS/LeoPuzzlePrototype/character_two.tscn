@@ -528,6 +528,3 @@ target_position = Vector2(0, 4)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 bus = &"SFX"
-
-[node name="AudioListener2D" type="AudioListener2D" parent="."]
-current = true
