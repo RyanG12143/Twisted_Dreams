@@ -52,8 +52,13 @@ position = Vector2(164, 420)
 
 [node name="Level_Select_Icon2" parent="HBoxContainer" instance=ExtResource("8_g52kj")]
 position = Vector2(161, 653)
-level_icon = "Real_1"
+level_number = 3
 level_type = "Real"
+
+[node name="Level_Select_Icon3" parent="HBoxContainer" instance=ExtResource("8_g52kj")]
+position = Vector2(484, 617)
+level_number = 4
+disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -10

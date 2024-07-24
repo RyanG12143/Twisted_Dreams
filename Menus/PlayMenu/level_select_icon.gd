@@ -1,21 +1,38 @@
 extends AnimatedSprite2D
 
-@export var level_icon:String = "Dream_1"
+@export var level_number:int = 1
 @export var level_type:String = "Dream"
+@export var disabled:bool = false
 @onready var button:Button = $Button
 @onready var anim:AnimationPlayer = $AnimationPlayer
+@onready var nums:AnimatedSprite2D = $Numbers
 
 func _ready():
-	animation = level_icon
+	animation = level_type
+	nums.animation = level_type
 	set_frame(0)
+	nums.set_frame((level_number * 2) - 2)
+	if(disabled):
+		button.set_default_cursor_shape(0)
+		modulate.r = 0.35
+		modulate.g = 0.35
+		modulate.b = 0.35
+	else:
+		button.set_default_cursor_shape(2)
+		modulate.r = 1
+		modulate.g = 1
+		modulate.b = 1
 
 func _process(delta):
-	if (button.is_hovered()):
-		if(level_type == "Dream"):
-			anim.play("Dream_Hovered")
+	if(!disabled):
+		if (button.is_hovered()):
+			if(level_type == "Dream"):
+				anim.play("Dream_Hovered")
+			else:
+				anim.play("Real_Hovered")
+			nums.set_frame((level_number * 2) - 1)
 		else:
-			anim.play("Real_Hovered")
-	else:
-		anim.stop()
-	if(!button.is_hovered() and get_frame() != 0):
-		set_frame(0)
+			anim.stop()
+		if(!button.is_hovered() and get_frame() != 0):
+			set_frame(0)
+			nums.set_frame((level_number * 2) - 2)
