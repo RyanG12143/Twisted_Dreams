@@ -1,18 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://dmoawieiwlq2j"]
 
-[ext_resource type="Script" path="res://TestBS/MatthewTestBS/Window.gd" id="1_k2ble"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_78sc8"]
-viewport_path = NodePath("Window")
+[ext_resource type="Texture2D" uid="uid://cc7rmohqdblpa" path="res://TestBS/MatthewTestBS/Assets/speechbubble.png" id="1_pnn1t"]
+[ext_resource type="Script" path="res://TestBS/MatthewTestBS/Dialog_3d.gd" id="2_8ty6c"]
 
 [node name="Dialog_3D" type="Sprite3D"]
-texture = SubResource("ViewportTexture_78sc8")
+transform = Transform3D(0.853833, 0, 0.520548, 0, 1, 0, -0.520548, 0, 0.853833, 0, 0, 0)
+texture = ExtResource("1_pnn1t")
+script = ExtResource("2_8ty6c")
 
-[node name="Window" type="Window" parent="."]
-transparent_bg = true
-position = Vector2i(0, 36)
-size = Vector2i(138, 23)
-script = ExtResource("1_k2ble")
+[node name="DialogText" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.876638, 0)
+modulate = Color(0, 0, 0, 1)
+text = "asdfafa"
 
-[node name="Label" type="Label" parent="Window"]
-text = "I hate dialog in 3d"
+[node name="Timer" type="Timer" parent="."]
