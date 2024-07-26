@@ -6,7 +6,7 @@ func Enter():
 	older_brother.velocity = Vector3.ZERO
 	# Facing wall normal
 	older_brother.rotation.y = -(atan2(player_normal.get_collision_normal().z, player_normal.get_collision_normal().x) - PI/2)
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.2).timeout
 	Transitioned.emit(self, "Older_Hang")
 	
 
