@@ -1,14 +1,20 @@
-extends Path2D
+extends ColorCodedMechanic
 class_name Elevator_Platform
 
 ## How far the platform moves (y direction) from a single input
 const MOVE_DISTANCE:int = 144
 
 ## The path.
-@onready var path = $PathFollow2D
+@onready var path:Path2D = $Elevator_Platform_Path
+
+## The path follow.
+@onready var path_follow:PathFollow2D = $Elevator_Platform_Path/PathFollow2D
+
+## The sprite.
+@onready var sprite:AnimatedSprite2D = $Elevator_Platform_Path/AnimatableBody2D/AnimatedSprite2D
 
 ## The animation player.
-@onready var animation = $AnimationPlayer
+@onready var anim:AnimationPlayer = $Elevator_Platform_Path/AnimationPlayer
 
 ## Number of active inputs affecting the elevator platform.
 var inputs:int = 0
@@ -43,27 +49,45 @@ var bodies_below:bool = false
 
 ## Setting the correct frame.
 func _ready():
-	animation.play("move_up")
-	animation.seek(starting_progress * 10, true)
-	animation.pause()
+	if(color == "blue"):
+		sprite.animation = "Blue"
+	elif(color == "pink"):
+		sprite.animation = "Pink"
+	elif(color == "orange"):
+		sprite.animation = "Orange"
+	set_frame(0)
+	
+	anim.play("move_up")
+	anim.seek(starting_progress * 10, true)
+	anim.pause()
 	target_height = starting_progress
-	path.set_progress_ratio(starting_progress)
+	path_follow.set_progress_ratio(starting_progress)
 
 ## Used to determine what the move direction of the platform should be.
 func _process(delta):
-	if((path.get_progress_ratio() != target_height)):
-		animation.play("move_up")
-		if(path.get_progress_ratio() < target_height):
-			animation.speed_scale = 1
-		elif(path.get_progress_ratio() > target_height && !bodies_below):
-			animation.speed_scale = -1
+	if((path_follow.get_progress_ratio() != target_height)):
+		anim.play("move_up")
+		if(path_follow.get_progress_ratio() < target_height):
+			anim.speed_scale = 1
+			if(sprite.get_frame() != 1):
+				sprite.set_frame(1)
+		elif(path_follow.get_progress_ratio() > target_height && !bodies_below):
+			anim.speed_scale = -1
+			if(sprite.get_frame() != 1):
+				sprite.set_frame(1)
 		else:
-			animation.pause()
-		if(abs(path.get_progress_ratio()-target_height) < 0.001):
-			path.set_progress_ratio(target_height)
-			animation.pause()
+			anim.pause()
+			if(sprite.get_frame() != 0):
+				sprite.set_frame(0)
+		if(abs(path_follow.get_progress_ratio()-target_height) < 0.001):
+			path_follow.set_progress_ratio(target_height)
+			anim.pause()
+			if(sprite.get_frame() != 0):
+				sprite.set_frame(0)
 	else:
-		animation.pause()
+		anim.pause()
+		if(sprite.get_frame() != 0):
+			sprite.set_frame(0)
 
 ## Handles additions of inputs.
 func add_input():
