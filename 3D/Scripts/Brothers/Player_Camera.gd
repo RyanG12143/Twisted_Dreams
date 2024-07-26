@@ -17,9 +17,11 @@ class_name Player_Camera
 
 @onready var _camera: Camera3D
 
-@onready var _player_visual: Node3D = $"."
+@onready var _player_visual: Node3D = $PlayerVisual
 
 var last_position: Vector3 = Vector3(0, 0, 0)
+var _physics_body_tran_last: Transform3D
+var _physics_body_tran_current: Transform3D
 
 
 # Ready function
@@ -64,12 +66,15 @@ func _set_pcam_rotation(pcam: PhantomCamera3D, event: InputEvent) -> void:
 
 # Physics process function
 func _physics_process(delta):
+	_physics_body_tran_last = _physics_body_tran_current
+	_physics_body_tran_current = global_transform
+	
 	#print(last_position > $PlayerVisual.global_position)
 	#print($PlayerVisual.global_position)
 	#last_position = $PlayerVisual.global_position
 	
-
-
+	
+	
 	var cam_dir: Vector3 = _camera.global_transform.basis.z
 	
 	# Quitting to menu
@@ -79,10 +84,10 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_released("3Dzoom_in") && _player_pcam.get_spring_length() > 1.5:
 		_player_pcam.set_spring_length(_player_pcam.get_spring_length() - 0.2)
-
+	
 	if Input.is_action_just_released("3Dzoom_out") && _player_pcam.get_spring_length() < 20:
 		_player_pcam.set_spring_length(_player_pcam.get_spring_length() + 0.2)
-
+	
 	
 	_rotate_step_up_seperation_ray()
 	move_and_slide()
@@ -152,4 +157,8 @@ func _rotate_step_up_seperation_ray():
 
 # Process function
 func _process(delta):
-	pass
+	_player_visual.global_transform = \
+		_physics_body_tran_last.interpolate_with(
+			_physics_body_tran_current,
+			Engine.get_physics_interpolation_fraction()
+		)

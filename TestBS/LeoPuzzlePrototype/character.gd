@@ -49,7 +49,7 @@ var is_grounded:bool
 ## Whether or not the character is jumping.
 var is_jumping:bool = false
 ## Maximum jump height.
-var max_jump_height:float = 1.0 * globals.UNIT_SIZE
+var max_jump_height:float = 0.85 * globals.UNIT_SIZE
 ## Minimum jump height.
 var min_jump_height:float = 0.15 * globals.UNIT_SIZE
 ## Duration of a jump.

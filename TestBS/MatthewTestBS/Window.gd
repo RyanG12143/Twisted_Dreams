@@ -2,4 +2,4 @@
 extends Window
 
 func _process(delta):
-	size = $Label.get_rect().size
+	size = get_parent().get_item_rect().size()

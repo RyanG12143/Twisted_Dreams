@@ -1,19 +1,79 @@
-[gd_scene load_steps=10 format=3 uid="uid://5wfhqfkebi8e"]
+[gd_scene load_steps=17 format=3 uid="uid://5wfhqfkebi8e"]
 
-[ext_resource type="Texture2D" uid="uid://bf3q30165sdbe" path="res://TestBS/LeoPuzzlePrototype/Assets/elevator-platform.png" id="1_l61sh"]
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Elevator_Platform.gd" id="1_yj7td"]
+[ext_resource type="Texture2D" uid="uid://bwogcua1jcn3f" path="res://TestBS/LeoPuzzlePrototype/Assets/Elevators.png" id="2_g2hsj"]
 
 [sub_resource type="Curve2D" id="Curve2D_45ob3"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 1.68179, 46.2493, 0, -720)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 1.68179, 46.2493, 0, -1440)
 }
 point_count = 2
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lwv2"]
+atlas = ExtResource("2_g2hsj")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l8vg"]
+atlas = ExtResource("2_g2hsj")
+region = Rect2(0, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssbl3"]
+atlas = ExtResource("2_g2hsj")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5c4e0"]
+atlas = ExtResource("2_g2hsj")
+region = Rect2(128, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17nx0"]
+atlas = ExtResource("2_g2hsj")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3bfo"]
+atlas = ExtResource("2_g2hsj")
+region = Rect2(64, 32, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ieibg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lwv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6l8vg")
+}],
+"loop": true,
+"name": &"Blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssbl3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5c4e0")
+}],
+"loop": true,
+"name": &"Orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17nx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3bfo")
+}],
+"loop": true,
+"name": &"Pink",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvvan"]
-size = Vector2(32.0018, 6.00025)
+size = Vector2(64.0042, 15.9879)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pt7v8"]
-size = Vector2(32.0001, 5.9993)
+size = Vector2(63.9998, 15.9991)
 
 [sub_resource type="Animation" id="Animation_aspof"]
 length = 0.001
@@ -71,47 +131,49 @@ _data = {
 "move_up": SubResource("Animation_ghes1")
 }
 
-[node name="Elevator_Platform" type="Path2D"]
+[node name="Elevator_Platform" type="AnimatedSprite2D"]
 z_index = 1
-position = Vector2(-32, -6)
-scale = Vector2(2, 2)
-curve = SubResource("Curve2D_45ob3")
 script = ExtResource("1_yj7td")
 
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+[node name="Elevator_Platform_Path" type="Path2D" parent="."]
+position = Vector2(-32, -6)
+curve = SubResource("Curve2D_45ob3")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Elevator_Platform_Path"]
 texture_filter = 1
 texture_repeat = 1
 rotation = 0.000253677
 scale = Vector2(1, 1)
 collision_mask = 6
 
-[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
-position = Vector2(16, -10)
-texture = ExtResource("1_l61sh")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Elevator_Platform_Path/AnimatableBody2D"]
+position = Vector2(31.9975, -10.0081)
+sprite_frames = SubResource("SpriteFrames_ieibg")
+animation = &"Blue"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(15.9999, 2.99734)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator_Platform_Path/AnimatableBody2D"]
+position = Vector2(31.9994, -2.01021)
 shape = SubResource("RectangleShape2D_cvvan")
 
-[node name="Area2D" type="Area2D" parent="AnimatableBody2D"]
+[node name="Area2D" type="Area2D" parent="Elevator_Platform_Path/AnimatableBody2D"]
 collision_layer = 0
 collision_mask = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/Area2D"]
-position = Vector2(16.0023, 8.99594)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator_Platform_Path/AnimatableBody2D/Area2D"]
+position = Vector2(32.0036, 13.9919)
 shape = SubResource("RectangleShape2D_pt7v8")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="."]
+[node name="PathFollow2D" type="PathFollow2D" parent="Elevator_Platform_Path"]
 rotation = -1.5708
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Elevator_Platform_Path/PathFollow2D"]
 rotation = 1.57105
 remote_path = NodePath("../../AnimatableBody2D")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Elevator_Platform_Path"]
 libraries = {
 "": SubResource("AnimationLibrary_yk82q")
 }
 
-[connection signal="body_entered" from="AnimatableBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="AnimatableBody2D/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Elevator_Platform_Path/AnimatableBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Elevator_Platform_Path/AnimatableBody2D/Area2D" to="." method="_on_area_2d_body_exited"]
