@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw2egyw3888tg"]
+
+[ext_resource type="Texture2D" uid="uid://bw5f81y27uylc" path="res://TestBS/LeoPuzzlePrototype/Assets/pair-gate-rocks.png" id="1_aqd2s"]
+[ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Lvl_End_Tree.gd" id="2_jsow8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42tlj"]
+size = Vector2(24, 31)
+
+[node name="Lvl_End_Tree" type="Sprite2D"]
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("1_aqd2s")
+script = ExtResource("2_jsow8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_42tlj")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
