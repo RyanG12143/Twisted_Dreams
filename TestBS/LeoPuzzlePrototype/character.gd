@@ -216,5 +216,5 @@ func play_ground_sound():
 	if audio_timer.is_stopped():
 		audio_timer.start(.3)
 		if ground_sounds.has(_ground_type):
-			audio.stream = ground_sounds[_ground_type][randi_range(0, grass_sounds.size() - 1)]
+			audio.stream = ground_sounds[_ground_type][randi_range(0, ground_sounds[_ground_type] - 1)]
 		audio.play()
