@@ -82,11 +82,11 @@ size = Vector3(15.6578, 7.27585, 27.458)
 environment = SubResource("Environment_l6bgl")
 
 [node name="OlderBrother" parent="." instance=ExtResource("1_2wrlp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.72522, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6944, 1.72522, 9.22731)
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
-transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 0, 2.92229, 3.28892)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, -8.6944, 2.92229, 12.5162)
 script = ExtResource("3_wdovb")
 priority = 10
 follow_mode = 6
@@ -100,7 +100,7 @@ collision_mask = 2
 
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 0, 2.92229, 3.28892)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, -8.6944, 2.92229, 12.5162)
 
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 script = ExtResource("6_fivi7")
@@ -176,9 +176,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0402, 0.49995, 15.579)
 mesh = SubResource("TorusMesh_am4xg")
 skeleton = NodePath("")
 
-[node name="NPC2" parent="." instance=ExtResource("1_08itc")]
+[node name="NPC2" parent="." node_paths=PackedStringArray("chase_target") instance=ExtResource("1_08itc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.93785, 0.596533, 15.0247)
-observe = true
+chasing = true
+max_chase_dist = 10.0
+chase_target = NodePath("../OlderBrother")
 
 [editable path="Markers/Waypoint"]
 [editable path="NPC2"]

@@ -21,6 +21,12 @@ signal finished_path
 ## Node3D containing all waypoints for npc travel to
 @export var positions_container:Node3D
 
+@export var chasing:bool = false
+
+@export var max_chase_dist:float = 0.0
+
+@export var chase_target:Node3D
+
 
 ## Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity:float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -39,7 +45,9 @@ var wait_turn_target:Vector3 = Vector3.ZERO
 ## Array full of targets to observe
 var observe_targets:Array[Node3D] = []
 ## Current target to turn head towards
-var observe_target
+var observe_target:Node3D
+
+var speed_mult_chase:float = 1
 
 ## Navigation agent to provide pathfinding for npc
 @onready var nav_agent:NavigationAgent3D = $NavigationAgent3D
@@ -51,12 +59,13 @@ var observe_target
 
 
 func _ready():
+	add_child(rotation_helper)
 	# Disable processing if not given path to follow (Easier to debug)
 	if not positions_container:
 		return
 	_fill_waypoints()
 	
-	add_child(rotation_helper)
+
 
 
 func _physics_process(delta):
@@ -86,7 +95,7 @@ func _physics_process(delta):
 				_head_turn_clamp(delta, nav_agent.get_next_path_position(), 90)
 	
 	# Catch no position_container
-	if not positions_container:
+	if not positions_container and not (chase_target and chasing):
 		move_and_slide()
 		return
 	
@@ -95,7 +104,11 @@ func _physics_process(delta):
 		_turn(delta, wait_turn_target)
 		return
 	
-	nav_agent.target_position = markers[current_marker].global_position
+	if not chasing:
+		nav_agent.target_position = markers[current_marker].global_position
+	else:
+		nav_agent.target_position = chase_target.global_position
+		speed_mult_chase = clampf(global_position.distance_to(nav_agent.target_position) - max_chase_dist, 1, 10)
 	
 	_turn(delta, nav_agent.get_next_path_position())
 	
@@ -103,11 +116,11 @@ func _physics_process(delta):
 	# Character movement
 	var direction = ($Front.global_position - global_position).normalized()
 	if direction:
-		velocity.x = direction.x * speed * speed_multiplyer
-		velocity.z = direction.z * speed * speed_multiplyer
+		velocity.x = direction.x * speed * speed_multiplyer * speed_mult_chase
+		velocity.z = direction.z * speed * speed_multiplyer * speed_mult_chase
 	else:
-		velocity.x = move_toward(velocity.x, 0, speed * speed_multiplyer)
-		velocity.z = move_toward(velocity.z, 0, speed * speed_multiplyer)
+		velocity.x = move_toward(velocity.x, 0, speed * speed_multiplyer * speed_mult_chase)
+		velocity.z = move_toward(velocity.z, 0, speed * speed_multiplyer * speed_mult_chase)
 
 	move_and_slide()
 
