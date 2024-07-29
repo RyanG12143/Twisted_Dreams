@@ -1,18 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://crbvuprtsh5gq"]
+[gd_scene load_steps=5 format=3 uid="uid://crbvuprtsh5gq"]
 
+[ext_resource type="Script" path="res://TestBS/MatthewTestBS/dialog_3d.gd" id="1_btjit"]
 [ext_resource type="Script" path="res://TestBS/MatthewTestBS/Window.gd" id="1_k2ble"]
+[ext_resource type="Texture2D" uid="uid://cc7rmohqdblpa" path="res://TestBS/MatthewTestBS/Assets/speechbubble.png" id="2_m33gx"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_78sc8"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_x6eyy"]
 viewport_path = NodePath("Window")
 
 [node name="Dialog_3D" type="Sprite3D"]
-texture = SubResource("ViewportTexture_78sc8")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.131047, 0.00060463)
+texture = SubResource("ViewportTexture_x6eyy")
+script = ExtResource("1_btjit")
+dialog = Array[String](["How are you?", "How are you?"])
+scroll_time = 0.05
 
 [node name="Window" type="Window" parent="."]
 transparent_bg = true
-position = Vector2i(0, 36)
-size = Vector2i(138, 23)
 script = ExtResource("1_k2ble")
 
-[node name="Label" type="Label" parent="Window"]
-text = "I hate dialog in 3d"
+[node name="DialogText" type="RichTextLabel" parent="Window"]
+modulate = Color(0, 0, 0, 1)
+offset_right = 40.0
+offset_bottom = 40.0
+bbcode_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.43675)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0743378, -0.954105)
+texture = ExtResource("2_m33gx")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
