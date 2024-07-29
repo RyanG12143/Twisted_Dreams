@@ -63,7 +63,9 @@ var is_following:bool = false
 ## The target to be followed while follow state is enabled.
 var follow_target:CharacterBody2D = null
 
-var ground_type:String = "Grass"
+var _ground_type:String = "Grass"
+
+var ground_sounds:Dictionary = {}
 
 ## Sets some default values.
 func _ready():
@@ -87,6 +89,9 @@ func _ready():
 		follow_target = globals.character_two
 	elif(character_number == 2):
 		follow_target = globals.character_one
+	
+	ground_sounds["Grass"] = grass_sounds
+	ground_sounds["Stone"] = stone_sounds
 
 ## Apply movement.
 func _physics_process(delta):
@@ -204,13 +209,12 @@ func play_ground_sound():
 				var tile_data = map.get_cell_tile_data(index, collided_tile_coords)
 				if not tile_data is TileData:
 					continue
-				ground_type = tile_data.get_custom_data_by_layer_id(0)
+				_ground_type = tile_data.get_custom_data_by_layer_id(0)
 				break
-	
+		elif coll.get_property_list().has("ground_type"):
+			_ground_type = coll.ground_type
 	if audio_timer.is_stopped():
 		audio_timer.start(.3)
-		if ground_type == "Grass":
-			audio.stream = grass_sounds[randi_range(0, grass_sounds.size() - 1)]
-		elif ground_type == "Stone":
-			audio.stream = stone_sounds[randi_range(0, stone_sounds.size() - 1)]
+		if ground_sounds.has(_ground_type):
+			audio.stream = ground_sounds[_ground_type][randi_range(0, grass_sounds.size() - 1)]
 		audio.play()
