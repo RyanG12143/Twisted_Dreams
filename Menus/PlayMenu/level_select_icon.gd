@@ -1,11 +1,23 @@
 extends AnimatedSprite2D
 
 @export var level_number:int = 1
+
 @export var level_type:String = "Dream"
+
 @export var disabled:bool = false
+
+@export var transition_manager:Node = null
+
+@export var scene_to_load:PackedScene = null
+
 @onready var button:Button = $Button
+
 @onready var anim:AnimationPlayer = $AnimationPlayer
+
 @onready var nums:AnimatedSprite2D = $Numbers
+
+var pressed:bool = false
+
 
 func _ready():
 	animation = level_type
@@ -36,3 +48,9 @@ func _process(delta):
 		if(!button.is_hovered() and get_frame() != 0):
 			set_frame(0)
 			nums.set_frame((level_number * 2) - 2)
+
+
+
+func _on_button_pressed():
+	transition_manager.scene_to_load = scene_to_load
+	transition_manager.scene_change()
