@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://baapsc4104dfh"]
+[gd_scene load_steps=9 format=3 uid="uid://baapsc4104dfh"]
 
 [ext_resource type="Texture2D" uid="uid://6kh8jskj8q6d" path="res://Menus/MainMenu/Assets/Title_transparent_background.png" id="1_27c4x"]
 [ext_resource type="PackedScene" uid="uid://d2c5suo67k66j" path="res://Menus/MainMenu/Play_Button.tscn" id="2_ksyv1"]
 [ext_resource type="PackedScene" uid="uid://dr1hhnbulqf5v" path="res://Menus/MainMenu/Scrolling_Links.tscn" id="2_pyj11"]
 [ext_resource type="Script" path="res://Menus/MainMenu/TitleText_Glow.gd" id="2_vmy3j"]
 [ext_resource type="PackedScene" uid="uid://ckfb0yf8iaqeh" path="res://Menus/MainMenu/Settings_Button.tscn" id="3_jqhpk"]
-[ext_resource type="PackedScene" uid="uid://bq3sv75y8346j" path="res://Menus/PlayMenu/Play_Menu.tscn" id="4_46tvg"]
 [ext_resource type="PackedScene" uid="uid://b2quymqk0yrdo" path="res://Menus/MainMenu/Quit_Button.tscn" id="4_iq7tg"]
 [ext_resource type="PackedScene" uid="uid://7wrgj7hac2qw" path="res://Menus/MainMenu/Main_Menu_Transition_Manager.tscn" id="7_oq4ax"]
 
@@ -35,13 +34,11 @@ environment = SubResource("Environment_fi0jc")
 position = Vector2(960, 600)
 scale = Vector2(0.35, 0.35)
 transition_manager = NodePath("../../Main_Menu_Transition_Manager")
-scene_to_load = ExtResource("4_46tvg")
 
 [node name="Settings_Button" parent="HBoxContainer" node_paths=PackedStringArray("transition_manager") instance=ExtResource("3_jqhpk")]
 position = Vector2(960, 750)
 scale = Vector2(0.35, 0.35)
 transition_manager = NodePath("../../Main_Menu_Transition_Manager")
-scene_to_load = null
 
 [node name="Quit_Button" parent="HBoxContainer" instance=ExtResource("4_iq7tg")]
 position = Vector2(960, 900)

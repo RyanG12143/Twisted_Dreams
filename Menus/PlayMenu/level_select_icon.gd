@@ -8,7 +8,10 @@ extends AnimatedSprite2D
 
 @export var transition_manager:Node = null
 
-@export var scene_to_load:PackedScene = null
+@export_enum(
+	"Dream Level 1",
+	"Real Level 1",
+	) var level_to_load:String = "Dream Level 1"
 
 @onready var button:Button = $Button
 
@@ -52,5 +55,5 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	transition_manager.scene_to_load = scene_to_load
+	transition_manager.scene_to_load = SceneReferences.level_dict[level_to_load]
 	transition_manager.scene_change()

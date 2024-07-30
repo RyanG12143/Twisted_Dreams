@@ -3,7 +3,8 @@ extends Node
 
 @onready var transition = $Transition
 @onready var color_rect = $Transition/ColorRect
-@export var scene_to_load: PackedScene
+
+var scene_to_load:String = ""
 
 func _ready():
 	await owner.ready
@@ -17,4 +18,5 @@ func scene_change():
 
 func _on_transition_animation_finished(anim_name):
 	if(anim_name == "fade_out"):
-		get_tree().change_scene_to_packed(scene_to_load)
+		var scene_load = load(scene_to_load)
+		get_tree().change_scene_to_packed(scene_load)

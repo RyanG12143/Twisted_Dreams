@@ -2,8 +2,6 @@ extends AnimatedSprite2D
 
 @export var transition_manager:Node = null
 
-@export var scene_to_load:PackedScene = null
-
 @onready var button:Button = $Button
 
 const MIN_LIGHT:float = 1.1
@@ -43,5 +41,5 @@ func _process(delta):
 		frame = 0
 
 func _on_button_pressed():
-		transition_manager.scene_to_load = scene_to_load
+		transition_manager.scene_to_load = SceneReferences.play_menu
 		transition_manager.scene_change()

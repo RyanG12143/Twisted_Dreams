@@ -38,6 +38,8 @@ func _process(delta):
 			glow_logo.self_modulate.b += LIGHT_CHANGE_AMOUNT
 			return
 		else:
+			
+			$Main_Menu_Transition_Manager.scene_to_load = SceneReferences.main_menu
 			$Main_Menu_Transition_Manager.scene_change()
 		glow_logo.self_modulate.r -= LIGHT_CHANGE_AMOUNT
 		glow_logo.self_modulate.g -= LIGHT_CHANGE_AMOUNT
