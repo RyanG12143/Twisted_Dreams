@@ -2,6 +2,8 @@ extends RigidBody2D
 class_name Crate
 ## Moveable, weighted crates.
 
+var ground_type:String = "Stone"
+
 ## Original position of the crate.
 var reset_position:Vector2
 ## Is the position being reset.

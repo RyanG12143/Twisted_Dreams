@@ -11,6 +11,8 @@ class_name Floor_Button
 signal Button_Pressed
 signal Button_Released
 
+var ground_type:String = "Stone"
+
 ## Whether or not the most recent action applied to the button was pressing.
 var recent_pressed:bool = false
 ## Array of valid bodies overlapping with the button, and are therefore pressing it.
