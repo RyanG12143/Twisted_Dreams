@@ -211,8 +211,8 @@ func play_ground_sound():
 					continue
 				_ground_type = tile_data.get_custom_data_by_layer_id(0)
 				break
-		elif coll.get_property_list().has("ground_type"):
-			_ground_type = coll.ground_type
+		elif coll.owner.get("ground_type"):
+			_ground_type = coll.owner.ground_type
 	if audio_timer.is_stopped():
 		audio_timer.start(.3)
 		if ground_sounds.has(_ground_type):
