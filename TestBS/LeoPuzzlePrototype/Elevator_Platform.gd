@@ -4,7 +4,7 @@ class_name Elevator_Platform
 var ground_type:String = "Stone"
 
 ## How far the platform moves (y direction) from a single input
-const MOVE_DISTANCE:int = 144
+const MOVE_DISTANCE:int = 128
 
 ## The path.
 @onready var path:Path2D = $Elevator_Platform_Path
