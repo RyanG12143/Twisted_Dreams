@@ -1,15 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bq3sv75y8346j"]
+[gd_scene load_steps=4 format=3 uid="uid://bq3sv75y8346j"]
 
 [ext_resource type="PackedScene" uid="uid://dnp2n7366bsx4" path="res://Menus/PlayMenu/level_select_icon.tscn" id="1_3h5tg"]
 [ext_resource type="Script" path="res://Menus/PlayMenu/Play_Menu.gd" id="1_ovcc1"]
 [ext_resource type="PackedScene" uid="uid://7wrgj7hac2qw" path="res://Menus/MainMenu/Main_Menu_Transition_Manager.tscn" id="1_vlw00"]
-[ext_resource type="PackedScene" uid="uid://baapsc4104dfh" path="res://Menus/MainMenu/Main_Menu.tscn" id="2_8hojo"]
-[ext_resource type="PackedScene" uid="uid://cq62xwmqwdoot" path="res://3D/Scenes/AreaGreyboxing/Home_District.tscn" id="4_e6rmc"]
-[ext_resource type="PackedScene" uid="uid://cyn2r4owpmtan" path="res://TestBS/LeoPuzzlePrototype/Dream_Level_1.tscn" id="5_27j6p"]
 
 [node name="PlayMenu" type="Node"]
 script = ExtResource("1_ovcc1")
-main_menu = ExtResource("2_8hojo")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 offset_right = 40.0
@@ -17,67 +13,40 @@ offset_bottom = 40.0
 
 [node name="RealLevels" type="Node" parent="HBoxContainer"]
 
-[node name="Real_1" parent="HBoxContainer/RealLevels" node_paths=PackedStringArray("transition_manager") instance=ExtResource("1_3h5tg")]
+[node name="Real_1" parent="HBoxContainer/RealLevels" instance=ExtResource("1_3h5tg")]
 position = Vector2(560, 650)
-level_type = "Real"
-transition_manager = NodePath("../../../Main_Menu_Transition_Manager")
-scene_to_load = ExtResource("4_e6rmc")
 
 [node name="Real_2" parent="HBoxContainer/RealLevels" instance=ExtResource("1_3h5tg")]
 position = Vector2(760, 650)
-level_number = 2
-level_type = "Real"
-disabled = true
 
 [node name="Real_3" parent="HBoxContainer/RealLevels" instance=ExtResource("1_3h5tg")]
 position = Vector2(960, 650)
-level_number = 3
-level_type = "Real"
-disabled = true
 
 [node name="Real_4" parent="HBoxContainer/RealLevels" instance=ExtResource("1_3h5tg")]
 position = Vector2(1160, 650)
-level_number = 4
-level_type = "Real"
-disabled = true
 
 [node name="Real_5" parent="HBoxContainer/RealLevels" instance=ExtResource("1_3h5tg")]
 position = Vector2(1360, 650)
-level_number = 5
-level_type = "Real"
-disabled = true
 
 [node name="DreamLevels" type="Node" parent="HBoxContainer"]
 
-[node name="Dream_1" parent="HBoxContainer/DreamLevels" node_paths=PackedStringArray("transition_manager") instance=ExtResource("1_3h5tg")]
+[node name="Dream_1" parent="HBoxContainer/DreamLevels" instance=ExtResource("1_3h5tg")]
 position = Vector2(460, 440)
-transition_manager = NodePath("../../../Main_Menu_Transition_Manager")
-scene_to_load = ExtResource("5_27j6p")
 
 [node name="Dream_2" parent="HBoxContainer/DreamLevels" instance=ExtResource("1_3h5tg")]
 position = Vector2(660, 440)
-level_number = 2
-disabled = true
 
 [node name="Dream_3" parent="HBoxContainer/DreamLevels" instance=ExtResource("1_3h5tg")]
 position = Vector2(860, 440)
-level_number = 3
-disabled = true
 
 [node name="Dream_4" parent="HBoxContainer/DreamLevels" instance=ExtResource("1_3h5tg")]
 position = Vector2(1060, 440)
-level_number = 4
-disabled = true
 
 [node name="Dream_5" parent="HBoxContainer/DreamLevels" instance=ExtResource("1_3h5tg")]
 position = Vector2(1260, 440)
-level_number = 5
-disabled = true
 
 [node name="Dream_6" parent="HBoxContainer/DreamLevels" instance=ExtResource("1_3h5tg")]
 position = Vector2(1460, 440)
-level_number = 6
-disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -10
