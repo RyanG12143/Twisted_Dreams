@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2bml8s2sr1x2"]
+
+[ext_resource type="Script" path="res://Menus/SettingsMenu/Settings_Menu.gd" id="1_wkvtj"]
+[ext_resource type="PackedScene" uid="uid://5sbras08cnpe" path="res://Menus/ReturnButton/Return_Button.tscn" id="2_b11vh"]
+[ext_resource type="PackedScene" uid="uid://b845a30nd7ure" path="res://Menus/SettingsMenu/Settings_Tab_Button.tscn" id="2_o6imp"]
+
+[node name="SettingsMenu" type="Node"]
+script = ExtResource("1_wkvtj")
+
+[node name="MenuTabs" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VideoTab" parent="MenuTabs" instance=ExtResource("2_o6imp")]
+position = Vector2(500, 100)
+animation = &"Video"
+
+[node name="SoundTab" parent="MenuTabs" instance=ExtResource("2_o6imp")]
+position = Vector2(800, 100)
+animation = &"Sound"
+button_type = "Sound"
+
+[node name="ControlsTab" parent="MenuTabs" instance=ExtResource("2_o6imp")]
+position = Vector2(1175, 100)
+animation = &"Controls"
+button_type = "Controls"
+
+[node name="GameplayTab" parent="MenuTabs" instance=ExtResource("2_o6imp")]
+position = Vector2(1625, 100)
+button_type = "Gameplay"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
+custom_minimum_size = Vector2(10000, 10000)
+offset_right = 10000.0
+offset_bottom = 10000.0
+mouse_filter = 2
+color = Color(0.439285, 0.329962, 0.244245, 1)
+
+[node name="ReturnButton" parent="." instance=ExtResource("2_b11vh")]
+position = Vector2(150, 970)

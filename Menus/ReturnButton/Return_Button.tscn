@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://5sbras08cnpe"]
+
+[ext_resource type="Texture2D" uid="uid://dhw88nwmps4oa" path="res://Menus/ReturnButton/Return_Button_Normal.png" id="1_wkiom"]
+[ext_resource type="Texture2D" uid="uid://bca0fkjgr01aj" path="res://Menus/ReturnButton/Return_Button_Hovered.png" id="2_d74ev"]
+[ext_resource type="Script" path="res://Menus/ReturnButton/Return_Button.gd" id="3_57arb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xjpi5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wkiom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d74ev")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ReturnButton" type="AnimatedSprite2D"]
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_xjpi5")
+frame = 1
+frame_progress = 0.800695
+script = ExtResource("3_57arb")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -540.0
+offset_top = -350.0
+offset_right = 540.0
+offset_bottom = 350.0
+mouse_default_cursor_shape = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

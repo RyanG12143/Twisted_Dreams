@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://b845a30nd7ure"]
+
+[ext_resource type="Texture2D" uid="uid://bh7iaj27iguyo" path="res://Menus/SettingsMenu/Tabs_Assets/15.png" id="1_a6gka"]
+[ext_resource type="Texture2D" uid="uid://70dew51d5xer" path="res://Menus/SettingsMenu/Tabs_Assets/19.png" id="1_l7y5j"]
+[ext_resource type="Texture2D" uid="uid://cqmsskarnkbk6" path="res://Menus/SettingsMenu/Tabs_Assets/17.png" id="1_rhyru"]
+[ext_resource type="Texture2D" uid="uid://depd8b8ctnrai" path="res://Menus/SettingsMenu/Tabs_Assets/18.png" id="2_3525x"]
+[ext_resource type="Texture2D" uid="uid://dk136h6cpslb7" path="res://Menus/SettingsMenu/Tabs_Assets/20.png" id="2_hwxf3"]
+[ext_resource type="Texture2D" uid="uid://bpnwym07wvu1n" path="res://Menus/SettingsMenu/Tabs_Assets/16.png" id="2_ub707"]
+[ext_resource type="Texture2D" uid="uid://bmvpqhdbroypb" path="res://Menus/SettingsMenu/Tabs_Assets/21.png" id="3_rbphm"]
+[ext_resource type="Texture2D" uid="uid://ob6fxcmoyfjx" path="res://Menus/SettingsMenu/Tabs_Assets/22.png" id="4_ketf3"]
+[ext_resource type="Script" path="res://Menus/SettingsMenu/Settings_Tab_Button.gd" id="9_fk8bo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0wpwy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_l7y5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hwxf3")
+}],
+"loop": true,
+"name": &"Controls",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rbphm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ketf3")
+}],
+"loop": true,
+"name": &"Gameplay",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rhyru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3525x")
+}],
+"loop": true,
+"name": &"Sound",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a6gka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ub707")
+}],
+"loop": true,
+"name": &"Video",
+"speed": 5.0
+}]
+
+[node name="SettingsTabButton" type="AnimatedSprite2D"]
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_0wpwy")
+animation = &"Gameplay"
+script = ExtResource("9_fk8bo")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -460.0
+offset_top = -150.0
+offset_right = 460.0
+offset_bottom = 150.0
+mouse_default_cursor_shape = 2

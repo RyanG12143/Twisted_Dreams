@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bq3sv75y8346j"]
+[gd_scene load_steps=5 format=3 uid="uid://bq3sv75y8346j"]
 
 [ext_resource type="PackedScene" uid="uid://dnp2n7366bsx4" path="res://Menus/PlayMenu/level_select_icon.tscn" id="1_3h5tg"]
 [ext_resource type="Script" path="res://Menus/PlayMenu/Play_Menu.gd" id="1_ovcc1"]
-[ext_resource type="PackedScene" uid="uid://7wrgj7hac2qw" path="res://Menus/MainMenu/Main_Menu_Transition_Manager.tscn" id="1_vlw00"]
+[ext_resource type="PackedScene" uid="uid://7wrgj7hac2qw" path="res://Menus/Main_Menu_Transition_Manager.tscn" id="1_vlw00"]
+[ext_resource type="PackedScene" uid="uid://5sbras08cnpe" path="res://Menus/ReturnButton/Return_Button.tscn" id="3_7v5j5"]
 
 [node name="PlayMenu" type="Node"]
 script = ExtResource("1_ovcc1")
@@ -89,6 +90,10 @@ custom_minimum_size = Vector2(10000, 10000)
 offset_right = 10000.0
 offset_bottom = 10000.0
 mouse_filter = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.696756, 0.714057, 0.557731, 1)
+
+[node name="ReturnButton" parent="." node_paths=PackedStringArray("transition_manager") instance=ExtResource("3_7v5j5")]
+position = Vector2(150, 970)
+transition_manager = NodePath("../Main_Menu_Transition_Manager")
 
 [node name="Main_Menu_Transition_Manager" parent="." instance=ExtResource("1_vlw00")]

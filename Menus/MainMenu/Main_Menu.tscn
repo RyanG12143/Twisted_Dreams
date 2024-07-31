@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Menus/MainMenu/TitleText_Glow.gd" id="2_vmy3j"]
 [ext_resource type="PackedScene" uid="uid://ckfb0yf8iaqeh" path="res://Menus/MainMenu/Settings_Button.tscn" id="3_jqhpk"]
 [ext_resource type="PackedScene" uid="uid://b2quymqk0yrdo" path="res://Menus/MainMenu/Quit_Button.tscn" id="4_iq7tg"]
-[ext_resource type="PackedScene" uid="uid://7wrgj7hac2qw" path="res://Menus/MainMenu/Main_Menu_Transition_Manager.tscn" id="7_oq4ax"]
+[ext_resource type="PackedScene" uid="uid://7wrgj7hac2qw" path="res://Menus/Main_Menu_Transition_Manager.tscn" id="7_oq4ax"]
 
 [sub_resource type="Environment" id="Environment_fi0jc"]
 background_mode = 3

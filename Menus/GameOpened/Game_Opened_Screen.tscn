@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Menus/GameOpened/Game_Opened_Screen.gd" id="1_35u6e"]
 [ext_resource type="Texture2D" uid="uid://bblp5scudpae2" path="res://Menus/GameOpened/White_Logo.png" id="3_tes5d"]
 [ext_resource type="Texture2D" uid="uid://b0vl5p05amuop" path="res://Menus/GameOpened/Abysmal_Twisted_Dreams_Version.png" id="4_b1v3v"]
-[ext_resource type="PackedScene" uid="uid://7wrgj7hac2qw" path="res://Menus/MainMenu/Main_Menu_Transition_Manager.tscn" id="4_c1sb1"]
+[ext_resource type="PackedScene" uid="uid://7wrgj7hac2qw" path="res://Menus/Main_Menu_Transition_Manager.tscn" id="4_c1sb1"]
 [ext_resource type="AudioStream" uid="uid://h2h13yo062mr" path="res://Menus/GameOpened/Logo_Shine.mp3" id="6_63ng7"]
 
 [node name="GameOpenedScreen" type="Node"]
