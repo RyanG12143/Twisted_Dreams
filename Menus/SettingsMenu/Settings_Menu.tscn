@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2bml8s2sr1x2"]
+[gd_scene load_steps=8 format=3 uid="uid://b2bml8s2sr1x2"]
 
 [ext_resource type="Script" path="res://Menus/SettingsMenu/Settings_Menu.gd" id="1_wkvtj"]
 [ext_resource type="PackedScene" uid="uid://5sbras08cnpe" path="res://Menus/ReturnButton/Return_Button.tscn" id="2_b11vh"]
 [ext_resource type="PackedScene" uid="uid://b845a30nd7ure" path="res://Menus/SettingsMenu/Settings_Tab_Button.tscn" id="2_o6imp"]
+[ext_resource type="Script" path="res://Menus/SettingsMenu/SoundScreen.gd" id="3_jt1bg"]
+[ext_resource type="Script" path="res://Menus/SettingsMenu/VideoScreen.gd" id="3_nd8es"]
+[ext_resource type="PackedScene" uid="uid://7wrgj7hac2qw" path="res://Menus/Main_Menu_Transition_Manager.tscn" id="6_ltohe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7chfo"]
+font_size = 32
 
 [node name="SettingsMenu" type="Node"]
 script = ExtResource("1_wkvtj")
@@ -22,12 +28,217 @@ button_type = "Sound"
 
 [node name="ControlsTab" parent="MenuTabs" instance=ExtResource("2_o6imp")]
 position = Vector2(1175, 100)
-animation = &"Controls"
 button_type = "Controls"
 
 [node name="GameplayTab" parent="MenuTabs" instance=ExtResource("2_o6imp")]
 position = Vector2(1625, 100)
 button_type = "Gameplay"
+
+[node name="VideoScreen" type="Node2D" parent="."]
+script = ExtResource("3_nd8es")
+
+[node name="ResolutionsLabel" type="Label" parent="VideoScreen"]
+offset_left = 400.0
+offset_top = 210.0
+offset_right = 667.0
+offset_bottom = 255.0
+text = "RESOLUTION"
+label_settings = SubResource("LabelSettings_7chfo")
+uppercase = true
+
+[node name="Resolutions" type="OptionButton" parent="VideoScreen"]
+custom_minimum_size = Vector2(400, 0)
+offset_left = 400.0
+offset_top = 255.0
+offset_right = 800.0
+offset_bottom = 286.0
+item_count = 3
+selected = 0
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+
+[node name="SoundScreen" type="Node2D" parent="."]
+visible = false
+script = ExtResource("3_jt1bg")
+
+[node name="Master" type="Node2D" parent="SoundScreen"]
+
+[node name="MasterSliderLabel" type="Label" parent="SoundScreen/Master"]
+offset_left = 400.0
+offset_top = 210.0
+offset_right = 667.0
+offset_bottom = 255.0
+text = "MASTER VOLUME"
+label_settings = SubResource("LabelSettings_7chfo")
+uppercase = true
+
+[node name="MasterVolumeSlider" type="HSlider" parent="SoundScreen/Master"]
+texture_repeat = 1
+custom_minimum_size = Vector2(1080, 0)
+offset_left = 400.0
+offset_top = 250.0
+offset_right = 1480.0
+offset_bottom = 266.0
+scale = Vector2(1, 1.55)
+min_value = 50.0
+value = 80.0
+rounded = true
+
+[node name="MasterMuteLabel" type="Label" parent="SoundScreen/Master"]
+offset_left = 1592.0
+offset_top = 239.0
+offset_right = 1859.0
+offset_bottom = 284.0
+text = "MUTE"
+label_settings = SubResource("LabelSettings_7chfo")
+uppercase = true
+
+[node name="MasterVolumeMute" type="CheckBox" parent="SoundScreen/Master"]
+texture_repeat = 1
+offset_left = 1700.0
+offset_top = 238.0
+offset_right = 1724.0
+offset_bottom = 262.0
+scale = Vector2(2, 2)
+icon_alignment = 1
+expand_icon = true
+
+[node name="Music" type="Node2D" parent="SoundScreen"]
+position = Vector2(0, 100)
+
+[node name="MusicSliderLabel" type="Label" parent="SoundScreen/Music"]
+offset_left = 400.0
+offset_top = 210.0
+offset_right = 667.0
+offset_bottom = 255.0
+text = "MUSIC VOLUME"
+label_settings = SubResource("LabelSettings_7chfo")
+uppercase = true
+
+[node name="MusicVolumeSlider" type="HSlider" parent="SoundScreen/Music"]
+texture_repeat = 1
+custom_minimum_size = Vector2(1080, 0)
+offset_left = 400.0
+offset_top = 250.0
+offset_right = 1480.0
+offset_bottom = 266.0
+scale = Vector2(1, 1.55)
+min_value = 50.0
+value = 80.0
+rounded = true
+
+[node name="MusicMuteLabel" type="Label" parent="SoundScreen/Music"]
+offset_left = 1592.0
+offset_top = 239.0
+offset_right = 1859.0
+offset_bottom = 284.0
+text = "MUTE"
+label_settings = SubResource("LabelSettings_7chfo")
+uppercase = true
+
+[node name="MusicVolumeMute" type="CheckBox" parent="SoundScreen/Music"]
+texture_repeat = 1
+offset_left = 1700.0
+offset_top = 238.0
+offset_right = 1724.0
+offset_bottom = 262.0
+scale = Vector2(2, 2)
+icon_alignment = 1
+expand_icon = true
+
+[node name="Effects" type="Node2D" parent="SoundScreen"]
+position = Vector2(0, 200)
+
+[node name="EffectsSliderLabel" type="Label" parent="SoundScreen/Effects"]
+offset_left = 400.0
+offset_top = 210.0
+offset_right = 667.0
+offset_bottom = 255.0
+text = "EFFECTS VOLUME"
+label_settings = SubResource("LabelSettings_7chfo")
+uppercase = true
+
+[node name="EffectsVolumeSlider" type="HSlider" parent="SoundScreen/Effects"]
+texture_repeat = 1
+custom_minimum_size = Vector2(1080, 0)
+offset_left = 400.0
+offset_top = 250.0
+offset_right = 1480.0
+offset_bottom = 266.0
+scale = Vector2(1, 1.55)
+min_value = 50.0
+value = 80.0
+rounded = true
+
+[node name="EffectsMuteLabel" type="Label" parent="SoundScreen/Effects"]
+offset_left = 1592.0
+offset_top = 239.0
+offset_right = 1859.0
+offset_bottom = 284.0
+text = "MUTE"
+label_settings = SubResource("LabelSettings_7chfo")
+uppercase = true
+
+[node name="EffectsVolumeMute" type="CheckBox" parent="SoundScreen/Effects"]
+texture_repeat = 1
+offset_left = 1700.0
+offset_top = 238.0
+offset_right = 1724.0
+offset_bottom = 262.0
+scale = Vector2(2, 2)
+icon_alignment = 1
+expand_icon = true
+
+[node name="Dialogue" type="Node2D" parent="SoundScreen"]
+position = Vector2(0, 300)
+
+[node name="DialogueSliderLabel" type="Label" parent="SoundScreen/Dialogue"]
+offset_left = 400.0
+offset_top = 210.0
+offset_right = 667.0
+offset_bottom = 255.0
+text = "DIALOGUE VOLUME"
+label_settings = SubResource("LabelSettings_7chfo")
+uppercase = true
+
+[node name="DialogueVolumeSlider" type="HSlider" parent="SoundScreen/Dialogue"]
+texture_repeat = 1
+custom_minimum_size = Vector2(1080, 0)
+offset_left = 400.0
+offset_top = 250.0
+offset_right = 1480.0
+offset_bottom = 266.0
+scale = Vector2(1, 1.55)
+min_value = 50.0
+value = 80.0
+rounded = true
+
+[node name="DialogueMuteLabel" type="Label" parent="SoundScreen/Dialogue"]
+offset_left = 1592.0
+offset_top = 239.0
+offset_right = 1859.0
+offset_bottom = 284.0
+text = "MUTE"
+label_settings = SubResource("LabelSettings_7chfo")
+uppercase = true
+
+[node name="DialogueVolumeMute" type="CheckBox" parent="SoundScreen/Dialogue"]
+texture_repeat = 1
+offset_left = 1700.0
+offset_top = 238.0
+offset_right = 1724.0
+offset_bottom = 262.0
+scale = Vector2(2, 2)
+icon_alignment = 1
+expand_icon = true
+
+[node name="ControlsScreen" type="Node2D" parent="."]
+
+[node name="GameplayScreen" type="Node2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -10
@@ -35,7 +246,20 @@ custom_minimum_size = Vector2(10000, 10000)
 offset_right = 10000.0
 offset_bottom = 10000.0
 mouse_filter = 2
-color = Color(0.439285, 0.329962, 0.244245, 1)
+color = Color(0.368627, 0.388235, 0.396078, 1)
 
-[node name="ReturnButton" parent="." instance=ExtResource("2_b11vh")]
+[node name="ReturnButton" parent="." node_paths=PackedStringArray("transition_manager") instance=ExtResource("2_b11vh")]
 position = Vector2(150, 970)
+transition_manager = NodePath("../Main_Menu_Transition_Manager")
+
+[node name="Main_Menu_Transition_Manager" parent="." instance=ExtResource("6_ltohe")]
+
+[connection signal="item_selected" from="VideoScreen/Resolutions" to="VideoScreen" method="_on_resolutions_item_selected"]
+[connection signal="value_changed" from="SoundScreen/Master/MasterVolumeSlider" to="SoundScreen" method="_on_master_volume_slider_value_changed"]
+[connection signal="toggled" from="SoundScreen/Master/MasterVolumeMute" to="SoundScreen" method="_on_master_volume_mute_toggled"]
+[connection signal="value_changed" from="SoundScreen/Music/MusicVolumeSlider" to="SoundScreen" method="_on_music_volume_slider_value_changed"]
+[connection signal="toggled" from="SoundScreen/Music/MusicVolumeMute" to="SoundScreen" method="_on_music_volume_mute_toggled"]
+[connection signal="value_changed" from="SoundScreen/Effects/EffectsVolumeSlider" to="SoundScreen" method="_on_effects_volume_slider_value_changed"]
+[connection signal="toggled" from="SoundScreen/Effects/EffectsVolumeMute" to="SoundScreen" method="_on_effects_volume_mute_toggled"]
+[connection signal="value_changed" from="SoundScreen/Dialogue/DialogueVolumeSlider" to="SoundScreen" method="_on_dialogue_volume_slider_value_changed"]
+[connection signal="toggled" from="SoundScreen/Dialogue/DialogueVolumeMute" to="SoundScreen" method="_on_dialogue_volume_mute_toggled"]
