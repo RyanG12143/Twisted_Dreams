@@ -1,29 +1,77 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw42uct8lrrjy"]
+[gd_scene load_steps=11 format=3 uid="uid://dw42uct8lrrjy"]
 
+[ext_resource type="Texture2D" uid="uid://dajvwyxmism2c" path="res://TestBS/LeoPuzzlePrototype/Assets/Levers.png" id="1_tpvia"]
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/Blooming_Flower.gd" id="3_ynwga"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqn5r"]
+atlas = ExtResource("1_tpvia")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upf8a"]
+atlas = ExtResource("1_tpvia")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5qng"]
+atlas = ExtResource("1_tpvia")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82l7h"]
+atlas = ExtResource("1_tpvia")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkip2"]
+atlas = ExtResource("1_tpvia")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t65ms"]
+atlas = ExtResource("1_tpvia")
+region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wqf8t"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": SubResource("AtlasTexture_pqn5r")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": SubResource("AtlasTexture_upf8a")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Blue",
 "speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5qng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82l7h")
+}],
+"loop": true,
+"name": &"Orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkip2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t65ms")
+}],
+"loop": true,
+"name": &"Pink",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dw5bv"]
-size = Vector2(20, 21)
+size = Vector2(32, 32)
 
 [node name="Blooming_Flower" type="AnimatedSprite2D"]
 z_index = 1
 texture_filter = 1
 texture_repeat = 1
 sprite_frames = SubResource("SpriteFrames_wqf8t")
+animation = &"Pink"
 script = ExtResource("3_ynwga")
 
 [node name="Area2D" type="Area2D" parent="."]

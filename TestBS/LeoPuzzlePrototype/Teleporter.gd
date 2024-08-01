@@ -75,6 +75,7 @@ func _process(delta):
 						body.set_collision_layer_value(2, false)
 						body.set_collision_mask_value(1, false)
 						body.set_collision_mask_value(3, false)
+						body.anim.pause()
 						body.visible = false
 						body.gravity_enabled = false
 						timer = 0
@@ -106,12 +107,12 @@ func _process(delta):
 			character_teleporting.set_collision_layer_value(2, true)
 			character_teleporting.set_collision_mask_value(1, true)
 			character_teleporting.set_collision_mask_value(3, true)
+			character_teleporting.anim.play()
 			character_teleporting.visible = true
 			globals.character_control = globals.next_controlled_character
 			character_teleporting.gravity_enabled = true
 			add_character_velocity(character_teleporting, delta)
 			globals.Character_Swapped.emit()
-			print("yeah")
 			character_is_teleporting = false
 			if (teleporter_enabled == false):
 				anim.play("disabled")
