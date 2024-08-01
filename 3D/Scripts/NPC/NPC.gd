@@ -203,7 +203,7 @@ func _turn(delta, target:Vector3):
 	
 	global_transform.basis = Basis(next_rotation)
 
-## Turns the chracter towards target
+## Turns the chracter head towards target
 func _head_turn_clamp(delta, target:Vector3, clamp:float):
 	
 	var new_transform = head.global_transform.looking_at(target, Vector3.UP, true)

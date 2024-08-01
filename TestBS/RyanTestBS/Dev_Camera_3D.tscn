@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://dofbdnlbt13nt"]
+
+[sub_resource type="GDScript" id="GDScript_j6p50"]
+script/source = "extends Camera3D
+
+var dir:Vector3 = Vector3.ZERO
+var speed:float = .1
+var sens:float = 0.002
+var pivot:Node3D
+
+var movement_active := false:
+	set(val):
+		movement_active = val
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED if movement_active else Input.MOUSE_MODE_VISIBLE)
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	await owner.ready
+	pivot = owner
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	dir = Vector3.ZERO
+	
+	if Input.is_action_pressed(\"Dev_Cam_Toggle\"):
+		movement_active = not movement_active
+	
+	if movement_active:
+		if Input.is_action_pressed(\"Dev_Cam_Forward\"): 			dir.z -= 1
+		if Input.is_action_pressed(\"Dev_Cam_Backward\"): 		dir.z += 1
+		if Input.is_action_pressed(\"Dev_Cam_Left\"): 			dir.x -= 1
+		if Input.is_action_pressed(\"Dev_Cam_Right\"): 			dir.x += 1
+		if Input.is_action_pressed(\"Dev_Cam_Up\"): 				dir.y += 1
+		if Input.is_action_pressed(\"Dev_Cam_Down\"): 			dir.y -= 1
+	
+	dir = dir.normalized()
+	dir = dir.rotated(Vector3.UP, pivot.rotation.y)
+	
+	pivot.global_position += dir * speed
+
+func _input(event: InputEvent) -> void:
+	if movement_active:
+		if event is InputEventMouseMotion:
+			pivot.rotate_y(-event.relative.x * sens)
+			rotate_x(-event.relative.y * sens)
+			rotation.x = clamp(rotation.x, -PI/2, PI/2)
+"
+
+[node name="Dev_Camera_3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+script = SubResource("GDScript_j6p50")

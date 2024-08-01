@@ -1,0 +1,1379 @@
+[gd_scene load_steps=11 format=3 uid="uid://3ixjas80haci"]
+
+[ext_resource type="PackedScene" uid="uid://cu7wqioxho4ft" path="res://3D/Scenes/NPC/NPC.tscn" id="1_hurcj"]
+[ext_resource type="Script" path="res://TestBS/RyanTestBS/Chase/Stress_Info.gd" id="1_yuivk"]
+[ext_resource type="PackedScene" uid="uid://n6rf8a232l5n" path="res://3D/Scenes/NPC/Waypoint.tscn" id="2_jp0gd"]
+[ext_resource type="Script" path="res://addons/freecam_3D/freecam.gd" id="3_i4lfr"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_3jsns"]
+vertices = PackedVector3Array(-0.75, 0.95945, -41.5, 1.25, 0.95945, -41.5, 1.25, 0.95945, -49, -1.5, 0.95945, -40.75, -0.75, 0.95945, -41.5, 1.25, 0.95945, -49, -49, 0.95945, -49, -49, 0.95945, -20.25, -1.5, 0.95945, -20.25, -1.5, 0.95945, -40.75, -49, 0.95945, -49, 1.25, 0.95945, -41.5, 15.5, 0.95945, -41.5, 15.5, 0.95945, -49, 1.25, 0.95945, -49, 15.5, 0.95945, -49, 15.5, 0.95945, -41.5, 17.5, 0.95945, -41.5, 15.5, 0.95945, -49, 17.5, 0.95945, -41.5, 18.25, 0.95945, -40.75, 49, 0.95945, -49, 18.25, 0.95945, -40.75, 18.25, 0.95945, -19.75, 49, 0.95945, -19.5, 49, 0.95945, -49, 6, 5.70945, -33.75, 7, 5.70945, -34.25, 7, 5.70945, -39.5, -12.25, 5.70945, -39.5, -12.25, 5.70945, -19.5, 6, 5.70945, -19.5, 6, 5.70945, -33.75, -12.25, 5.70945, -39.5, 8, 5.45945, -33.75, 8, 4.95945, -32, 12.75, 4.95945, -32, 12.75, 5.45945, -33.75, 16.25, 5.70945, -39.5, 14.25, 5.70945, -34.25, 14.75, 5.70945, -33.75, 7, 5.70945, -34.25, 8, 5.45945, -33.75, 12.75, 5.45945, -33.75, 14.25, 5.70945, -34.25, 16.25, 5.70945, -39.5, 7, 5.70945, -39.5, 14.75, 5.70945, -33.75, 14.75, 5.70945, -19.5, 16.25, 5.70945, -19.5, 16.25, 5.70945, -39.5, 15, 0.95945, -25.75, 15, 0.95945, -19.75, 16, 0.95945, -19.75, 16, 0.95945, -39.25, 0.75, 0.95945, -19.75, 5.75, 0.95945, -19.75, 5.75, 0.95945, -25.75, 0.75, 0.95945, -39.25, 0.75, 0.95945, -39.25, 5.75, 0.95945, -25.75, 6.5, 0.95945, -26.5, 14.25, 0.95945, -26.5, 15, 0.95945, -25.75, 16, 0.95945, -39.25, 6.5, 0.95945, -26.5, 14.25, 0.95945, -26.5, 16, 0.95945, -39.25, 0.75, 0.95945, -39.25, 8, 0.95945, -20, 12.75, 0.95945, -20, 12.75, 4.95945, -32, 8, 4.95945, -32, 9.975, 4.20945, -30.525, 1, 0.95945, -4.5, 1, 0.95945, -17.5, -0.75, 0.95945, -17.5, -2.5, 0.95945, -4.5, -49, 0.95945, -2.75, -3.25, 0.95945, -2.75, -3.25, 0.95945, -3.75, -2.5, 0.95945, -4.5, -0.75, 0.95945, -17.5, -1.5, 0.95945, -18.25, -3.25, 0.95945, -3.75, -2.5, 0.95945, -4.5, -1.5, 0.95945, -18.25, -1.5, 0.95945, -20.25, -49, 0.95945, -20.25, -49, 0.95945, -2.75, 12.75, 0.95945, -18.25, 12.75, 0.95945, -20, 8, 0.95945, -20, 8, 0.95945, -18.25, 17.5, 0.95945, -17.5, 13.5, 0.95945, -17.5, 3.25, 0.95945, -2, 13.5, 0.95945, -17.5, 12.75, 0.95945, -18.25, 8, 0.95945, -18.25, 7.25, 0.95945, -17.5, 3.25, 0.95945, -3.75, 3.25, 0.95945, -2, 18.25, 0.95945, -18.25, 17.5, 0.95945, -17.5, 3.25, 0.95945, -2, 49, 0.95945, -19.5, 1, 0.95945, -17.5, 1, 0.95945, -4.5, 2.5, 0.95945, -4.5, 7.25, 0.95945, -17.5, 1, 0.95945, -17.5, 2.5, 0.95945, -4.5, 3.25, 0.95945, -3.75, 2.5, 0.95945, -1.25, 1, 0.95945, -1.25, 1.25, 0.95945, 49, 49, 0.95945, -19.5, 18.25, 0.95945, -19.75, 18.25, 0.95945, -18.25, 49, 0.95945, -19.5, 3.25, 0.95945, -2, 2.5, 0.95945, -1.25, 1.25, 0.95945, 49, 49, 0.95945, 49, -3.25, 0.95945, -2, -3.25, 0.95945, -2.75, -49, 0.95945, -2.75, -2.5, 0.95945, -1.25, -3.25, 0.95945, -2, -49, 0.95945, -2.75, -49, 0.95945, 49, -1.25, 0.95945, 49, -1.25, 0.95945, 49, -1, 0.95945, -1.25, -2.5, 0.95945, -1.25, -1.25, 0.95945, 49, 1.25, 0.95945, 49, 1, 0.95945, -1.25, -1, 0.95945, -1.25)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 6), PackedInt32Array(8, 7, 9), PackedInt32Array(9, 7, 10), PackedInt32Array(14, 13, 11), PackedInt32Array(11, 13, 12), PackedInt32Array(17, 16, 15), PackedInt32Array(19, 18, 20), PackedInt32Array(20, 18, 21), PackedInt32Array(23, 22, 24), PackedInt32Array(24, 22, 25), PackedInt32Array(27, 26, 28), PackedInt32Array(28, 26, 29), PackedInt32Array(31, 30, 32), PackedInt32Array(32, 30, 33), PackedInt32Array(37, 36, 34), PackedInt32Array(34, 36, 35), PackedInt32Array(40, 39, 38), PackedInt32Array(42, 41, 43), PackedInt32Array(43, 41, 44), PackedInt32Array(44, 41, 46), PackedInt32Array(44, 46, 45), PackedInt32Array(48, 47, 49), PackedInt32Array(49, 47, 50), PackedInt32Array(52, 51, 53), PackedInt32Array(53, 51, 54), PackedInt32Array(56, 55, 57), PackedInt32Array(57, 55, 58), PackedInt32Array(61, 60, 59), PackedInt32Array(64, 63, 62), PackedInt32Array(66, 65, 67), PackedInt32Array(67, 65, 68), PackedInt32Array(71, 73, 72), PackedInt32Array(72, 73, 69), PackedInt32Array(69, 73, 70), PackedInt32Array(70, 73, 71), PackedInt32Array(75, 74, 76), PackedInt32Array(76, 74, 77), PackedInt32Array(80, 79, 78), PackedInt32Array(81, 83, 82), PackedInt32Array(85, 84, 86), PackedInt32Array(86, 84, 87), PackedInt32Array(87, 84, 88), PackedInt32Array(88, 84, 89), PackedInt32Array(93, 92, 90), PackedInt32Array(90, 92, 91), PackedInt32Array(96, 95, 94), PackedInt32Array(98, 97, 99), PackedInt32Array(99, 97, 100), PackedInt32Array(100, 97, 101), PackedInt32Array(101, 97, 102), PackedInt32Array(104, 103, 105), PackedInt32Array(105, 103, 106), PackedInt32Array(109, 108, 107), PackedInt32Array(112, 111, 113), PackedInt32Array(113, 111, 110), PackedInt32Array(116, 115, 114), PackedInt32Array(119, 118, 117), PackedInt32Array(121, 120, 122), PackedInt32Array(122, 120, 123), PackedInt32Array(123, 120, 124), PackedInt32Array(127, 126, 125), PackedInt32Array(129, 128, 130), PackedInt32Array(130, 128, 131), PackedInt32Array(131, 128, 132), PackedInt32Array(135, 134, 133), PackedInt32Array(139, 138, 136), PackedInt32Array(136, 138, 137)]
+geometry_parsed_geometry_type = 1
+agent_radius = 1.0
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_54bqd"]
+
+[sub_resource type="Sky" id="Sky_rivwb"]
+sky_material = SubResource("ProceduralSkyMaterial_54bqd")
+
+[sub_resource type="Environment" id="Environment_l6bgl"]
+background_mode = 2
+sky = SubResource("Sky_rivwb")
+
+[sub_resource type="TorusMesh" id="TorusMesh_am4xg"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6nnwd"]
+
+[node name="Chase scene test" type="Node3D"]
+script = ExtResource("1_yuivk")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.247155, -4.76837e-07, 0.00691319)
+navigation_mesh = SubResource("NavigationMesh_3jsns")
+
+[node name="Node3D" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.89177, 0)
+use_collision = true
+size = Vector3(100, 4.78343, 100)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0612566, 0.881485, -2.85991)
+use_collision = true
+size = Vector3(4.22314, 2.01953, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.94378, 2.38434, -29.4826)
+use_collision = true
+size = Vector3(30.1861, 5.76868, 21.7341)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="NavigationRegion3D/Node3D/CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 0.950076, -0.31202, 0, 0.31202, 0.950076, 8.42721, 3.00288, 2.60615)
+operation = 2
+use_collision = true
+size = Vector3(6.82849, 5.05072, 18.876)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="NavigationRegion3D/Node3D/CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.164, -1.30664, -1.68486)
+operation = 2
+use_collision = true
+size = Vector3(15.6578, 7.27585, 27.458)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l6bgl")
+
+[node name="NPC" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.111195, 1.11838, -6.28709)
+turn_Speed = 5.0
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="Camera3D" type="Camera3D" parent="NPC"]
+transform = Transform3D(1, 0, 0, 0, 0.955962, 0.29349, 0, -0.29349, 0.955962, 0, 1.86195, 2.43271)
+current = true
+
+[node name="NPC3" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.111195, 1.11838, -7.27128)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC4" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.59705, 1.11838, -7.27128)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC5" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.29891, 1.11838, -7.27128)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC6" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.29891, 1.11838, -10.3551)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC7" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.34634, 1.11838, -10.3551)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC8" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.34634, 1.11838, -16.8967)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC9" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4169, 1.11838, -16.8967)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC10" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4169, 1.11838, -10.086)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC11" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2065, 1.11838, -10.086)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC12" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2065, 1.11838, -15.3812)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC13" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3629, 1.11838, -15.3812)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC14" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3629, 1.11838, -11.8927)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC15" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3629, 1.11838, -20.219)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC16" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6678, 1.11838, -20.219)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC17" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8228, 1.11838, -13.4149)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC18" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7713, 1.11838, -13.4149)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC19" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7713, 1.11838, -22.6992)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC20" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73455, 1.11838, -22.6992)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC21" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73455, 1.11838, -29.8212)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC22" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6518, 1.11838, -29.8212)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC23" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4406, 1.11838, -29.8212)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC24" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4406, 1.11838, -22.673)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC25" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6254, 1.11838, -22.673)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC26" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6254, 1.11838, -14.6745)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC27" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3384, 1.11838, -11.8323)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC28" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3384, 1.11838, -8.20558)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC29" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3384, 1.11838, -6.47739)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC30" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0196, 1.11838, -6.47739)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC31" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0196, 1.11838, -4.74982)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC32" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1722, 1.11838, -4.74982)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC33" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1722, 1.11838, -4.28854)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC34" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1096, 1.11838, -4.28854)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC35" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1096, 1.11838, -6.04878)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC36" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2448, 1.11838, -6.04878)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC37" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.477, 1.11838, -6.04878)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC38" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.477, 1.11838, -9.54412)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC39" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3899, 1.11838, -9.54412)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC40" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3899, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC41" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC47" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC48" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC49" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC50" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC51" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC52" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC53" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC54" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC55" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC56" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC57" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC58" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC59" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC60" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC61" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC62" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC63" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC64" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC65" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC66" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC67" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC68" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC69" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC70" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC71" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC72" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC73" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC74" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC75" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC76" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC77" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC78" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC79" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC80" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC81" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC82" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC83" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC84" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC85" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC86" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC87" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC88" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC89" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC90" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC91" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC92" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC93" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC94" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC95" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC96" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC97" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC98" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC99" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC100" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC101" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC102" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC103" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC104" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC105" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC106" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC107" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC108" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC109" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC110" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC111" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC112" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC113" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC114" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC115" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC116" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC117" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC118" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC119" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC120" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC121" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC122" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC123" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC124" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC125" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC126" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC127" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC128" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC129" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC130" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC131" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC132" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC133" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC134" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC135" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC136" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC137" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC138" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC139" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC140" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC141" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC142" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC143" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC144" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC145" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC146" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC147" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC148" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC149" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC150" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC151" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC152" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC153" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC154" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC155" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC156" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC157" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC158" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC159" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="NPC160" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
+turn_Speed = 5.0
+observe = true
+head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+loop = true
+positions_container = NodePath("../Markers")
+
+[node name="Markers" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.298242, 0)
+
+[node name="Waypoint" parent="Markers" instance=ExtResource("2_jp0gd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17483, 0.937884, 0)
+
+[node name="Marker3D" parent="Markers/Waypoint" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4045)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Markers/Waypoint"]
+mesh = SubResource("TorusMesh_am4xg")
+skeleton = NodePath("")
+
+[node name="Waypoint2" parent="Markers" instance=ExtResource("2_jp0gd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.65639, 0.84428, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Markers/Waypoint2"]
+mesh = SubResource("TorusMesh_am4xg")
+skeleton = NodePath("")
+
+[node name="Waypoint3" parent="Markers" instance=ExtResource("2_jp0gd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.13482, 1.20304, -16.5113)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Markers/Waypoint3"]
+mesh = SubResource("TorusMesh_am4xg")
+skeleton = NodePath("")
+
+[node name="Waypoint4" parent="Markers" instance=ExtResource("2_jp0gd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.82489, 5.61272, -27.3636)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Markers/Waypoint4"]
+mesh = SubResource("TorusMesh_am4xg")
+skeleton = NodePath("")
+
+[node name="Waypoint5" parent="Markers" instance=ExtResource("2_jp0gd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64742, 0.84428, -9.79923)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Markers/Waypoint5"]
+mesh = SubResource("TorusMesh_am4xg")
+skeleton = NodePath("")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Waypoint2" parent="Node3D" instance=ExtResource("2_jp0gd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.735, 0.49995, 8.22924)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D/Waypoint2"]
+mesh = SubResource("TorusMesh_am4xg")
+skeleton = NodePath("")
+
+[node name="Waypoint" parent="Node3D" instance=ExtResource("2_jp0gd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5734, 0.49995, 9.56692)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D/Waypoint"]
+mesh = SubResource("TorusMesh_am4xg")
+skeleton = NodePath("")
+
+[node name="Waypoint3" parent="Node3D" instance=ExtResource("2_jp0gd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0402, 0.49995, 15.579)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D/Waypoint3"]
+mesh = SubResource("TorusMesh_am4xg")
+skeleton = NodePath("")
+
+[node name="NPC2" parent="." instance=ExtResource("1_hurcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.93785, 0.596533, 15.0247)
+observe = true
+
+[node name="Freecam3D" type="Camera3D" parent="."]
+script = ExtResource("3_i4lfr")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Freecam3D" groups=["Observable"]]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Freecam3D/CharacterBody3D"]
+shape = SubResource("SphereShape3D_6nnwd")
+
+[editable path="Markers/Waypoint"]
+[editable path="NPC2"]
+[editable path="NPC2/PoliceOfficer_Placeholder04"]

@@ -209,7 +209,8 @@ func play_ground_sound():
 				var tile_data = map.get_cell_tile_data(index, collided_tile_coords)
 				if not tile_data is TileData:
 					continue
-				_ground_type = tile_data.get_custom_data_by_layer_id(0)
+				if tile_data.get_custom_data_by_layer_id(0):
+					_ground_type = tile_data.get_custom_data_by_layer_id(0)
 				break
 		elif coll.owner.get("ground_type"):
 			_ground_type = coll.owner.ground_type

@@ -15,19 +15,30 @@ layer_0/tile_data = PackedInt32Array(720912, 196608, 3, 720913, 196608, 3, 72091
 
 [node name="Enemy" parent="." instance=ExtResource("3_0f0yu")]
 position = Vector2(643, 132)
+charging = false
+weeping = true
 
 [node name="Enemy2" parent="." instance=ExtResource("3_0f0yu")]
 position = Vector2(308, 321)
-disabled = true
 
 [node name="character_one" parent="." instance=ExtResource("4_j0gww")]
-position = Vector2(381, 121)
+position = Vector2(555, 134)
+
+[node name="AudioStreamPlayer2D" parent="character_one" index="8"]
+volume_db = -80.0
 
 [node name="character_two" parent="." instance=ExtResource("5_gfuy7")]
 position = Vector2(1308, 126)
 
 [node name="Luminous_Crate" parent="." instance=ExtResource("5_48ade")]
-position = Vector2(872, 149)
+position = Vector2(931, 148)
 
 [node name="Luminous_Crate2" parent="." instance=ExtResource("5_48ade")]
-position = Vector2(992, 151)
+position = Vector2(1313, 404)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(627, 287)
+zoom = Vector2(2, 2)
+
+[editable path="character_one"]
+[editable path="character_two"]
