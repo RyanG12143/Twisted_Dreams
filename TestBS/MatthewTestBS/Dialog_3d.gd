@@ -10,8 +10,8 @@ func _ready():
 	d_text.set_visible_characters(0)
 	$Timer.set_wait_time(scroll_time)
 
-func _input(event):
-	if(event.is_action_pressed("interact")):
+func _process(delta):
+	if(Input.is_action_just_pressed("interact")):
 		if(page < dialog.size() - 1 and d_text.get_visible_characters() >= d_text.get_total_character_count()):
 			page += 1
 			d_text.bbcode_text = dialog[page]
@@ -21,6 +21,18 @@ func _input(event):
 			$Timer.stop()
 		elif(page == dialog.size() - 1):
 			hide()
+
+#func _input(event):
+	#if(event.is_pressed() and event.keycode == ):
+		#if(page < dialog.size() - 1 and d_text.get_visible_characters() >= d_text.get_total_character_count()):
+			#page += 1
+			#d_text.bbcode_text = dialog[page]
+			#$Timer.start()
+		#elif(page < dialog.size() - 1 and d_text.get_visible_characters() < d_text.get_total_character_count()):
+			#d_text.set_visible_characters(d_text.get_total_character_count())
+			#$Timer.stop()
+		#elif(page == dialog.size() - 1):
+			#hide()
 
 func _on_timer_timeout():
 	d_text.set_visible_characters(d_text.get_visible_characters() + 1)

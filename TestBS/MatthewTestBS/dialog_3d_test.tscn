@@ -11,17 +11,18 @@ viewport_path = NodePath("Window")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.131047, 0.00060463)
 texture = SubResource("ViewportTexture_x6eyy")
 script = ExtResource("1_btjit")
-dialog = Array[String](["How are you?", "How are you?"])
+dialog = Array[String](["Hello!", "How are you?"])
 scroll_time = 0.05
 
 [node name="Window" type="Window" parent="."]
 transparent_bg = true
+position = Vector2i(-200, 36)
 script = ExtResource("1_k2ble")
 
 [node name="DialogText" type="RichTextLabel" parent="Window"]
 modulate = Color(0, 0, 0, 1)
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 100.0
+offset_bottom = 100.0
 bbcode_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
