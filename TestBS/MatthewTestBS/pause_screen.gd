@@ -32,7 +32,7 @@ func _on_settings_pressed():
 #Opens the title screen
 func _on_return_to_title_pressed():
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://TestBS/DustinTest/Scenes/TitleScreen.tscn")
+	get_tree().change_scene_to_file("res://Menus/MainMenu/Main_Menu.tscn")
 
 #Goes back to the main menu
 func _on_back_to_main_pressed():
