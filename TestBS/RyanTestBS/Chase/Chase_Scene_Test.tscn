@@ -62,15 +62,10 @@ size = Vector3(15.6578, 7.27585, 27.458)
 environment = SubResource("Environment_l6bgl")
 
 [node name="NPC" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_08itc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.111195, 1.11838, -6.28709)
-turn_Speed = 5.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.261753, 0.499945, -6.47569)
 observe = true
 loop = true
 positions_container = NodePath("../Markers")
-
-[node name="Camera3D" type="Camera3D" parent="NPC"]
-transform = Transform3D(1, 0, 0, 0, 0.955962, 0.29349, 0, -0.29349, 0.955962, 0, 1.86195, 2.43271)
-current = true
 
 [node name="Markers" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.298242, 0)
@@ -142,11 +137,10 @@ chasing = true
 max_chase_dist = 10.0
 chase_target = NodePath("../NPC3")
 
-[node name="NPC3" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_08itc")]
+[node name="NPC3" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_08itc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.6742, 0.664952, 5.70539)
 speed = 6.0
 turn_Speed = 5.0
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Node3D2")
 
