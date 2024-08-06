@@ -14,12 +14,6 @@ func Physics_Update(delta: float):
 	if older_brother.velocity.y < 0:
 		Transitioned.emit(self, "Older_Fall")
 	
-	#setting the look direction
-	var testVelocity: Vector3 = Vector3(older_brother.velocity.x, 0, older_brother.velocity.z)
-	if testVelocity.length() > 0.2 and can_turn:
-		var look_direction: Vector2 = -Vector2(older_brother.velocity.z, older_brother.velocity.x)
-		older_brother.rotation.y = look_direction.angle()
-	
 	if older_brother.is_on_floor():
 		if Input.is_action_pressed("3Dforward") || Input.is_action_pressed("3Dbackward") || Input.is_action_pressed("3Dleft") || Input.is_action_pressed("3Dright"):
 			if Input.is_action_pressed("3Dsprint"):
@@ -37,6 +31,14 @@ func Physics_Update(delta: float):
 	
 	older_brother.velocity.x = velocity_move.x
 	older_brother.velocity.z = velocity_move.z
+	
+	# Turns the character towards the input direction
+	rotation_helper.look_at(Vector3(-velocity_move.x, rotation_helper.global_position.y, -velocity_move.z), Vector3.UP, true)
+	var target_rotation = Quaternion(rotation_helper.global_transform.basis)
+	var current_rotation = Quaternion(older_brother.global_transform.basis)
+	var next_rotation = current_rotation.slerp(target_rotation, delta * turn_speed)
+	
+	older_brother.global_transform.basis = Basis(next_rotation)
 
 func _process(delta):
 	super(delta)

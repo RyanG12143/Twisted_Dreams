@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://bd2sq84ss3jap"]
 
-[ext_resource type="PackedScene" uid="uid://deg7i3dtq3kts" path="res://3D/Scenes/Characters/Brother_Younger.tscn" id="1_b4hwr"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_3yh0r"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_p7r67"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="4_6t5lc"]
+[ext_resource type="PackedScene" uid="uid://bived31tg1brm" path="res://3D/Scenes/Characters/Brother_Older.tscn" id="5_ujikm"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_xxdra"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7wn02"]
@@ -65,6 +65,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87683, 0.50439, -6.60303)
 use_collision = true
 collision_mask = 0
 size = Vector3(1, 1.00342, 1)
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.48407, 0.395137, -4.04356)
+use_collision = true
+collision_mask = 0
+size = Vector3(2.39978, 0.784913, 0.240723)
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.93374, 0.472773, -4.04356)
+use_collision = true
+collision_mask = 0
+size = Vector3(2.39978, 0.940186, 0.240723)
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.219004, 0.564326, -4.04356)
+use_collision = true
+collision_mask = 0
+size = Vector3(2.39978, 1.12329, 0.240723)
+
+[node name="CSGBox3D29" type="CSGBox3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.08953, 0.321955, -4.04356)
+use_collision = true
+collision_mask = 0
+size = Vector3(2.39978, 0.63855, 0.240723)
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="Meshes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04177, 0.580439, -6.60303)
@@ -222,16 +246,13 @@ operation = 2
 height = 1.95351
 sides = 49
 
-[node name="YoungerBrother" parent="." instance=ExtResource("1_b4hwr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0899672, 0.973637, -0.0110625)
-
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
-transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 0.0899672, 2.1707, 3.27786)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 0, 2.22889, 3.28892)
 script = ExtResource("2_3yh0r")
 priority = 10
 follow_mode = 6
-follow_target = NodePath("../YoungerBrother")
+follow_target = NodePath("../OlderBrother")
 tween_resource = SubResource("Resource_fdnka")
 camera_3d_resource = SubResource("Resource_rorul")
 follow_damping = true
@@ -240,7 +261,9 @@ spring_length = 3.5
 
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0.0899672, 2.1707, 3.27786)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 0, 2.22889, 3.28892)
 
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 script = ExtResource("5_xxdra")
+
+[node name="OlderBrother" parent="." instance=ExtResource("5_ujikm")]

@@ -1,0 +1,385 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkf17x8h1lsyc"]
+
+[ext_resource type="Script" path="res://3D/Scripts/Objects/Train.gd" id="1_8oexj"]
+[ext_resource type="Material" uid="uid://dqh67xl8hqsyw" path="res://3D/Assets/Textures/Material_Textures/Dark_Grey.tres" id="2_t22ay"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v3j1r"]
+size = Vector3(2.9, 0.5, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4mtuo"]
+material = ExtResource("2_t22ay")
+size = Vector3(1.5, 3.2, 0.2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cdnh7"]
+points = PackedVector3Array(0.799206, 1.6254, 0.128522, -0.775397, -1.6254, -0.125347, -0.775397, -1.6254, 0.128522, -0.775397, 1.6254, -0.125347, 0.799206, -1.6254, -0.125347, 0.799206, -1.6254, 0.128522, -0.775397, 1.6254, 0.128522, 0.799206, 1.6254, -0.125347)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_q16fy"]
+points = PackedVector3Array(0.799206, 1.6254, 0.128522, -0.775397, -1.6254, -0.125347, -0.775397, -1.6254, 0.128522, -0.775397, 1.6254, -0.125347, 0.799206, -1.6254, -0.125347, 0.799206, -1.6254, 0.128522, -0.775397, 1.6254, 0.128522, 0.799206, 1.6254, -0.125347)
+
+[node name="Train" type="Node3D"]
+script = ExtResource("1_8oexj")
+
+[node name="Conductor_Cart" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.871, 1.9294, 2.00123e-05)
+use_collision = true
+size = Vector3(29.9, 4, 3.8)
+
+[node name="Security_Gate12" type="CSGBox3D" parent="Conductor_Cart"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20001, -0.25, 0)
+operation = 2
+use_collision = true
+size = Vector3(26, 3.4, 2.8)
+
+[node name="Security_Gate14" type="CSGBox3D" parent="Conductor_Cart"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.05, 0.0500011, 0.0500031)
+operation = 2
+use_collision = true
+size = Vector3(1.5, 3, 3.1)
+
+[node name="Security_Gate15" type="CSGBox3D" parent="Conductor_Cart"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2, 0.850002, 0.808685)
+operation = 2
+use_collision = true
+size = Vector3(1.8, 1.4, 1.5)
+
+[node name="Security_Gate18" type="CSGBox3D" parent="Conductor_Cart"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.95, 0.850002, -1.69131)
+operation = 2
+use_collision = true
+size = Vector3(1.3, 1.4, 1.5)
+
+[node name="Security_Gate17" type="CSGBox3D" parent="Conductor_Cart"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.95, 0.850002, 1.80869)
+operation = 2
+use_collision = true
+size = Vector3(1.3, 1.4, 1.5)
+
+[node name="Security_Gate16" type="CSGBox3D" parent="Conductor_Cart"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2, 0.850002, -0.791321)
+operation = 2
+use_collision = true
+size = Vector3(1.8, 1.4, 1.5)
+
+[node name="Security_Gate13" type="CSGBox3D" parent="Conductor_Cart"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150024, -0.350002, -0.449997)
+operation = 2
+use_collision = true
+size = Vector3(2.9, 3.2, 4.9)
+
+[node name="Nav_Helper" type="StaticBody3D" parent="Conductor_Cart"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150024, -2.20326, -2.07797)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Conductor_Cart/Nav_Helper"]
+shape = SubResource("BoxShape3D_v3j1r")
+
+[node name="Nav_Helper2" type="StaticBody3D" parent="Conductor_Cart"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150024, -2.20326, 2.05281)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Conductor_Cart/Nav_Helper2"]
+shape = SubResource("BoxShape3D_v3j1r")
+
+[node name="Train_Cart" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.8708, 1.9294, 2.00123e-05)
+use_collision = true
+size = Vector3(29.9, 4, 3.8)
+
+[node name="Security_Gate12" type="CSGBox3D" parent="Train_Cart"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.300018, -0.25, 0)
+operation = 2
+use_collision = true
+size = Vector3(29, 3.4, 2.8)
+
+[node name="Security_Gate13" type="CSGBox3D" parent="Train_Cart"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.149994, -0.350002, 0)
+operation = 2
+use_collision = true
+size = Vector3(2.9, 3.2, 4)
+
+[node name="Nav_Helper" type="StaticBody3D" parent="Train_Cart"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150024, -2.20326, -2.07797)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Train_Cart/Nav_Helper"]
+shape = SubResource("BoxShape3D_v3j1r")
+
+[node name="Nav_Helper2" type="StaticBody3D" parent="Train_Cart"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150024, -2.20326, 2.05281)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Train_Cart/Nav_Helper2"]
+shape = SubResource("BoxShape3D_v3j1r")
+
+[node name="Train_Cart2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.6708, 1.9294, 2.00123e-05)
+use_collision = true
+size = Vector3(29.9, 4, 3.8)
+
+[node name="Security_Gate12" type="CSGBox3D" parent="Train_Cart2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.300018, -0.25, 0)
+operation = 2
+use_collision = true
+size = Vector3(29, 3.4, 2.8)
+
+[node name="Security_Gate13" type="CSGBox3D" parent="Train_Cart2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.149994, -0.350002, 0)
+operation = 2
+use_collision = true
+size = Vector3(2.9, 3.2, 4)
+
+[node name="Nav_Helper" type="StaticBody3D" parent="Train_Cart2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150024, -2.20326, -2.07797)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Train_Cart2/Nav_Helper"]
+shape = SubResource("BoxShape3D_v3j1r")
+
+[node name="Nav_Helper2" type="StaticBody3D" parent="Train_Cart2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150024, -2.20326, 2.05281)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Train_Cart2/Nav_Helper2"]
+shape = SubResource("BoxShape3D_v3j1r")
+
+[node name="Train_Cart3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.671, 1.9294, 2.00123e-05)
+use_collision = true
+size = Vector3(29.9, 4, 3.8)
+
+[node name="Security_Gate12" type="CSGBox3D" parent="Train_Cart3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.300018, -0.25, 0)
+operation = 2
+use_collision = true
+size = Vector3(29, 3.4, 2.8)
+
+[node name="Security_Gate13" type="CSGBox3D" parent="Train_Cart3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.149994, -0.350002, 0)
+operation = 2
+use_collision = true
+size = Vector3(2.9, 3.2, 4)
+
+[node name="Nav_Helper" type="StaticBody3D" parent="Train_Cart3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150024, -2.20326, -2.07797)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Train_Cart3/Nav_Helper"]
+shape = SubResource("BoxShape3D_v3j1r")
+
+[node name="Nav_Helper2" type="StaticBody3D" parent="Train_Cart3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150024, -2.20326, 2.05281)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Train_Cart3/Nav_Helper2"]
+shape = SubResource("BoxShape3D_v3j1r")
+
+[node name="Links" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -130.6, -14, -1.1)
+
+[node name="Link" type="CSGBox3D" parent="Links"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.9475, 14.1177, 1.06473)
+use_collision = true
+size = Vector3(2.2, 0.4, 1)
+material = ExtResource("2_t22ay")
+
+[node name="Link2" type="CSGBox3D" parent="Links"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.8475, 14.1177, 1.06473)
+use_collision = true
+size = Vector3(2.2, 0.4, 1)
+material = ExtResource("2_t22ay")
+
+[node name="Link3" type="CSGBox3D" parent="Links"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.7476, 14.1177, 1.06473)
+use_collision = true
+size = Vector3(2.2, 0.4, 1)
+material = ExtResource("2_t22ay")
+
+[node name="Right_Doors" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -130.6, -14, -1.1)
+
+[node name="Door_Right" type="StaticBody3D" parent="Right_Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3309, 15.5794, -0.599976)
+collision_layer = 16
+collision_mask = 14
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right_Doors/Door_Right"]
+mesh = SubResource("BoxMesh_4mtuo")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Right_Doors/Door_Right"]
+shape = SubResource("ConvexPolygonShape3D_cdnh7")
+
+[node name="Door_Right2" type="StaticBody3D" parent="Right_Doors"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 20.8309, 15.5794, 2.80002)
+collision_layer = 16
+collision_mask = 14
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right_Doors/Door_Right2"]
+mesh = SubResource("BoxMesh_4mtuo")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Right_Doors/Door_Right2"]
+shape = SubResource("ConvexPolygonShape3D_cdnh7")
+
+[node name="Door_Right3" type="StaticBody3D" parent="Right_Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.3309, 15.5794, -0.599976)
+collision_layer = 16
+collision_mask = 14
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right_Doors/Door_Right3"]
+mesh = SubResource("BoxMesh_4mtuo")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Right_Doors/Door_Right3"]
+shape = SubResource("ConvexPolygonShape3D_cdnh7")
+
+[node name="Door_Right4" type="StaticBody3D" parent="Right_Doors"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 52.8309, 15.5794, 2.80002)
+collision_layer = 16
+collision_mask = 14
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right_Doors/Door_Right4"]
+mesh = SubResource("BoxMesh_4mtuo")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Right_Doors/Door_Right4"]
+shape = SubResource("ConvexPolygonShape3D_cdnh7")
+
+[node name="Door_Right5" type="StaticBody3D" parent="Right_Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.1309, 15.5794, -0.599976)
+collision_layer = 16
+collision_mask = 14
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right_Doors/Door_Right5"]
+mesh = SubResource("BoxMesh_4mtuo")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Right_Doors/Door_Right5"]
+shape = SubResource("ConvexPolygonShape3D_cdnh7")
+
+[node name="Door_Right6" type="StaticBody3D" parent="Right_Doors"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 84.6309, 15.5794, 2.80002)
+collision_layer = 16
+collision_mask = 14
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right_Doors/Door_Right6"]
+mesh = SubResource("BoxMesh_4mtuo")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Right_Doors/Door_Right6"]
+shape = SubResource("ConvexPolygonShape3D_cdnh7")
+
+[node name="Door_Right7" type="StaticBody3D" parent="Right_Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.131, 15.5794, -0.599976)
+collision_layer = 16
+collision_mask = 14
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right_Doors/Door_Right7"]
+mesh = SubResource("BoxMesh_4mtuo")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Right_Doors/Door_Right7"]
+shape = SubResource("ConvexPolygonShape3D_cdnh7")
+
+[node name="Door_Right8" type="StaticBody3D" parent="Right_Doors"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 116.631, 15.5794, 2.80002)
+collision_layer = 16
+collision_mask = 14
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right_Doors/Door_Right8"]
+mesh = SubResource("BoxMesh_4mtuo")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Right_Doors/Door_Right8"]
+shape = SubResource("ConvexPolygonShape3D_cdnh7")
+
+[node name="Left_Doors" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -130.6, -14, -1.1)
+
+[node name="Door_Left" type="StaticBody3D" parent="Left_Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8309, 15.5794, -0.599976)
+collision_layer = 16
+collision_mask = 14
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Left_Doors/Door_Left"]
+mesh = SubResource("BoxMesh_4mtuo")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Left_Doors/Door_Left"]
+shape = SubResource("ConvexPolygonShape3D_q16fy")
+
+[node name="Door_Left2" type="StaticBody3D" parent="Left_Doors"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 19.3309, 15.5794, 2.80002)
+collision_layer = 16
+collision_mask = 14
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Left_Doors/Door_Left2"]
+mesh = SubResource("BoxMesh_4mtuo")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Left_Doors/Door_Left2"]
+shape = SubResource("ConvexPolygonShape3D_q16fy")
+
+[node name="Door_Left3" type="StaticBody3D" parent="Left_Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.8309, 15.5794, -0.599976)
+collision_layer = 16
+collision_mask = 14
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Left_Doors/Door_Left3"]
+mesh = SubResource("BoxMesh_4mtuo")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Left_Doors/Door_Left3"]
+shape = SubResource("ConvexPolygonShape3D_q16fy")
+
+[node name="Door_Left4" type="StaticBody3D" parent="Left_Doors"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 51.3309, 15.5794, 2.80002)
+collision_layer = 16
+collision_mask = 14
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Left_Doors/Door_Left4"]
+mesh = SubResource("BoxMesh_4mtuo")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Left_Doors/Door_Left4"]
+shape = SubResource("ConvexPolygonShape3D_q16fy")
+
+[node name="Door_Left5" type="StaticBody3D" parent="Left_Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.6309, 15.5794, -0.599976)
+collision_layer = 16
+collision_mask = 14
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Left_Doors/Door_Left5"]
+mesh = SubResource("BoxMesh_4mtuo")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Left_Doors/Door_Left5"]
+shape = SubResource("ConvexPolygonShape3D_q16fy")
+
+[node name="Door_Left6" type="StaticBody3D" parent="Left_Doors"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 83.1309, 15.5794, 2.80002)
+collision_layer = 16
+collision_mask = 14
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Left_Doors/Door_Left6"]
+mesh = SubResource("BoxMesh_4mtuo")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Left_Doors/Door_Left6"]
+shape = SubResource("ConvexPolygonShape3D_q16fy")
+
+[node name="Door_Left7" type="StaticBody3D" parent="Left_Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.631, 15.5794, -0.599976)
+collision_layer = 16
+collision_mask = 14
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Left_Doors/Door_Left7"]
+mesh = SubResource("BoxMesh_4mtuo")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Left_Doors/Door_Left7"]
+shape = SubResource("ConvexPolygonShape3D_q16fy")
+
+[node name="Door_Left8" type="StaticBody3D" parent="Left_Doors"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 115.131, 15.5794, 2.80002)
+collision_layer = 16
+collision_mask = 14
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Left_Doors/Door_Left8"]
+mesh = SubResource("BoxMesh_4mtuo")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Left_Doors/Door_Left8"]
+shape = SubResource("ConvexPolygonShape3D_q16fy")

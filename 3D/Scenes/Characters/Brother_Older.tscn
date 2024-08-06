@@ -121,7 +121,7 @@ hit_from_inside = true
 
 [node name="LedgeHeight" type="RayCast3D" parent="PlayerVisual/Rays"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00109506, 0.934371, -0.685304)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00109506, 0.934371, -0.385304)
 hit_from_inside = true
 
 [node name="LedgeRays" type="Node3D" parent="PlayerVisual/Rays"]

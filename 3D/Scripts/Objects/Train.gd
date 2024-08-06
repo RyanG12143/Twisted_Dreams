@@ -17,7 +17,7 @@ func _process(delta):
 
 # Open train doors
 func open():
-	if is_open:
+	if !is_open:
 		for right_door in right_doors.get_children():
 			var door_movement = right_door.global_transform.origin + (-right_door.global_transform.basis.x * 1.4)
 			var tween = create_tween()
@@ -31,7 +31,7 @@ func open():
 
 # Close train doors
 func close():
-	if !is_open:
+	if is_open:
 		for right_door in right_doors.get_children():
 			var door_movement = right_door.global_transform.origin + (right_door.global_transform.basis.x * 1.4)
 			var tween = create_tween()
