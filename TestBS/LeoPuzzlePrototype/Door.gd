@@ -1,5 +1,7 @@
-extends AnimatedSprite2D
+extends ColorCodedMechanic
 ## Doors, can be open or closed.
+
+@onready var anim:AnimationPlayer = $AnimationPlayer
 
 ## Collider of the door.
 @onready var collider:CollisionShape2D = $StaticBody2D/CollisionShape2D
@@ -12,7 +14,13 @@ var inputs:int = 0
 
 ## Sets door to visually closed.
 func _ready():
-	frame = 0
+	if(color == "blue"):
+		animation = "Blue"
+	elif(color == "pink"):
+		animation = "Pink"
+	elif(color == "orange"):
+		animation = "Orange"
+	set_frame(0)
 
 ## Handles additions of inputs.
 func add_input():
@@ -22,10 +30,18 @@ func add_input():
 	else:
 		open = false
 	if(open):
-		frame = 1
+		if(anim.current_animation == ""):
+			anim.play("Open")
+			anim.speed_scale = 1
+		else:
+			anim.speed_scale *= -1
 		collider.set_deferred("disabled", true)
 	else:
-		frame = 0
+		if(anim.current_animation == ""):
+			anim.play("Close")
+			anim.speed_scale = 1
+		else:
+			anim.speed_scale *= -1
 		collider.set_deferred("disabled", false)
 
 ## Handles removals of inputs.
@@ -36,8 +52,16 @@ func remove_input():
 	else:
 		open = true
 	if(open):
-		frame = 1
+		if(anim.current_animation == ""):
+			anim.play("Open")
+			anim.speed_scale = 1
+		else:
+			anim.speed_scale *= -1
 		collider.set_deferred("disabled", true)
 	else:
-		frame = 0
+		if(anim.current_animation == ""):
+			anim.play("Close")
+			anim.speed_scale = 1
+		else:
+			anim.speed_scale *= -1
 		collider.set_deferred("disabled", false)

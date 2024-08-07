@@ -32,11 +32,11 @@ func _ready():
 func _on_area_2d_body_entered(body):
 	if(body.is_in_group("Can_Press_Buttons")):
 		if(!overlapping_bodies):
-			emit_signal("Button_Pressed")
-			var temp = get_frame()
-			anim.stop()
-			anim.play("Press")
-			set_frame(temp)
+			if(anim.current_animation == ""):
+				anim.play("Press")
+				anim.speed_scale = 1
+			else:
+				anim.speed_scale *= -1
 		overlapping_bodies.append(body)
 
 ## Handles bodies being removed from the button.
@@ -45,10 +45,11 @@ func _on_area_2d_body_exited(body):
 		overlapping_bodies.erase(body)
 		if(!overlapping_bodies):
 			emit_signal("Button_Released")
-			var temp = get_frame()
-			anim.stop()
-			anim.play("Release")
-			set_frame(temp)
+			if(anim.current_animation == ""):
+				anim.play("Release")
+				anim.speed_scale = 1
+			else:
+				anim.speed_scale *= -1
 
 func play_sound():
 	if (!overlapping_bodies):
