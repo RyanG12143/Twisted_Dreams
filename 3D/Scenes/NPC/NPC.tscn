@@ -30,7 +30,6 @@ shape = SubResource("SeparationRayShape3D_yo15t")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 target_desired_distance = 0.2
-debug_enabled = true
 
 [node name="Front" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00346, 0.887075)
@@ -40,7 +39,6 @@ one_shot = true
 
 [node name="Update_Timer" type="Timer" parent="."]
 wait_time = 0.1
-autostart = true
 
 [node name="Observe_Area" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.603017, 0.524247)

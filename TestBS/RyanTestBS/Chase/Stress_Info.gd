@@ -14,3 +14,7 @@ func _process(delta):
 		
 		avg -= thing.pop_front()/60
 	print(avg)
+	print(1/delta)
+
+func _physics_process(delta):
+	pass

@@ -21,12 +21,6 @@ signal finished_path
 ## Node3D containing all waypoints for npc travel to
 @export var positions_container:Node3D
 
-@export var chasing:bool = false
-
-@export var max_chase_dist:float = 0.0
-
-@export var chase_target:Node3D
-
 
 ## Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity:float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -46,8 +40,11 @@ var wait_turn_target:Vector3 = Vector3.ZERO
 var observe_targets:Array[Node3D] = []
 ## Current target to turn head towards
 var observe_target:Node3D
+## 
+var occupied_waypoint:Node3D
 
-var speed_mult_chase:float = 1
+var queued:bool
+
 
 ## Navigation agent to provide pathfinding for npc
 @onready var nav_agent:NavigationAgent3D = $NavigationAgent3D
@@ -59,6 +56,8 @@ var speed_mult_chase:float = 1
 
 
 func _ready():
+	if observe:
+		$Update_Timer.start(.1)
 	add_child(rotation_helper)
 	# Disable processing if not given path to follow (Easier to debug)
 	if not positions_container:
@@ -73,6 +72,44 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	
+	_head_logic(delta)
+	
+	# Catch no position_container
+	if not positions_container:
+		move_and_slide()
+		return
+	
+	# Waiting at waypoint
+	if waiting:
+		_turn(delta, wait_turn_target)
+		return
+	
+	nav_agent.target_position = markers[current_marker].global_position
+	
+	_turn(delta, nav_agent.get_next_path_position())
+	
+	
+	# Character movement
+	var direction = ($Front.global_position - global_position).normalized()
+	if direction:
+		velocity.x = direction.x * speed * speed_multiplyer
+		velocity.z = direction.z * speed * speed_multiplyer
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed * speed_multiplyer)
+		velocity.z = move_toward(velocity.z, 0, speed * speed_multiplyer)
+	
+	move_and_slide()
+	
+	var targ_pos = nav_agent.target_position
+	targ_pos.y = global_position.y
+	var dist_targ = global_position.distance_to(targ_pos)
+	
+	# Checking if reached target without height
+	if dist_targ < nav_agent.target_desired_distance:
+		nav_agent.emit_signal("target_reached")
+
+
+func _head_logic(delta):
 	if head:
 		if observe_target and observe:
 			_head_turn_clamp(delta, observe_target.global_position, 90)
@@ -93,46 +130,9 @@ func _physics_process(delta):
 				_head_turn_clamp(delta, point, 90)
 			else:
 				_head_turn_clamp(delta, nav_agent.get_next_path_position(), 90)
-	
-	# Catch no position_container
-	if not positions_container and not (chase_target and chasing):
-		move_and_slide()
-		return
-	
-	# Waiting at waypoint
-	if waiting:
-		_turn(delta, wait_turn_target)
-		return
-	
-	if not chasing:
-		nav_agent.target_position = markers[current_marker].global_position
-	else:
-		nav_agent.target_position = chase_target.global_position
-		speed_mult_chase = clampf(global_position.distance_to(nav_agent.target_position) - max_chase_dist, 1, 10)
-	
-	_turn(delta, nav_agent.get_next_path_position())
-	
-	
-	# Character movement
-	var direction = ($Front.global_position - global_position).normalized()
-	if direction:
-		velocity.x = direction.x * speed * speed_multiplyer * speed_mult_chase
-		velocity.z = direction.z * speed * speed_multiplyer * speed_mult_chase
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed * speed_multiplyer * speed_mult_chase)
-		velocity.z = move_toward(velocity.z, 0, speed * speed_multiplyer * speed_mult_chase)
-
-	move_and_slide()
-
 
 func _process(delta):
-	var targ_pos = nav_agent.target_position
-	targ_pos.y = global_position.y
-	var dist_targ = global_position.distance_to(targ_pos)
-	
-	# Checking if reached target without height
-	if dist_targ < nav_agent.target_desired_distance:
-		nav_agent.emit_signal("target_reached")
+	pass
 
 
 func _on_target_reached():
@@ -142,20 +142,32 @@ func _on_target_reached():
 	
 	# Chekcing and assigning waypoint values
 	if marker.get_script() != null:
-		if marker.wait:
+		
+		if marker.turn_towards:
+			wait_turn_target = marker.turn_target.global_position
+		else:
+			wait_turn_target = global_position
+		
+		if marker.wait and not waiting:
+			marker.empty = false
 			waiting = true
 			wait_timer.start(marker.wait_time)
+			return
+		
+		if marker.queue:
+			if not markers[current_marker + 1].empty:
+				markers[current_marker + 1].waypoint_freed.connect(_next_queue_empty)
+				waiting = true
+				marker.empty = false
+				return
+		
+		marker.emptied()
 		
 		if marker.change_speed:
 			if marker.speed_value > 0:
 				speed = marker.speed_value
 			if marker.speed_multiplyer > 0:
 				speed_multiplyer = marker.speed_multiplyer
-		
-		if marker.turn_towards:
-			wait_turn_target = marker.turn_target.global_position
-		else:
-			wait_turn_target = global_position
 		
 		if marker.give_new_path:
 			if not marker.random_new_path:
@@ -167,31 +179,28 @@ func _on_target_reached():
 			_fill_waypoints()
 			return
 	
+	
 	# Deciding to loop a
 	if markers.size() > current_marker + 1 and not (current_marker + (1 * traverse_direction)) < 0:
 		current_marker += 1 * traverse_direction
 		nav_agent.target_position = markers[current_marker].global_position
-		return
 	
-	if loop and inverse_loop:
+	elif loop and inverse_loop:
 		traverse_direction *= -1
 		current_marker += 1 * traverse_direction
 		nav_agent.target_position = markers[current_marker].global_position
-		return
 	
-	if loop:
+	elif loop:
 		current_marker = 0
 		nav_agent.target_position = markers[current_marker].global_position
-		return
 	
+	else:
+		emit_signal("finished_path")
+		if free_on_end:
+			queue_free()
 	
-	emit_signal("finished_path")
-	if free_on_end:
-		queue_free()
-
-
-func _on_wait_timeout():
-	waiting = false
+	if markers[current_marker].get_script() != null:
+		markers[current_marker].empty = false
 
 
 ## Turns the chracter towards target
@@ -251,3 +260,12 @@ func _on_observe_area_entered(body):
 func _on_observe_area_body_exited(body):
 	if body.is_in_group("Observable"):
 		observe_targets.erase(body)
+
+func _on_wait_timeout():
+	_on_target_reached()
+	waiting = false
+
+func _next_queue_empty():
+	markers[current_marker + 1].waypoint_freed.disconnect(_next_queue_empty)
+	_on_target_reached()
+	waiting = false

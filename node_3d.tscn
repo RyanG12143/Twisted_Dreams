@@ -13,6 +13,7 @@ height = 1.66113
 depth = 2.82165
 anchor = 0
 anchor_fixed = true
+material = null
 calculation = 0
 steps = 9
 fill = true
@@ -26,6 +27,7 @@ height = 0.242583
 depth = 0.381758
 anchor = 1
 anchor_fixed = true
+material = null
 calculation = 1
 steps = 10
 fill = true
@@ -39,6 +41,7 @@ height = 1.13634
 depth = 1.23999
 anchor = 1
 anchor_fixed = true
+material = null
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(0.983185, 0.0259166, -0.180765, 1.86265e-09, 0.989878, 0.141921, 0.182613, -0.139534, 0.973233, 0, 0, 0)
@@ -52,6 +55,7 @@ height = 0.125125
 depth = 0.252809
 anchor = 0
 anchor_fixed = true
+material = null
 calculation = 1
 steps = 9
 fill = true
@@ -72,6 +76,7 @@ height = 1.0
 depth = 1.0
 anchor = 0
 anchor_fixed = true
+material = null
 
 [node name="CSGTorus3D" type="CSGTorus3D" parent="."]
 transform = Transform3D(0.942641, -0.0328174, 0.33219, 0, 0.995156, 0.0983124, -0.333807, -0.0926734, 0.938075, 0.0348182, 0.776238, 0.870972)

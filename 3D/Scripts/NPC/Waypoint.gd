@@ -1,5 +1,7 @@
 extends Marker3D
 
+signal waypoint_freed
+
 ## NPC will wait at waypoint when enabled
 @export var wait:bool = false
 ## Time that npc will wait at waypoint
@@ -19,6 +21,15 @@ extends Marker3D
 @export var random_new_path:bool = false
 ## Paths npc will choose from when being given new path
 @export var new_paths:Array[Node3D]
+## When true NPC will check if next node is empty
+@export var queue:bool = false
+
+## Variable to check if waypoint is occupied, used when prior node is a queue node
+@export var empty:bool = true
 
 ## Target to turn towards when turn_towards is enabled
-@onready var turn_target:Marker3D = $Marker3D
+@onready var turn_target:Marker3D = $Turn_Target
+
+func emptied():
+	empty = true
+	emit_signal("waypoint_freed")

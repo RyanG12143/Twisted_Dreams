@@ -5,4 +5,4 @@
 [node name="Waypoint" type="Marker3D"]
 script = ExtResource("1_bo0e7")
 
-[node name="Marker3D" type="Marker3D" parent="."]
+[node name="Turn_Target" type="Marker3D" parent="."]
