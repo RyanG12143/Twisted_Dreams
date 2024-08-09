@@ -216,6 +216,7 @@ Dev_Cam_Toggle={
 2d_physics/layer_4="enemies"
 3d_physics/layer_4="Trigger Volume"
 3d_physics/layer_5="Doors"
+3d_physics/layer_6="Sliding Doors"
 
 [physics]
 

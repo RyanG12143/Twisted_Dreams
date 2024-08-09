@@ -23,7 +23,7 @@ length = 0.3
 [node name="OlderBrother" type="CharacterBody3D" groups=["Observable", "Player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03182, 0)
 collision_layer = 2
-collision_mask = 15
+collision_mask = 47
 script = ExtResource("1_xen6v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["Player"]]

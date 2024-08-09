@@ -191,7 +191,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -130.6, -14, -1.1)
 
 [node name="Door_Right" type="StaticBody3D" parent="Right_Doors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3309, 15.5794, -0.599976)
-collision_layer = 16
+collision_layer = 32
 collision_mask = 14
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Right_Doors/Door_Right"]
@@ -203,7 +203,7 @@ shape = SubResource("ConvexPolygonShape3D_cdnh7")
 
 [node name="Door_Right2" type="StaticBody3D" parent="Right_Doors"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 20.8309, 15.5794, 2.80002)
-collision_layer = 16
+collision_layer = 32
 collision_mask = 14
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Right_Doors/Door_Right2"]
@@ -215,7 +215,7 @@ shape = SubResource("ConvexPolygonShape3D_cdnh7")
 
 [node name="Door_Right3" type="StaticBody3D" parent="Right_Doors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.3309, 15.5794, -0.599976)
-collision_layer = 16
+collision_layer = 32
 collision_mask = 14
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Right_Doors/Door_Right3"]
@@ -227,7 +227,7 @@ shape = SubResource("ConvexPolygonShape3D_cdnh7")
 
 [node name="Door_Right4" type="StaticBody3D" parent="Right_Doors"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 52.8309, 15.5794, 2.80002)
-collision_layer = 16
+collision_layer = 32
 collision_mask = 14
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Right_Doors/Door_Right4"]
@@ -239,7 +239,7 @@ shape = SubResource("ConvexPolygonShape3D_cdnh7")
 
 [node name="Door_Right5" type="StaticBody3D" parent="Right_Doors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.1309, 15.5794, -0.599976)
-collision_layer = 16
+collision_layer = 32
 collision_mask = 14
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Right_Doors/Door_Right5"]
@@ -251,7 +251,7 @@ shape = SubResource("ConvexPolygonShape3D_cdnh7")
 
 [node name="Door_Right6" type="StaticBody3D" parent="Right_Doors"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 84.6309, 15.5794, 2.80002)
-collision_layer = 16
+collision_layer = 32
 collision_mask = 14
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Right_Doors/Door_Right6"]
@@ -263,7 +263,7 @@ shape = SubResource("ConvexPolygonShape3D_cdnh7")
 
 [node name="Door_Right7" type="StaticBody3D" parent="Right_Doors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.131, 15.5794, -0.599976)
-collision_layer = 16
+collision_layer = 32
 collision_mask = 14
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Right_Doors/Door_Right7"]
@@ -275,7 +275,7 @@ shape = SubResource("ConvexPolygonShape3D_cdnh7")
 
 [node name="Door_Right8" type="StaticBody3D" parent="Right_Doors"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 116.631, 15.5794, 2.80002)
-collision_layer = 16
+collision_layer = 32
 collision_mask = 14
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Right_Doors/Door_Right8"]
@@ -290,7 +290,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -130.6, -14, -1.1)
 
 [node name="Door_Left" type="StaticBody3D" parent="Left_Doors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8309, 15.5794, -0.599976)
-collision_layer = 16
+collision_layer = 32
 collision_mask = 14
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Left_Doors/Door_Left"]
@@ -302,7 +302,7 @@ shape = SubResource("ConvexPolygonShape3D_q16fy")
 
 [node name="Door_Left2" type="StaticBody3D" parent="Left_Doors"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 19.3309, 15.5794, 2.80002)
-collision_layer = 16
+collision_layer = 32
 collision_mask = 14
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Left_Doors/Door_Left2"]
@@ -314,7 +314,7 @@ shape = SubResource("ConvexPolygonShape3D_q16fy")
 
 [node name="Door_Left3" type="StaticBody3D" parent="Left_Doors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.8309, 15.5794, -0.599976)
-collision_layer = 16
+collision_layer = 32
 collision_mask = 14
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Left_Doors/Door_Left3"]
@@ -326,7 +326,7 @@ shape = SubResource("ConvexPolygonShape3D_q16fy")
 
 [node name="Door_Left4" type="StaticBody3D" parent="Left_Doors"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 51.3309, 15.5794, 2.80002)
-collision_layer = 16
+collision_layer = 32
 collision_mask = 14
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Left_Doors/Door_Left4"]
@@ -338,7 +338,7 @@ shape = SubResource("ConvexPolygonShape3D_q16fy")
 
 [node name="Door_Left5" type="StaticBody3D" parent="Left_Doors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.6309, 15.5794, -0.599976)
-collision_layer = 16
+collision_layer = 32
 collision_mask = 14
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Left_Doors/Door_Left5"]
@@ -350,7 +350,7 @@ shape = SubResource("ConvexPolygonShape3D_q16fy")
 
 [node name="Door_Left6" type="StaticBody3D" parent="Left_Doors"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 83.1309, 15.5794, 2.80002)
-collision_layer = 16
+collision_layer = 32
 collision_mask = 14
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Left_Doors/Door_Left6"]
@@ -362,7 +362,7 @@ shape = SubResource("ConvexPolygonShape3D_q16fy")
 
 [node name="Door_Left7" type="StaticBody3D" parent="Left_Doors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.631, 15.5794, -0.599976)
-collision_layer = 16
+collision_layer = 32
 collision_mask = 14
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Left_Doors/Door_Left7"]
@@ -374,7 +374,7 @@ shape = SubResource("ConvexPolygonShape3D_q16fy")
 
 [node name="Door_Left8" type="StaticBody3D" parent="Left_Doors"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 115.131, 15.5794, 2.80002)
-collision_layer = 16
+collision_layer = 32
 collision_mask = 14
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Left_Doors/Door_Left8"]

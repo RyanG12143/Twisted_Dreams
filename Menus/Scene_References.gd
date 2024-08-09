@@ -10,3 +10,9 @@ var level_dict:Dictionary = {
 	"Dream Level 1": ("uid://cyn2r4owpmtan"),
 	"Real Level 1": ("uid://cq62xwmqwdoot"),
  }
+
+## Stores the 3D levels
+var level_dict_3D:Dictionary = {
+	"Home District": ("uid://cq62xwmqwdoot"),
+	"Market District": ("uid://dre0o1tw818oq"),
+}
