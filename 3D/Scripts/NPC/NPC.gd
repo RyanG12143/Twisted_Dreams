@@ -63,8 +63,6 @@ func _ready():
 	if not positions_container:
 		return
 	_fill_waypoints()
-	
-
 
 
 func _physics_process(delta):
@@ -130,6 +128,7 @@ func _head_logic(delta):
 				_head_turn_clamp(delta, point, 90)
 			else:
 				_head_turn_clamp(delta, nav_agent.get_next_path_position(), 90)
+
 
 func _process(delta):
 	pass

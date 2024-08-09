@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cu7wqioxho4ft"]
+[gd_scene load_steps=6 format=3 uid="uid://bnudyh5gbuh1p"]
 
-[ext_resource type="Script" path="res://3D/Scripts/NPC/NPC.gd" id="1_aymty"]
-[ext_resource type="PackedScene" uid="uid://bhjch3woimdoe" path="res://3D/Scenes/Characters/Police_Officer.tscn" id="2_pyh7e"]
+[ext_resource type="Script" path="res://3D/Scripts/NPC/Chase_NPC.gd" id="1_tacf6"]
+[ext_resource type="PackedScene" uid="uid://bhjch3woimdoe" path="res://3D/Scenes/Characters/Police_Officer.tscn" id="2_e8fjp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rsqqe"]
 radius = 0.313997
@@ -13,13 +13,13 @@ length = 0.5
 [sub_resource type="BoxShape3D" id="BoxShape3D_2vtsd"]
 size = Vector3(8.34918, 2.9082, 7.56543)
 
-[node name="NPC" type="CharacterBody3D" node_paths=PackedStringArray("head")]
+[node name="Chase_NPC" type="CharacterBody3D" node_paths=PackedStringArray("head")]
 collision_layer = 4
 collision_mask = 17
-script = ExtResource("1_aymty")
+script = ExtResource("1_tacf6")
 head = NodePath("PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 
-[node name="PoliceOfficer_Placeholder04" parent="." instance=ExtResource("2_pyh7e")]
+[node name="PoliceOfficer_Placeholder04" parent="." instance=ExtResource("2_e8fjp")]
 
 [node name="Character_Collision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.790831, 0)
@@ -31,6 +31,7 @@ shape = SubResource("SeparationRayShape3D_yo15t")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 target_desired_distance = 0.2
+debug_enabled = true
 
 [node name="Front" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00346, 0.887075)
@@ -53,6 +54,11 @@ shape = SubResource("BoxShape3D_2vtsd")
 [node name="Observe_Ray" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35133, 0)
 target_position = Vector3(0, 0, 1)
+
+[node name="Vault_Check" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.527374, 0)
+target_position = Vector3(0, 0, 0.5)
+collision_mask = 16
 
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_target_reached"]
 [connection signal="timeout" from="Wait_Timer" to="." method="_on_wait_timeout"]
