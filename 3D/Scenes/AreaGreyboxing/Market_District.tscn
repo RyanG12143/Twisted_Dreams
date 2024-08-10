@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dre0o1tw818oq"]
+[gd_scene load_steps=43 format=3 uid="uid://dre0o1tw818oq"]
 
 [ext_resource type="Material" uid="uid://dqh67xl8hqsyw" path="res://3D/Assets/Textures/Material_Textures/Dark_Grey.tres" id="1_5cd8q"]
 [ext_resource type="Script" path="res://3D/Scripts/Level_Design/train_manager.gd" id="1_8icnd"]
@@ -123,9 +123,6 @@ size = 1.0
 frustum_offset = Vector2(0, 0)
 near = 0.05
 far = 4000.0
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_1rj5c"]
-size = Vector3(3.2, 2.7, 2.3)
 
 [node name="Market_District" type="Node3D"]
 
@@ -372,6 +369,7 @@ text = "Distribution
 font_size = 145
 
 [node name="Line" type="Node3D" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor"]
+process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, -12.9)
 
 [node name="Queue_Waypoints" type="Node3D" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Line"]
@@ -7274,22 +7272,121 @@ positions_container = NodePath("../To_Entry_Checkpoint_Right")
 
 [node name="Wanderer4" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.528, 15.7, 67.455)
-positions_container = NodePath("../To_Entry_Checkpoint_Left")
+positions_container = NodePath("../To_Entry_Checkpoint_Right")
 
 [node name="Wanderer3" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.47198, 15.7, 67.455)
-positions_container = NodePath("../To_Entry_Checkpoint_Left")
+positions_container = NodePath("../To_Entry_Checkpoint_Right")
+
+[node name="NPC" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 14.7, 67)
+positions_container = NodePath("../To_Entry_Checkpoint_Right")
+
+[node name="NPC2" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 15, 68)
+positions_container = NodePath("../To_Entry_Checkpoint_Right")
+
+[node name="NPC3" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 15, 68)
+positions_container = NodePath("../To_Entry_Checkpoint_Right")
+
+[node name="NPC4" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 15, 68)
+positions_container = NodePath("../To_Entry_Checkpoint_Right")
+
+[node name="NPC5" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 15, 68)
+positions_container = NodePath("../To_Entry_Checkpoint_Right")
+
+[node name="NPC6" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 15, 68)
+positions_container = NodePath("../To_Entry_Checkpoint_Right")
 
 [node name="To_Entry_Checkpoint_Right" type="Node3D" parent="Wander NPCS"]
 
-[node name="Marker3D" type="Marker3D" parent="Wander NPCS/To_Entry_Checkpoint_Right"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.2, -10.2, -5.4)
+[node name="Waypoint" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 15, 63.1)
 
-[node name="Marker3D2" type="Marker3D" parent="Wander NPCS/To_Entry_Checkpoint_Right"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7, -10.9, -21)
+[node name="Waypoint2" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.4, -7.5, 61.7)
 
-[node name="Marker3D3" type="Marker3D" parent="Wander NPCS/To_Entry_Checkpoint_Right"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.7, -10.9, -99)
+[node name="Waypoint3" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.8, -10.4, 26.7)
+
+[node name="Waypoint4" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.5, -10.6, 10)
+queue = true
+
+[node name="Waypoint5" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.8, -10.6, 10)
+queue = true
+
+[node name="Waypoint6" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.8, -10.6, 9.00002)
+queue = true
+
+[node name="Waypoint7" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.1, -10.6, 8.00002)
+queue = true
+
+[node name="Waypoint8" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.1, -10.6, 8.00002)
+queue = true
+
+[node name="Waypoint9" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.7, -10.6, 8.00002)
+queue = true
+
+[node name="Waypoint11" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.7, -10.6, 6.00002)
+queue = true
+
+[node name="Waypoint10" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.7, -10.6, 6.00002)
+queue = true
+
+[node name="Waypoint12" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.7, -10.6, 6.00002)
+queue = true
+
+[node name="Waypoint13" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.7, -10.6, 5.00002)
+queue = true
+
+[node name="Waypoint14" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.7, -10.6, 4.00002)
+queue = true
+
+[node name="Waypoint15" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7, -10.6, 4.00002)
+queue = true
+
+[node name="Waypoint16" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, -10.6, 3.00002)
+queue = true
+
+[node name="Waypoint17" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.3, -10.6, 1.60001)
+queue = true
+
+[node name="Waypoint18" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.4, -10.6, -0.599983)
+queue = true
+
+[node name="Waypoint19" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.6, -10.6, -3.89999)
+queue = true
+
+[node name="Waypoint20" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.6, -10.6, -6.89999)
+wait = true
+wait_time = 5.0
+
+[node name="Waypoint21" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.6, -10.6, -28.9)
+
+[node name="Waypoint22" parent="Wander NPCS/To_Entry_Checkpoint_Right" instance=ExtResource("8_iy8lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.6, -10.6, -70.9)
 
 [node name="To_Entry_Checkpoint_Left" type="Node3D" parent="Wander NPCS"]
 
@@ -7329,20 +7426,11 @@ current = true
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 script = ExtResource("6_84xg3")
 
-[node name="NextLevelVolume" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 434.4, 31.2, 163.3)
-collision_layer = 8
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NextLevelVolume"]
-shape = SubResource("BoxShape3D_1rj5c")
-
-[node name="3D_Transition_Manager" parent="." node_paths=PackedStringArray("transition_collider", "player") instance=ExtResource("7_ys8uk")]
+[node name="3D_Transition_Manager" parent="." node_paths=PackedStringArray("train", "player") instance=ExtResource("7_ys8uk")]
 scene_to_load = "Home District"
-transition_collider = NodePath("../NextLevelVolume")
+train = NodePath("../NavigationRegion3D/Meshes/Walls/Security_Wall/Train")
 player = NodePath("../OlderBrother")
 
 [node name="Freecam3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 426, 2, -9)
-current = true
 script = ExtResource("23_q0sw8")

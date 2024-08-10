@@ -3,11 +3,13 @@ extends Node
 var right_doors: Node3D
 var left_doors: Node3D
 var is_open: bool = false
+var next_level_volumes: Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	right_doors = $Right_Doors
 	left_doors = $Left_Doors
+	next_level_volumes = $Next_Level_Volumes
 	open()
 
 

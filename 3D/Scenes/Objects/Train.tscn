@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkf17x8h1lsyc"]
+[gd_scene load_steps=8 format=3 uid="uid://dkf17x8h1lsyc"]
 
 [ext_resource type="Script" path="res://3D/Scripts/Objects/Train.gd" id="1_8oexj"]
 [ext_resource type="Material" uid="uid://dqh67xl8hqsyw" path="res://3D/Assets/Textures/Material_Textures/Dark_Grey.tres" id="2_t22ay"]
@@ -15,6 +15,9 @@ points = PackedVector3Array(0.799206, 1.6254, 0.128522, -0.775397, -1.6254, -0.1
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_q16fy"]
 points = PackedVector3Array(0.799206, 1.6254, 0.128522, -0.775397, -1.6254, -0.125347, -0.775397, -1.6254, 0.128522, -0.775397, 1.6254, -0.125347, 0.799206, -1.6254, -0.125347, 0.799206, -1.6254, 0.128522, -0.775397, 1.6254, 0.128522, 0.799206, 1.6254, -0.125347)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q15wa"]
+size = Vector3(3.3, 2.7, 2.3)
 
 [node name="Train" type="Node3D"]
 script = ExtResource("1_8oexj")
@@ -383,3 +386,41 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Left_Doors/Door_Left8"]
 shape = SubResource("ConvexPolygonShape3D_q16fy")
+
+[node name="Next_Level_Volumes" type="Node3D" parent="."]
+
+[node name="Next_Level_Volume" type="Area3D" parent="Next_Level_Volumes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6691, 1.3794, 2.13385e-05)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Next_Level_Volumes/Next_Level_Volume"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0500002, 0, 0)
+shape = SubResource("BoxShape3D_q15wa")
+
+[node name="Next_Level_Volume2" type="Area3D" parent="Next_Level_Volumes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.6691, 1.3794, 2.13385e-05)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Next_Level_Volumes/Next_Level_Volume2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0500002, 0, 0)
+shape = SubResource("BoxShape3D_q15wa")
+
+[node name="Next_Level_Volume3" type="Area3D" parent="Next_Level_Volumes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.4691, 1.3794, 2.13385e-05)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Next_Level_Volumes/Next_Level_Volume3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0500002, 0, 0)
+shape = SubResource("BoxShape3D_q15wa")
+
+[node name="Next_Level_Volume4" type="Area3D" parent="Next_Level_Volumes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.469, 1.3794, 2.13385e-05)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Next_Level_Volumes/Next_Level_Volume4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0500002, 0, 0)
+shape = SubResource("BoxShape3D_q15wa")
