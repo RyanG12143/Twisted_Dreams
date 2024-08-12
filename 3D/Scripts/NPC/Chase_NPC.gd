@@ -1,3 +1,4 @@
+class_name Chase_NPC
 extends CharacterBody3D
 
 ## Emitted when NPC has no more positions to path towards
@@ -23,6 +24,8 @@ var speed_multiplyer:float = 1
 var waiting:bool = false
 ## Boolean to declare when npc may need to vault
 var vault_prep:bool = false
+##
+var vaulting:bool = false
 
 
 ## Navigation agent to provide pathfinding for npc
@@ -35,18 +38,24 @@ var vault_prep:bool = false
 
 func _ready():
 	add_child(rotation_helper)
+	
+	if not target:
+		return
 	nav_agent.target_position = target.global_position
 
 
 func _physics_process(delta):
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() and not vaulting:
 		velocity.y -= gravity * delta
 	
 	# Waiting at waypoint
 	if waiting:
 		_turn(delta, nav_agent.get_next_path_position())
 		_head_turn_clamp(delta, nav_agent.target_positio, 90)
+		return
+	
+	if not target or vaulting:
 		return
 	
 	nav_agent.target_position = target.global_position
@@ -83,6 +92,7 @@ func _turn(delta, target:Vector3):
 	
 	global_transform.basis = Basis(next_rotation)
 
+
 ## Turns the chracter head towards target
 func _head_turn_clamp(delta, target:Vector3, clamp:float):
 	
@@ -91,3 +101,23 @@ func _head_turn_clamp(delta, target:Vector3, clamp:float):
 	head.rotation_degrees.y = clampf(head.rotation_degrees.y, -clamp, clamp)
 	
 	head.scale = Vector3(1,1,1) # Scale gets weird with global transforms so this puts it back to normal
+
+
+func vault(height:float):
+	print("Vault")
+	vault_prep = false
+	vaulting = true
+	
+	var tween = create_tween()
+	var target_height = Vector3(global_position.x, height, global_position.z)
+	var front = global_position - $Front.global_position
+	front.y = 0
+	front = front.normalized()
+	var target_end = Vector3(target_height - (front * .5))
+	tween.tween_property(self, "global_position", target_height, 1)
+	tween.tween_property(self, "global_position", target_end, 1)
+	tween.tween_callback(vault_fin)
+
+
+func vault_fin():
+	vaulting = false

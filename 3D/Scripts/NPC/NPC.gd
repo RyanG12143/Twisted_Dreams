@@ -40,10 +40,6 @@ var wait_turn_target:Vector3 = Vector3.ZERO
 var observe_targets:Array[Node3D] = []
 ## Current target to turn head towards
 var observe_target:Node3D
-## 
-var occupied_waypoint:Node3D
-
-var queued:bool
 
 
 ## Navigation agent to provide pathfinding for npc
@@ -82,7 +78,8 @@ func _physics_process(delta):
 		_turn(delta, wait_turn_target)
 		return
 	
-	nav_agent.target_position = markers[current_marker].global_position
+	if nav_agent.target_position != markers[current_marker].global_position:
+		nav_agent.target_position = markers[current_marker].global_position
 	
 	_turn(delta, nav_agent.get_next_path_position())
 	
@@ -268,3 +265,7 @@ func _next_queue_empty():
 	markers[current_marker + 1].waypoint_freed.disconnect(_next_queue_empty)
 	_on_target_reached()
 	waiting = false
+
+
+func _on_path_update_timeout():
+	pass # Replace with function body.
