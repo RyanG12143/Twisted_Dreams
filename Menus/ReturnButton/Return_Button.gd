@@ -1,6 +1,7 @@
 extends AnimatedSprite2D
 
 @export var transition_manager:Node = null
+@export_enum("Main Menu", "Level Select Menu") var level_to_load:String = "Main Menu"
 
 @onready var button:Button = $Button
 
@@ -16,5 +17,8 @@ func _process(delta):
 
 func _on_button_pressed():
 	get_owner().pressed = true
-	transition_manager.scene_to_load = SceneReferences.main_menu
+	if(level_to_load == "Main Menu"):
+		transition_manager.scene_to_load = SceneReferences.main_menu
+	elif(level_to_load == "Level Select Menu"):
+		transition_manager.scene_to_load = SceneReferences.play_menu
 	transition_manager.scene_change()

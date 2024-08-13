@@ -56,5 +56,9 @@ func _process(delta):
 
 func _on_button_pressed():
 	get_owner().pressed = true
-	transition_manager.scene_to_load = SceneReferences.level_dict[level_to_load]
+	if(level_to_load.begins_with("Dream")):
+		transition_manager.scene_to_load = SceneReferences.level_dict[level_to_load]
+	else:
+		SceneReferences.stored_scene = level_to_load
+		transition_manager.scene_to_load = SceneReferences.brother_select
 	transition_manager.scene_change()

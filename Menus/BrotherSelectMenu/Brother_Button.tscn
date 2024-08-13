@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvsk3gw75y6u7"]
+
+[ext_resource type="Texture2D" uid="uid://c6hotrsyrxgxq" path="res://Menus/BrotherSelectMenu/27.png" id="1_eyc1h"]
+[ext_resource type="Script" path="res://Menus/BrotherSelectMenu/Brother_Button.gd" id="1_jmo42"]
+[ext_resource type="Texture2D" uid="uid://cne74dtvhq66n" path="res://Menus/BrotherSelectMenu/28.png" id="2_6442u"]
+[ext_resource type="Texture2D" uid="uid://b2atpauhuyo6a" path="res://Menus/BrotherSelectMenu/26.png" id="3_4x34h"]
+[ext_resource type="Texture2D" uid="uid://b8786tk4d670i" path="res://Menus/BrotherSelectMenu/25.png" id="4_p6fnv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_quu30"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_eyc1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6442u")
+}],
+"loop": true,
+"name": &"Enzo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4x34h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p6fnv")
+}],
+"loop": true,
+"name": &"Raimi",
+"speed": 5.0
+}]
+
+[node name="BrotherButton" type="AnimatedSprite2D"]
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_quu30")
+animation = &"Enzo"
+script = ExtResource("1_jmo42")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -365.0
+offset_top = -365.0
+offset_right = 365.0
+offset_bottom = 365.0
+mouse_default_cursor_shape = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
