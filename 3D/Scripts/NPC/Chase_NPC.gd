@@ -22,9 +22,7 @@ var gravity:float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var speed_multiplyer:float = 1
 ## Boolean for waiting at desired waypoint
 var waiting:bool = false
-## Boolean to declare when npc may need to vault
-var vault_prep:bool = false
-##
+## 
 var vaulting:bool = false
 
 
@@ -105,7 +103,6 @@ func _head_turn_clamp(delta, target:Vector3, clamp:float):
 
 func vault(height:float):
 	print("Vault")
-	vault_prep = false
 	vaulting = true
 	
 	var tween = create_tween()

@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp3hqmff2ibir"]
+
+[ext_resource type="Script" path="res://TestBS/RyanTestBS/Chase/Vault.gd" id="1_hi270"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tkas5"]
+size = Vector3(1.62183, 1.30115, 7.51465)
+
+[node name="Vault_Object" type="Node3D"]
+script = ExtResource("1_hi270")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0942383, 1.23157)
+use_collision = true
+collision_layer = 32
+collision_mask = 0
+size = Vector3(1, 1.18848, 7.51099)
+
+[node name="Height" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024889, 0.523681, 0)
+
+[node name="Vault" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Vault"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0740967, 0.150574, 1.23193)
+shape = SubResource("BoxShape3D_tkas5")
+
+[connection signal="body_entered" from="Vault" to="." method="_vault_body_entered"]
