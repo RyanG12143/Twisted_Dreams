@@ -26,11 +26,18 @@ func _ready():
 ## Enables and reveals the blocker.
 func enable_blocker():
 	blocker_collider.set_deferred("disabled", false)
+	while(blocker_bars.get_frame() != 0):
+		blocker_bars.set_frame(blocker_bars.get_frame() - 1)
+		await get_tree().create_timer(0.1).timeout
+
 	
 
 ## Disables and hides the gate.
 func disable_gate():
 	gate_collider.set_deferred("disabled", true)
+	while(gate_bars.get_frame() != 11):
+		gate_bars.set_frame(gate_bars.get_frame() + 1)
+		await get_tree().create_timer(0.1).timeout
 
 
 func _on_detection_area_body_entered(body):
@@ -42,6 +49,8 @@ func _on_detection_area_body_entered(body):
 			else:
 				gate_pillar.set_frame(2)
 			if(nearby_character_num == 2):
+				gate_pillar.set_frame(1)
+				blocker_pillar.set_frame(1)
 				enable_blocker()
 				disable_gate()
 				gate_used = true
