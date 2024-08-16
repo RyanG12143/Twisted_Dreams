@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cpqe14df5cb1a"
-path="res://.godot/imported/PLEASE DONT BE CRUSTY HELP .glb-84aeb9b22d1145f723805ad9c09e32ed.scn"
+path="res://.godot/imported/PoliceOfficer_Placeholder05.glb-87dcec31beee9568d9444a771e5bb52e.scn"
 
 [deps]
 
-source_file="res://3D/Assets/Placeholder/Characters/PLEASE DONT BE CRUSTY HELP .glb"
-dest_files=["res://.godot/imported/PLEASE DONT BE CRUSTY HELP .glb-84aeb9b22d1145f723805ad9c09e32ed.scn"]
+source_file="res://3D/Assets/Placeholder/Characters/PoliceOfficer_Placeholder05.glb"
+dest_files=["res://.godot/imported/PoliceOfficer_Placeholder05.glb-87dcec31beee9568d9444a771e5bb52e.scn"]
 
 [params]
 

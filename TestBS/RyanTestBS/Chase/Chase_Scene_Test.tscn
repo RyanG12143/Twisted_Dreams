@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://xuteggk5aiph"]
 
 [ext_resource type="PackedScene" uid="uid://dp3hqmff2ibir" path="res://3D/Scenes/Objects/Vault_Object.tscn" id="1_2it0x"]
-[ext_resource type="PackedScene" uid="uid://cu7wqioxho4ft" path="res://3D/Scenes/NPC/NPC.tscn" id="1_08itc"]
+[ext_resource type="PackedScene" uid="uid://cu7wqioxho4ft" path="res://3D/Scenes/NPC/Path_NPC.tscn" id="1_08itc"]
 [ext_resource type="Script" path="res://addons/freecam_3D/freecam.gd" id="3_frlb4"]
 [ext_resource type="PackedScene" uid="uid://bnudyh5gbuh1p" path="res://3D/Scenes/NPC/Chase_NPC.tscn" id="4_e2bcl"]
 [ext_resource type="PackedScene" uid="uid://n6rf8a232l5n" path="res://3D/Scenes/NPC/Waypoint.tscn" id="8_gleb1"]

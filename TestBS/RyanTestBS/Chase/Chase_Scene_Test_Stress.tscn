@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://3ixjas80haci"]
 
-[ext_resource type="PackedScene" uid="uid://cu7wqioxho4ft" path="res://3D/Scenes/NPC/NPC.tscn" id="1_hurcj"]
+[ext_resource type="PackedScene" uid="uid://cu7wqioxho4ft" path="res://3D/Scenes/NPC/Path_NPC.tscn" id="1_hurcj"]
 [ext_resource type="Script" path="res://TestBS/RyanTestBS/Chase/Stress_Info.gd" id="1_yuivk"]
 [ext_resource type="PackedScene" uid="uid://n6rf8a232l5n" path="res://3D/Scenes/NPC/Waypoint.tscn" id="2_jp0gd"]
 [ext_resource type="Script" path="res://addons/freecam_3D/freecam.gd" id="3_i4lfr"]

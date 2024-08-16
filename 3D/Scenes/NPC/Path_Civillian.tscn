@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://yy4jyk1ek45n"]
+
+[ext_resource type="PackedScene" uid="uid://cu7wqioxho4ft" path="res://3D/Scenes/NPC/Path_NPC.tscn" id="1_8ja8c"]
+[ext_resource type="PackedScene" uid="uid://uvawx5onss6l" path="res://3D/Scenes/Characters/NPC_Placeholder.tscn" id="2_r6cjj"]
+
+[node name="Path_NPC" instance=ExtResource("1_8ja8c")]
+
+[node name="NPC_Placeholder" parent="." index="0" instance=ExtResource("2_r6cjj")]
+
+[editable path="NPC_Placeholder"]

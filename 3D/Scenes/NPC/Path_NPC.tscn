@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cu7wqioxho4ft"]
+[gd_scene load_steps=5 format=3 uid="uid://cu7wqioxho4ft"]
 
 [ext_resource type="Script" path="res://3D/Scripts/NPC/NPC.gd" id="1_aymty"]
-[ext_resource type="PackedScene" uid="uid://bhjch3woimdoe" path="res://3D/Scenes/Characters/Police_Officer.tscn" id="2_pyh7e"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rsqqe"]
 radius = 0.313997
@@ -17,9 +16,7 @@ size = Vector3(8.34918, 2.9082, 7.56543)
 collision_layer = 4
 collision_mask = 49
 script = ExtResource("1_aymty")
-head = NodePath("PoliceOfficer_Placeholder04/PoliceOfficer/Head")
-
-[node name="PoliceOfficer_Placeholder04" parent="." instance=ExtResource("2_pyh7e")]
+head = NodePath("")
 
 [node name="Character_Collision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.790831, 0)
@@ -64,5 +61,3 @@ autostart = true
 [connection signal="body_entered" from="Observe_Area" to="." method="_on_observe_area_entered"]
 [connection signal="body_exited" from="Observe_Area" to="." method="_on_observe_area_body_exited"]
 [connection signal="timeout" from="Path_Update" to="." method="_on_path_update_timeout"]
-
-[editable path="PoliceOfficer_Placeholder04"]
