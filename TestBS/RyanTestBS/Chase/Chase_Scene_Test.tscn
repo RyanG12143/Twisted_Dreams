@@ -1,10 +1,35 @@
-[gd_scene load_steps=12 format=3 uid="uid://xuteggk5aiph"]
+[gd_scene load_steps=19 format=3 uid="uid://xuteggk5aiph"]
 
 [ext_resource type="PackedScene" uid="uid://dp3hqmff2ibir" path="res://3D/Scenes/Objects/Vault_Object.tscn" id="1_2it0x"]
 [ext_resource type="PackedScene" uid="uid://cu7wqioxho4ft" path="res://3D/Scenes/NPC/Path_NPC.tscn" id="1_08itc"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_7tx36"]
 [ext_resource type="Script" path="res://addons/freecam_3D/freecam.gd" id="3_frlb4"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_it6tn"]
 [ext_resource type="PackedScene" uid="uid://bnudyh5gbuh1p" path="res://3D/Scenes/NPC/Chase_NPC.tscn" id="4_e2bcl"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="4_ylr1j"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_0o8s0"]
+[ext_resource type="PackedScene" uid="uid://bived31tg1brm" path="res://3D/Scenes/Characters/Brother_Older.tscn" id="5_texlg"]
 [ext_resource type="PackedScene" uid="uid://n6rf8a232l5n" path="res://3D/Scenes/NPC/Waypoint.tscn" id="8_gleb1"]
+
+[sub_resource type="Resource" id="Resource_usvwk"]
+script = ExtResource("3_it6tn")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="Resource" id="Resource_3fttq"]
+script = ExtResource("4_ylr1j")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6nnwd"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_3jsns"]
 vertices = PackedVector3Array(-0.75, 0.966515, -41.5, 1.25, 0.966515, -41.5, 1.25, 0.966515, -49, -1.5, 0.966515, -40.75, -0.75, 0.966515, -41.5, 1.25, 0.966515, -49, -49, 0.966515, -49, -49, 0.966515, -20.25, -1.5, 0.966515, -20.25, -1.5, 0.966515, -40.75, -49, 0.966515, -49, 1.25, 0.966515, -41.5, 15.5, 0.966515, -41.5, 15.5, 0.966515, -49, 1.25, 0.966515, -49, 15.5, 0.966515, -49, 15.5, 0.966515, -41.5, 17.5, 0.966515, -41.5, 15.5, 0.966515, -49, 17.5, 0.966515, -41.5, 18.25, 0.966515, -40.75, 49, 0.966515, -49, 18.25, 0.966515, -40.75, 18.25, 0.966515, -19.75, 49, 0.966515, -19.5, 49, 0.966515, -49, 6, 5.71652, -33.75, 7, 5.71652, -34.25, 7, 5.71652, -39.5, -12.25, 5.71652, -39.5, -12.25, 5.71652, -19.5, 6, 5.71652, -19.5, 6, 5.71652, -33.75, -12.25, 5.71652, -39.5, 8, 5.46652, -33.75, 8, 4.96652, -32, 12.75, 4.96652, -32, 12.75, 5.46652, -33.75, 16.25, 5.71652, -39.5, 14.25, 5.71652, -34.25, 14.75, 5.71652, -33.75, 7, 5.71652, -34.25, 8, 5.46652, -33.75, 12.75, 5.46652, -33.75, 14.25, 5.71652, -34.25, 16.25, 5.71652, -39.5, 7, 5.71652, -39.5, 14.75, 5.71652, -33.75, 14.75, 5.71652, -19.5, 16.25, 5.71652, -19.5, 16.25, 5.71652, -39.5, 15, 0.966515, -25.75, 15, 0.966515, -19.75, 16, 0.966515, -19.75, 16, 0.966515, -39.25, 0.75, 0.966515, -19.75, 5.75, 0.966515, -19.75, 5.75, 0.966515, -25.75, 0.75, 0.966515, -39.25, 0.75, 0.966515, -39.25, 5.75, 0.966515, -25.75, 6.5, 0.966515, -26.5, 14.25, 0.966515, -26.5, 15, 0.966515, -25.75, 16, 0.966515, -39.25, 6.5, 0.966515, -26.5, 14.25, 0.966515, -26.5, 16, 0.966515, -39.25, 0.75, 0.966515, -39.25, 8, 0.966515, -20, 12.75, 0.966515, -20, 12.75, 4.96652, -32, 8, 4.96652, -32, 9.975, 4.21652, -30.525, 1, 0.966515, -4.5, 1, 0.966515, -17.5, -0.75, 0.966515, -17.5, -2.5, 0.966515, -4.5, -49, 0.966515, -2.75, -3.25, 0.966515, -2.75, -3.25, 0.966515, -3.75, -2.5, 0.966515, -4.5, -0.75, 0.966515, -17.5, -1.5, 0.966515, -18.25, -3.25, 0.966515, -3.75, -2.5, 0.966515, -4.5, -1.5, 0.966515, -18.25, -1.5, 0.966515, -20.25, -49, 0.966515, -20.25, -49, 0.966515, -2.75, 12.75, 0.966515, -18.25, 12.75, 0.966515, -20, 8, 0.966515, -20, 8, 0.966515, -18.25, 17.5, 0.966515, -17.5, 13.5, 0.966515, -17.5, 3.25, 0.966515, -2, 13.5, 0.966515, -17.5, 12.75, 0.966515, -18.25, 8, 0.966515, -18.25, 7.25, 0.966515, -17.5, 3.25, 0.966515, -3.75, 3.25, 0.966515, -2, 18.25, 0.966515, -18.25, 17.5, 0.966515, -17.5, 3.25, 0.966515, -2, 49, 0.966515, -19.5, 1, 0.966515, -17.5, 1, 0.966515, -4.5, 2.5, 0.966515, -4.5, 7.25, 0.966515, -17.5, 1, 0.966515, -17.5, 2.5, 0.966515, -4.5, 3.25, 0.966515, -3.75, 2.5, 0.966515, -1.25, 1, 0.966515, -1.25, 1.25, 0.966515, 49, 49, 0.966515, -19.5, 18.25, 0.966515, -19.75, 18.25, 0.966515, -18.25, 49, 0.966515, -19.5, 3.25, 0.966515, -2, 2.5, 0.966515, -1.25, 1.25, 0.966515, 49, 49, 0.966515, 49, -3.25, 0.966515, -2, -3.25, 0.966515, -2.75, -49, 0.966515, -2.75, -2.5, 0.966515, -1.25, -3.25, 0.966515, -2, -49, 0.966515, -2.75, -49, 0.966515, 49, -1.25, 0.966515, 49, -1.25, 0.966515, 49, -1, 0.966515, -1.25, -2.5, 0.966515, -1.25, -1.25, 0.966515, 49, 1.25, 0.966515, 49, 1, 0.966515, -1.25, -1, 0.966515, -1.25)
@@ -24,9 +49,40 @@ sky = SubResource("Sky_rivwb")
 
 [sub_resource type="TorusMesh" id="TorusMesh_am4xg"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_6nnwd"]
-
 [node name="Chase scene test" type="Node3D"]
+
+[node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
+unique_name_in_owner = true
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 0, 2.22889, 7.29952)
+script = ExtResource("2_7tx36")
+priority = 10
+follow_mode = 6
+follow_target = NodePath("../OlderBrother")
+tween_resource = SubResource("Resource_usvwk")
+camera_3d_resource = SubResource("Resource_3fttq")
+follow_damping = true
+follow_distance = 3.5
+spring_length = 3.5
+
+[node name="MainCamera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 2.22889, 7.29952)
+
+[node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
+script = ExtResource("5_0o8s0")
+
+[node name="OlderBrother" parent="." instance=ExtResource("5_texlg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03182, 4.0106)
+
+[node name="Freecam3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.1355, 1.69429, 40.6674)
+script = ExtResource("3_frlb4")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Freecam3D" groups=["Observable"]]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Freecam3D/CharacterBody3D"]
+shape = SubResource("SphereShape3D_6nnwd")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.247155, -4.76837e-07, 0.00691319)
@@ -40,9 +96,9 @@ use_collision = true
 size = Vector3(100, 4.78343, 100)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0612566, 0.881485, -2.85991)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0612566, 1.13707, -2.85991)
 use_collision = true
-size = Vector3(4.22314, 2.01953, 1)
+size = Vector3(4.22314, 2.5307, 1)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D/Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.94378, 2.38434, -29.4826)
@@ -70,6 +126,10 @@ size = Vector3(1, 1.17905, 7.51099)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_l6bgl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, -0.930718, 0.365738, 0, -0.365738, -0.930718, -0.289136, -1.17629, 0)
+shadow_enabled = true
 
 [node name="NPC" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_08itc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.261753, 0.499945, -6.47569)
@@ -144,17 +204,6 @@ speed = 7.0
 turn_Speed = 5.0
 loop = true
 positions_container = NodePath("../Node3D2")
-
-[node name="Freecam3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.1355, 1.69429, 40.6674)
-current = true
-script = ExtResource("3_frlb4")
-
-[node name="CharacterBody3D" type="CharacterBody3D" parent="Freecam3D" groups=["Observable"]]
-collision_layer = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Freecam3D/CharacterBody3D"]
-shape = SubResource("SphereShape3D_6nnwd")
 
 [node name="Node3D2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.6742, 0.664952, 5.70539)

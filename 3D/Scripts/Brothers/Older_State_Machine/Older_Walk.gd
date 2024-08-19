@@ -3,6 +3,11 @@ class_name Older_Walk
 
 func Enter():
 	movement_speed = walk_speed
+	if animation_tree:
+		animation_tree.travel("OlderBrother_Walk")
+
+func Exit():
+	pass
 
 func Update(delta: float):
 	pass
