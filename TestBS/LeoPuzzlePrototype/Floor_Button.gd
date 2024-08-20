@@ -32,6 +32,7 @@ func _ready():
 func _on_area_2d_body_entered(body):
 	if(body.is_in_group("Can_Press_Buttons")):
 		if(!overlapping_bodies):
+			emit_signal("Button_Pressed")
 			if(anim.current_animation == ""):
 				anim.play("Press")
 				anim.speed_scale = 1
