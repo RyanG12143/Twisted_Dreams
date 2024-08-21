@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfdjae2r6cn0k"]
+
+[ext_resource type="PackedScene" uid="uid://tkj130nt2nja" path="res://3D/Assets/Animations/Older_Brother/OlderBrother_Animations01.glb" id="1_lro35"]
+
+[node name="OlderBrother_Animations01" instance=ExtResource("1_lro35")]

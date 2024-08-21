@@ -2,7 +2,8 @@ extends Older_State
 class_name Older_Fall
 
 func Enter():
-	pass
+	if animation_tree:
+		animation_tree.travel("OlderBrother_Fall")
 
 func Update(delta: float):
 	pass

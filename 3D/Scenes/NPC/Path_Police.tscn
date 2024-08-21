@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxnjdvepirbw3"]
+
+[ext_resource type="PackedScene" uid="uid://cu7wqioxho4ft" path="res://3D/Scenes/NPC/Path_NPC.tscn" id="1_vfson"]
+[ext_resource type="PackedScene" uid="uid://bhjch3woimdoe" path="res://3D/Scenes/Characters/Police_Officer.tscn" id="2_jerkl"]
+
+[node name="Path_Police" node_paths=PackedStringArray("head") instance=ExtResource("1_vfson")]
+head = NodePath("PoliceOfficer_Placeholder04/PoliceOfficer/Head")
+
+[node name="PoliceOfficer_Placeholder04" parent="." index="0" instance=ExtResource("2_jerkl")]
+
+[editable path="PoliceOfficer_Placeholder04"]

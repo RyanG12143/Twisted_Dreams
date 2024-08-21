@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://uvawx5onss6l"]
+
+[ext_resource type="PackedScene" uid="uid://cudotkuhcuscb" path="res://3D/Assets/Placeholder/Characters/NPC_Placeholder.glb" id="1_5467n"]
+
+[node name="NPC_Placeholder" instance=ExtResource("1_5467n")]

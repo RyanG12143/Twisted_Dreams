@@ -4,6 +4,8 @@ class_name Older_Climb
 @export var move_speed := 10.0
 
 func Enter():
+	if animation_tree:
+		animation_tree.travel("OlderBrother_Climb")
 	can_jump = false
 	var v_move_time = 1
 	var h_move_time = 0.4

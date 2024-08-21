@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://bhjch3woimdoe"]
 
-[ext_resource type="PackedScene" uid="uid://cpqe14df5cb1a" path="res://3D/Assets/Placeholder/Characters/PLEASE DONT BE CRUSTY HELP .glb" id="1_5ov5r"]
+[ext_resource type="PackedScene" uid="uid://cpqe14df5cb1a" path="res://3D/Assets/Placeholder/Characters/PoliceOfficer_Placeholder05.glb" id="1_5ov5r"]
 
-[node name="PLEASE DONT BE CRUSTY HELP " instance=ExtResource("1_5ov5r")]
+[node name="PoliceOfficer_Placeholder05" instance=ExtResource("1_5ov5r")]

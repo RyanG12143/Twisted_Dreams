@@ -1,14 +1,15 @@
-[gd_scene load_steps=47 format=3 uid="uid://dre0o1tw818oq"]
+[gd_scene load_steps=45 format=3 uid="uid://dre0o1tw818oq"]
 
 [ext_resource type="Material" uid="uid://dqh67xl8hqsyw" path="res://3D/Assets/Textures/Material_Textures/Dark_Grey.tres" id="1_5cd8q"]
 [ext_resource type="Script" path="res://3D/Scripts/Level_Design/train_manager.gd" id="1_8icnd"]
 [ext_resource type="PackedScene" uid="uid://yg72f38gg1sg" path="res://3D/Scenes/Objects/Double_Door_With_Frame.tscn" id="1_p72i5"]
-[ext_resource type="PackedScene" uid="uid://cu7wqioxho4ft" path="res://3D/Scenes/NPC/NPC.tscn" id="2_235u5"]
+[ext_resource type="PackedScene" uid="uid://cu7wqioxho4ft" path="res://3D/Scenes/NPC/Path_NPC.tscn" id="2_235u5"]
 [ext_resource type="PackedScene" uid="uid://bived31tg1brm" path="res://3D/Scenes/Characters/Brother_Older.tscn" id="2_gtjnm"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_n7vig"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_cr0xv"]
 [ext_resource type="Script" path="res://3D/Scripts/NPC/Waypoint.gd" id="4_jdyt6"]
 [ext_resource type="PackedScene" uid="uid://chfmwuj54wyib" path="res://3D/Scenes/Objects/Door_With_Frame.tscn" id="5_hatbl"]
+[ext_resource type="PackedScene" uid="uid://yy4jyk1ek45n" path="res://3D/Scenes/NPC/Path_Civillian.tscn" id="5_slndv"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_y4wnn"]
 [ext_resource type="Script" path="res://3D/Scripts/Level_Design/Chase_Trigger_Older.gd" id="6_0vapn"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_84xg3"]
@@ -17,17 +18,14 @@
 [ext_resource type="Terrain3DStorage" uid="uid://cswn4h5yrohb3" path="res://3D/Terrain/new_terrain_3d_storage.res" id="8_1n6rm"]
 [ext_resource type="PackedScene" uid="uid://n6rf8a232l5n" path="res://3D/Scenes/NPC/Waypoint.tscn" id="8_iy8lm"]
 [ext_resource type="Material" uid="uid://bgwr06fmtghwx" path="res://3D/Assets/Textures/Material_Textures/Glass.tres" id="8_mqxe3"]
-[ext_resource type="PackedScene" uid="uid://crbvuprtsh5gq" path="res://TestBS/MatthewTestBS/dialog_3d.tscn" id="9_hacd5"]
 [ext_resource type="Terrain3DMaterial" uid="uid://caml41jx0wogn" path="res://3D/Terrain/new_terrain_3d_material.tres" id="9_iklmi"]
 [ext_resource type="Script" path="res://3D/Scripts/Level_Design/Breaking_Glass_Bridge.gd" id="10_df5vq"]
 [ext_resource type="Terrain3DAssets" uid="uid://c5w6cm1au8k7l" path="res://3D/Terrain/new_terrain_3d_assets.tres" id="10_diyy4"]
 [ext_resource type="PackedScene" uid="uid://bhjch3woimdoe" path="res://3D/Scenes/Characters/Police_Officer.tscn" id="11_edklm"]
 [ext_resource type="Script" path="res://3D/Scripts/Level_Design/Chase_Trigger_Bridge_Officers.gd" id="11_qmlfo"]
 [ext_resource type="PackedScene" uid="uid://dkf17x8h1lsyc" path="res://3D/Scenes/Objects/Train.tscn" id="13_ghe0k"]
-[ext_resource type="PackedScene" uid="uid://plsoynxsdaw8" path="res://TestBS/MatthewTestBS/younger_brother_icon.tscn" id="20_yhpdr"]
+[ext_resource type="PackedScene" uid="uid://bxnjdvepirbw3" path="res://3D/Scenes/NPC/Path_Police.tscn" id="16_kf7g8"]
 [ext_resource type="Script" path="res://addons/freecam_3D/freecam.gd" id="23_q0sw8"]
-[ext_resource type="PackedScene" uid="uid://b1yk3apkos0tc" path="res://TestBS/MatthewTestBS/trigger_box_3d.tscn" id="25_gf81n"]
-[ext_resource type="PackedScene" uid="uid://dm8golhbdad31" path="res://TestBS/MatthewTestBS/pause_screen_3d.tscn" id="28_im7cs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_isqim"]
 sky_top_color = Color(0.364013, 0.451352, 0.597576, 1)
@@ -299,16 +297,10 @@ transform = Transform3D(0.819152, 0, 0.573576, 0, 1, 0, -0.573576, 0, 0.819152, 
 speed = 6.0
 observe = true
 
-[node name="Distribution_NPC" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Booth/NPC" node_paths=PackedStringArray("head") instance=ExtResource("2_235u5")]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 1.21057, 0.9, 2.11864)
+[node name="Distribution_NPC" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Booth/NPC" instance=ExtResource("5_slndv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.21057, 0.9, 2.11864)
 speed = 1.0
 observe = true
-head = NodePath("../CHASING_OFFICER/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
-
-[node name="Dialog_3D" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Booth/NPC/Distribution_NPC" instance=ExtResource("9_hacd5")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.0517, 1.7149, -0.521576)
-dialog = Array[String](["Get your stuff"])
-important = true
 
 [node name="Path" type="Node3D" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Booth"]
 
@@ -483,42 +475,42 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 1)
 [node name="NPC" type="Node3D" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Line"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.39999, -6, 41)
 
-[node name="NPC" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Line/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
+[node name="Path_NPC" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Line/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("5_slndv")]
 loop = true
 positions_container = NodePath("../../Queue_Waypoints")
 
-[node name="NPC2" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Line/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.43134)
+[node name="Path_NPC2" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Line/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("5_slndv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.43958)
 loop = true
 positions_container = NodePath("../../Queue_Waypoints")
 
-[node name="NPC3" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Line/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.23132)
+[node name="Path_NPC3" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Line/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("5_slndv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.16737)
 loop = true
 positions_container = NodePath("../../Queue_Waypoints")
 
-[node name="NPC4" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Line/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+[node name="Path_NPC4" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Line/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("5_slndv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.0083)
 loop = true
 positions_container = NodePath("../../Queue_Waypoints")
 
-[node name="NPC5" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Line/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11)
+[node name="Path_NPC5" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Line/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("5_slndv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.0064)
 loop = true
 positions_container = NodePath("../../Queue_Waypoints")
 
-[node name="NPC6" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Line/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -11)
+[node name="Path_NPC6" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Line/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("5_slndv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.992, 0, -11.1523)
 loop = true
 positions_container = NodePath("../../Queue_Waypoints")
 
-[node name="NPC7" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Line/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -8)
+[node name="Path_NPC7" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Line/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("5_slndv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97025, 0, -8.07751)
 loop = true
 positions_container = NodePath("../../Queue_Waypoints")
 
-[node name="NPC8" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Line/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -5)
+[node name="Path_NPC8" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Line/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("5_slndv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08685, 0, -5.08958)
 loop = true
 positions_container = NodePath("../../Queue_Waypoints")
 
@@ -4254,29 +4246,25 @@ font_size = 162
 
 [node name="Chase_Officers" type="Node3D" parent="NavigationRegion3D/Meshes/Buildings/Market_Building3"]
 
-[node name="CHASING_OFFICER" parent="NavigationRegion3D/Meshes/Buildings/Market_Building3/Chase_Officers" node_paths=PackedStringArray("head") instance=ExtResource("2_235u5")]
+[node name="CHASING_OFFICER" parent="NavigationRegion3D/Meshes/Buildings/Market_Building3/Chase_Officers" instance=ExtResource("2_235u5")]
 transform = Transform3D(0.819152, 0, 0.573576, 0, 1, 0, -0.573576, 0, 0.819152, -7.58942, 11.2, 21.0186)
 speed = 3.0
 observe = true
-head = NodePath("../../../Market_Building/Market_Building/First_Floor/Booth/NPC/CHASING_OFFICER/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 
-[node name="CHASING_OFFICER4" parent="NavigationRegion3D/Meshes/Buildings/Market_Building3/Chase_Officers" node_paths=PackedStringArray("head") instance=ExtResource("2_235u5")]
+[node name="CHASING_OFFICER4" parent="NavigationRegion3D/Meshes/Buildings/Market_Building3/Chase_Officers" instance=ExtResource("2_235u5")]
 transform = Transform3D(0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, 0.939693, -4.58942, 11.2, 14.0186)
 speed = 3.0
 observe = true
-head = NodePath("../../../Market_Building/Market_Building/First_Floor/Booth/NPC/CHASING_OFFICER/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 
-[node name="CHASING_OFFICER2" parent="NavigationRegion3D/Meshes/Buildings/Market_Building3/Chase_Officers" node_paths=PackedStringArray("head") instance=ExtResource("2_235u5")]
+[node name="CHASING_OFFICER2" parent="NavigationRegion3D/Meshes/Buildings/Market_Building3/Chase_Officers" instance=ExtResource("2_235u5")]
 transform = Transform3D(0.906308, 0, -0.422618, 0, 1, 0, 0.422618, 0, 0.906308, 1.41058, 11.2, 18.0186)
 speed = 3.0
 observe = true
-head = NodePath("../../../Market_Building/Market_Building/First_Floor/Booth/NPC/CHASING_OFFICER/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 
-[node name="CHASING_OFFICER3" parent="NavigationRegion3D/Meshes/Buildings/Market_Building3/Chase_Officers" node_paths=PackedStringArray("head") instance=ExtResource("2_235u5")]
+[node name="CHASING_OFFICER3" parent="NavigationRegion3D/Meshes/Buildings/Market_Building3/Chase_Officers" instance=ExtResource("2_235u5")]
 transform = Transform3D(0.996195, 0, 0.0871558, 0, 1, 0, -0.0871558, 0, 0.996195, 10.4106, 11.2, 19.0186)
 speed = 3.0
 observe = true
-head = NodePath("../../../Market_Building/Market_Building/First_Floor/Booth/NPC/CHASING_OFFICER/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 
 [node name="Chase_Trigger" type="Area3D" parent="NavigationRegion3D/Meshes/Buildings/Market_Building3" node_paths=PackedStringArray("player", "collider", "chasing_officers")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29999, 15.5, 47.05)
@@ -4420,10 +4408,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.2000
 [node name="CharacterBody3D3" parent="NavigationRegion3D/Meshes/Buildings/Market_Building4/Market_Building/First_Floor/Booth/NPC" instance=ExtResource("11_edklm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.20001, 0.9, -2.1)
 
-[node name="Chase_Character" parent="NavigationRegion3D/Meshes/Buildings/Market_Building4/Market_Building/First_Floor/Booth/NPC" node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("2_235u5")]
+[node name="Chase_Character" parent="NavigationRegion3D/Meshes/Buildings/Market_Building4/Market_Building/First_Floor/Booth/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.600006, 0.9, 6.4)
 speed = 2.0
-head = NodePath("../../../../../../Market_Building/Market_Building/First_Floor/Booth/NPC/Chase_Character/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../../../../../../Market_Building/Market_Building/First_Floor/Booth/Path")
 
@@ -4700,10 +4687,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.2000
 [node name="CharacterBody3D3" parent="NavigationRegion3D/Meshes/Buildings/Market_Building4/Market_Building/First_Floor/Booth2/NPC" instance=ExtResource("11_edklm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.20001, 0.9, -2.1)
 
-[node name="Chase_Character" parent="NavigationRegion3D/Meshes/Buildings/Market_Building4/Market_Building/First_Floor/Booth2/NPC" node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("2_235u5")]
+[node name="Chase_Character" parent="NavigationRegion3D/Meshes/Buildings/Market_Building4/Market_Building/First_Floor/Booth2/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.600006, 2, -3)
 speed = 2.0
-head = NodePath("../../../../../../Market_Building/Market_Building/First_Floor/Booth2/NPC/Chase_Character/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../../../../../../Market_Building/Market_Building/First_Floor/Booth2/Path")
 
@@ -4979,9 +4965,8 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.2000
 [node name="CharacterBody3D3" parent="NavigationRegion3D/Meshes/Buildings/Market_Building4/Market_Building/First_Floor/Booth3/NPC" instance=ExtResource("11_edklm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.20001, 0.9, -2.1)
 
-[node name="Chase_Character" parent="NavigationRegion3D/Meshes/Buildings/Market_Building4/Market_Building/First_Floor/Booth3/NPC" node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("2_235u5")]
+[node name="Chase_Character" parent="NavigationRegion3D/Meshes/Buildings/Market_Building4/Market_Building/First_Floor/Booth3/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.600006, 2, -1.20001)
-head = NodePath("../../../../../../Market_Building/Market_Building/First_Floor/Booth3/NPC/Chase_Character/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../../../../../../Market_Building/Market_Building/First_Floor/Booth3/Path")
 
@@ -6661,17 +6646,12 @@ size = Vector3(213.9, 24, 22.2)
 
 [node name="NPC" type="Node3D" parent="NavigationRegion3D/Meshes/Walls/Marketplace_Wall/Security_Checkpoint"]
 
-[node name="Tower_Guard" parent="NavigationRegion3D/Meshes/Walls/Marketplace_Wall/Security_Checkpoint/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
+[node name="Tower_Guard" parent="NavigationRegion3D/Meshes/Walls/Marketplace_Wall/Security_Checkpoint/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("16_kf7g8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.8278, -6.3, 9.755)
-loop = true
 positions_container = NodePath("../../Paths/Tower_Guard")
 
 [node name="PoliceOfficer" parent="NavigationRegion3D/Meshes/Walls/Marketplace_Wall/Security_Checkpoint/NPC" instance=ExtResource("11_edklm")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -44.0278, -11.2, 0.254997)
-
-[node name="Dialog_3D" parent="NavigationRegion3D/Meshes/Walls/Marketplace_Wall/Security_Checkpoint/NPC/PoliceOfficer" instance=ExtResource("9_hacd5")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.387268, 2.10111, -0.0145874)
-dialog = Array[String](["Move along", "Next!"])
 
 [node name="PoliceOfficer2" parent="NavigationRegion3D/Meshes/Walls/Marketplace_Wall/Security_Checkpoint/NPC" instance=ExtResource("11_edklm")]
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -43.0278, -11.2, 1.455)
@@ -6917,7 +6897,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.199
 
 [node name="NPC" type="Node3D" parent="NavigationRegion3D/Meshes/Walls/Marketplace_Wall/Security_Checkpoint2"]
 
-[node name="Tower_Guard" parent="NavigationRegion3D/Meshes/Walls/Marketplace_Wall/Security_Checkpoint2/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
+[node name="Tower_Guard" parent="NavigationRegion3D/Meshes/Walls/Marketplace_Wall/Security_Checkpoint2/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("16_kf7g8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.8278, -6.3, 9.755)
 loop = true
 positions_container = NodePath("../../Paths/Tower_Guard2")
@@ -7275,44 +7255,44 @@ assets = ExtResource("10_diyy4")
 [node name="Wander NPCS" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 489.528, 11.3, 94.545)
 
-[node name="Wanderer" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
+[node name="Wanderer1" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("5_slndv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.528, 15.7, 67.455)
 positions_container = NodePath("../To_Entry_Checkpoint_Right")
 
-[node name="Wanderer2" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.52802, 15.7, 67.455)
+[node name="Wanderer2" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("5_slndv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.528, 15.7, 67.465)
 positions_container = NodePath("../To_Entry_Checkpoint_Right")
 
-[node name="Wanderer4" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.528, 15.7, 67.455)
-positions_container = NodePath("../To_Entry_Checkpoint_Right")
-
-[node name="Wanderer3" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
+[node name="Wanderer3" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("5_slndv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.47198, 15.7, 67.455)
 positions_container = NodePath("../To_Entry_Checkpoint_Right")
 
-[node name="NPC" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
+[node name="Wanderer4" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("5_slndv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.528, 15.7, 67.455)
+positions_container = NodePath("../To_Entry_Checkpoint_Right")
+
+[node name="Path_NPC" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("5_slndv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 14.7, 67)
 positions_container = NodePath("../To_Entry_Checkpoint_Right")
 
-[node name="NPC2" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
+[node name="Path_NPC2" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("5_slndv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 15, 68)
 positions_container = NodePath("../To_Entry_Checkpoint_Right")
 
-[node name="NPC3" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 15, 68)
+[node name="Path_NPC3" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("5_slndv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.002, 15, 68)
 positions_container = NodePath("../To_Entry_Checkpoint_Right")
 
-[node name="NPC4" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 15, 68)
+[node name="Path_NPC4" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("5_slndv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.9194, 15, 68)
 positions_container = NodePath("../To_Entry_Checkpoint_Right")
 
-[node name="NPC5" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 15, 68)
+[node name="Path_NPC5" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("5_slndv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0459, 15, 68)
 positions_container = NodePath("../To_Entry_Checkpoint_Right")
 
-[node name="NPC6" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("2_235u5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 15, 68)
+[node name="Path_NPC6" parent="Wander NPCS" node_paths=PackedStringArray("positions_container") instance=ExtResource("5_slndv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0447, 15, 68)
 positions_container = NodePath("../To_Entry_Checkpoint_Right")
 
 [node name="To_Entry_Checkpoint_Right" type="Node3D" parent="Wander NPCS"]
@@ -7418,8 +7398,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416, 0, 0)
 [node name="OlderBrother" parent="." instance=ExtResource("2_gtjnm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 440.458, 26.8413, 163.473)
 
-[node name="WalkingRunningIcon" parent="OlderBrother" instance=ExtResource("20_yhpdr")]
-
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
 transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 440.458, 28.3462, 167.608)
@@ -7449,10 +7427,3 @@ player = NodePath("../OlderBrother")
 [node name="Freecam3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 426, 2, -9)
 script = ExtResource("23_q0sw8")
-
-[node name="Trigger_Box_3D2" parent="." instance=ExtResource("25_gf81n")]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 443.464, 0.656504, 95.5254)
-
-[node name="PauseScreen" parent="." instance=ExtResource("28_im7cs")]
-
-[connection signal="Not_Important" from="Trigger_Box_3D2" to="NavigationRegion3D/Meshes/Walls/Marketplace_Wall/Security_Checkpoint/NPC/PoliceOfficer/Dialog_3D" method="_on_trigger_box_3d_not_important"]

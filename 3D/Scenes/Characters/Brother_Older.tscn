@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://bived31tg1brm"]
+[gd_scene load_steps=51 format=3 uid="uid://bived31tg1brm"]
 
 [ext_resource type="Script" path="res://3D/Scripts/Brothers/Player_Camera.gd" id="1_xen6v"]
-[ext_resource type="PackedScene" uid="uid://bjx5fr4s3kv31" path="res://3D/Assets/Placeholder/Characters/OlderSibling_Placeholder02.glb" id="2_607xc"]
+[ext_resource type="PackedScene" uid="uid://dfdjae2r6cn0k" path="res://3D/Scenes/Characters/Brother_Older_Anim.tscn" id="2_p48l8"]
 [ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/State_Machine_Older.gd" id="3_bjnb2"]
 [ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Idle.gd" id="4_ford2"]
 [ext_resource type="Script" path="res://3D/Scripts/Brothers/Older_State_Machine/Older_Walk.gd" id="5_xjdr7"]
@@ -19,6 +19,152 @@ height = 1.7
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_ngfeu"]
 length = 0.3
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_822yd"]
+animation = &"OlderBrother_Climb"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gim2p"]
+animation = &"OlderBrother_Fall"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pd65y"]
+animation = &"OlderBrother_Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v1pho"]
+animation = &"OlderBrother_Jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sdyr4"]
+animation = &"OlderBrother_Run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u2t5a"]
+animation = &"OlderBrother_Walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x80qn"]
+advance_mode = 2
+
+[sub_resource type="Curve" id="Curve_qahhm"]
+_data = [Vector2(0.00630915, 0.032413), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wr58y"]
+xfade_time = 0.4
+xfade_curve = SubResource("Curve_qahhm")
+
+[sub_resource type="Curve" id="Curve_8b2pl"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_73vkn"]
+xfade_time = 0.2
+xfade_curve = SubResource("Curve_8b2pl")
+
+[sub_resource type="Curve" id="Curve_3wwef"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yj5xl"]
+xfade_time = 0.2
+xfade_curve = SubResource("Curve_3wwef")
+
+[sub_resource type="Curve" id="Curve_7iwty"]
+_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7hrev"]
+xfade_time = 0.2
+xfade_curve = SubResource("Curve_7iwty")
+
+[sub_resource type="Curve" id="Curve_7mex7"]
+_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ukkxx"]
+xfade_time = 0.2
+xfade_curve = SubResource("Curve_7mex7")
+
+[sub_resource type="Curve" id="Curve_hduyk"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_stl1e"]
+xfade_time = 0.2
+xfade_curve = SubResource("Curve_hduyk")
+
+[sub_resource type="Curve" id="Curve_qf103"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pvs0o"]
+xfade_time = 0.2
+xfade_curve = SubResource("Curve_qf103")
+
+[sub_resource type="Curve" id="Curve_ujj0f"]
+_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oeqpv"]
+xfade_time = 0.1
+xfade_curve = SubResource("Curve_ujj0f")
+
+[sub_resource type="Curve" id="Curve_56if8"]
+_data = [Vector2(0, 0.0376412), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_otm6r"]
+xfade_time = 0.2
+xfade_curve = SubResource("Curve_56if8")
+
+[sub_resource type="Curve" id="Curve_37tm8"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5d8pi"]
+xfade_time = 0.2
+xfade_curve = SubResource("Curve_37tm8")
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5wfwq"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pflo7"]
+
+[sub_resource type="Curve" id="Curve_687nf"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fgngh"]
+xfade_time = 0.2
+xfade_curve = SubResource("Curve_687nf")
+
+[sub_resource type="Curve" id="Curve_hu7ao"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vei8p"]
+xfade_time = 0.2
+xfade_curve = SubResource("Curve_hu7ao")
+
+[sub_resource type="Curve" id="Curve_m7ugb"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uk5sp"]
+xfade_time = 0.2
+xfade_curve = SubResource("Curve_m7ugb")
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_k7ldq"]
+states/OlderBrother_Climb/node = SubResource("AnimationNodeAnimation_822yd")
+states/OlderBrother_Climb/position = Vector2(690, 220)
+states/OlderBrother_Fall/node = SubResource("AnimationNodeAnimation_gim2p")
+states/OlderBrother_Fall/position = Vector2(-28, 142)
+states/OlderBrother_Idle/node = SubResource("AnimationNodeAnimation_pd65y")
+states/OlderBrother_Idle/position = Vector2(490, 100)
+states/OlderBrother_Jump/node = SubResource("AnimationNodeAnimation_v1pho")
+states/OlderBrother_Jump/position = Vector2(218, 77)
+states/OlderBrother_Run/node = SubResource("AnimationNodeAnimation_sdyr4")
+states/OlderBrother_Run/position = Vector2(204, 264)
+states/OlderBrother_Walk/node = SubResource("AnimationNodeAnimation_u2t5a")
+states/OlderBrother_Walk/position = Vector2(218, -72)
+states/Start/position = Vector2(490, -104)
+transitions = ["Start", "OlderBrother_Idle", SubResource("AnimationNodeStateMachineTransition_x80qn"), "OlderBrother_Jump", "OlderBrother_Fall", SubResource("AnimationNodeStateMachineTransition_wr58y"), "OlderBrother_Idle", "OlderBrother_Walk", SubResource("AnimationNodeStateMachineTransition_73vkn"), "OlderBrother_Idle", "OlderBrother_Run", SubResource("AnimationNodeStateMachineTransition_yj5xl"), "OlderBrother_Run", "OlderBrother_Idle", SubResource("AnimationNodeStateMachineTransition_7hrev"), "OlderBrother_Walk", "OlderBrother_Idle", SubResource("AnimationNodeStateMachineTransition_ukkxx"), "OlderBrother_Walk", "OlderBrother_Fall", SubResource("AnimationNodeStateMachineTransition_stl1e"), "OlderBrother_Fall", "OlderBrother_Walk", SubResource("AnimationNodeStateMachineTransition_pvs0o"), "OlderBrother_Idle", "OlderBrother_Jump", SubResource("AnimationNodeStateMachineTransition_oeqpv"), "OlderBrother_Fall", "OlderBrother_Idle", SubResource("AnimationNodeStateMachineTransition_otm6r"), "OlderBrother_Run", "OlderBrother_Fall", SubResource("AnimationNodeStateMachineTransition_5d8pi"), "OlderBrother_Run", "OlderBrother_Jump", SubResource("AnimationNodeStateMachineTransition_5wfwq"), "OlderBrother_Walk", "OlderBrother_Jump", SubResource("AnimationNodeStateMachineTransition_pflo7"), "OlderBrother_Fall", "OlderBrother_Run", SubResource("AnimationNodeStateMachineTransition_fgngh"), "OlderBrother_Walk", "OlderBrother_Run", SubResource("AnimationNodeStateMachineTransition_vei8p"), "OlderBrother_Run", "OlderBrother_Walk", SubResource("AnimationNodeStateMachineTransition_uk5sp")]
+graph_offset = Vector2(-197, 38.902)
 
 [node name="OlderBrother" type="CharacterBody3D" groups=["Observable", "Player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03182, 0)
@@ -60,8 +206,55 @@ target_position = Vector3(0, -0.35, 0)
 [node name="PlayerVisual" type="Node3D" parent="."]
 unique_name_in_owner = true
 
-[node name="OlderSibling_Placeholder02" parent="PlayerVisual" instance=ExtResource("2_607xc")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -1.03182, 0)
+[node name="AnimationTree" type="AnimationTree" parent="PlayerVisual"]
+unique_name_in_owner = true
+root_node = NodePath("%AnimationTree/../OlderBrother_Animations01")
+tree_root = SubResource("AnimationNodeStateMachine_k7ldq")
+anim_player = NodePath("../OlderBrother_Animations01/AnimationPlayer")
+
+[node name="OlderBrother_Animations01" parent="PlayerVisual" instance=ExtResource("2_p48l8")]
+
+[node name="OlderBrother_Rig" parent="PlayerVisual/OlderBrother_Animations01" index="1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.995119, 0)
+
+[node name="Skeleton3D" parent="PlayerVisual/OlderBrother_Animations01/OlderBrother_Rig" index="6"]
+bones/0/rotation = Quaternion(-0.00822008, 1.19205e-07, 9.7991e-10, 0.999966)
+bones/1/rotation = Quaternion(-0.00655057, 0, 0, 0.999979)
+bones/2/rotation = Quaternion(-0.00861885, 0, 0, 0.999963)
+bones/4/rotation = Quaternion(-0.00646825, 0, 0, 0.999979)
+bones/7/rotation = Quaternion(-0.456947, -0.0563871, 0.0909259, 0.883036)
+bones/8/rotation = Quaternion(-0.0491525, -0.00403816, -0.017096, 0.998637)
+bones/9/rotation = Quaternion(-0.0496733, 0.00706741, 0.0277551, 0.998355)
+bones/11/rotation = Quaternion(-0.440845, 0.0525476, -0.0300513, 0.89554)
+bones/12/rotation = Quaternion(0.0323194, 5.91374e-05, 0.00356176, 0.999471)
+bones/13/rotation = Quaternion(0.0974362, 0.00437383, 0.00788539, 0.995201)
+bones/15/rotation = Quaternion(0.470619, 0.0118253, 0.0964056, 0.876974)
+bones/17/rotation = Quaternion(-0.0162573, -0.0191555, 0.761863, 0.647251)
+bones/18/rotation = Quaternion(0.00631508, 0.000245648, -0.0167951, 0.999839)
+bones/19/rotation = Quaternion(0.00153612, 3.04432e-10, -1.50807e-09, 0.999999)
+bones/20/rotation = Quaternion(1.78725e-09, -2.8312e-07, -0.0589807, 0.998259)
+bones/21/rotation = Quaternion(2.79947e-08, 9.90688e-08, 0.166188, 0.986094)
+bones/25/rotation = Quaternion(-0.0226861, 0.0220662, -0.73335, 0.679114)
+bones/26/rotation = Quaternion(0.00510294, 0.000795213, -0.00139751, 0.999986)
+bones/27/rotation = Quaternion(-0.008363, -1.40607e-10, 2.64833e-08, 0.999965)
+bones/33/rotation = Quaternion(0.242528, 0.0178994, 0.0872547, 0.966047)
+bones/34/rotation = Quaternion(0.0555426, 0.013513, -0.0242607, 0.99807)
+bones/36/rotation = Quaternion(-0.443474, 0.0290081, 0.0348486, 0.89514)
+bones/37/rotation = Quaternion(-0.00824565, 3.259e-05, -0.102558, 0.994693)
+bones/38/rotation = Quaternion(-0.000404615, -0.000265728, 0.584305, 0.811534)
+bones/39/rotation = Quaternion(0.000443265, -4.76192e-08, 0.209334, 0.977844)
+bones/41/rotation = Quaternion(-0.430029, -0.01886, -0.0395483, 0.901751)
+bones/42/rotation = Quaternion(-8.84805e-09, 7.989e-09, 0.102571, 0.994726)
+bones/43/rotation = Quaternion(-1.28642e-07, -2.55193e-07, -0.584304, 0.811535)
+bones/44/rotation = Quaternion(-8.7732e-08, 1.12961e-07, -0.209334, 0.977844)
+bones/45/rotation = Quaternion(0.15146, 0.817863, 0.54584, -0.101084)
+bones/46/rotation = Quaternion(-0.805995, 0.242041, -0.00918847, 0.540095)
+bones/48/rotation = Quaternion(-0.827867, -0.077922, -0.0471915, 0.553477)
+bones/50/rotation = Quaternion(-0.677527, -0.0120681, -0.00748527, 0.735361)
+bones/52/rotation = Quaternion(-0.69719, 0.0118768, 0.00786379, 0.716745)
+bones/54/rotation = Quaternion(-0.709056, 1.50151e-14, 1.51031e-14, 0.705152)
+bones/56/rotation = Quaternion(0.00826653, 0, 0.999966, 0)
+bones/58/rotation = Quaternion(0, 0, 1, 0)
 
 [node name="Rays" type="Node3D" parent="PlayerVisual"]
 unique_name_in_owner = true
@@ -211,3 +404,5 @@ older_brother = NodePath("../..")
 [node name="Older_Shimmy" type="Node" parent="State Machine Older" node_paths=PackedStringArray("older_brother")]
 script = ExtResource("12_wnlxi")
 older_brother = NodePath("../..")
+
+[editable path="PlayerVisual/OlderBrother_Animations01"]

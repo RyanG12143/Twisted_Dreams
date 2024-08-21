@@ -5,6 +5,8 @@ func Enter():
 	#movement_speed = strafe_speed
 	older_brother.velocity.y = JUMP_VELOCITY
 	acceleration = 1
+	if animation_tree:
+		animation_tree.travel("OlderBrother_Jump")
 
 func Update(delta: float):
 	pass

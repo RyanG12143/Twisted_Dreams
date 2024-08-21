@@ -3,6 +3,8 @@ class_name Older_Run
 
 func Enter():
 	movement_speed = run_speed
+	if animation_tree:
+		animation_tree.travel("OlderBrother_Run")
 
 func Update(delta: float):
 	pass

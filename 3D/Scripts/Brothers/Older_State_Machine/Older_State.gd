@@ -12,6 +12,7 @@ signal Transitioned
 @onready var lip_rays = %LipRays
 @onready var player_normal = %PlayerNormal
 @onready var _player_stair_rays: Node3D = $PlayerVisual/Rays/Stair_Rays
+@onready var animation_tree: AnimationNodeStateMachinePlayback = %AnimationTree["parameters/playback"]
 
 @export var older_brother: Node3D
 
