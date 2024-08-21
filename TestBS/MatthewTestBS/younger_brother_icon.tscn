@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://plsoynxsdaw8"]
+
+[ext_resource type="Script" path="res://TestBS/MatthewTestBS/younger_brother_icon.gd" id="1_cs85s"]
+[ext_resource type="Texture2D" uid="uid://ci4dga8jxb3pd" path="res://TestBS/MatthewTestBS/Assets/Running_YoungerBrother_3DUI_Small_ElaineKelling_02.png" id="1_n5qti"]
+[ext_resource type="Texture2D" uid="uid://tbcwaga3vws3" path="res://TestBS/MatthewTestBS/Assets/Walking_YoungerBrother_3DUI_Small_ElaineKelling_02.png" id="2_ee3el"]
+[ext_resource type="Texture2D" uid="uid://c6dfjxm1ds5f6" path="res://TestBS/MatthewTestBS/Assets/MapYounger_UI3D_Small_ElaineKelling_01.png" id="4_311jg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e0i25"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n5qti")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ee3el")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[node name="Icons" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_cs85s")
+
+[node name="Icon" type="AnimatedSprite2D" parent="."]
+position = Vector2(1824, 960)
+sprite_frames = SubResource("SpriteFrames_e0i25")
+animation = &"Run"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 32.0
+offset_top = 912.0
+offset_right = 184.0
+offset_bottom = 1064.0
+icon = ExtResource("4_311jg")
+flat = true

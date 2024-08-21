@@ -12,9 +12,6 @@ func _input(event):
 		get_tree().paused = true
 		show()
 		$MainScreen.show()
-		$SettingsMenu.hide()
-		$AudioMenu.hide()
-		$VisualMenu.hide()
 	elif Input.is_action_just_pressed("escape") and get_tree().paused == true:
 		hide()
 		get_tree().paused = false
@@ -46,12 +43,10 @@ func _on_save_pressed():
 #Goes to the audio menu
 func _on_audio_pressed():
 	$MainScreen.hide()
-	$AudioMenu.show()
 
 #Goes back to the settings menu
 func _on_back_to_settings_pressed():
 	$AudioMenu.hide()
-	$VisualMenu.hide()
 	$SettingsMenu.show()
 
 #Goes to the visuals menu

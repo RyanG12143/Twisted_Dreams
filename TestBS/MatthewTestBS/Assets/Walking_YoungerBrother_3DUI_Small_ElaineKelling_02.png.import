@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g5smoawtrh8j"
-path="res://.godot/imported/crate.png-016b75cd2d091a35c997c773965323e4.ctex"
+uid="uid://tbcwaga3vws3"
+path="res://.godot/imported/Walking_YoungerBrother_3DUI_Small_ElaineKelling_02.png-c517cf028ffc5ab5a5b8fcbcec506275.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestBS/LeoPuzzlePrototype/Assets/crate.png"
-dest_files=["res://.godot/imported/crate.png-016b75cd2d091a35c997c773965323e4.ctex"]
+source_file="res://TestBS/MatthewTestBS/Assets/Walking_YoungerBrother_3DUI_Small_ElaineKelling_02.png"
+dest_files=["res://.godot/imported/Walking_YoungerBrother_3DUI_Small_ElaineKelling_02.png-c517cf028ffc5ab5a5b8fcbcec506275.ctex"]
 
 [params]
 

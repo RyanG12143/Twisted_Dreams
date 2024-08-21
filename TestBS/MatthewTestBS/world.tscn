@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cymsy7cclwwld" path="res://TestBS/MatthewTestBS/Dialog.tscn" id="4_vkhun"]
 [ext_resource type="PackedScene" uid="uid://pqhyjjoo1fcs" path="res://TestBS/LeoPuzzlePrototype/character_two.tscn" id="5_kj2l7"]
 [ext_resource type="PackedScene" uid="uid://bttpiegars2dr" path="res://TestBS/LeoPuzzlePrototype/Crate.tscn" id="6_x63rw"]
-[ext_resource type="PackedScene" uid="uid://fnabxih0s6b4" path="res://TestBS/MatthewTestBS/pause_screen.tscn" id="7_v6g86"]
+[ext_resource type="PackedScene" uid="uid://fnabxih0s6b4" path="res://TestBS/MatthewTestBS/pause_screen_2d.tscn" id="7_v6g86"]
 [ext_resource type="PackedScene" uid="uid://d04kov6vp75gk" path="res://TestBS/LeoPuzzlePrototype/Trigger_Box.tscn" id="8_r3ac1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_05fo7"]
