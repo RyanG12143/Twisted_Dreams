@@ -44,6 +44,7 @@ func _on_timer_timeout():
 
 func _on_trigger_box_3d_not_important():
 	show()
+	page = 0
 	d_text.bbcode_text = dialog[page]
 	d_text.set_visible_characters(0)
 	$Timer.set_wait_time(scroll_time)
