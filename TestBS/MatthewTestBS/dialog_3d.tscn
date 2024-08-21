@@ -1,19 +1,42 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmoawieiwlq2j"]
+[gd_scene load_steps=5 format=3 uid="uid://crbvuprtsh5gq"]
 
-[ext_resource type="Texture2D" uid="uid://cc7rmohqdblpa" path="res://TestBS/MatthewTestBS/Assets/speechbubble.png" id="1_pnn1t"]
-[ext_resource type="Script" path="res://TestBS/MatthewTestBS/Dialog_3d.gd" id="2_8ty6c"]
+[ext_resource type="Script" path="res://TestBS/MatthewTestBS/dialog_3d.gd" id="1_btjit"]
+[ext_resource type="Script" path="res://TestBS/MatthewTestBS/Window.gd" id="1_k2ble"]
+[ext_resource type="Texture2D" uid="uid://cc7rmohqdblpa" path="res://TestBS/MatthewTestBS/Assets/speechbubble.png" id="2_m33gx"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_x6eyy"]
+viewport_path = NodePath("Sprite3D/Window")
 
 [node name="Dialog_3D" type="Sprite3D"]
-transform = Transform3D(0.853833, 0, 0.520548, 0, 1, 0, -0.520548, 0, 0.853833, 0, 0, 0)
-texture = ExtResource("1_pnn1t")
-script = ExtResource("2_8ty6c")
-dialog = Array[String](["Hello", "How are you?", "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"])
+process_mode = 3
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.0743378, -0.954105)
+texture = ExtResource("2_m33gx")
+script = ExtResource("1_btjit")
+scroll_time = 0.05
+duration = 1.0
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16655, 0.4966, 1.14771)
+texture = SubResource("ViewportTexture_x6eyy")
+
+[node name="Window" type="Window" parent="Sprite3D"]
+own_world_3d = true
+transparent_bg = true
+position = Vector2i(-200, 0)
+script = ExtResource("1_k2ble")
+
+[node name="DialogText" type="RichTextLabel" parent="Sprite3D/Window"]
+modulate = Color(0, 0, 0, 1)
+offset_right = 100.0
+offset_bottom = 100.0
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
+theme_override_font_sizes/italics_font_size = 20
+theme_override_font_sizes/bold_italics_font_size = 20
+theme_override_font_sizes/mono_font_size = 20
+bbcode_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
+autostart = true
 
-[node name="DialogText" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462853, 0)
-modulate = Color(0, 0, 0, 1)
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.999999, 0, -0.000541061, 0, 1, 0, 0.000541061, 0, 0.999999, -0.363984, 0.645013, 1.84366)
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

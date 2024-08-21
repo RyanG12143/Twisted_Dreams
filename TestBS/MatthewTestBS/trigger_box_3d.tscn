@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1yk3apkos0tc"]
+
+[ext_resource type="Script" path="res://TestBS/MatthewTestBS/Trigger_Box_3D.gd" id="1_nl1e0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vfy8q"]
+
+[node name="Trigger_Box_3D" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_nl1e0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_vfy8q")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

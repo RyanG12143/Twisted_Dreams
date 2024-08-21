@@ -101,7 +101,6 @@ animation = &"Controls"
 script = ExtResource("9_fk8bo")
 
 [node name="HoverEffect" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_hygnr")
 animation = &"Video"
 
