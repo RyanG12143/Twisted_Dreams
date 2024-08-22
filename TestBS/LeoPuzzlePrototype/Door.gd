@@ -36,13 +36,6 @@ func add_input():
 		else:
 			anim.speed_scale *= -1
 		collider.set_deferred("disabled", true)
-	else:
-		if(anim.current_animation == ""):
-			anim.play("Close")
-			anim.speed_scale = 1
-		else:
-			anim.speed_scale *= -1
-		collider.set_deferred("disabled", false)
 
 ## Handles removals of inputs.
 func remove_input():
@@ -51,14 +44,7 @@ func remove_input():
 		open = false
 	else:
 		open = true
-	if(open):
-		if(anim.current_animation == ""):
-			anim.play("Open")
-			anim.speed_scale = 1
-		else:
-			anim.speed_scale *= -1
-		collider.set_deferred("disabled", true)
-	else:
+	if(!open):
 		if(anim.current_animation == ""):
 			anim.play("Close")
 			anim.speed_scale = 1

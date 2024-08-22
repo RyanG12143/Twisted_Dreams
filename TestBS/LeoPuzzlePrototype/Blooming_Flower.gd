@@ -10,6 +10,12 @@ var flower_bloomed:bool = false
 
 ## Sets flower to unbloomed by default.
 func _ready():
+	if(color == "blue"):
+		animation = "Blue"
+	elif(color == "pink"):
+		animation = "Pink"
+	elif(color == "orange"):
+		animation = "Orange"
 	set_frame(0)
 
 
