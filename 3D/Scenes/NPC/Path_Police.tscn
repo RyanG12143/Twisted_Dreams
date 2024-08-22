@@ -8,4 +8,7 @@ head = NodePath("PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 
 [node name="PoliceOfficer_Placeholder04" parent="." index="0" instance=ExtResource("2_jerkl")]
 
+[node name="NavigationAgent3D" parent="." index="3"]
+target_desired_distance = 0.4
+
 [editable path="PoliceOfficer_Placeholder04"]
