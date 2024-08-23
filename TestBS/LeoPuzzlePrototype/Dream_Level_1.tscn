@@ -282,7 +282,7 @@ script = ExtResource("10_gw17j")
 priority = 10
 follow_mode = 3
 follow_targets = [NodePath("../../Characters/character_one"), NodePath("../../Characters/character_two")]
-zoom = Vector2(1.865, 1.865)
+zoom = Vector2(1.675, 1.675)
 tween_resource = SubResource("Resource_bhbs3")
 auto_zoom = true
 auto_zoom_min = -100.0
@@ -292,7 +292,7 @@ draw_limits = true
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
 position = Vector2(87, -400)
-zoom = Vector2(1.865, 1.865)
+zoom = Vector2(1.675, 1.675)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera/Camera2D"]
 script = ExtResource("12_14urq")
@@ -410,6 +410,9 @@ position = Vector2(3792, -912)
 
 [node name="Pair_Gate" parent="Puzzle_Mechanics_3" instance=ExtResource("23_sx6dy")]
 position = Vector2(4391, -978)
+
+[node name="Crate2" parent="." instance=ExtResource("14_cp6wq")]
+position = Vector2(143, -435)
 
 [connection signal="Flower_Bloomed" from="Puzzle_Mechanics_1/Blooming_Flower" to="Puzzle_Mechanics_1/Door" method="add_input"]
 [connection signal="Rune_Disabled" from="Puzzle_Mechanics_1/Rune" to="Puzzle_Mechanics_1/Elevator_Platform_1" method="remove_input"]
