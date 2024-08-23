@@ -42,16 +42,7 @@ _shader_parameters = {
 "noise3_scale": 0.225,
 "noise_texture": SubResource("NoiseTexture2D_ka6eh"),
 "tri_scale_reduction": 0.3,
-"vertex_normals_distance": 128.0,
-"world_noise_blend_far": 1.0,
-"world_noise_blend_near": 0.32,
-"world_noise_height": 64.0,
-"world_noise_lod_distance": 7500.0,
-"world_noise_max_octaves": 4,
-"world_noise_min_octaves": 2,
-"world_noise_offset": Vector3(0, 0, 0),
-"world_noise_scale": 5.0
+"vertex_normals_distance": 128.0
 }
-world_background = 2
 auto_shader = true
 dual_scaling = true

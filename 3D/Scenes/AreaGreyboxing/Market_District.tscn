@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dre0o1tw818oq"]
+[gd_scene load_steps=49 format=3 uid="uid://dre0o1tw818oq"]
 
 [ext_resource type="Material" uid="uid://dqh67xl8hqsyw" path="res://3D/Assets/Textures/Material_Textures/Dark_Grey.tres" id="1_5cd8q"]
 [ext_resource type="Script" path="res://3D/Scripts/Level_Design/train_manager.gd" id="1_8icnd"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_cr0xv"]
 [ext_resource type="Script" path="res://3D/Scripts/NPC/Waypoint.gd" id="4_jdyt6"]
 [ext_resource type="PackedScene" uid="uid://chfmwuj54wyib" path="res://3D/Scenes/Objects/Door_With_Frame.tscn" id="5_hatbl"]
+[ext_resource type="PackedScene" uid="uid://bnudyh5gbuh1p" path="res://3D/Scenes/NPC/Chase_NPC.tscn" id="5_rma41"]
 [ext_resource type="PackedScene" uid="uid://yy4jyk1ek45n" path="res://3D/Scenes/NPC/Path_Civillian.tscn" id="5_slndv"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_y4wnn"]
 [ext_resource type="Script" path="res://3D/Scripts/Level_Design/Chase_Trigger_Older.gd" id="6_0vapn"]
@@ -51,7 +52,7 @@ geometry_collision_mask = 4294967247
 agent_max_climb = 0.5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h563f"]
-size = Vector3(16, 4, 2)
+size = Vector3(12.1, 4, 5.7)
 
 [sub_resource type="BoxMesh" id="BoxMesh_3xrxr"]
 material = ExtResource("8_mqxe3")
@@ -295,10 +296,10 @@ speed = 2.0
 loop = true
 positions_container = NodePath("../../Path")
 
-[node name="CHASING_OFFICER" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Booth/NPC" instance=ExtResource("2_235u5")]
-transform = Transform3D(0.819152, 0, 0.573576, 0, 1, 0, -0.573576, 0, 0.819152, 3.41058, -0.4, -4.98136)
+[node name="Chase_NPC" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Booth/NPC" node_paths=PackedStringArray("target") instance=ExtResource("5_rma41")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 3.5, -0.4, -5.4)
 speed = 6.0
-observe = true
+target = NodePath("../../../../../../../../../OlderBrother")
 
 [node name="Distribution_NPC" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Booth/NPC" instance=ExtResource("5_slndv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.21057, 0.9, 2.11864)
@@ -335,20 +336,21 @@ turn_towards = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.1, -1.3)
 
 [node name="ACTIVE_Distribution_Box" type="CSGBox3D" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Booth" node_paths=PackedStringArray("player", "collider", "chasing_officer")]
+process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29999, 0.5, 2.05)
 size = Vector3(1, 1, 1.5)
 material = ExtResource("1_5cd8q")
 script = ExtResource("6_0vapn")
 player = NodePath("../../../../../../../../OlderBrother")
 collider = NodePath("Chase_Trigger")
-chasing_officer = NodePath("../NPC/CHASING_OFFICER")
+chasing_officer = NodePath("../NPC/Chase_NPC")
 
 [node name="Chase_Trigger" type="Area3D" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Booth/ACTIVE_Distribution_Box"]
 collision_layer = 8
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Booth/ACTIVE_Distribution_Box/Chase_Trigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.600006, 0, -0.0223274)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35001, 0, -0.172327)
 shape = SubResource("BoxShape3D_h563f")
 
 [node name="Distribution_Box2" type="CSGBox3D" parent="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Booth"]
@@ -4249,25 +4251,17 @@ font_size = 162
 
 [node name="Chase_Officers" type="Node3D" parent="NavigationRegion3D/Meshes/Buildings/Market_Building3"]
 
-[node name="CHASING_OFFICER" parent="NavigationRegion3D/Meshes/Buildings/Market_Building3/Chase_Officers" instance=ExtResource("2_235u5")]
-transform = Transform3D(0.819152, 0, 0.573576, 0, 1, 0, -0.573576, 0, 0.819152, -7.58942, 11.2, 21.0186)
-speed = 3.0
-observe = true
+[node name="Chase_NPC" parent="NavigationRegion3D/Meshes/Buildings/Market_Building3/Chase_Officers" instance=ExtResource("5_rma41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.1, 22.3)
 
-[node name="CHASING_OFFICER4" parent="NavigationRegion3D/Meshes/Buildings/Market_Building3/Chase_Officers" instance=ExtResource("2_235u5")]
-transform = Transform3D(0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, 0.939693, -4.58942, 11.2, 14.0186)
-speed = 3.0
-observe = true
+[node name="Chase_NPC2" parent="NavigationRegion3D/Meshes/Buildings/Market_Building3/Chase_Officers" instance=ExtResource("5_rma41")]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -5, 11.1, 22.3)
 
-[node name="CHASING_OFFICER2" parent="NavigationRegion3D/Meshes/Buildings/Market_Building3/Chase_Officers" instance=ExtResource("2_235u5")]
-transform = Transform3D(0.906308, 0, -0.422618, 0, 1, 0, 0.422618, 0, 0.906308, 1.41058, 11.2, 18.0186)
-speed = 3.0
-observe = true
+[node name="Chase_NPC3" parent="NavigationRegion3D/Meshes/Buildings/Market_Building3/Chase_Officers" instance=ExtResource("5_rma41")]
+transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 4.7, 11.1, 22.3)
 
-[node name="CHASING_OFFICER3" parent="NavigationRegion3D/Meshes/Buildings/Market_Building3/Chase_Officers" instance=ExtResource("2_235u5")]
-transform = Transform3D(0.996195, 0, 0.0871558, 0, 1, 0, -0.0871558, 0, 0.996195, 10.4106, 11.2, 19.0186)
-speed = 3.0
-observe = true
+[node name="Chase_NPC4" parent="NavigationRegion3D/Meshes/Buildings/Market_Building3/Chase_Officers" instance=ExtResource("5_rma41")]
+transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 8.7, 11.1, 23.2)
 
 [node name="Chase_Trigger" type="Area3D" parent="NavigationRegion3D/Meshes/Buildings/Market_Building3" node_paths=PackedStringArray("player", "collider", "chasing_officers")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29999, 15.5, 47.05)
@@ -6651,6 +6645,7 @@ size = Vector3(213.9, 24, 22.2)
 
 [node name="Tower_Guard" parent="NavigationRegion3D/Meshes/Walls/Marketplace_Wall/Security_Checkpoint/NPC" node_paths=PackedStringArray("positions_container") instance=ExtResource("16_kf7g8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.8278, -6.3, 9.755)
+loop = true
 positions_container = NodePath("../../Paths/Tower_Guard")
 
 [node name="PoliceOfficer" parent="NavigationRegion3D/Meshes/Walls/Marketplace_Wall/Security_Checkpoint/NPC" instance=ExtResource("11_edklm")]
@@ -7401,11 +7396,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, -10.9, -92)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416, 0, 0)
 
 [node name="OlderBrother" parent="." instance=ExtResource("2_gtjnm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 440.458, 26.8413, 163.473)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 413.458, 1.1413, -9.52699)
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
-transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 440.458, 28.3462, 167.608)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 413.458, 2.64618, -5.39235)
 script = ExtResource("3_n7vig")
 priority = 10
 follow_mode = 6
@@ -7418,7 +7413,7 @@ spring_length = 4.4
 
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 440.458, 28.3462, 167.608)
+transform = Transform3D(0.999999, 0, 0, 0, 0.939692, 0.342019, 0, -0.34202, 0.939691, 413.458, 2.64618, -5.39235)
 current = true
 
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
@@ -7430,7 +7425,8 @@ train = NodePath("../NavigationRegion3D/Meshes/Walls/Security_Wall/Train")
 player = NodePath("../OlderBrother")
 
 [node name="Freecam3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 426, 2, -9)
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 433, 29, 160)
+current = true
 script = ExtResource("23_q0sw8")
 
 [node name="Icons" parent="." instance=ExtResource("27_nuvn6")]
@@ -7440,4 +7436,8 @@ storage = ExtResource("27_6uyc2")
 material = ExtResource("28_yaj4x")
 assets = ExtResource("29_13x1o")
 
+[connection signal="train_arrive" from="Train_Manager" to="Train_Manager" method="print_train_arrive"]
+[connection signal="train_doors_closed" from="Train_Manager" to="Train_Manager" method="print_train_doors_open"]
+[connection signal="train_doors_open" from="Train_Manager" to="Train_Manager" method="print_train_doors_close"]
+[connection signal="body_entered" from="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Booth/ACTIVE_Distribution_Box/Chase_Trigger" to="NavigationRegion3D/Meshes/Buildings/Market_Building/Market_Building/First_Floor/Booth/ACTIVE_Distribution_Box" method="_on_chase_trigger_body_entered"]
 [connection signal="Not_Important" from="NavigationRegion3D/Meshes/Walls/Marketplace_Wall/Security_Checkpoint/NPC/PoliceOfficer/Trigger_Box_3D" to="NavigationRegion3D/Meshes/Walls/Marketplace_Wall/Security_Checkpoint/NPC/PoliceOfficer/Dialog_3D" method="_on_trigger_box_3d_not_important"]

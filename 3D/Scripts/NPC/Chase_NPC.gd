@@ -50,7 +50,7 @@ func _physics_process(delta):
 	# Waiting at waypoint
 	if waiting:
 		_turn(delta, nav_agent.get_next_path_position())
-		_head_turn_clamp(delta, nav_agent.target_positio, 90)
+		_head_turn_clamp(delta, nav_agent.target_position, 90)
 		return
 	
 	if not target or vaulting:

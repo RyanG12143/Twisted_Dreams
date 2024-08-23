@@ -14,4 +14,4 @@ func _process(delta):
 	if collider.overlaps_body(player) && !event_triggered:
 		for chasing_officer in chasing_officers.get_children():
 			chasing_officer.chasing = true
-		event_triggered = true
+			event_triggered = true
