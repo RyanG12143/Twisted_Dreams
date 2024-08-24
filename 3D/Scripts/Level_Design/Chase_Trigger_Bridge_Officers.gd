@@ -7,11 +7,11 @@ var event_triggered: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	for chasing_officer in chasing_officers.get_children():
+		chasing_officer.waiting = true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if collider.overlaps_body(player) && !event_triggered:
+func _on_body_entered(body):
+	if body.is_in_group("Player"):
 		for chasing_officer in chasing_officers.get_children():
-			chasing_officer.chasing = true
+			chasing_officer.waiting = false
 			event_triggered = true
