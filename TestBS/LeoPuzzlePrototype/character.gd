@@ -18,6 +18,8 @@ extends CharacterBody2D
 ## Area2D.
 @onready var Area:Area2D = $Area2D
 
+@onready var CrateSwapDetection:Area2D = $CrateSwapDetection
+
 @onready var audio:AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @onready var audio_timer:Timer = Timer.new()
@@ -151,19 +153,25 @@ func apply_movement():
 			else:
 				body.set_deferred("linear_velocity", Vector2(1.0  * push_force, body.linear_velocity.y))
 	
-	for index in get_slide_collision_count():
-		var collision = get_slide_collision(index)
-		if collision.get_collider() is Crate:
-			var coll:RigidBody2D = collision.get_collider()
-			if ((abs(coll.global_position.y - global_position.y) < 26 && character_number == 1) or (abs(coll.global_position.y - global_position.y) < 41 && character_number == 2)):
-				if(move_direction != 0 && collision.get_collider().global_position.y > (global_position.y - 5)):
-					if(Input.is_action_pressed("crate_pick_up")):
+	if(Input.is_action_pressed("crate_pick_up") && character_number == globals.character_control):
+		for body in CrateSwapDetection.get_overlapping_bodies():
+			if body is Crate:
+				var coll:RigidBody2D = body
+				if ((abs(coll.global_position.y - global_position.y) < 26 && character_number == 1) or (abs(coll.global_position.y - global_position.y) < 41 && character_number == 2)):
+					if(coll.global_position.y > (global_position.y - 5)):
 						coll._pull_crate()
 						if(coll.global_position.x > global_position.x):
 							coll.set_deferred("linear_velocity", Vector2(-4 * push_force, coll.linear_velocity.y))
 						else:
 							coll.set_deferred("linear_velocity", Vector2(4 * push_force, coll.linear_velocity.y))
-					elif(prev_mov_dir == move_direction):
+	
+	for index in get_slide_collision_count():
+		var collision = get_slide_collision(index)
+		if collision.get_collider() is Crate:
+			var coll:RigidBody2D = collision.get_collider()
+			if ((abs(coll.global_position.y - global_position.y) < 26 && character_number == 1) or (abs(coll.global_position.y - global_position.y) < 41 && character_number == 2)):
+				if(move_direction != 0 && coll.global_position.y > (global_position.y - 5)):
+					if(prev_mov_dir == move_direction && !(Input.is_action_pressed("crate_pick_up"))):
 						coll.set_deferred("linear_velocity", Vector2(move_direction * push_force, coll.linear_velocity.y))
 
 ## Handle movement input.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://pqhyjjoo1fcs"]
+[gd_scene load_steps=60 format=3 uid="uid://pqhyjjoo1fcs"]
 
 [ext_resource type="Script" path="res://TestBS/LeoPuzzlePrototype/character.gd" id="1_nw2x1"]
 [ext_resource type="Texture2D" uid="uid://dsyylnduc8qnu" path="res://TestBS/LeoPuzzlePrototype/Assets/Siblings/OlderSibling_Jump.png" id="2_6gl8o"]
@@ -454,6 +454,9 @@ size = Vector2(24, 63.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6s1v"]
 size = Vector2(24, 1.72937)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qer8"]
+size = Vector2(44.5833, 1.90476)
+
 [node name="character_two" type="CharacterBody2D" node_paths=PackedStringArray("left_raycast", "right_raycast", "ground_raycast") groups=["Can_Press_Buttons", "Player"]]
 z_index = 2
 collision_layer = 2
@@ -489,6 +492,17 @@ collision_mask = 4
 position = Vector2(4.76837e-07, -31.865)
 scale = Vector2(0.999999, 1)
 shape = SubResource("RectangleShape2D_q6s1v")
+
+[node name="CrateSwapDetection" type="Area2D" parent="."]
+position = Vector2(-0.5, -0.8)
+scale = Vector2(1.05, 1.05)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrateSwapDetection"]
+position = Vector2(0.47619, 30.2857)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_0qer8")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_8u82v")
