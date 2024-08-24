@@ -5,6 +5,6 @@
 
 [node name="Path_NPC" instance=ExtResource("1_8ja8c")]
 
-[node name="NPC_Placeholder" parent="." index="0" instance=ExtResource("2_r6cjj")]
+[node name="NPC_Placeholder" parent="." index="0" groups=["Civillian"] instance=ExtResource("2_r6cjj")]
 
 [editable path="NPC_Placeholder"]

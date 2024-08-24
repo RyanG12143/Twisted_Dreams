@@ -25,6 +25,8 @@ var waiting:bool = false
 ## 
 var vaulting:bool = false
 
+var vault_looking = Vector3.ZERO
+
 
 ## Navigation agent to provide pathfinding for npc
 @onready var nav_agent:NavigationAgent3D = $NavigationAgent3D
@@ -47,13 +49,17 @@ func _physics_process(delta):
 	if not is_on_floor() and not vaulting:
 		velocity.y -= gravity * delta
 	
-	# Waiting at waypoint
 	if waiting:
 		_turn(delta, nav_agent.get_next_path_position())
 		_head_turn_clamp(delta, nav_agent.target_position, 90)
 		return
 	
-	if not target or vaulting:
+	if vaulting:
+		_turn(delta, vault_looking)
+		_head_turn_clamp(delta, nav_agent.target_position, 90)
+		return
+	
+	if not target:
 		return
 	
 	nav_agent.target_position = target.global_position
@@ -101,16 +107,18 @@ func _head_turn_clamp(delta, target:Vector3, clamp:float):
 	head.scale = Vector3(1,1,1) # Scale gets weird with global transforms so this puts it back to normal
 
 
-func vault(height:float):
+func vault(height:float, direction:Vector3):
 	print("Vault")
 	vaulting = true
 	
 	var tween = create_tween()
 	var target_height = Vector3(global_position.x, height, global_position.z)
-	var front = global_position - $Front.global_position
-	front.y = 0
-	front = front.normalized()
-	var target_end = Vector3(target_height - (front * .5))
+	direction.y = 0
+	direction = direction.normalized()
+	var target_end = Vector3(target_height - (direction * .5))
+	vault_looking = target_end - (direction * 2)
+	
+	#tween.tween_property(self, "global_rotation", )
 	tween.tween_property(self, "global_position", target_height, 1)
 	tween.tween_property(self, "global_position", target_end, 1)
 	tween.tween_callback(vault_fin)

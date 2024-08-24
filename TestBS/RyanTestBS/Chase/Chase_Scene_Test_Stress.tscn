@@ -73,987 +73,864 @@ positions_container = NodePath("../Markers")
 transform = Transform3D(1, 0, 0, 0, 0.955962, 0.29349, 0, -0.29349, 0.955962, 0, 1.86195, 2.43271)
 current = true
 
-[node name="NPC3" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC3" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.111195, 1.11838, -7.27128)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC4" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC4" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.59705, 1.11838, -7.27128)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC5" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC5" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.29891, 1.11838, -7.27128)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC6" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC6" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.29891, 1.11838, -10.3551)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC7" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC7" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.34634, 1.11838, -10.3551)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC8" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC8" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.34634, 1.11838, -16.8967)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC9" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC9" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4169, 1.11838, -16.8967)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC10" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC10" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4169, 1.11838, -10.086)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC11" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC11" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2065, 1.11838, -10.086)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC12" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC12" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2065, 1.11838, -15.3812)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC13" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC13" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3629, 1.11838, -15.3812)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC14" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC14" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3629, 1.11838, -11.8927)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC15" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC15" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3629, 1.11838, -20.219)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC16" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC16" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6678, 1.11838, -20.219)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC17" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC17" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8228, 1.11838, -13.4149)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC18" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC18" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7713, 1.11838, -13.4149)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC19" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC19" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7713, 1.11838, -22.6992)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC20" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC20" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73455, 1.11838, -22.6992)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC21" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC21" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73455, 1.11838, -29.8212)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC22" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC22" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6518, 1.11838, -29.8212)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC23" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC23" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4406, 1.11838, -29.8212)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC24" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC24" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4406, 1.11838, -22.673)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC25" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC25" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6254, 1.11838, -22.673)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC26" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC26" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6254, 1.11838, -14.6745)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC27" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC27" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3384, 1.11838, -11.8323)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC28" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC28" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3384, 1.11838, -8.20558)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC29" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC29" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3384, 1.11838, -6.47739)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC30" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC30" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0196, 1.11838, -6.47739)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC31" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC31" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0196, 1.11838, -4.74982)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC32" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC32" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1722, 1.11838, -4.74982)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC33" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC33" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1722, 1.11838, -4.28854)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC34" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC34" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1096, 1.11838, -4.28854)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC35" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC35" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1096, 1.11838, -6.04878)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC36" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC36" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2448, 1.11838, -6.04878)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC37" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC37" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.477, 1.11838, -6.04878)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC38" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC38" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.477, 1.11838, -9.54412)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC39" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC39" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3899, 1.11838, -9.54412)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC40" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC40" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3899, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC41" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC41" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC47" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC47" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC48" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC48" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC49" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC49" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC50" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC50" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC51" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC51" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC52" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC52" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC53" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC53" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC54" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC54" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC55" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC55" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC56" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC56" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC57" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC57" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC58" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC58" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC59" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC59" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC60" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC60" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC61" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC61" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC62" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC62" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC63" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC63" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC64" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC64" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC65" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC65" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC66" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC66" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC67" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC67" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC68" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC68" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC69" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC69" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC70" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC70" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC71" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC71" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC72" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC72" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC73" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC73" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC74" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC74" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC75" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC75" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC76" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC76" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC77" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC77" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC78" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC78" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC79" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC79" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC80" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC80" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC81" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC81" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC82" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC82" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC83" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC83" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC84" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC84" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC85" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC85" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC86" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC86" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC87" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC87" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC88" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC88" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC89" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC89" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC90" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC90" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC91" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC91" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC92" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC92" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC93" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC93" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC94" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC94" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC95" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC95" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC96" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC96" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC97" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC97" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC98" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC98" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC99" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC99" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC100" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC100" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC101" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC101" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC102" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC102" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC103" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC103" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC104" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC104" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC105" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC105" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC106" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC106" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC107" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC107" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC108" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC108" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC109" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC109" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC110" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC110" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC111" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC111" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC112" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC112" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC113" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC113" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC114" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC114" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC115" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC115" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC116" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC116" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC117" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC117" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC118" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC118" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC119" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC119" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC120" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC120" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC121" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC121" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC122" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC122" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC123" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC123" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC124" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC124" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC125" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC125" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC126" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC126" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC127" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC127" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC128" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC128" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC129" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC129" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
-[node name="NPC130" parent="." node_paths=PackedStringArray("head", "positions_container") instance=ExtResource("1_hurcj")]
+[node name="NPC130" parent="." node_paths=PackedStringArray("positions_container") instance=ExtResource("1_hurcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.7768, 1.11838, -7.01266)
 turn_Speed = 5.0
 observe = true
-head = NodePath("../NPC/PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 loop = true
 positions_container = NodePath("../Markers")
 
@@ -1133,4 +1010,3 @@ shape = SubResource("SphereShape3D_6nnwd")
 
 [editable path="Markers/Waypoint"]
 [editable path="NPC2"]
-[editable path="NPC2/PoliceOfficer_Placeholder04"]

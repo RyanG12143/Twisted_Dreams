@@ -1,3 +1,4 @@
+class_name NPC
 extends CharacterBody3D
 
 ## Emitted when NPC has no more positions to path towards
@@ -54,11 +55,23 @@ var observe_target:Node3D
 func _ready():
 	if observe:
 		$Update_Timer.start(.1)
-	add_child(rotation_helper)
+	
+	if not rotation_helper.is_inside_tree():
+		add_child(rotation_helper)
 	# Disable processing if not given path to follow (Easier to debug)
 	if not positions_container:
 		return
 	_fill_waypoints()
+
+
+func ready():
+	if observe:
+		$Update_Timer.start(.1)
+	else:
+		$Update_Timer.stop()
+	_fill_waypoints()
+	current_marker = 0
+	traverse_direction = 1
 
 
 func _physics_process(delta):
@@ -193,7 +206,7 @@ func _on_target_reached():
 	else:
 		emit_signal("finished_path")
 		if free_on_end:
-			queue_free()
+			despawn()
 	
 	if markers[current_marker].get_script() != null:
 		markers[current_marker].empty = false
@@ -269,3 +282,12 @@ func _next_queue_empty():
 
 func _on_path_update_timeout():
 	pass # Replace with function body.
+
+
+func wait(time:float):
+	waiting = true
+	wait_timer.start(time)
+
+
+func despawn():
+	pass
