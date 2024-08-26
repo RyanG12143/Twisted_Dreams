@@ -153,7 +153,7 @@ func apply_movement():
 			else:
 				body.set_deferred("linear_velocity", Vector2(1.0  * push_force, body.linear_velocity.y))
 	
-	if(Input.is_action_pressed("crate_pick_up") && character_number == globals.character_control):
+	if(Input.is_action_just_pressed("crate_pick_up") && character_number == globals.character_control):
 		for body in CrateSwapDetection.get_overlapping_bodies():
 			if body is Crate:
 				var coll:RigidBody2D = body

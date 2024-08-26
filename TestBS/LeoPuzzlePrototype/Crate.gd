@@ -51,6 +51,8 @@ func _integrate_forces(state):
 ## Called when crate is being pulled, moves crate to opposite side of player
 func _pull_crate():
 	being_flipped = true
+	var temp:int = globals.character_control
+	globals.character_control = 0
 	set_collision_layer_value(3,false)
 	set_collision_mask_value(2,false)
 	await get_tree().create_timer(0.14).timeout
@@ -58,5 +60,6 @@ func _pull_crate():
 	await get_tree().create_timer(0.01).timeout
 	set_collision_layer_value(3,true)
 	set_collision_mask_value(2,true)
+	globals.character_control = temp
 	being_flipped = false
 	
