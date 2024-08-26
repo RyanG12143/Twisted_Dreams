@@ -35,12 +35,16 @@ var traverse_direction:int = 1
 var markers:Array[Marker3D]
 ## Boolean for waiting at desired waypoint
 var waiting:bool = false
+## If true will get next position after waiting
+var wait_update:bool = true
 ## Target to turn towards when reaching waypoint
 var wait_turn_target:Vector3 = Vector3.ZERO
 ## Array full of targets to observe
 var observe_targets:Array[Node3D] = []
 ## Current target to turn head towards
 var observe_target:Node3D
+## Cache on level
+var npc_cache:Node
 
 
 ## Navigation agent to provide pathfinding for npc
@@ -53,6 +57,9 @@ var observe_target:Node3D
 
 
 func _ready():
+	if %NPC_Cache and not npc_cache:
+		npc_cache = %NPC_Cache
+	
 	if observe:
 		$Update_Timer.start(.1)
 	
@@ -89,6 +96,7 @@ func _physics_process(delta):
 	# Waiting at waypoint
 	if waiting:
 		_turn(delta, wait_turn_target)
+		move_and_slide()
 		return
 	
 	if nav_agent.target_position != markers[current_marker].global_position:
@@ -270,9 +278,14 @@ func _on_observe_area_body_exited(body):
 	if body.is_in_group("Observable"):
 		observe_targets.erase(body)
 
+
 func _on_wait_timeout():
-	_on_target_reached()
+	if wait_update:
+		_on_target_reached()
+	else:
+		wait_update = true
 	waiting = false
+
 
 func _next_queue_empty():
 	markers[current_marker + 1].waypoint_freed.disconnect(_next_queue_empty)
@@ -280,14 +293,17 @@ func _next_queue_empty():
 	waiting = false
 
 
-func _on_path_update_timeout():
-	pass # Replace with function body.
-
 
 func wait(time:float):
+	wait_update = false
 	waiting = true
 	wait_timer.start(time)
 
 
 func despawn():
-	pass
+	if npc_cache:
+		print("Despawn")
+		npc_cache.despawn_pathing_npc(self)
+	else:
+		print("free")
+		queue_free()

@@ -10,5 +10,6 @@ head = NodePath("PoliceOfficer_Placeholder04/PoliceOfficer/Head")
 
 [node name="NavigationAgent3D" parent="." index="3"]
 target_desired_distance = 0.4
+debug_enabled = true
 
 [editable path="PoliceOfficer_Placeholder04"]

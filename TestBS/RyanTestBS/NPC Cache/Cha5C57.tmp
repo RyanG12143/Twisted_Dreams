@@ -181,6 +181,18 @@ path = NodePath("../Node3D")
 wait_time = 0.1
 autostart = true
 
+[node name="Spawner2" type="Marker3D" parent="." node_paths=PackedStringArray("path")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.88719, 0.781533, -5.35847)
+script = ExtResource("13_nsk3h")
+path_spawn = true
+type = 1
+path = NodePath("../Node3D")
+
+[node name="Timer" type="Timer" parent="Spawner2"]
+wait_time = 0.1
+autostart = true
+
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="spawn"]
+[connection signal="timeout" from="Spawner2/Timer" to="Spawner2" method="spawn"]
 
 [editable path="NavigationRegion3D/Vault_Object"]

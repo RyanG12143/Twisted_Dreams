@@ -27,6 +27,7 @@ Game_State="*res://Scripts/Global/Game_State.gd"
 Utils="*res://Scripts/Global/Utils.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 SceneReferences="*res://Menus/Scene_References.gd"
+Enums="*res://Scripts/Global/Enums.gd"
 
 [display]
 
