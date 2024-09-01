@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct232jg2fh3cq"
-path="res://.godot/imported/Running_YoungerBrother_3DUI_Small_ElaineKelling_02.png-8361e2b7fcb1a10bc24120e5d3a19bd9.ctex"
+uid="uid://b8s68lla24pgu"
+path="res://.godot/imported/Walking_ElderBrother_3DUI_ElaineKelling.png-0660ec692f6899e7edd43f70c41cea66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestBS/MatthewTestBS/Assets/Running_YoungerBrother_3DUI_Small_ElaineKelling_02.png"
-dest_files=["res://.godot/imported/Running_YoungerBrother_3DUI_Small_ElaineKelling_02.png-8361e2b7fcb1a10bc24120e5d3a19bd9.ctex"]
+source_file="res://TestBS/MatthewTestBS/Assets/Walking_ElderBrother_3DUI_ElaineKelling.png"
+dest_files=["res://.godot/imported/Walking_ElderBrother_3DUI_ElaineKelling.png-0660ec692f6899e7edd43f70c41cea66.ctex"]
 
 [params]
 

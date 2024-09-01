@@ -27,4 +27,3 @@ func _input(event):
 
 func _on_scrolling_timer_timeout():
 	$DialogText.set_visible_characters($DialogText.get_visible_characters() + 1)
-
