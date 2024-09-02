@@ -31,7 +31,7 @@ script = ExtResource("1_cs85s")
 [node name="Icon" type="AnimatedSprite2D" parent="."]
 position = Vector2(1824, 960)
 sprite_frames = SubResource("SpriteFrames_e0i25")
-animation = &"Run"
+animation = &"Walk"
 
 [node name="Button" type="Button" parent="."]
 offset_left = 32.0

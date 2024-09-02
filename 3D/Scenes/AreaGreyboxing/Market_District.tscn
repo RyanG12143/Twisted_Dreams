@@ -3,7 +3,7 @@
 [ext_resource type="Material" uid="uid://dqh67xl8hqsyw" path="res://3D/Assets/Textures/Material_Textures/Dark_Grey.tres" id="1_5cd8q"]
 [ext_resource type="Script" path="res://3D/Scripts/Level_Design/train_manager.gd" id="1_8icnd"]
 [ext_resource type="PackedScene" uid="uid://yg72f38gg1sg" path="res://3D/Scenes/Objects/Double_Door_With_Frame.tscn" id="1_p72i5"]
-[ext_resource type="PackedScene" uid="uid://cu7wqioxho4ft" path="res://3D/Scenes/NPC/Path_NPC.tscn" id="2_235u5"]
+[ext_resource type="PackedScene" path="res://3D/Scenes/NPC/Path_NPC.tscn" id="2_235u5"]
 [ext_resource type="PackedScene" uid="uid://bived31tg1brm" path="res://3D/Scenes/Characters/Brother_Older.tscn" id="2_gtjnm"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_n7vig"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_cr0xv"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dm8golhbdad31"]
+[gd_scene load_steps=16 format=3 uid="uid://dm8golhbdad31"]
 
 [ext_resource type="Script" path="res://TestBS/MatthewTestBS/pause_screen.gd" id="1_l5vat"]
 [ext_resource type="Texture2D" uid="uid://270mvh3rsiw" path="res://TestBS/MatthewTestBS/Assets/Pauserobo_UI_3D_ElaineKelling_01.png" id="2_gwj3t"]
@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://c33p8kvq4ghln" path="res://TestBS/MatthewTestBS/Assets/TitleButton_UI_clicked_3D_ElaineK.png" id="10_tfrop"]
 [ext_resource type="Texture2D" uid="uid://dqcnm0vi8fwcp" path="res://TestBS/MatthewTestBS/Assets/SaveIcon_UI_Unlicked_3D_ElaineK.png" id="11_uoet1"]
 [ext_resource type="Texture2D" uid="uid://b0cnjyh57derr" path="res://TestBS/MatthewTestBS/Assets/SaveIcon_UI_clicked_3D_ElaineK.png" id="12_heu5f"]
+[ext_resource type="Texture2D" uid="uid://dv0hdl02ovey4" path="res://TestBS/MatthewTestBS/Assets/ControlMenu_UI_3D_ElaineKelling_01.png" id="13_jppef"]
+[ext_resource type="Texture2D" uid="uid://cjh7bbfkskirl" path="res://TestBS/MatthewTestBS/Assets/ExitButton_UI3D_Unlicked_ElaineK_01.png" id="14_gwmv8"]
+[ext_resource type="Texture2D" uid="uid://byu3yuca7bpru" path="res://TestBS/MatthewTestBS/Assets/ExitButton_UI3D_Clicked_ElaineK_01.png" id="15_1uaqs"]
 
 [node name="PauseScreen" type="CanvasLayer"]
 process_mode = 3
@@ -75,6 +78,27 @@ offset_right = 1530.0
 offset_bottom = 594.0
 texture_normal = ExtResource("11_uoet1")
 texture_pressed = ExtResource("12_heu5f")
+
+[node name="ControlsScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ControlsScreen"]
+position = Vector2(989, 551)
+texture = ExtResource("13_jppef")
+
+[node name="Exit" type="TextureButton" parent="ControlsScreen"]
+layout_mode = 0
+offset_left = 1622.0
+offset_top = 170.0
+offset_right = 1694.0
+offset_bottom = 242.0
+texture_normal = ExtResource("14_gwmv8")
+texture_pressed = ExtResource("15_1uaqs")
 
 [connection signal="pressed" from="MainScreen/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MainScreen/Audio" to="." method="_on_audio_pressed"]

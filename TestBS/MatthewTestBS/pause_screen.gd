@@ -24,7 +24,7 @@ func _on_back_pressed():
 #Goes to the settings menu
 func _on_settings_pressed():
 	$MainScreen.hide()
-	$SettingsMenu.show()
+	$ControlsScreen.show()
 
 #Opens the title screen
 func _on_return_to_title_pressed():
