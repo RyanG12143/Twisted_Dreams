@@ -87,7 +87,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="ControlsScreen"]
+[node name="Controls" type="Sprite2D" parent="ControlsScreen"]
 position = Vector2(989, 551)
 texture = ExtResource("13_jppef")
 
@@ -105,3 +105,4 @@ texture_pressed = ExtResource("15_1uaqs")
 [connection signal="pressed" from="MainScreen/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MainScreen/ReturnToTitle" to="." method="_on_return_to_title_pressed"]
 [connection signal="pressed" from="MainScreen/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="ControlsScreen/Exit" to="." method="_on_exit_pressed"]

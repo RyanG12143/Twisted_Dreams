@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://fnabxih0s6b4"]
+[gd_scene load_steps=20 format=3 uid="uid://fnabxih0s6b4"]
 
 [ext_resource type="Script" path="res://TestBS/MatthewTestBS/pause_screen.gd" id="1_pypjs"]
 [ext_resource type="Texture2D" uid="uid://ctp66q1owd1yv" path="res://TestBS/MatthewTestBS/Assets/ContinueIcon_UI_Unlicked_2D_ElaineK.png" id="2_dxvud"]
@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://binglvlfj8crp" path="res://TestBS/MatthewTestBS/Assets/PausePlant_UI_2D_ElaineKelling_02.png" id="10_6ihv1"]
 [ext_resource type="Texture2D" uid="uid://de7tpl2hre77s" path="res://TestBS/MatthewTestBS/Assets/SaveIcon_UI_Unlicked_2D_ElaineK.png" id="11_g646r"]
 [ext_resource type="Texture2D" uid="uid://ban63iajhe566" path="res://TestBS/MatthewTestBS/Assets/SaveIcon_UI_clicked_2D_ElaineK.png" id="12_2dk6m"]
+[ext_resource type="Texture2D" uid="uid://b07067vj6kw1u" path="res://TestBS/MatthewTestBS/Assets/ControlMenu_UI_2D_ElaineKelling_01.png" id="13_13vkb"]
+[ext_resource type="Texture2D" uid="uid://dmlikro6bosc0" path="res://TestBS/MatthewTestBS/Assets/ExitButton_UI2D_unClicked_ElaineK_01.png" id="14_plv6x"]
+[ext_resource type="Texture2D" uid="uid://c8pgh2rchop7k" path="res://TestBS/MatthewTestBS/Assets/ExitButton_UI2D_Clicked_ElaineK_01.png" id="15_mqqgr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bk304"]
 font_size = 50
@@ -88,14 +91,26 @@ offset_bottom = 587.0
 texture_normal = ExtResource("11_g646r")
 texture_pressed = ExtResource("12_2dk6m")
 
-[node name="SettingsMenu" type="Control" parent="."]
-visible = false
+[node name="ControlsScreen" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Controls" type="Sprite2D" parent="ControlsScreen"]
+position = Vector2(989, 551)
+texture = ExtResource("13_13vkb")
+
+[node name="Exit" type="TextureButton" parent="ControlsScreen"]
+layout_mode = 0
+offset_left = 1618.0
+offset_top = 169.0
+offset_right = 1690.0
+offset_bottom = 241.0
+texture_normal = ExtResource("14_plv6x")
+texture_pressed = ExtResource("15_mqqgr")
 
 [node name="AudioMenu" type="Control" parent="."]
 visible = false
@@ -180,8 +195,9 @@ text = "Back"
 
 [connection signal="pressed" from="MainScreen/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MainScreen/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="MainScreen/Settings" to="SettingsMenu" method="_on_settings_pressed"]
+[connection signal="pressed" from="MainScreen/Settings" to="ControlsScreen" method="_on_settings_pressed"]
 [connection signal="pressed" from="MainScreen/ReturnToTitle" to="." method="_on_return_to_title_pressed"]
 [connection signal="pressed" from="MainScreen/Audio" to="." method="_on_audio_pressed"]
 [connection signal="pressed" from="MainScreen/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="ControlsScreen/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="AudioMenu/BackToSettings" to="." method="_on_back_to_settings_pressed"]

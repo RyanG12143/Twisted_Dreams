@@ -11,6 +11,7 @@ func _input(event):
 	if Input.is_action_pressed("escape") and get_tree().paused == false:
 		get_tree().paused = true
 		show()
+		$ControlsScreen.hide()
 		$MainScreen.show()
 	elif Input.is_action_just_pressed("escape") and get_tree().paused == true:
 		hide()
@@ -61,3 +62,8 @@ func _on_subtitle_toggle_toggled(toggled_on):
 		$VisualMenu/SubtitleSample.show()
 	else:
 		$VisualMenu/SubtitleSample.hide()
+
+
+func _on_exit_pressed():
+	$ControlsScreen.hide()
+	$MainScreen.show()
