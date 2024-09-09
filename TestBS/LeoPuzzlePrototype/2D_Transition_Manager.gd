@@ -1,12 +1,20 @@
+@tool
 extends Node
 ## Manages 2D scene transitions (currently just deaths).
 
 @onready var transition = $Transition
+@onready var color_rect:ColorRect = $Transition/ColorRect
 #@export var scene_to_load: PackedScene
 
 func _ready():
 	await owner.ready
 	transition.play("fade_in")
+
+func _process(delta):
+	if Engine.is_editor_hint():
+		color_rect.visible = false
+	else:
+		color_rect.visible = true
 	
 
 func _on_area_2d_body_entered(body):
