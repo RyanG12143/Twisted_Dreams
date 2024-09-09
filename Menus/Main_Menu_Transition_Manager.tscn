@@ -96,6 +96,7 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="Transition"]
+visible = false
 offset_right = 1152.0
 offset_bottom = 648.0
 scale = Vector2(39.9624, 23.3469)

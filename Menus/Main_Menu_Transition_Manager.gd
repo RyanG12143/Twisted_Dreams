@@ -1,3 +1,4 @@
+@tool
 extends Node
 ## Manages Main Menu scene transitions.
 
@@ -10,7 +11,12 @@ func _ready():
 	await owner.ready
 	color_rect.set_mouse_filter(2)
 	transition.play("fade_in")
-	
+
+func _process(delta: float) -> void:
+	if Engine.is_editor_hint():
+		color_rect.visible = false
+	else:
+		color_rect.visible = true
 
 func scene_change():
 	transition.play("fade_out")
