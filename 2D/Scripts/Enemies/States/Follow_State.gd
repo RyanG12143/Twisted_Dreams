@@ -76,5 +76,3 @@ func update(body:CharacterBody2D, delta:float):
 					emit_signal("transitioned", self, "Weeping")
 				elif direction.x < 0 and target.is_facing_right:
 					emit_signal("transitioned", self, "Weeping")
-
-

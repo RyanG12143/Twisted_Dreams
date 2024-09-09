@@ -49,6 +49,8 @@ var overlapping_bodies:Array = []
 ## Are there objects stopping the platform from going down.
 var bodies_below:bool = false
 
+var bonus_inputs:int = 0
+
 ## Setting the correct frame.
 func _ready():
 	if(color == "blue"):
@@ -99,15 +101,20 @@ func add_input():
 			target_height += 0.1
 		else:
 			target_height -= 0.1
+	else:
+		bonus_inputs += 1
 
 ## Handles removals of inputs.
 func remove_input():
-	inputs -= 1
-	if(inputs >= 0):
-		if(goes_down):
-			target_height += 0.1
+		inputs -= 1
+		if(bonus_inputs > 0):
+			bonus_inputs -= 1
 		else:
-			target_height -= 0.1
+			if(inputs >= 0):
+				if(goes_down):
+					target_height += 0.1
+				else:
+					target_height -= 0.1
 
 
 func _on_area_2d_body_entered(body):
